@@ -8,7 +8,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand */}
         <a href="/" className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg p-1">
-          <CompanionLogo size={32} className="text-amber-400 group-hover:text-amber-300 transition-colors" />
+          <CompanionLogo size={32} className="text-white group-hover:text-amber-300 transition-colors" />
           <div className="flex flex-col">
             <span className="font-bold tracking-wider text-sm sm:text-base text-white group-hover:text-amber-200 transition-colors">
               FLUIDISE
