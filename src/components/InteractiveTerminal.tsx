@@ -55,9 +55,15 @@ export const InteractiveTerminal: React.FC = () => {
   const output = mode === 'json' ? current.json : current.text;
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(output);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    navigator.clipboard
+      .writeText(output)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      })
+      .catch((err) => {
+        console.error('Failed to copy text: ', err);
+      });
   };
 
   return (
@@ -65,7 +71,7 @@ export const InteractiveTerminal: React.FC = () => {
       {/* Window Header */}
       <div className="flex items-center justify-between px-4 py-3 bg-white/[0.03] border-b border-white/[0.08]">
         <div className="flex items-center gap-2">
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5" aria-hidden="true">
             <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
             <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
             <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
@@ -76,28 +82,36 @@ export const InteractiveTerminal: React.FC = () => {
           </div>
         </div>
 
-        {/* Mode selector */}
-        <div className="flex items-center gap-1.5 bg-black/40 p-1 rounded-lg border border-white/[0.08]">
+        {/* Mode selector with ARIA tabs */}
+        <div
+          role="tablist"
+          aria-label="Output format selector"
+          className="flex items-center gap-1.5 bg-black/40 p-1 rounded-lg border border-white/[0.08]"
+        >
           <button
+            role="tab"
+            aria-selected={mode === 'json'}
             onClick={() => setMode('json')}
-            className={`px-2.5 py-1 text-xs font-mono rounded flex items-center gap-1 transition-all ${
+            className={`px-2.5 py-1 text-xs font-mono rounded flex items-center gap-1 transition-all focus-visible:ring-1 focus-visible:ring-amber-400 ${
               mode === 'json'
                 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
                 : 'text-zinc-400 hover:text-white'
             }`}
           >
             <IconCpu size={12} />
-            JSON (Agent default)
+            <span>JSON (Agent default)</span>
           </button>
           <button
+            role="tab"
+            aria-selected={mode === 'text'}
             onClick={() => setMode('text')}
-            className={`px-2.5 py-1 text-xs font-mono rounded flex items-center gap-1 transition-all ${
+            className={`px-2.5 py-1 text-xs font-mono rounded flex items-center gap-1 transition-all focus-visible:ring-1 focus-visible:ring-amber-400 ${
               mode === 'text'
                 ? 'bg-white/10 text-zinc-200 border border-white/20'
                 : 'text-zinc-400 hover:text-white'
             }`}
           >
-            Text (--format text)
+            <span>Text (--format text)</span>
           </button>
         </div>
       </div>
@@ -112,30 +126,30 @@ export const InteractiveTerminal: React.FC = () => {
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => setSample(sample === 'valid' ? 'invalid' : 'valid')}
-            className="text-xs font-mono px-2 py-1 rounded bg-white/[0.05] hover:bg-white/[0.1] text-zinc-300 border border-white/[0.08] transition-colors"
+            className="text-xs font-mono px-2.5 py-1 rounded bg-white/[0.05] hover:bg-white/[0.1] text-zinc-300 border border-white/[0.08] transition-colors focus-visible:ring-1 focus-visible:ring-amber-400"
           >
             Toggle {sample === 'valid' ? 'Error' : 'Success'}
           </button>
           <button
             onClick={handleCopy}
-            className="p-1.5 rounded bg-white/[0.05] hover:bg-white/[0.1] text-zinc-300 border border-white/[0.08] transition-colors"
+            className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded bg-white/[0.05] hover:bg-white/[0.1] text-zinc-300 border border-white/[0.08] transition-colors focus-visible:ring-1 focus-visible:ring-amber-400"
             title="Copy Output"
-            aria-label="Copy Output"
+            aria-label="Copy terminal output"
           >
             {copied ? <IconCheck size={14} className="text-emerald-400" /> : <IconCopy size={14} />}
           </button>
         </div>
       </div>
 
-      {/* Output Console */}
-      <div className="p-5 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto min-h-[220px]">
+      {/* Output Console with stable minimum height (prevents CLS) */}
+      <div className="p-5 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto min-h-[380px]">
         <AnimatePresence mode="wait">
           <motion.pre
             key={`${mode}-${sample}`}
-            initial={{ opacity: 0, y: 4 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.15 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.12 }}
             className={`whitespace-pre ${
               mode === 'json'
                 ? 'text-amber-200/90'
@@ -156,6 +170,10 @@ export const InteractiveTerminal: React.FC = () => {
           Exit code: {sample === 'valid' ? '0' : '1'}
         </span>
         <span className="text-zinc-400">Zero side-effects • Native Rust binary</span>
+      </div>
+
+      <div className="sr-only" aria-live="polite">
+        {copied ? 'Terminal output copied to clipboard' : ''}
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import { Hero } from '../components/Hero';
+import Hero from '../components/Hero.astro';
 import { ToolGrid } from '../components/ToolGrid';
-import { ManifestoSection } from '../components/ManifestoSection';
+import ManifestoSection from '../components/ManifestoSection.astro';
 
 const toolEntries = await getCollection('tools');
 const tools = toolEntries
@@ -15,7 +15,7 @@ const tools = toolEntries
 ---
 
 <Layout>
-  <Hero client:load />
-  <ToolGrid client:load tools={tools} />
-  <ManifestoSection client:visible />
+  <Hero />
+  <ToolGrid client:visible tools={tools} />
+  <ManifestoSection />
 </Layout>

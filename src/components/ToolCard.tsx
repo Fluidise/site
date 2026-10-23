@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import {
   IconCheck,
   IconCopy,
@@ -54,9 +53,13 @@ export const ToolCard: React.FC<{ tool: ToolData }> = ({ tool }) => {
     e.preventDefault();
     e.stopPropagation();
     if (tool.brewCommand) {
-      navigator.clipboard.writeText(tool.brewCommand);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      navigator.clipboard
+        .writeText(tool.brewCommand)
+        .then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        })
+        .catch((err) => console.error('Copy failed: ', err));
     }
   };
 
@@ -72,10 +75,8 @@ export const ToolCard: React.FC<{ tool: ToolData }> = ({ tool }) => {
   };
 
   return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-      className={`group relative rounded-2xl border bg-[#0e0c14]/90 p-6 sm:p-8 backdrop-blur-xl transition-all duration-300 ${styles.accent} ${styles.glow} flex flex-col justify-between`}
+    <div
+      className={`group relative rounded-2xl border bg-[#0e0c14]/90 p-6 sm:p-8 backdrop-blur-xl transition-all duration-200 hover:-translate-y-1 ${styles.accent} ${styles.glow} flex flex-col justify-between`}
     >
       <div>
         {/* Card Header */}
@@ -116,9 +117,9 @@ export const ToolCard: React.FC<{ tool: ToolData }> = ({ tool }) => {
             <span className="truncate">{tool.brewCommand}</span>
             <button
               onClick={handleCopy}
-              className="p-1 hover:text-white text-zinc-400 transition-colors"
-              title="Copy installation command"
-              aria-label="Copy installation command"
+              className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded hover:bg-white/[0.1] text-zinc-400 hover:text-white transition-colors focus-visible:ring-1 focus-visible:ring-amber-400"
+              title={`Copy install command for ${tool.name}`}
+              aria-label={`Copy install command for ${tool.name}`}
             >
               {copied ? <IconCheck size={14} className="text-emerald-400" /> : <IconCopy size={14} />}
             </button>
@@ -128,24 +129,24 @@ export const ToolCard: React.FC<{ tool: ToolData }> = ({ tool }) => {
         <div className="flex items-center justify-between gap-3 pt-1">
           <a
             href={`/tools/${tool.id}`}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors group/link"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors group/link focus-visible:ring-1 focus-visible:ring-amber-400 rounded"
           >
-            Read Specification & Docs
+            <span>Read Specification & Docs</span>
             <IconArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
           </a>
 
           <a
             href={tool.repoUrl}
             target="_blank"
-            rel="noreferrer"
-            className="p-1.5 rounded-md hover:bg-white/[0.08] text-zinc-400 hover:text-white transition-colors"
-            title="View on GitHub"
-            aria-label="View on GitHub"
+            rel="noreferrer noopener"
+            className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md hover:bg-white/[0.08] text-zinc-400 hover:text-white transition-colors focus-visible:ring-1 focus-visible:ring-amber-400"
+            title={`View ${tool.name} repository on GitHub`}
+            aria-label={`View ${tool.name} repository on GitHub`}
           >
             <IconBrandGithub size={18} />
           </a>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };

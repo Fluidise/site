@@ -1,0 +1,148 @@
+---
+import { IconBrandGithub, IconExternalLink, IconSparkles, IconMenu2, IconX } from '@tabler/icons-react';
+import CompanionLogo from './CompanionLogo.astro';
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-white/[0.08] bg-[#09080c]/80 backdrop-blur-xl transition-all">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    {/* Brand */}
+    <a href="/" class="flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-amber-400 rounded-lg p-1 outline-none">
+      <CompanionLogo size={32} ariaHidden={true} class="text-white group-hover:text-amber-300 transition-colors" />
+      <div class="flex flex-col">
+        <span class="font-bold tracking-wider text-sm sm:text-base text-white group-hover:text-amber-200 transition-colors font-mono">
+          FLUIDISE
+        </span>
+        <span class="text-[10px] tracking-widest uppercase text-zinc-400 -mt-1 font-mono">
+          Agent-First DX
+        </span>
+      </div>
+    </a>
+
+    {/* Desktop Navigation */}
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+      <a
+        href="/#tools"
+        class="hover:text-white transition-colors py-1 border-b-2 border-transparent hover:border-amber-400"
+      >
+        Tools & Suite
+      </a>
+      <a
+        href="/#philosophy"
+        class="hover:text-white transition-colors py-1 border-b-2 border-transparent hover:border-amber-400"
+      >
+        Philosophy
+      </a>
+      <a
+        href="https://github.com/Fluidise/core/tree/main/docs"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="flex items-center gap-1.5 hover:text-white transition-colors py-1 border-b-2 border-transparent hover:border-amber-400"
+      >
+        Specifications
+        <IconExternalLink size={14} className="opacity-70" />
+      </a>
+    </nav>
+
+    {/* Right Actions & Mobile Hamburger */}
+    <div class="flex items-center gap-3">
+      <div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-mono">
+        <IconSparkles size={12} className="text-amber-400" />
+        <span>v1.0 Ready</span>
+      </div>
+
+      <a
+        href="https://github.com/Fluidise"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-zinc-200 text-sm font-medium transition-all hover:scale-105 active:scale-95"
+        aria-label="View Fluidise organization on GitHub"
+      >
+        <IconBrandGithub size={18} />
+        <span>GitHub</span>
+      </a>
+
+      {/* Mobile Menu Button */}
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="md:hidden p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.08] transition-colors focus-visible:ring-2 focus-visible:ring-amber-400"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
+      >
+        <span id="menu-icon-open"><IconMenu2 size={22} /></span>
+        <span id="menu-icon-close" class="hidden"><IconX size={22} /></span>
+      </button>
+    </div>
+  </div>
+
+  {/* Mobile Menu Drawer */}
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-white/[0.08] bg-[#0c0a12]/95 px-4 pt-3 pb-5 space-y-3 font-mono text-sm backdrop-blur-xl"
+  >
+    <a
+      href="/#tools"
+      class="mobile-nav-link block px-3 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-white/[0.05] transition-colors"
+    >
+      Tools & Suite
+    </a>
+    <a
+      href="/#philosophy"
+      class="mobile-nav-link block px-3 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-white/[0.05] transition-colors"
+    >
+      Philosophy
+    </a>
+    <a
+      href="https://github.com/Fluidise/core/tree/main/docs"
+      target="_blank"
+      rel="noreferrer noopener"
+      class="mobile-nav-link flex items-center justify-between px-3 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-white/[0.05] transition-colors"
+    >
+      <span>Specifications</span>
+      <IconExternalLink size={16} className="opacity-70" />
+    </a>
+    <div class="pt-2 border-t border-white/[0.06]">
+      <a
+        href="https://github.com/Fluidise"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-amber-500 text-black font-semibold text-xs tracking-wider uppercase transition-all"
+      >
+        <IconBrandGithub size={16} />
+        <span>GitHub Organization</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isExpanded));
+      menu.classList.toggle('hidden');
+      if (iconOpen && iconClose) {
+        iconOpen.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+      }
+    });
+
+    const links = menu.querySelectorAll('.mobile-nav-link');
+    links.forEach((l) => {
+      l.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        if (iconOpen && iconClose) {
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+      });
+    });
+  }
+</script>

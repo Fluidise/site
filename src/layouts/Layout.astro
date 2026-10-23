@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { Navbar } from '../components/Navbar';
+import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -12,6 +12,9 @@ const {
   title = 'Fluidise — The Agent-First Developer Experience Suite',
   description = 'Deterministic, standalone, and high-performance developer tools designed for AI coding agents and human maintainers.',
 } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://fluidise.dev').href;
+const canonicalImageSrc = new URL('/brand/banner.png', Astro.site ?? 'https://fluidise.dev').href;
 ---
 
 <!doctype html>
@@ -20,7 +23,11 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    {/* Security Meta Tags */}
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     {/* Primary Meta Tags */}
     <title>{title}</title>
@@ -30,21 +37,21 @@ const {
 
     {/* Open Graph / Facebook */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fluidise.dev/" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/brand/banner.png" />
+    <meta property="og:image" content={canonicalImageSrc} />
 
     {/* Twitter */}
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://fluidise.dev/" />
+    <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/brand/banner.png" />
+    <meta property="twitter:image" content={canonicalImageSrc} />
   </head>
   <body class="bg-mesh-glow text-zinc-100 antialiased selection:bg-amber-500/20 selection:text-amber-200">
     <div class="min-h-screen flex flex-col justify-between">
-      <Navbar client:load />
+      <Navbar />
       <main class="flex-grow">
         <slot />
       </main>

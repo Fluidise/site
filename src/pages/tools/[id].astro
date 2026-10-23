@@ -4,6 +4,8 @@ import Layout from '../../layouts/Layout.astro';
 import {
   IconBrandGithub,
   IconArrowLeft,
+  IconCopy,
+  IconCheck,
 } from '@tabler/icons-react';
 
 export async function getStaticPaths() {
@@ -26,10 +28,10 @@ const { Content } = await render(tool);
     {/* Back button */}
     <a
       href="/#tools"
-      class="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-amber-300 transition-colors mb-8 group"
+      class="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-amber-300 transition-colors mb-8 group focus-visible:ring-1 focus-visible:ring-amber-400 rounded py-1 px-2 -ml-2"
     >
       <IconArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-      Back to Suite Hub
+      <span>Back to Suite Hub</span>
     </a>
 
     {/* Tool Header */}
@@ -40,7 +42,7 @@ const { Content } = await render(tool);
             <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-300 border border-amber-500/20">
               {tool.data.status === 'released' ? 'v1.0.0 Stable' : 'In Development'}
             </span>
-            <span class="text-xs font-mono text-zinc-500">Standalone Native Binary</span>
+            <span class="text-xs font-mono text-zinc-400">Standalone Native Binary</span>
           </div>
           <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-mono tracking-tight">
             {tool.data.name}
@@ -50,8 +52,9 @@ const { Content } = await render(tool);
         <a
           href={tool.data.repoUrl}
           target="_blank"
-          rel="noreferrer"
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.1] text-zinc-200 text-sm font-medium transition-all self-start sm:self-auto"
+          rel="noreferrer noopener"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.1] text-zinc-200 text-sm font-medium transition-all self-start sm:self-auto focus-visible:ring-2 focus-visible:ring-amber-400"
+          aria-label={`View ${tool.data.name} on GitHub`}
         >
           <IconBrandGithub size={18} />
           <span>View on GitHub</span>
@@ -62,14 +65,26 @@ const { Content } = await render(tool);
         {tool.data.tagline}
       </p>
 
-      {/* Quick Install snippet */}
+      {/* Quick Install snippet with 1-click copy */}
       {tool.data.brewCommand && (
         <div class="p-4 rounded-xl bg-black/50 border border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <div class="flex items-center gap-2 font-mono text-xs sm:text-sm text-zinc-200">
-            <span class="text-amber-400">$</span>
-            <code>{tool.data.brewCommand}</code>
+          <div class="flex items-center gap-2 font-mono text-xs sm:text-sm text-zinc-200 overflow-x-auto max-w-full">
+            <span class="text-amber-400 shrink-0">$</span>
+            <code class="whitespace-nowrap">{tool.data.brewCommand}</code>
           </div>
-          <span class="text-[11px] font-mono text-zinc-500">Official Homebrew Tap</span>
+          <div class="flex items-center gap-3 self-end sm:self-auto shrink-0">
+            <span class="text-[11px] font-mono text-zinc-400">Official Homebrew Tap</span>
+            <button
+              id="tool-copy-brew-btn"
+              type="button"
+              data-command={tool.data.brewCommand}
+              aria-label={`Copy install command: ${tool.data.brewCommand}`}
+              class="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded bg-white/[0.08] hover:bg-white/[0.15] text-zinc-300 hover:text-white transition-colors focus-visible:ring-1 focus-visible:ring-amber-400"
+            >
+              <span id="tool-copy-icon-default"><IconCopy size={14} /></span>
+              <span id="tool-copy-icon-success" class="hidden text-emerald-400"><IconCheck size={14} /></span>
+            </button>
+          </div>
         </div>
       )}
     </div>
@@ -89,9 +104,35 @@ const { Content } = await render(tool);
       </div>
     </div>
 
-    {/* Markdown Body Content */}
-    <article class="prose prose-invert prose-zinc max-w-none prose-headings:font-mono prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-pre:bg-[#0c0a12] prose-pre:border prose-pre:border-white/[0.1] prose-code:font-mono prose-code:text-amber-200">
+    {/* Markdown Body Content with fully styled prose */}
+    <article class="prose max-w-none">
       <Content />
     </article>
   </div>
 </Layout>
+
+<script is:inline>
+  const copyBtn = document.getElementById('tool-copy-brew-btn');
+  const iconDefault = document.getElementById('tool-copy-icon-default');
+  const iconSuccess = document.getElementById('tool-copy-icon-success');
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const command = copyBtn.getAttribute('data-command') || '';
+      navigator.clipboard.writeText(command)
+        .then(() => {
+          if (iconDefault && iconSuccess) {
+            iconDefault.classList.add('hidden');
+            iconSuccess.classList.remove('hidden');
+          }
+          setTimeout(() => {
+            if (iconDefault && iconSuccess) {
+              iconDefault.classList.remove('hidden');
+              iconSuccess.classList.add('hidden');
+            }
+          }, 2000);
+        })
+        .catch((err) => console.error('Failed to copy', err));
+    });
+  }
+</script>

@@ -12,7 +12,17 @@ const tools = defineCollection({
     version: z.string().optional(),
     color: z.enum(['copper', 'plum', 'emerald']),
     icon: z.string(),
-    repoUrl: z.string(),
+    repoUrl: z.string().refine(
+      (url) => {
+        try {
+          const parsed = new URL(url);
+          return parsed.protocol === 'https:';
+        } catch {
+          return false;
+        }
+      },
+      { message: 'repoUrl must be a valid HTTPS URL' }
+    ),
     brewCommand: z.string().optional(),
     cargoCommand: z.string().optional(),
     keyFeatures: z.array(z.string()),
