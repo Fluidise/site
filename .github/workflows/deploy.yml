@@ -1,0 +1,90 @@
+name: CI/CD Pipeline
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Validation, tests et build Docker
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.3
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Type check with Astro
+        run: bun run check
+        env:
+          ASTRO_TELEMETRY_DISABLED: 1
+
+      - name: Build static site verification
+        run: bun run build
+        env:
+          ASTRO_TELEMETRY_DISABLED: 1
+
+      - name: Build and verify Docker container
+        run: docker build -t fluidise-site-ci .
+
+  deploy:
+    name: Déploiement en production via Dokploy
+    needs: check
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: production
+    steps:
+      - name: Déclencher le webhook Dokploy
+        env:
+          DOKPLOY_DEPLOY_URL: ${{ secrets.DOKPLOY_DEPLOY_URL }}
+          CLOUDFLARE_ACCESS_CLIENT_ID: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_ID }}
+          CLOUDFLARE_ACCESS_CLIENT_SECRET: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_SECRET }}
+        run: |
+          if [ -z "$DOKPLOY_DEPLOY_URL" ]; then
+            echo "::warning::DOKPLOY_DEPLOY_URL n'est pas encore configuré dans l'environnement 'production'. Étape de webhook ignorée jusqu'à configuration des secrets."
+            exit 0
+          fi
+
+          deploy_token="${DOKPLOY_DEPLOY_URL##*/}"
+          echo "::add-mask::$deploy_token"
+
+          payload=$(jq -nc \
+            --arg ref "$GITHUB_REF" \
+            --arg sha "$GITHUB_SHA" \
+            '{ref: $ref, head_commit: {id: $sha, message: "CI passed"}, commits: []}')
+
+          curl --fail --silent --show-error --output /dev/null \
+            --request POST \
+            --header "CF-Access-Client-Id: $CLOUDFLARE_ACCESS_CLIENT_ID" \
+            --header "CF-Access-Client-Secret: $CLOUDFLARE_ACCESS_CLIENT_SECRET" \
+            --header "X-GitHub-Event: push" \
+            --header "Content-Type: application/json" \
+            --data "$payload" \
+            "$DOKPLOY_DEPLOY_URL"
