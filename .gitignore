@@ -1,0 +1,36 @@
+# Node.js & dependencies
+node_modules/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+.astro/
+
+# Environment variables
+.env
+.env.production
+.env.local
+.env.*.local
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Situational Git worktrees
+.worktrees/
+
+# Agent & temporary scratch dirs
+.agents/
+.codex/

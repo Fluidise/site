@@ -1,0 +1,97 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import {
+  IconBrandGithub,
+  IconArrowLeft,
+} from '@tabler/icons-react';
+
+export async function getStaticPaths() {
+  const tools = await getCollection('tools');
+  return tools.map((tool) => ({
+    params: { id: tool.id },
+    props: { tool },
+  }));
+}
+
+const { tool } = Astro.props;
+const { Content } = await render(tool);
+---
+
+<Layout
+  title={`${tool.data.name} — Fluidise Tool Specification`}
+  description={tool.data.summary}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    {/* Back button */}
+    <a
+      href="/#tools"
+      class="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-amber-300 transition-colors mb-8 group"
+    >
+      <IconArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+      Back to Suite Hub
+    </a>
+
+    {/* Tool Header */}
+    <div class="relative rounded-2xl border border-white/[0.1] bg-[#0c0a12]/90 p-6 sm:p-10 backdrop-blur-xl mb-12 shadow-2xl">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-6">
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-300 border border-amber-500/20">
+              {tool.data.status === 'released' ? 'v1.0.0 Stable' : 'In Development'}
+            </span>
+            <span class="text-xs font-mono text-zinc-500">Standalone Native Binary</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-mono tracking-tight">
+            {tool.data.name}
+          </h1>
+        </div>
+
+        <a
+          href={tool.data.repoUrl}
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.1] text-zinc-200 text-sm font-medium transition-all self-start sm:self-auto"
+        >
+          <IconBrandGithub size={18} />
+          <span>View on GitHub</span>
+        </a>
+      </div>
+
+      <p class="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-8">
+        {tool.data.tagline}
+      </p>
+
+      {/* Quick Install snippet */}
+      {tool.data.brewCommand && (
+        <div class="p-4 rounded-xl bg-black/50 border border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2 font-mono text-xs sm:text-sm text-zinc-200">
+            <span class="text-amber-400">$</span>
+            <code>{tool.data.brewCommand}</code>
+          </div>
+          <span class="text-[11px] font-mono text-zinc-500">Official Homebrew Tap</span>
+        </div>
+      )}
+    </div>
+
+    {/* Key Guarantees */}
+    <div class="mb-12">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-amber-400 mb-4">
+        Operational Guarantees
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {tool.data.keyFeatures.map((feature: string) => (
+          <div class="p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 shrink-0" />
+            <span class="text-xs sm:text-sm text-zinc-300 leading-relaxed">{feature}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Markdown Body Content */}
+    <article class="prose prose-invert prose-zinc max-w-none prose-headings:font-mono prose-headings:text-white prose-a:text-amber-400 hover:prose-a:text-amber-300 prose-pre:bg-[#0c0a12] prose-pre:border prose-pre:border-white/[0.1] prose-code:font-mono prose-code:text-amber-200">
+      <Content />
+    </article>
+  </div>
+</Layout>

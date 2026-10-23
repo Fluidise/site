@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { Hero } from '../components/Hero';
+import { ToolGrid } from '../components/ToolGrid';
+import { ManifestoSection } from '../components/ManifestoSection';
+
+const toolEntries = await getCollection('tools');
+const tools = toolEntries
+  .map((entry) => ({
+    id: entry.id,
+    ...entry.data,
+  }))
+  .sort((a, b) => a.order - b.order);
+---
+
+<Layout>
+  <Hero client:load />
+  <ToolGrid client:load tools={tools} />
+  <ManifestoSection client:visible />
+</Layout>

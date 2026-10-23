@@ -1,0 +1,54 @@
+---
+import '../styles/global.css';
+import { Navbar } from '../components/Navbar';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Fluidise — The Agent-First Developer Experience Suite',
+  description = 'Deterministic, standalone, and high-performance developer tools designed for AI coding agents and human maintainers.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    {/* Primary Meta Tags */}
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#09080c" />
+
+    {/* Open Graph / Facebook */}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fluidise.dev/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/brand/banner.png" />
+
+    {/* Twitter */}
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://fluidise.dev/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/brand/banner.png" />
+  </head>
+  <body class="bg-mesh-glow text-zinc-100 antialiased selection:bg-amber-500/20 selection:text-amber-200">
+    <div class="min-h-screen flex flex-col justify-between">
+      <Navbar client:load />
+      <main class="flex-grow">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
