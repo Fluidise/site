@@ -29,47 +29,20 @@ const PRINCIPLES = [
 ];
 ---
 
-<section id="philosophy" class="py-16 md:py-24 border-t border-white/[0.08] relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <span class="text-xs font-mono uppercase tracking-widest text-amber-400 mb-2 block">
-        Core Principles
-      </span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-        The Product Contract
-      </h2>
-      <p class="text-sm sm:text-base text-zinc-400 mt-3">
-        Every package published under Fluidise conforms to foundational invariants established in our core specifications.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<section id="philosophy" class="philosophy-section" aria-labelledby="philosophy-heading">
+  <div class="shell">
+    <h2 id="philosophy-heading">The Product Contract</h2>
+    <p class="philosophy-intro">Every package published under Fluidise conforms to foundational invariants established in our core specifications.</p>
+    <div class="principles">
       {PRINCIPLES.map((principle) => {
         const Icon = principle.icon;
         return (
-          <div class="relative rounded-2xl border border-white/[0.08] bg-[#0c0a12]/80 p-8 backdrop-blur-xl flex flex-col justify-between hover:border-amber-500/30 transition-all duration-200 hover:-translate-y-1">
-            <div>
-              <div class="flex items-center justify-between mb-6">
-                <div class="p-3 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                  <Icon size={24} />
-                </div>
-                <span class="text-2xl font-mono font-bold text-zinc-400">
-                  {principle.number}
-                </span>
-              </div>
-
-              <h3 class="text-lg font-bold text-white mb-3 font-mono">
-                {principle.title}
-              </h3>
-              <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
-                {principle.description}
-              </p>
-            </div>
-
-            <div class="pt-4 border-t border-white/[0.06] text-xs font-mono text-amber-300/80">
-              ⚡ {principle.highlight}
-            </div>
-          </div>
+          <article class="principle">
+            <Icon size={28} aria-hidden="true" />
+            <h3>{principle.title}</h3>
+            <p>{principle.description}</p>
+            <strong>{principle.highlight}</strong>
+          </article>
         );
       })}
     </div>

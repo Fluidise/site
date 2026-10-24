@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { IconCheck, IconCopy, IconTerminal2, IconCpu } from '@tabler/icons-react';
+import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
+import { IconCheck, IconCopy } from '@tabler/icons-react';
 
 const SAMPLES = {
   valid: {
@@ -46,137 +45,126 @@ Exit code: 1 (Deterministic violation).`,
   },
 };
 
-export const InteractiveTerminal: React.FC = () => {
+export function InteractiveTerminal() {
   const [mode, setMode] = useState<'json' | 'text'>('json');
   const [sample, setSample] = useState<'valid' | 'invalid'>('valid');
-  const [copied, setCopied] = useState(false);
-
+  const [feedback, setFeedback] = useState('');
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  useEffect(() => () => clearTimeout(timer.current), []);
   const current = SAMPLES[sample];
-  const output = mode === 'json' ? current.json : current.text;
+  const output = current[mode];
 
-  const handleCopy = () => {
-    navigator.clipboard
-      .writeText(output)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      })
-      .catch((err) => {
-        console.error('Failed to copy text: ', err);
-      });
-  };
+  function handleFormatKeyDown(event: KeyboardEvent<HTMLButtonElement>) {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const next =
+      event.key === 'Home'
+        ? 'json'
+        : event.key === 'End'
+          ? 'text'
+          : mode === 'json'
+            ? 'text'
+            : 'json';
+    setMode(next);
+    document.getElementById(`terminal-format-${next}`)?.focus();
+  }
+
+  async function copy() {
+    clearTimeout(timer.current);
+    try {
+      await navigator.clipboard.writeText(output);
+      setFeedback('Terminal output copied to clipboard');
+      timer.current = setTimeout(() => setFeedback(''), 2000);
+    } catch {
+      setFeedback('Copy failed. Select and copy the output manually.');
+    }
+  }
 
   return (
-    <div className="w-full max-w-3xl mx-auto rounded-xl border border-white/[0.12] bg-[#0c0a10]/95 shadow-2xl overflow-hidden backdrop-blur-xl">
-      {/* Window Header */}
-      <div className="flex items-center justify-between px-4 py-3 bg-white/[0.03] border-b border-white/[0.08]">
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-1.5" aria-hidden="true">
-            <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
-            <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-            <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
+    <div className="terminal">
+      <div className="terminal-header">
+        <div>
+          <h3 className="terminal-heading">fluidise-clint interactive sandbox</h3>
+          <p className="terminal-demo-label">Demonstration · Sample output, not live execution</p>
+        </div>
+        <div className="terminal-controls">
+          <div role="tablist" aria-label="Output format selector" className="terminal-controls">
+            <button
+              type="button"
+              className="glacial-control"
+              id="terminal-format-json"
+              role="tab"
+              aria-selected={mode === 'json'}
+              tabIndex={mode === 'json' ? 0 : -1}
+              onKeyDown={handleFormatKeyDown}
+              aria-controls="terminal-output"
+              onClick={() => setMode('json')}
+            >
+              JSON (Agent default)
+            </button>
+            <button
+              type="button"
+              className="glacial-control"
+              id="terminal-format-text"
+              role="tab"
+              aria-selected={mode === 'text'}
+              tabIndex={mode === 'text' ? 0 : -1}
+              onKeyDown={handleFormatKeyDown}
+              aria-controls="terminal-output"
+              onClick={() => setMode('text')}
+            >
+              Text (--format text)
+            </button>
           </div>
-          <div className="hidden sm:flex items-center gap-1.5 text-xs font-mono text-zinc-400 pl-3">
-            <IconTerminal2 size={14} className="text-amber-400" />
-            <span>fluidise-clint interactive sandbox</span>
-          </div>
-        </div>
-
-        {/* Mode selector with ARIA tabs */}
-        <div
-          role="tablist"
-          aria-label="Output format selector"
-          className="flex items-center gap-1.5 bg-black/40 p-1 rounded-lg border border-white/[0.08]"
-        >
           <button
-            role="tab"
-            aria-selected={mode === 'json'}
-            onClick={() => setMode('json')}
-            className={`px-2.5 py-1 text-xs font-mono rounded flex items-center gap-1 transition-all focus-visible:ring-1 focus-visible:ring-amber-400 ${
-              mode === 'json'
-                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                : 'text-zinc-400 hover:text-white'
-            }`}
-          >
-            <IconCpu size={12} />
-            <span>JSON (Agent default)</span>
-          </button>
-          <button
-            role="tab"
-            aria-selected={mode === 'text'}
-            onClick={() => setMode('text')}
-            className={`px-2.5 py-1 text-xs font-mono rounded flex items-center gap-1 transition-all focus-visible:ring-1 focus-visible:ring-amber-400 ${
-              mode === 'text'
-                ? 'bg-white/10 text-zinc-200 border border-white/20'
-                : 'text-zinc-400 hover:text-white'
-            }`}
-          >
-            <span>Text (--format text)</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Terminal Command bar */}
-      <div className="px-5 py-3 bg-black/30 border-b border-white/[0.05] flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2 font-mono text-xs sm:text-sm text-zinc-300 overflow-x-auto py-1">
-          <span className="text-amber-400 font-bold">$</span>
-          <span>{current.command}</span>
-        </div>
-
-        <div className="flex items-center gap-2 shrink-0">
-          <button
+            type="button"
+            className="glacial-control"
+            aria-controls="terminal-output"
             onClick={() => setSample(sample === 'valid' ? 'invalid' : 'valid')}
-            className="text-xs font-mono px-2.5 py-1 rounded bg-white/[0.05] hover:bg-white/[0.1] text-zinc-300 border border-white/[0.08] transition-colors focus-visible:ring-1 focus-visible:ring-amber-400"
           >
             Toggle {sample === 'valid' ? 'Error' : 'Success'}
           </button>
-          <button
-            onClick={handleCopy}
-            className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded bg-white/[0.05] hover:bg-white/[0.1] text-zinc-300 border border-white/[0.08] transition-colors focus-visible:ring-1 focus-visible:ring-amber-400"
-            title="Copy Output"
-            aria-label="Copy terminal output"
+        </div>
+      </div>
+      <div className="terminal-body">
+        <div className="terminal-command">
+          <code>$ {current.command}</code>
+        </div>
+        <div className="terminal-output">
+          <pre
+            role="tabpanel"
+            aria-labelledby={`terminal-format-${mode}`}
+            id="terminal-output"
+            data-sample={sample}
+            tabIndex={0}
+            aria-label={`${mode === 'json' ? 'JSON' : 'Text'} sample output`}
           >
-            {copied ? <IconCheck size={14} className="text-emerald-400" /> : <IconCopy size={14} />}
+            {output}
+          </pre>
+          <button
+            type="button"
+            className="copy-button"
+            aria-label="Copy terminal output"
+            onClick={copy}
+          >
+            {feedback === 'Terminal output copied to clipboard' ? (
+              <IconCheck size={17} aria-hidden="true" />
+            ) : (
+              <IconCopy size={17} aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>
-
-      {/* Output Console with stable minimum height (prevents CLS) */}
-      <div className="p-5 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto min-h-[380px]">
-        <AnimatePresence mode="wait">
-          <motion.pre
-            key={`${mode}-${sample}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.12 }}
-            className={`whitespace-pre ${
-              mode === 'json'
-                ? 'text-amber-200/90'
-                : sample === 'valid'
-                  ? 'text-emerald-300/90'
-                  : 'text-rose-300/90'
-            }`}
-          >
-            {output}
-          </motion.pre>
-        </AnimatePresence>
+      <div className="terminal-footer">
+        <span>Exit code: {sample === 'valid' ? '0' : '1'}</span>
+        <span>Zero side-effects · Native Rust binary</span>
       </div>
-
-      {/* Terminal Footer info */}
-      <div className="px-5 py-2.5 bg-black/40 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-zinc-400">
-        <span className="flex items-center gap-1.5">
-          <span
-            className={`w-2 h-2 rounded-full ${sample === 'valid' ? 'bg-emerald-400' : 'bg-rose-400'}`}
-          />
-          Exit code: {sample === 'valid' ? '0' : '1'}
-        </span>
-        <span className="text-zinc-400">Zero side-effects • Native Rust binary</span>
-      </div>
-
-      <div className="sr-only" aria-live="polite">
-        {copied ? 'Terminal output copied to clipboard' : ''}
-      </div>
+      <output className={feedback.startsWith('Copy failed') ? 'terminal-feedback' : 'sr-only'}>
+        {feedback}
+      </output>
+      <output className="sr-only">
+        {mode === 'json' ? 'JSON' : 'Text'} format, {sample} sample
+      </output>
     </div>
   );
-};
+}

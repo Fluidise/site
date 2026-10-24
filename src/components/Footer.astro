@@ -1,47 +1,16 @@
----
-import CompanionLogo from './CompanionLogo.astro';
----
-
-<footer class="border-t border-white/[0.08] bg-[#070609] py-12 sm:py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/[0.06]">
-      {/* Brand & Companion */}
-      <div class="flex items-center gap-3">
-        <CompanionLogo size={36} class="text-white" />
-        <div>
-          <span class="font-bold tracking-wider text-base text-white font-mono">FLUIDISE</span>
-          <p class="text-xs text-zinc-400 mt-0.5">Agent-first developer experience suite.</p>
-        </div>
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" aria-label="Fluidise home"><img src="/brand/logo.svg" width="40" height="40" alt="" /></a>
+        <div><strong>FLUIDISE</strong><p>Agent-first developer experience suite.</p></div>
       </div>
-
-      {/* Links */}
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-xs font-mono text-zinc-400">
-        <div class="flex flex-col gap-2">
-          <span class="text-zinc-200 font-semibold uppercase tracking-wider text-[11px]">Suite</span>
-          <a href="/tools/clint" class="hover:text-amber-300 transition-colors">fluidise-clint</a>
-          <a href="/tools/relay" class="hover:text-amber-300 transition-colors">fluidise-relay</a>
-          <a href="https://github.com/Fluidise/homebrew-tap" target="_blank" rel="noreferrer noopener" class="hover:text-amber-300 transition-colors">homebrew-tap</a>
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <span class="text-zinc-200 font-semibold uppercase tracking-wider text-[11px]">Foundation</span>
-          <a href="https://github.com/Fluidise/core" target="_blank" rel="noreferrer noopener" class="hover:text-amber-300 transition-colors">core repo</a>
-          <a href="https://github.com/Fluidise/core/blob/main/docs/product-contract.md" target="_blank" rel="noreferrer noopener" class="hover:text-amber-300 transition-colors">product contract</a>
-          <a href="https://github.com/Fluidise/core/blob/main/docs/brand.md" target="_blank" rel="noreferrer noopener" class="hover:text-amber-300 transition-colors">brand guide</a>
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <span class="text-zinc-200 font-semibold uppercase tracking-wider text-[11px]">Organization</span>
-          <a href="https://github.com/Fluidise" target="_blank" rel="noreferrer noopener" class="hover:text-amber-300 transition-colors">GitHub Org</a>
-          <a href="https://github.com/Fluidise/site" target="_blank" rel="noreferrer noopener" class="hover:text-amber-300 transition-colors">Site Repo</a>
-          <span class="text-zinc-400">MIT License</span>
-        </div>
+      <div class="footer-links">
+        <div><strong>Suite</strong><a href="/tools/clint">fluidise-clint</a><a href="/tools/relay">fluidise-relay</a><a href="https://github.com/Fluidise/homebrew-tap" target="_blank" rel="noreferrer noopener">homebrew-tap</a></div>
+        <div><strong>Foundation</strong><a href="https://github.com/Fluidise/core" target="_blank" rel="noreferrer noopener">core repo</a><a href="https://github.com/Fluidise/core/blob/main/docs/product-contract.md" target="_blank" rel="noreferrer noopener">product contract</a><a href="https://github.com/Fluidise/core/blob/main/docs/brand.md" target="_blank" rel="noreferrer noopener">brand guide</a></div>
+        <div><strong>Organization</strong><a href="https://github.com/Fluidise" target="_blank" rel="noreferrer noopener">GitHub Org</a><a href="https://github.com/Fluidise/site" target="_blank" rel="noreferrer noopener">Site Repo</a><span>MIT License</span></div>
       </div>
     </div>
-
-    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-400">
-      <p>© 2026 Acrazie & Fluidise. Released under the MIT License.</p>
-      <p>Designed with strictly deterministic standards.</p>
-    </div>
+    <div class="footer-legal"><p>© 2026 Acrazie &amp; Fluidise. Released under the MIT License.</p><p>Designed with strictly deterministic standards.</p></div>
   </div>
 </footer>

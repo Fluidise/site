@@ -1,138 +1,30 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import {
-  IconBrandGithub,
-  IconArrowLeft,
-  IconCopy,
-  IconCheck,
-} from '@tabler/icons-react';
+import { IconBrandGithub, IconArrowLeft } from '@tabler/icons-react';
+import { CopyCommand } from '../../components/CopyCommand';
 
 export async function getStaticPaths() {
-  const tools = await getCollection('tools');
-  return tools.map((tool) => ({
-    params: { id: tool.id },
-    props: { tool },
-  }));
+  return (await getCollection('tools')).map((tool) => ({ params: { id: tool.id }, props: { tool } }));
 }
-
 const { tool } = Astro.props;
 const { Content } = await render(tool);
 ---
-
-<Layout
-  title={`${tool.data.name} — Fluidise Tool Specification`}
-  description={tool.data.summary}
->
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-    {/* Back button */}
-    <a
-      href="/#tools"
-      class="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-amber-300 transition-colors mb-8 group focus-visible:ring-1 focus-visible:ring-amber-400 rounded py-1 px-2 -ml-2"
-    >
-      <IconArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-      <span>Back to Suite Hub</span>
-    </a>
-
-    {/* Tool Header */}
-    <div class="relative rounded-2xl border border-white/[0.1] bg-[#0c0a12]/90 p-6 sm:p-10 backdrop-blur-xl mb-12 shadow-2xl">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-6">
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-300 border border-amber-500/20">
-              {tool.data.status === 'released' ? 'v1.0.0 Stable' : 'In Development'}
-            </span>
-            <span class="text-xs font-mono text-zinc-400">Standalone Native Binary</span>
-          </div>
-          <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-mono tracking-tight">
-            {tool.data.name}
-          </h1>
-        </div>
-
-        <a
-          href={tool.data.repoUrl}
-          target="_blank"
-          rel="noreferrer noopener"
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.1] text-zinc-200 text-sm font-medium transition-all self-start sm:self-auto focus-visible:ring-2 focus-visible:ring-amber-400"
-          aria-label={`View ${tool.data.name} on GitHub`}
-        >
-          <IconBrandGithub size={18} />
-          <span>View on GitHub</span>
-        </a>
-      </div>
-
-      <p class="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-3xl mb-8">
-        {tool.data.tagline}
-      </p>
-
-      {/* Quick Install snippet with 1-click copy */}
-      {tool.data.brewCommand && (
-        <div class="p-4 rounded-xl bg-black/50 border border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <div class="flex items-center gap-2 font-mono text-xs sm:text-sm text-zinc-200 overflow-x-auto max-w-full">
-            <span class="text-amber-400 shrink-0">$</span>
-            <code class="whitespace-nowrap">{tool.data.brewCommand}</code>
-          </div>
-          <div class="flex items-center gap-3 self-end sm:self-auto shrink-0">
-            <span class="text-[11px] font-mono text-zinc-400">Official Homebrew Tap</span>
-            <button
-              id="tool-copy-brew-btn"
-              type="button"
-              data-command={tool.data.brewCommand}
-              aria-label={`Copy install command: ${tool.data.brewCommand}`}
-              class="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded bg-white/[0.08] hover:bg-white/[0.15] text-zinc-300 hover:text-white transition-colors focus-visible:ring-1 focus-visible:ring-amber-400"
-            >
-              <span id="tool-copy-icon-default"><IconCopy size={14} /></span>
-              <span id="tool-copy-icon-success" class="hidden text-emerald-400"><IconCheck size={14} /></span>
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-
-    {/* Key Guarantees */}
-    <div class="mb-12">
-      <h2 class="text-xs font-mono uppercase tracking-widest text-amber-400 mb-4">
-        Operational Guarantees
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {tool.data.keyFeatures.map((feature: string) => (
-          <div class="p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] flex items-start gap-3">
-            <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 shrink-0" />
-            <span class="text-xs sm:text-sm text-zinc-300 leading-relaxed">{feature}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    {/* Markdown Body Content with fully styled prose */}
-    <article class="prose max-w-none">
-      <Content />
-    </article>
+<Layout title={`${tool.data.name} — Fluidise Tool Specification`} description={tool.data.summary}>
+  <div class="doc-shell">
+    <a class="doc-home" href="/"><img src="/brand/logo.svg" width="32" height="32" alt="" /> FLUIDISE</a>
+    <a class="text-link doc-back" href="/#tools"><IconArrowLeft size={16} aria-hidden="true" /> Back to Suite Hub</a>
+    <header class="doc-header">
+      <div class="doc-meta"><span>{tool.data.status === 'released' ? `${tool.data.version ?? ''} Stable` : 'In Development'}</span><span>Standalone Native Binary</span></div>
+      <h1>{tool.data.name}</h1>
+      <p>{tool.data.tagline}</p>
+      <a class="text-link" href={tool.data.repoUrl} target="_blank" rel="noreferrer noopener"><IconBrandGithub size={18} aria-hidden="true" /> View on GitHub<span class="sr-only"> (opens in new tab)</span></a>
+      {tool.data.brewCommand && <CopyCommand client:idle command={tool.data.brewCommand} label={`Copy install command: ${tool.data.brewCommand}`} />}
+    </header>
+    <section class="doc-guarantees" aria-labelledby="guarantees-heading">
+      <h2 id="guarantees-heading">Operational Guarantees</h2>
+      <ul>{tool.data.keyFeatures.map((feature: string) => <li>{feature}</li>)}</ul>
+    </section>
+    <article class="prose"><Content /></article>
   </div>
 </Layout>
-
-<script is:inline>
-  const copyBtn = document.getElementById('tool-copy-brew-btn');
-  const iconDefault = document.getElementById('tool-copy-icon-default');
-  const iconSuccess = document.getElementById('tool-copy-icon-success');
-
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-      const command = copyBtn.getAttribute('data-command') || '';
-      navigator.clipboard.writeText(command)
-        .then(() => {
-          if (iconDefault && iconSuccess) {
-            iconDefault.classList.add('hidden');
-            iconSuccess.classList.remove('hidden');
-          }
-          setTimeout(() => {
-            if (iconDefault && iconSuccess) {
-              iconDefault.classList.remove('hidden');
-              iconSuccess.classList.add('hidden');
-            }
-          }, 2000);
-        })
-        .catch((err) => console.error('Failed to copy', err));
-    });
-  }
-</script>

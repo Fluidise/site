@@ -4,6 +4,8 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import { ToolGrid } from '../components/ToolGrid';
 import ManifestoSection from '../components/ManifestoSection.astro';
+import { InteractiveTerminal } from '../components/InteractiveTerminal';
+import { CopyCommand } from '../components/CopyCommand';
 
 const toolEntries = await getCollection('tools');
 const tools = toolEntries
@@ -17,5 +19,13 @@ const tools = toolEntries
 <Layout>
   <Hero />
   <ToolGrid client:visible tools={tools} />
+  <section class="demo-section shell" aria-labelledby="demo-heading">
+    <h2 id="demo-heading">Interactive terminal</h2>
+    <InteractiveTerminal client:idle />
+    <div class="install-tap">
+      <p>Install via Homebrew</p>
+      <CopyCommand client:idle command="brew tap Fluidise/homebrew-tap" label="Copy Homebrew tap installation command" />
+    </div>
+  </section>
   <ManifestoSection />
 </Layout>

@@ -18,7 +18,7 @@ const canonicalImageSrc = new URL('/brand/banner.png', Astro.site ?? 'https://fl
 ---
 
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,7 +33,7 @@ const canonicalImageSrc = new URL('/brand/banner.png', Astro.site ?? 'https://fl
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#09080c" />
+    <meta name="theme-color" content="#eff5fa" />
 
     {/* Open Graph / Facebook */}
     <meta property="og:type" content="website" />
@@ -49,10 +49,11 @@ const canonicalImageSrc = new URL('/brand/banner.png', Astro.site ?? 'https://fl
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={canonicalImageSrc} />
   </head>
-  <body class="bg-mesh-glow text-zinc-100 antialiased selection:bg-amber-500/20 selection:text-amber-200">
-    <div class="min-h-screen flex flex-col justify-between">
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div>
       <Navbar />
-      <main class="flex-grow">
+      <main id="main-content" class="page-main">
         <slot />
       </main>
       <Footer />
