@@ -19,8 +19,25 @@ commit-msg:
     commit-lint:
       run: |
         commit_file="{1}"
+        LINTER=""
+        REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || echo ".")"
+        COMMON_DIR="$(git rev-parse --git-common-dir 2>/dev/null || echo "$REPO_ROOT/.git")"
+        MAIN_ROOT="$(cd "$COMMON_DIR/.." 2>/dev/null && pwd -P || echo "$REPO_ROOT")"
+
         if command -v fluidise-clint >/dev/null 2>&1; then
-          fluidise-clint --format text "$commit_file"
+          LINTER="fluidise-clint"
+        elif [ -x "$REPO_ROOT/../lint/target/release/fluidise-clint" ]; then
+          LINTER="$REPO_ROOT/../lint/target/release/fluidise-clint"
+        elif [ -x "$REPO_ROOT/../lint/target/debug/fluidise-clint" ]; then
+          LINTER="$REPO_ROOT/../lint/target/debug/fluidise-clint"
+        elif [ -x "$MAIN_ROOT/../lint/target/release/fluidise-clint" ]; then
+          LINTER="$MAIN_ROOT/../lint/target/release/fluidise-clint"
+        elif [ -x "$MAIN_ROOT/../lint/target/debug/fluidise-clint" ]; then
+          LINTER="$MAIN_ROOT/../lint/target/debug/fluidise-clint"
+        fi
+
+        if [ -n "$LINTER" ]; then
+          "$LINTER" --file "$commit_file" --human
         else
           commit_first_line=$(head -n 1 "$commit_file")
           if ! echo "$commit_first_line" | grep -qE '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-zA-Z0-9_\-\/]+\))?: .+'; then
