@@ -1,5 +1,5 @@
 # Stage 1: Build static website
-FROM oven/bun:1.4.3-alpine AS build
+FROM oven/bun:1.4.4-alpine AS build
 WORKDIR /app
 
 COPY package.json bun.lock ./
