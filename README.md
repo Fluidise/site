@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/brand/banner.png" alt="Fluidise Site — burgundy lunar landscape with copper light and an ivory crescent" width="100%">
+  <img src="public/brand/readme-banner.png" alt="Fluidise Site — glacial peaks above a sea of clouds" width="100%">
 </p>
 
 <h1 align="center">Fluidise Site</h1>
