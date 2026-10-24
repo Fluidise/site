@@ -21,7 +21,7 @@ const tools = defineCollection({
           return false;
         }
       },
-      { message: 'repoUrl must be a valid HTTPS URL' }
+      { message: 'repoUrl must be a valid HTTPS URL' },
     ),
     brewCommand: z.string().optional(),
     cargoCommand: z.string().optional(),

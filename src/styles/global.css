@@ -1,14 +1,17 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @layer base {
-  *, ::before, ::after {
+  *,
+  ::before,
+  ::after {
     border-color: rgba(255, 255, 255, 0.08);
   }
 
   body {
     background-color: #09080c;
     color: #f3f3f5;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family:
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -19,7 +22,8 @@
   }
 
   /* Accessible Focus States */
-  a:focus-visible, button:focus-visible {
+  a:focus-visible,
+  button:focus-visible {
     outline: 2px solid #f59e0b;
     outline-offset: 2px;
   }
@@ -29,7 +33,9 @@
     html {
       scroll-behavior: auto !important;
     }
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
@@ -72,11 +78,10 @@
 
 /* Background atmospheric gradient lights */
 @utility bg-mesh-glow {
-  background: 
+  background:
     radial-gradient(circle at 50% -10%, rgba(224, 122, 95, 0.12) 0%, transparent 50%),
     radial-gradient(circle at 10% 20%, rgba(96, 56, 64, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 90% 40%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-    #09080c;
+    radial-gradient(circle at 90% 40%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), #09080c;
 }
 
 /* Glassmorphism panel */
@@ -94,7 +99,7 @@
 /* Grid pattern */
 @utility bg-grid-pattern {
   background-size: 32px 32px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }

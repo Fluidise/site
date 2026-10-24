@@ -121,7 +121,11 @@ export const ToolCard: React.FC<{ tool: ToolData }> = ({ tool }) => {
               title={`Copy install command for ${tool.name}`}
               aria-label={`Copy install command for ${tool.name}`}
             >
-              {copied ? <IconCheck size={14} className="text-emerald-400" /> : <IconCopy size={14} />}
+              {copied ? (
+                <IconCheck size={14} className="text-emerald-400" />
+              ) : (
+                <IconCopy size={14} />
+              )}
             </button>
           </div>
         )}
@@ -132,7 +136,10 @@ export const ToolCard: React.FC<{ tool: ToolData }> = ({ tool }) => {
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors group/link focus-visible:ring-1 focus-visible:ring-amber-400 rounded"
           >
             <span>Read Specification & Docs</span>
-            <IconArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+            <IconArrowRight
+              size={14}
+              className="group-hover/link:translate-x-1 transition-transform"
+            />
           </a>
 
           <a

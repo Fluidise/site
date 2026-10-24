@@ -28,7 +28,8 @@ export const ToolGrid: React.FC<ToolGridProps> = ({ tools }) => {
               Modular DX Packages
             </h2>
             <p className="text-sm sm:text-base text-zinc-400 mt-2 max-w-xl">
-              Each tool is independently installable, zero-runtime, and built with explicit machine-readable contracts.
+              Each tool is independently installable, zero-runtime, and built with explicit
+              machine-readable contracts.
             </p>
           </div>
 

@@ -154,8 +154,8 @@ export const InteractiveTerminal: React.FC = () => {
               mode === 'json'
                 ? 'text-amber-200/90'
                 : sample === 'valid'
-                ? 'text-emerald-300/90'
-                : 'text-rose-300/90'
+                  ? 'text-emerald-300/90'
+                  : 'text-rose-300/90'
             }`}
           >
             {output}
@@ -166,7 +166,9 @@ export const InteractiveTerminal: React.FC = () => {
       {/* Terminal Footer info */}
       <div className="px-5 py-2.5 bg-black/40 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-zinc-400">
         <span className="flex items-center gap-1.5">
-          <span className={`w-2 h-2 rounded-full ${sample === 'valid' ? 'bg-emerald-400' : 'bg-rose-400'}`} />
+          <span
+            className={`w-2 h-2 rounded-full ${sample === 'valid' ? 'bg-emerald-400' : 'bg-rose-400'}`}
+          />
           Exit code: {sample === 'valid' ? '0' : '1'}
         </span>
         <span className="text-zinc-400">Zero side-effects • Native Rust binary</span>
