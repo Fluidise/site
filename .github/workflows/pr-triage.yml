@@ -1,0 +1,91 @@
+name: PR Triage
+
+on:
+  pull_request_target:
+    types: [opened, edited, ready_for_review, converted_to_draft]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  triage:
+    name: Triage Pull Request
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Auto-assign author and apply conventional labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          ACTION: ${{ github.event.action }}
+        run: |
+          set -euo pipefail
+
+          # Read current metadata after acquiring concurrency, not a queued event's snapshot.
+          PR_JSON=$(gh pr view "$PR_URL" --json author,headRefName,title,body,isDraft,labels)
+          PR_AUTHOR=$(jq -r '.author.login' <<< "$PR_JSON")
+          BRANCH=$(jq -r '.headRefName' <<< "$PR_JSON")
+          TITLE=$(jq -r '.title' <<< "$PR_JSON")
+          BODY=$(jq -r '.body // ""' <<< "$PR_JSON")
+          IS_DRAFT=$(jq -r '.isDraft' <<< "$PR_JSON")
+
+          # 1. Auto-assign PR author upon creation
+          if [ "$ACTION" = "opened" ]; then
+            echo "Assigning PR author @$PR_AUTHOR..."
+            gh pr edit "$PR_URL" --add-assignee "$PR_AUTHOR"
+          fi
+
+          # 2. Determine type label from branch prefix or Conventional Commit title
+          TYPE_LABELS=(feat fix chore docs ci refactor test perf build)
+          TYPE_LABEL=""
+          for type in "${TYPE_LABELS[@]}"; do
+            if [[ "$BRANCH" == "$type/"* ]]; then
+              TYPE_LABEL="$type"
+              break
+            fi
+          done
+          if [ -z "$TYPE_LABEL" ] && [[ "$TITLE" =~ ^([a-z]+)(\([^\)]+\))?!?: ]]; then
+            TITLE_TYPE="${BASH_REMATCH[1]}"
+            for type in "${TYPE_LABELS[@]}"; do
+              if [ "$TITLE_TYPE" = "$type" ]; then
+                TYPE_LABEL="$type"
+                break
+              fi
+            done
+          fi
+
+          DESIRED_LABELS=()
+          if [ -n "$TYPE_LABEL" ]; then
+            DESIRED_LABELS+=("$TYPE_LABEL")
+          fi
+
+          # 3. Detect breaking changes
+          if [[ "$TITLE" =~ ^[a-z]+(\([^\)]+\))?!: ]] || [[ "$BODY" =~ BREAKING[[:space:]]CHANGE: ]]; then
+            DESIRED_LABELS+=(breaking-change)
+          fi
+
+          # 4. Manage review status label based on draft status
+          if [ "$IS_DRAFT" = "true" ]; then
+            DESIRED_LABELS+=(work-in-progress)
+          else
+            DESIRED_LABELS+=(needs-review)
+          fi
+
+          # Reconcile only workflow-owned labels; unrelated labels are never removed.
+          EDIT_ARGS=()
+          for label in "${DESIRED_LABELS[@]}"; do
+            EDIT_ARGS+=(--add-label "$label")
+          done
+          for label in "${TYPE_LABELS[@]}" breaking-change work-in-progress needs-review; do
+            if [[ " ${DESIRED_LABELS[*]} " != *" $label "* ]] &&
+              jq -e --arg label "$label" '.labels | any(.name == $label)' <<< "$PR_JSON" > /dev/null; then
+              EDIT_ARGS+=(--remove-label "$label")
+            fi
+          done
+          gh pr edit "$PR_URL" "${EDIT_ARGS[@]}"
