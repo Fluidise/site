@@ -13,9 +13,10 @@
 ## Overview
 
 This repository hosts the official web hub for **Fluidise** ([`fluidise.dev`](https://fluidise.dev)), showcasing:
+
 - **Suite Catalog**: Centralized discovery for standalone packages ([`fluidise-clint`](https://github.com/Fluidise/clint), [`fluidise-relay`](https://github.com/Fluidise/relay)).
 - **Dedicated Tool Pages**: Interactive documentation, installation guides, and CLI execution guarantees per tool.
-- **Architectural Manifesto**: Detailed breakdown of our *Agent-First* invariants and strict *Unix Philosophy*.
+- **Architectural Manifesto**: Detailed breakdown of our _Agent-First_ invariants and strict _Unix Philosophy_.
 
 ## Tech Stack
 

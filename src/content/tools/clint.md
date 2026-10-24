@@ -1,21 +1,21 @@
 ---
-name: "fluidise-clint"
-tagline: "Deterministic Conventional Commits validator designed for AI agents and automated workflows"
-summary: "High-performance commit message linter that emits structured, versioned JSON diagnostics by default with exact byte-range spans, guaranteed bounded execution, and zero filesystem side effects."
-status: "released"
-version: "v1.0.0"
-color: "plum"
-icon: "IconChecklist"
-repoUrl: "https://github.com/Fluidise/clint"
-brewCommand: "brew install Fluidise/homebrew-tap/fluidise-clint"
-cargoCommand: "cargo install fluidise-clint"
+name: 'fluidise-clint'
+tagline: 'Deterministic Conventional Commits validator designed for AI agents and automated workflows'
+summary: 'High-performance commit message linter that emits structured, versioned JSON diagnostics by default with exact byte-range spans, guaranteed bounded execution, and zero filesystem side effects.'
+status: 'released'
+version: 'v1.0.0'
+color: 'plum'
+icon: 'IconChecklist'
+repoUrl: 'https://github.com/Fluidise/clint'
+brewCommand: 'brew install Fluidise/homebrew-tap/fluidise-clint'
+cargoCommand: 'cargo install fluidise-clint'
 order: 1
 keyFeatures:
-  - "Default Machine-Readable JSON: Emits versioned diagnostics with byte spans on stdout for agent consumption"
-  - "Zero Side-Effects Guarantee: Never mutates repositories, installs unannounced hooks, or makes network calls"
-  - "Strict Operational Determinism: Exact RFC 2119 linting with stable exit codes (0 = valid, 1 = violation, 2 = usage)"
-  - "Human Ergonomics: Switch instantly to formatted visual terminal reports with --format text"
-  - "Standalone Native Binary: Built with Rust 1.85+, sub-millisecond execution with zero runtime dependencies"
+  - 'Default Machine-Readable JSON: Emits versioned diagnostics with byte spans on stdout for agent consumption'
+  - 'Zero Side-Effects Guarantee: Never mutates repositories, installs unannounced hooks, or makes network calls'
+  - 'Strict Operational Determinism: Exact RFC 2119 linting with stable exit codes (0 = valid, 1 = violation, 2 = usage)'
+  - 'Human Ergonomics: Switch instantly to formatted visual terminal reports with --format text'
+  - 'Standalone Native Binary: Built with Rust 1.85+, sub-millisecond execution with zero runtime dependencies'
 ---
 
 ## Overview

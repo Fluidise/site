@@ -1,21 +1,21 @@
 ---
-name: "fluidise-relay"
-tagline: "Agent-first Git hook manager for deterministic orchestration and safe process control"
-summary: "High-integrity Git lifecycle orchestrator written in Rust. Enforces deterministic command execution, read-only plan inspection before mutation, and structured diagnostics with bounded resource usage."
-status: "in-progress"
-version: "v0.1.0-alpha"
-color: "emerald"
-icon: "IconGitFork"
-repoUrl: "https://github.com/Fluidise/relay"
-brewCommand: "brew install Fluidise/homebrew-tap/fluidise-relay"
-cargoCommand: "cargo install fluidise-relay"
+name: 'fluidise-relay'
+tagline: 'Agent-first Git hook manager for deterministic orchestration and safe process control'
+summary: 'High-integrity Git lifecycle orchestrator written in Rust. Enforces deterministic command execution, read-only plan inspection before mutation, and structured diagnostics with bounded resource usage.'
+status: 'in-progress'
+version: 'v0.1.0-alpha'
+color: 'emerald'
+icon: 'IconGitFork'
+repoUrl: 'https://github.com/Fluidise/relay'
+brewCommand: 'brew install Fluidise/homebrew-tap/fluidise-relay'
+cargoCommand: 'cargo install fluidise-relay'
 order: 2
 keyFeatures:
-  - "Read-Only Plan Inspection: Verify exactly what commands will execute before mutating any Git hook file"
-  - "Deterministic Orchestration: Manages commit-msg and pre-commit lifecycle with strict process isolation"
-  - "Zero Runtime Footprint: Standalone binary with no Node, Python, or Ruby dependencies"
-  - "Unified Configuration: Single fluidise.toml declarative format for whole-suite orchestration"
-  - "JSON Diagnostics: Machine-readable event telemetry and exit codes for AI agents"
+  - 'Read-Only Plan Inspection: Verify exactly what commands will execute before mutating any Git hook file'
+  - 'Deterministic Orchestration: Manages commit-msg and pre-commit lifecycle with strict process isolation'
+  - 'Zero Runtime Footprint: Standalone binary with no Node, Python, or Ruby dependencies'
+  - 'Unified Configuration: Single fluidise.toml declarative format for whole-suite orchestration'
+  - 'JSON Diagnostics: Machine-readable event telemetry and exit codes for AI agents'
 ---
 
 ## Overview

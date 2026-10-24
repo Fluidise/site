@@ -1,13 +1,17 @@
 {
   "name": "fluidise-site",
   "version": "0.1.0",
-  "type": "module",
   "description": "Official website and tool hub for the Fluidise developer experience suite.",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "lint": "oxlint",
+    "format": "oxfmt --write",
+    "format:check": "oxfmt --check",
+    "test": "vitest run"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.1",
@@ -23,8 +27,13 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
     "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "typescript": "^6.0.3"
+    "lefthook": "^2.2.2",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
   }
 }

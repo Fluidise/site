@@ -34,3 +34,4 @@ dist/
 # Agent & temporary scratch dirs
 .agents/
 .codex/
+.gemini/
