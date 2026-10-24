@@ -5,11 +5,11 @@ pre-commit:
   parallel: false
   commands:
     format:
-      glob: "*.{js,jsx,ts,tsx,json,css,md}"
+      glob: '*.{js,jsx,ts,tsx,json,css,md}'
       run: bun x oxfmt --write {staged_files}
       stage_fixed: true
     lint:
-      glob: "*.{js,jsx,ts,tsx}"
+      glob: '*.{js,jsx,ts,tsx}'
       run: bun x oxlint {staged_files}
     astro-check:
       run: bun run check
