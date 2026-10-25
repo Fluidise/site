@@ -159,10 +159,12 @@ a {
 }
 
 .alpine-hero {
+  display: block;
   position: relative;
   height: 75vh;
   height: 75svh;
   overflow: hidden;
+  isolation: isolate;
   background: #3d8ec7;
 }
 .alpine-hero__image {
@@ -172,8 +174,21 @@ a {
   object-fit: cover;
   object-position: center;
 }
+.alpine-hero__foreground {
+  visibility: hidden;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.alpine-hero[data-depth-active] .alpine-hero__foreground {
+  visibility: visible;
+}
 .alpine-hero__title {
   position: absolute;
+  z-index: 1;
   left: 3.4%;
   top: 9.57vh;
   top: 9.57svh;
@@ -185,6 +200,15 @@ a {
   line-height: 0.95;
   letter-spacing: 0.12em;
   text-shadow: 0 2px 12px rgb(12 54 83 / 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alpine-hero__foreground {
+    visibility: hidden !important;
+  }
+  .alpine-hero__title {
+    transform: none !important;
+  }
 }
 
 .floating-dock {
@@ -798,9 +822,6 @@ article.prose pre code {
     letter-spacing: 0.1em;
     left: 6%;
   }
-  .alpine-hero__image {
-    object-position: 56% center;
-  }
   .floating-dock {
     padding: 8px 12px;
     gap: 0;
@@ -863,6 +884,13 @@ article.prose pre code {
   }
   .footer-links {
     gap: 28px;
+  }
+}
+/* Keep the initial heading in the available sky on short landscape viewports. */
+@media (min-aspect-ratio: 2/1) {
+  .alpine-hero__title {
+    top: 5svh;
+    font-size: clamp(12px, 7.5svh, 88px);
   }
 }
 @media (prefers-reduced-transparency: reduce) {

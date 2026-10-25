@@ -1,11 +1,92 @@
 ---
-import banner from '../../assets/plates/alpine-banner.png';
-import compressedBanner from '../../assets/plates/alpine-banner.webp';
+import { getImage } from 'astro:assets';
+import banner from '../../assets/plates/alpine-banner-v3.png';
+import contour from '../../assets/plates/alpine-banner-v3-contour.json';
+
+const artwork = await getImage({ src: banner, format: 'webp', quality: 90 });
+const clipId = `alpine-massif-${crypto.randomUUID()}`;
+// The image-bound contour retains the real ridge detail in source coordinates.
+const ridgeline = contour.outline;
 ---
-<section class="alpine-hero" aria-label="Fluidise">
-  <picture>
-    <source srcset={compressedBanner.src} type="image/webp" />
-    <img class="alpine-hero__image" src={banner.src} width={banner.width} height={banner.height} alt="" fetchpriority="high" loading="eager" decoding="async" />
-  </picture>
+<alpine-hero class="alpine-hero" role="region" aria-label="Fluidise">
+  <img class="alpine-hero__image" src={artwork.src} width={banner.width} height={banner.height} alt="" fetchpriority="high" loading="eager" decoding="async" />
   <h1 class="alpine-hero__title">FLUIDISE<span class="sr-only"> — Agent-first developer experience suite</span></h1>
-</section>
+  <svg class="alpine-hero__foreground" viewBox={`0 0 ${banner.width} ${banner.height}`} preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <defs>
+      <clipPath id={clipId} clipPathUnits="userSpaceOnUse">
+        <path d={ridgeline} />
+      </clipPath>
+    </defs>
+    <image href={artwork.src} width={banner.width} height={banner.height} clip-path={`url(#${clipId})`} />
+  </svg>
+</alpine-hero>
+
+<script>
+  class AlpineHero extends HTMLElement {
+    private dispose?: () => void;
+
+    connectedCallback() {
+      this.dispose?.();
+      const title = this.querySelector<HTMLElement>('.alpine-hero__title');
+      if (!title) return;
+      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let frame: number | null = null;
+      let visible = true;
+      let disposed = false;
+
+      const update = () => {
+        frame = null;
+        if (disposed || !visible || document.hidden) return;
+        if (motion.matches) {
+          title.style.transform = 'translate3d(0, 0px, 0)';
+          this.removeAttribute('data-depth-active');
+          return;
+        }
+        const bounds = this.getBoundingClientRect();
+        const offset = Math.min(bounds.height, Math.max(0, -bounds.top));
+        this.toggleAttribute('data-depth-active', offset > 0);
+        title.style.transform = `translate3d(0, ${offset}px, 0)`;
+      };
+      const schedule = () => {
+        if (!disposed && visible && !document.hidden && !motion.matches && frame === null) {
+          frame = requestAnimationFrame(update);
+        }
+      };
+      const cancel = () => {
+        if (frame !== null) cancelAnimationFrame(frame);
+        frame = null;
+      };
+      const preference = () => { cancel(); update(); };
+      const visibility = () => { cancel(); if (!document.hidden) update(); };
+      const resize = () => { cancel(); update(); };
+      const observer = 'IntersectionObserver' in window ? new IntersectionObserver(([entry]) => {
+        if (disposed) return;
+        visible = entry.isIntersecting;
+        if (visible) schedule(); else cancel();
+      }) : null;
+      observer?.observe(this);
+      window.addEventListener('scroll', schedule, { passive: true });
+      window.addEventListener('resize', resize);
+      document.addEventListener('visibilitychange', visibility);
+      motion.addEventListener('change', preference);
+      update();
+      this.dispose = () => {
+        disposed = true;
+        cancel();
+        observer?.disconnect();
+        window.removeEventListener('scroll', schedule);
+        window.removeEventListener('resize', resize);
+        document.removeEventListener('visibilitychange', visibility);
+        motion.removeEventListener('change', preference);
+        title.style.removeProperty('transform');
+        this.removeAttribute('data-depth-active');
+      };
+    }
+
+    disconnectedCallback() {
+      this.dispose?.();
+      this.dispose = undefined;
+    }
+  }
+  if (!customElements.get('alpine-hero')) customElements.define('alpine-hero', AlpineHero);
+</script>
