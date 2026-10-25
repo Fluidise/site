@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-24T14:03:35.706687Z",
+  "generatedAt": "2026-10-25T20:51:09.788608Z",
   "title": "Design System: Fluidise Alpine Glass",
   "extensions": {
     "colorMeta": {
@@ -424,55 +424,103 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Homepage Goldman wordmark only; not catalog headings."
+        "purpose": "Homepage condensed white FLUIDISE wordmark; mobile tracking override is documented in DESIGN.md."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Catalog section heading."
+        "purpose": "Shared catalog, demonstration and guarantees section headings."
       },
       "doc-title": {
         "displayName": "Doc Title",
-        "purpose": "Dedicated tool documentation title."
+        "purpose": "Tool-page title with long-name wrapping."
       },
       "package-title": {
         "displayName": "Package Title",
-        "purpose": "Bold package name."
+        "purpose": "Catalog package name on wider screens."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Supporting catalog and section copy."
+        "purpose": "Interface baseline and introductory supporting copy."
       },
       "prose": {
         "displayName": "Prose",
-        "purpose": "Long-form documentation."
+        "purpose": "Long-form documentation with a 68ch maximum measure."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Small interactive control label."
+        "purpose": "Wrapping small-control label."
       },
       "code": {
         "displayName": "Code",
-        "purpose": "Terminal commands and structured samples."
+        "purpose": "Native monospace commands, samples and preformatted documentation."
       },
       "compact-label": {
         "displayName": "Compact Label",
-        "purpose": "Mobile dock/control labels and small metadata; preserve component-specific weight."
+        "purpose": "Legal copy and terminal demonstration label; inherits component leading."
       },
       "catalog-summary": {
         "displayName": "Catalog Summary",
-        "purpose": "Existing 15px catalog summary text at line-height 1.65."
+        "purpose": "Catalog summary with distinct reading rhythm."
       },
       "documentation-lead": {
         "displayName": "Documentation Lead",
-        "purpose": "18px tool-page lead paragraph at line-height 1.7; terminal headings also use the 18px size step."
+        "purpose": "Tool-page introductory paragraph, capped at 65ch."
       },
       "principle-heading": {
         "displayName": "Principle Heading",
-        "purpose": "20px headings within the existing principles region."
+        "purpose": "Condensed principle subheading."
       },
       "compact-package-title": {
         "displayName": "Compact Package Title",
-        "purpose": "21px bold package names at widths up to 600px; prose third-level headings also use the 21px size step with their own spacing."
+        "purpose": "Catalog package name at widths up to 600px."
+      },
+      "metadata": {
+        "displayName": "Metadata",
+        "purpose": "Shared status, documentation metadata and footer-link size; component leading may differ."
+      },
+      "dock-label": {
+        "displayName": "Dock Label",
+        "purpose": "Wide-screen dock labels."
+      },
+      "compact-dock-label": {
+        "displayName": "Compact Dock Label",
+        "purpose": "Dock labels at widths up to 600px."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Documentation and repository text links."
+      },
+      "catalog-tagline": {
+        "displayName": "Catalog Tagline",
+        "purpose": "Tool-entry lead line, capped at 65ch."
+      },
+      "feature-list": {
+        "displayName": "Feature List",
+        "purpose": "Tool feature list with open line rhythm."
+      },
+      "principle-copy": {
+        "displayName": "Principle Copy",
+        "purpose": "Principle paragraphs, capped at 65ch."
+      },
+      "principle-highlight": {
+        "displayName": "Principle Highlight",
+        "purpose": "Emphasized supporting principle statement."
+      },
+      "prose-section": {
+        "displayName": "Prose Section",
+        "purpose": "Second-level documentation heading."
+      },
+      "prose-subheading": {
+        "displayName": "Prose Subheading",
+        "purpose": "Third-level documentation heading."
+      },
+      "brand-small": {
+        "displayName": "Brand Small",
+        "purpose": "Footer lettering; documentation home link inherits body leading instead."
+      },
+      "terminal-heading": {
+        "displayName": "Terminal Heading",
+        "purpose": "Humanist body-family terminal heading, not condensed editorial type."
       }
     },
     "shadows": [
@@ -512,7 +560,7 @@
       "refersTo": "glacial-control",
       "description": "Filter or sample-format control; unselected state.",
       "html": "<button class=\"ds-control\" type=\"button\" aria-pressed=\"false\">All Packages</button>",
-      "css": ".ds-control{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;font-size:14px;font-weight:500;min-height:44px;white-space:nowrap;cursor:pointer;border:1px solid #d3e0ee;border-radius:16px;background:#f0f5f9;color:var(--muted,#50627a);padding:11px 24px;transition:background-color .15s ease,color .15s ease}.ds-control:hover{background:#e3effb;color:var(--slate,#11243b)}.ds-control[aria-pressed=\"true\"]{color:var(--glacier,#075cce);background:#e6f1ff;border-color:#bcd9ff}.ds-control:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-control{transition:none}}"
+      "css": "@font-face{font-family:'Barlow Condensed';src:url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Source Sans 3';src:url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-control{font-family:'Source Sans 3', 'Segoe UI', sans-serif;font-size:0.9375rem;font-weight:600;line-height:1.4;min-height:44px;white-space:normal;max-inline-size:100%;cursor:pointer;border:1px solid #d3e0ee;border-radius:16px;background:#f0f5f9;color:var(--muted,#50627a);padding:11px 24px;transition:background-color .15s ease,color .15s ease}.ds-control:hover{background:#e3effb;color:var(--slate,#11243b)}.ds-control[aria-pressed=\"true\"]{color:var(--glacier,#075cce);background:#e6f1ff;border-color:#bcd9ff}.ds-control:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-control{transition:none}}"
     },
     {
       "name": "Selected glacial control",
@@ -520,7 +568,7 @@
       "refersTo": "glacial-control-selected",
       "description": "Pressed filter appearance with accessible state.",
       "html": "<button class=\"ds-control\" type=\"button\" aria-pressed=\"true\">All Packages</button>",
-      "css": ".ds-control{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;font-size:14px;font-weight:500;min-height:44px;white-space:nowrap;cursor:pointer;border:1px solid #d3e0ee;border-radius:16px;background:#f0f5f9;color:var(--muted,#50627a);padding:11px 24px;transition:background-color .15s ease,color .15s ease}.ds-control:hover{background:#e3effb;color:var(--slate,#11243b)}.ds-control[aria-pressed=\"true\"]{color:var(--glacier,#075cce);background:#e6f1ff;border-color:#bcd9ff}.ds-control:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-control{transition:none}}"
+      "css": "@font-face{font-family:'Barlow Condensed';src:url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Source Sans 3';src:url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-control{font-family:'Source Sans 3', 'Segoe UI', sans-serif;font-size:0.9375rem;font-weight:600;line-height:1.4;min-height:44px;white-space:normal;max-inline-size:100%;cursor:pointer;border:1px solid #d3e0ee;border-radius:16px;background:#f0f5f9;color:var(--muted,#50627a);padding:11px 24px;transition:background-color .15s ease,color .15s ease}.ds-control:hover{background:#e3effb;color:var(--slate,#11243b)}.ds-control[aria-pressed=\"true\"]{color:var(--glacier,#075cce);background:#e6f1ff;border-color:#bcd9ff}.ds-control:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-control{transition:none}}"
     },
     {
       "name": "Glacial navigation dock",
@@ -528,7 +576,7 @@
       "refersTo": "floating-dock",
       "description": "Four labeled destinations. Preview stays in flow; production dock is fixed bottom-center with safe-area clearance.",
       "html": "<nav class=\"ds-dock\" aria-label=\"Main navigation\"><a class=\"ds-dock-link\" href=\"/#tools\" aria-current=\"location\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\" color=\"#111111\">\n  <title>Fluidise logo</title>\n  <path fill=\"currentColor\" stroke=\"none\" d=\"M45 17H36C24 17 19 24 19 35V47C19 53 16 57 8 59V71C16 73 19 77 19 83V93C19 105 25 112 37 112H45V96H40C35 96 34 94 34 89V80C34 73 31 68 26 65C31 61 34 56 34 49V39C34 34 35 32 40 32H45ZM83 17H92C104 17 109 24 109 35V47C109 53 112 57 120 59V71C112 73 109 77 109 83V93C109 105 103 112 91 112H83V96H88C93 96 94 94 94 89V80C94 73 97 68 102 65C97 61 94 56 94 49V39C94 34 93 32 88 32H83Z\" />\n  <rect x=\"47\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <rect x=\"69\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <path d=\"M56 83Q66 87 74 78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n</svg><span>Tools</span></a><a class=\"ds-dock-link\" href=\"/#philosophy\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"12\" r=\"6\"/><circle cx=\"15\" cy=\"12\" r=\"6\"/></svg><span>Philosophy</span></a><a class=\"ds-dock-link\" href=\"https://github.com/Fluidise/core/tree/main/docs\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 4v16h-12a3 3 0 0 1 0 -6h12\"/><path d=\"M19 4h-12a3 3 0 0 0 -3 3v10\"/><path d=\"M9 8h6\"/></svg><span>Specifications</span></a><a class=\"ds-dock-link\" href=\"https://github.com/Fluidise\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 6v-3.9a3.4 3.4 0 0 0 -.9 -2.7c3 -.3 6.2 -1.5 6.2 -6.8a5.3 5.3 0 0 0 -1.5 -3.7a4.9 4.9 0 0 0 -.1 -3.7s-1.2 -.3 -3.9 1.5a13.4 13.4 0 0 0 -7 0c-2.7 -1.8 -3.9 -1.5 -3.9 -1.5a4.9 4.9 0 0 0 -.1 3.7a5.3 5.3 0 0 0 -1.5 3.7c0 5.3 3.2 6.5 6.2 6.8a3.4 3.4 0 0 0 -.9 2.7v3.9\"/></svg><span>GitHub</span></a></nav>",
-      "css": ".ds-dock{box-sizing:border-box;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;width:min(532px,calc(100% - 24px));padding:10px 25px;border:1px solid rgb(255 255 255 / .9);border-radius:28px;background:rgb(244 250 255 / .92);box-shadow:0 10px 32px rgb(26 65 105 / .16),inset 0 1px 1px white;backdrop-filter:blur(24px) saturate(1.25);-webkit-backdrop-filter:blur(24px) saturate(1.25)}.ds-dock-link{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;min-height:50px;padding:4px;color:#344a64;font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;font-size:14px;text-decoration:none;border-radius:12px}.ds-dock-link svg{width:23px;height:23px}.ds-dock-link:hover{color:var(--glacier,#075cce);background:rgb(212 232 255 / .55)}.ds-dock-link[aria-current]{color:var(--glacier,#075cce)}.ds-dock-link:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-dock,.ds-dock-link{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-transparency:reduce){.ds-dock{background:#f4f9ff;backdrop-filter:none;-webkit-backdrop-filter:none}}@media(forced-colors:active){.ds-dock{border:1px solid ButtonText;background:Canvas}.ds-dock-link[aria-current]{outline:1px solid Highlight}}"
+      "css": "@font-face{font-family:'Barlow Condensed';src:url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Source Sans 3';src:url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-dock{box-sizing:border-box;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;width:min(532px,calc(100% - 24px));padding:10px 25px;border:1px solid rgb(255 255 255 / .9);border-radius:28px;background:rgb(244 250 255 / .92);box-shadow:0 10px 32px rgb(26 65 105 / .16),inset 0 1px 1px white;backdrop-filter:blur(24px) saturate(1.25);-webkit-backdrop-filter:blur(24px) saturate(1.25)}.ds-dock-link{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;min-height:50px;padding:4px;color:#344a64;font-family:'Source Sans 3', 'Segoe UI', sans-serif;font-size:0.9375rem;line-height:1.3;overflow-wrap:anywhere;text-decoration:none;border-radius:12px}.ds-dock-link svg{width:23px;height:23px}.ds-dock-link:hover{color:var(--glacier,#075cce);background:rgb(212 232 255 / .55)}.ds-dock-link[aria-current]{color:var(--glacier,#075cce)}.ds-dock-link:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-dock,.ds-dock-link{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-transparency:reduce){.ds-dock{background:#f4f9ff;backdrop-filter:none;-webkit-backdrop-filter:none}}@media(forced-colors:active){.ds-dock{border:1px solid ButtonText;background:Canvas}.ds-dock-link[aria-current]{outline:1px solid Highlight}}@media(max-width:600px){.ds-dock-link{font-size:0.8125rem}}"
     },
     {
       "name": "Open catalog entry",
@@ -536,7 +584,7 @@
       "refersTo": "catalog-entry",
       "description": "Divider-separated package identity and documentation link, not a raised card.",
       "html": "<article class=\"ds-entry\"><div class=\"ds-symbol\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\" color=\"#111111\">\n  <title>Fluidise logo</title>\n  <path fill=\"currentColor\" stroke=\"none\" d=\"M45 17H36C24 17 19 24 19 35V47C19 53 16 57 8 59V71C16 73 19 77 19 83V93C19 105 25 112 37 112H45V96H40C35 96 34 94 34 89V80C34 73 31 68 26 65C31 61 34 56 34 49V39C34 34 35 32 40 32H45ZM83 17H92C104 17 109 24 109 35V47C109 53 112 57 120 59V71C112 73 109 77 109 83V93C109 105 103 112 91 112H83V96H88C93 96 94 94 94 89V80C94 73 97 68 102 65C97 61 94 56 94 49V39C94 34 93 32 88 32H83Z\" />\n  <rect x=\"47\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <rect x=\"69\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <path d=\"M56 83Q66 87 74 78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n</svg></div><div><h3>fluidise-clint</h3><a href=\"/tools/clint\">Read Specification &amp; Docs</a></div></article>",
-      "css": ".ds-entry{display:grid;grid-template-columns:80px minmax(0,1fr);gap:32px;padding:28px 0 34px;border-bottom:1px solid var(--line,#d9e3ed);background:var(--snow,#fff);color:var(--slate,#11243b);font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif}.ds-symbol{display:grid;place-items:center;width:80px;height:80px;background:#eaf3fc;border-radius:20px}.ds-symbol svg{width:52px;height:52px}.ds-entry h3{font-size:24px;font-weight:700;line-height:1.2;letter-spacing:-.03em;margin:0 0 8px}.ds-entry a{color:var(--glacier,#075cce);font-size:15px;text-decoration:none}.ds-entry a:hover{text-decoration:underline}.ds-entry a:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@media(max-width:600px){.ds-entry{grid-template-columns:44px minmax(0,1fr);gap:16px}.ds-symbol{width:44px;height:44px;border-radius:12px}.ds-symbol svg{width:32px;height:32px}.ds-entry h3{font-size:21px}}@supports(corner-shape:squircle){.ds-symbol{corner-shape:squircle;border-radius:40px}}"
+      "css": "@font-face{font-family:'Barlow Condensed';src:url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Source Sans 3';src:url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-entry{display:grid;grid-template-columns:80px minmax(0,1fr);gap:32px;padding:28px 0 34px;border-bottom:1px solid var(--line,#d9e3ed);background:var(--snow,#fff);color:var(--slate,#11243b);font-family:'Source Sans 3', 'Segoe UI', sans-serif}.ds-symbol{display:grid;place-items:center;width:80px;height:80px;background:#eaf3fc;border-radius:20px}.ds-symbol svg{width:52px;height:52px}.ds-entry h3{font-family:'Barlow Condensed', 'Arial Narrow', sans-serif;font-size:2rem;font-weight:700;line-height:1.1;letter-spacing:0;overflow-wrap:anywhere;margin:0 0 8px}.ds-entry a{color:var(--glacier,#075cce);font-size:1.0625rem;font-weight:600;line-height:1.5;text-decoration:none}.ds-entry a:hover{text-decoration:underline}.ds-entry a:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@media(max-width:600px){.ds-entry{grid-template-columns:44px minmax(0,1fr);gap:16px}.ds-symbol{width:44px;height:44px;border-radius:12px}.ds-symbol svg{width:32px;height:32px}.ds-entry h3{font-size:1.75rem}}@supports(corner-shape:squircle){.ds-symbol{corner-shape:squircle;border-radius:40px}}"
     },
     {
       "name": "Copy command",
@@ -544,7 +592,7 @@
       "refersTo": "copy-command",
       "description": "Square installation bar with locally scrollable command; visual preview does not copy to clipboard.",
       "html": "<div class=\"ds-copy\"><code>brew tap Fluidise/homebrew-tap</code><button class=\"ds-copy-button\" type=\"button\" aria-label=\"Copy Homebrew tap installation command\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 9a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z\"/><path d=\"M17 7v-2a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h2\"/></svg></button></div>",
-      "css": ".ds-copy{box-sizing:border-box;display:flex;align-items:center;gap:12px;justify-content:space-between;min-width:0;max-width:100%;padding:10px 12px;background:var(--ice,#eff5fa);border:1px solid var(--line,#d9e3ed);border-radius:0;color:var(--slate,#11243b)}.ds-copy code{min-width:0;flex:1;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;font-size:12px;overflow-x:auto;white-space:nowrap}.ds-copy-button{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;color:var(--muted,#50627a);background:transparent;border:0;border-radius:12px;cursor:pointer}.ds-copy-button:hover{background:#dbeaf9;color:var(--glacier,#075cce)}.ds-copy-button:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-copy-button{corner-shape:squircle;border-radius:40px}}"
+      "css": ".ds-copy{box-sizing:border-box;display:flex;align-items:center;gap:12px;justify-content:space-between;min-width:0;max-width:100%;padding:10px 12px;background:var(--ice,#eff5fa);border:1px solid var(--line,#d9e3ed);border-radius:0;color:var(--slate,#11243b)}.ds-copy code{min-width:0;flex:1;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;font-size:0.875rem;line-height:1.7;overflow-x:auto;white-space:nowrap}.ds-copy-button{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;color:var(--muted,#50627a);background:transparent;border:0;border-radius:12px;cursor:pointer}.ds-copy-button:hover{background:#dbeaf9;color:var(--glacier,#075cce)}.ds-copy-button:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-copy-button{corner-shape:squircle;border-radius:40px}}"
     },
     {
       "name": "Copy icon button",
@@ -552,7 +600,7 @@
       "refersTo": "copy-button",
       "description": "44px copy affordance with native squircle corners and a 12px unsupported-browser fallback; runtime success/check feedback belongs to the live React component.",
       "html": "<button class=\"ds-copy-button\" type=\"button\" aria-label=\"Copy terminal output\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 9a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z\"/><path d=\"M17 7v-2a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h2\"/></svg></button>",
-      "css": ".ds-copy{box-sizing:border-box;display:flex;align-items:center;gap:12px;justify-content:space-between;min-width:0;max-width:100%;padding:10px 12px;background:var(--ice,#eff5fa);border:1px solid var(--line,#d9e3ed);border-radius:0;color:var(--slate,#11243b)}.ds-copy code{min-width:0;flex:1;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;font-size:12px;overflow-x:auto;white-space:nowrap}.ds-copy-button{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;color:var(--muted,#50627a);background:transparent;border:0;border-radius:12px;cursor:pointer}.ds-copy-button:hover{background:#dbeaf9;color:var(--glacier,#075cce)}.ds-copy-button:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-copy-button{corner-shape:squircle;border-radius:40px}}"
+      "css": ".ds-copy{box-sizing:border-box;display:flex;align-items:center;gap:12px;justify-content:space-between;min-width:0;max-width:100%;padding:10px 12px;background:var(--ice,#eff5fa);border:1px solid var(--line,#d9e3ed);border-radius:0;color:var(--slate,#11243b)}.ds-copy code{min-width:0;flex:1;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;font-size:0.875rem;line-height:1.7;overflow-x:auto;white-space:nowrap}.ds-copy-button{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;color:var(--muted,#50627a);background:transparent;border:0;border-radius:12px;cursor:pointer}.ds-copy-button:hover{background:#dbeaf9;color:var(--glacier,#075cce)}.ds-copy-button:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-copy-button{corner-shape:squircle;border-radius:40px}}"
     },
     {
       "name": "Interactive terminal panel",
@@ -560,7 +608,7 @@
       "refersTo": "terminal",
       "description": "Square command/output frame; sample content is explicitly a demonstration.",
       "html": "<section class=\"ds-terminal\"><header><h3>fluidise-clint interactive sandbox</h3><p>Demonstration · Sample output, not live execution</p></header><div class=\"ds-terminal-body\"><code>$ fluidise-clint \"feat(core): introduce agent-first contract\"</code><pre tabindex=\"0\" aria-label=\"JSON sample output\">{\n  \"schema_version\": 1,\n  \"status\": \"valid\",\n  \"diagnostics\": []\n}</pre></div></section>",
-      "css": ".ds-terminal{border:1px solid #cbd9e7;border-radius:0;background:#f9fbfd;color:var(--slate,#11243b);font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif}.ds-terminal header{padding:20px 24px;border-bottom:1px solid var(--line,#d9e3ed)}.ds-terminal h3{font-size:18px;margin:0}.ds-terminal p{font-size:12px;color:var(--muted,#50627a);margin:4px 0 0}.ds-terminal-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.ds-terminal code{display:block;margin:24px;padding:16px;overflow-x:auto;white-space:pre;background:var(--ice,#eff5fa);font:13px/1.7 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}.ds-terminal pre{min-width:0;overflow-x:auto;margin:0;padding:24px;border-left:1px solid var(--line,#d9e3ed);font:13px/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;color:#134b82}.ds-terminal pre:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@media(max-width:600px){.ds-terminal-body{grid-template-columns:minmax(0,1fr)}.ds-terminal pre{border-left:0;border-top:1px solid var(--line,#d9e3ed);font-size:12px}}"
+      "css": "@font-face{font-family:'Barlow Condensed';src:url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Source Sans 3';src:url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-terminal{border:1px solid #cbd9e7;border-radius:0;background:#f9fbfd;color:var(--slate,#11243b);font-family:'Source Sans 3', 'Segoe UI', sans-serif}.ds-terminal header{padding:20px 24px;border-bottom:1px solid var(--line,#d9e3ed)}.ds-terminal h3{font-size:1.25rem;font-weight:600;line-height:1.35;overflow-wrap:anywhere;margin:0}.ds-terminal p{font-size:0.8125rem;line-height:1.6;color:var(--muted,#50627a);margin:4px 0 0}.ds-terminal-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.ds-terminal code{display:block;margin:24px;padding:16px;overflow-x:auto;white-space:pre;background:var(--ice,#eff5fa);font:0.875rem/1.7 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}.ds-terminal pre{min-width:0;overflow-x:auto;margin:0;padding:24px;border-left:1px solid var(--line,#d9e3ed);font:0.875rem/1.7 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;color:#134b82}.ds-terminal pre:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@media(max-width:600px){.ds-terminal-body{grid-template-columns:minmax(0,1fr)}.ds-terminal pre{border-left:0;border-top:1px solid var(--line,#d9e3ed)}}"
     },
     {
       "name": "Documentation code block",
@@ -568,12 +616,12 @@
       "refersTo": "documentation-code",
       "description": "Dark, square documentation code with local horizontal scrolling.",
       "html": "<pre class=\"ds-doc-code\" tabindex=\"0\" aria-label=\"Installation command\"><code>brew tap Fluidise/homebrew-tap</code></pre>",
-      "css": ".ds-doc-code{background:#10283e;color:#edf6ff;padding:24px;border-radius:0;overflow-x:auto;margin:0;font:13.6px/1.7 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}.ds-doc-code code{font:inherit;background:transparent}.ds-doc-code:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}"
+      "css": ".ds-doc-code{background:#10283e;color:#edf6ff;padding:24px;border-radius:0;overflow-x:auto;margin:0;font:0.875rem/1.7 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}.ds-doc-code code{font:inherit;letter-spacing:0.01em;background:transparent}.ds-doc-code:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}"
     }
   ],
   "narrative": {
     "northStar": "Alpine Glass",
-    "overview": "An alpine panorama establishes the Fluidise identity; snow-white reading surfaces keep its independent developer tools legible. Glacier blue marks actions and selected controls, while slate carries the documentation. Liquid/glacial glass belongs to the labeled navigation dock, not the technical panels.\n\nThe wide wordmark is the display voice. Catalog headings and source prose use the system sans stack; commands and structured samples use monospace. Existing black and white official SVG logos remain unmodified. This records the approved implementation, not a completed shipping review: the human first-viewport checkpoint is accepted, while automated workflow closure remains incomplete.",
+    "overview": "An alpine panorama establishes the Fluidise identity; snow-white reading surfaces keep its independent developer tools legible. Glacier blue marks actions and selected controls, while slate carries the documentation. Liquid/glacial glass belongs to the labeled navigation dock, not the technical panels.\n\nThe condensed wordmark and editorial headings share Barlow Condensed; Source Sans 3 supports reading and interface roles, while commands and structured samples retain native monospace. Existing black and white official SVG logos remain unmodified. The user delegated this site-wide typography replacement; historical first-viewport composition approval is not approval of the new lettering, and automated workflow closure remains incomplete.",
     "keyCharacteristics": [
       "Full-width alpine photography with an uninterrupted sky wordmark.",
       "Snow-white reading ground, glacier-blue actions, and slate text.",

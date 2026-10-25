@@ -30,69 +30,138 @@ colors:
   inline-code-ink: '#214c78'
 typography:
   display:
-    fontFamily: 'Goldman, sans-serif'
-    fontSize: 'clamp(28px, 5.18vw, 88px)'
+    fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
+    fontSize: 'clamp(3rem, 10vw, 6rem)'
     fontWeight: 700
-    lineHeight: 1
-    letterSpacing: '.5em'
+    lineHeight: 0.95
+    letterSpacing: '0.12em'
   headline:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: 'clamp(28px, 2.8vw, 44px)'
+    fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
+    fontSize: 'clamp(2.25rem, 3.5vw, 3.25rem)'
     fontWeight: 700
     lineHeight: 1.15
-    letterSpacing: '-.03em'
+    letterSpacing: '-0.01em'
   doc-title:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: 'clamp(32px, 5vw, 64px)'
+    fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
+    fontSize: 'clamp(2.5rem, 6vw, 5rem)'
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: '-0.01em'
+  package-title:
+    fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
+    fontSize: '2rem'
     fontWeight: 700
     lineHeight: 1.1
-    letterSpacing: '-.035em'
-  package-title:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: '24px'
-    fontWeight: 700
-    lineHeight: 1.2
-    letterSpacing: '-.03em'
+    letterSpacing: '0'
   body:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: '16px'
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '1.0625rem'
     fontWeight: 400
     lineHeight: 1.6
   prose:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: '16px'
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '1.125rem'
     fontWeight: 400
-    lineHeight: 1.8
+    lineHeight: 1.75
   label:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: '14px'
-    fontWeight: 500
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '0.9375rem'
+    fontWeight: 600
+    lineHeight: 1.4
   code:
     fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
-    fontSize: '13px'
+    fontSize: '0.875rem'
+    fontWeight: 400
     lineHeight: 1.7
   compact-label:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: '12px'
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '0.8125rem'
+    fontWeight: 400
+    lineHeight: 1.6
   catalog-summary:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: '15px'
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '1.0625rem'
     fontWeight: 400
     lineHeight: 1.65
   documentation-lead:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: '18px'
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '1.375rem'
+    fontWeight: 400
+    lineHeight: 1.5
+  principle-heading:
+    fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
+    fontSize: '1.625rem'
+    fontWeight: 700
+    lineHeight: 1.3
+  compact-package-title:
+    fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
+    fontSize: '1.75rem'
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: '0'
+  metadata:
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '0.875rem'
+    fontWeight: 400
+    lineHeight: 1.6
+  dock-label:
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '0.9375rem'
+    fontWeight: 400
+    lineHeight: 1.3
+  compact-dock-label:
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '0.8125rem'
+    fontWeight: 400
+    lineHeight: 1.3
+  action:
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '1.0625rem'
+    fontWeight: 600
+    lineHeight: 1.5
+  catalog-tagline:
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '1.25rem'
+    fontWeight: 400
+    lineHeight: 1.45
+  feature-list:
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '1.0625rem'
     fontWeight: 400
     lineHeight: 1.7
-  principle-heading:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: '20px'
-  compact-package-title:
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    fontSize: '21px'
+  principle-copy:
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '1.0625rem'
+    fontWeight: 400
+    lineHeight: 1.75
+  principle-highlight:
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '0.9375rem'
+    fontWeight: 600
+    lineHeight: 1.6
+  prose-section:
+    fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
+    fontSize: '2.25rem'
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: '0'
+  prose-subheading:
+    fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
+    fontSize: '1.75rem'
     fontWeight: 700
     lineHeight: 1.2
-    letterSpacing: '-.03em'
+    letterSpacing: '0'
+  brand-small:
+    fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
+    fontSize: '1.5rem'
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: '0.06em'
+  terminal-heading:
+    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontSize: '1.25rem'
+    fontWeight: 600
+    lineHeight: 1.35
 rounded:
   square: '0'
   copy-control: '12px'
@@ -162,7 +231,7 @@ components:
 
 An alpine panorama establishes the Fluidise identity; snow-white reading surfaces keep its independent developer tools legible. Glacier blue marks actions and selected controls, while slate carries the documentation. Liquid/glacial glass belongs to the labeled navigation dock, not the technical panels.
 
-The wide wordmark is the display voice. Catalog headings and source prose use the system sans stack; commands and structured samples use monospace. Existing black and white official SVG logos remain unmodified. This records the approved implementation, not a completed shipping review: the human first-viewport checkpoint is accepted, while automated workflow closure remains incomplete.
+The condensed wordmark and editorial headings share Barlow Condensed; Source Sans 3 supports reading and interface roles, while commands and structured samples retain native monospace. Existing black and white official SVG logos remain unmodified. The user delegated this site-wide typography replacement; historical first-viewport composition approval is not approval of the new lettering, and automated workflow closure remains incomplete.
 
 **Key Characteristics:**
 
@@ -199,25 +268,25 @@ The error token is functional: invalid sample output and visible copy-failure fe
 
 ## Typography
 
-**Display Font:** self-hosted Goldman Bold, with sans-serif fallback; used for the wide white FLUIDISE wordmark only.
-**Body Font:** the system sans stack recorded in frontmatter.
-**Label/Mono Font:** the system monospace stack recorded in frontmatter.
+**Display and Heading Font:** self-hosted Barlow Condensed Bold, with Arial Narrow and sans-serif fallbacks.
+**Body and Interface Font:** self-hosted Source Sans 3 variable, with Segoe UI and sans-serif fallbacks.
+**Code Font:** native monospace stack recorded in frontmatter.
 
-The technical wordmark contrasts with straightforward catalog and documentation typography. System sans headings are the observed implementation, not a new decorative display face or permission to replace Goldman.
+The “Expedition Field Guide” pairing uses condensed, emphatic headings against open humanist reading copy. The typography replacement is explicitly authorized in `.impeccable/surfaces/typography.md`; it does not replace the alpine photograph, palette, shapes, official SVG marks, copy, or behavior.
 
 ### Hierarchy
 
-- **Display:** responsive wordmark; approximately 78px on the reviewed wide viewport, with the exact clamp in frontmatter. At widths up to 600px, size becomes 5.4vw, tracking .3em, and left position 6%.
-- **Headline:** catalog section heading; other demonstration and documentation section headings use 28px.
-- **Documentation title:** large tool name, wrapping anywhere when required.
-- **Package title:** explicit bold weight (700), 24px desktop and 21px at widths up to 600px.
-- **Body:** supporting introductory copy at 16px/1.6; catalog summaries use 15px/1.65 and taglines 16px/1.55. Reading measures are 70ch for supporting catalog copy, 65ch for the documentation lead, and 72ch for article prose.
-- **Prose:** 16px/1.8, with bold 28px second-level and 21px third-level headings.
-- **Label:** small controls use 14px/500; mobile controls and dock labels use 12px. Dock labels remain visible, using “Docs” in place of the full Specifications label on mobile while preserving its accessible name.
-- **Documentation lead:** introductory tool-page paragraph at 18px/1.7.
-- **Principle heading:** 20px heading within each principle; no new display family or weight is prescribed.
-- **Compact label:** the observed 12px step for mobile dock/control labels and small metadata; the component retains its own weight.
-- **Code:** terminal command text uses 13px/1.7; output uses 13px/1.65, becoming 12px on mobile. Installation text uses 12px; article inline code uses .85em/1.7.
+- **Display:** the white homepage wordmark uses the display token. At widths up to 600px, tracking becomes .1em; the same size clamp remains active and left position becomes 6%.
+- **Headlines and titles:** the headline token serves catalog, demonstration, and guarantees section headings. Documentation titles use their own larger clamp and wrap long names. Package titles use the package-title token, switching to compact-package-title at 600px and below. All use the heading family at 700.
+- **Editorial subheadings:** principles use principle-heading; long-form documentation uses prose-section and prose-subheading. Section, principle, terminal, and prose third-level headings balance lines. Prose headings reset tracking to zero.
+- **Body and reading:** body is the shared interface and introductory-copy baseline; catalog-summary, feature-list, principle-copy, and prose distinguish line rhythm without mobile body reductions. Measures are 70ch for catalog summary, features and introductory copy; 65ch for taglines, principle paragraphs and documentation leads; and 68ch for article prose.
+- **Lead and supporting roles:** catalog-tagline and documentation-lead distinguish introductions from body copy. Principle highlights use the principle-highlight token. Terminal headings retain the body family at 600, rather than the condensed family.
+- **Labels and actions:** controls use label; text links use action. Dock labels use dock-label and switch to compact-dock-label at 600px and below, retaining the accessible Specifications name and compact “Docs” text. Controls wrap rather than imposing nowrap.
+- **Metadata:** metadata provides the shared status, documentation metadata, and footer-link size. Compact legal and demonstration text use compact-label. Terminal footer and legal text override the inherited leading to 1.5 and 1.6 respectively; terminal footer has tabular numerals. Documentation metadata inherits the body leading.
+- **Small brand lettering:** footer lettering uses brand-small. The documentation home link shares its family, size, weight and tracking but inherits body leading (1.6).
+- **Code:** installation commands, terminal samples and documentation blocks use code without mobile size reduction. Inline prose code uses .875em/1.7 and wraps long tokens; preformatted blocks retain local horizontal scrolling. Dark documentation code adds .01em tracking.
+
+Shared sizes use rem units or rem-bounded clamps. The two local WOFF2 faces use normal style, `font-display: swap`, and matching cross-origin font preloads in the shared layout. Barlow Condensed declares weight 700; Source Sans 3 declares the 400–700 range. Their OFL licenses and provenance live in `public/fonts/`; native monospace adds no font request. Goldman is no longer part of the active type system.
 
 **The Brand Asset Rule.** Use the existing official black or white SVG logo unchanged; do not trace, recolor, or replace it with a generated mark.
 
@@ -295,4 +364,4 @@ All interactive elements retain a 3px glacier focus outline with 4px offset. Red
 - **Don't** add banner animation in this task; it is deferred to a dedicated skill.
 - **Don't** treat existing release, availability, performance, or execution claims as evidence verified by the redesign.
 
-Evidence: current source in `src/styles/global.css`, `src/components/`, `src/pages/index.astro`, `src/pages/tools/[id].astro`, and `src/layouts/Layout.astro`; approved direction in `.impeccable/surfaces/src-pages-index-astro.md`; product constraints in `PRODUCT.md`. The independent review's follow-up verdict records overflow, dock clearance, and package heading fixes as resolved. The human first-viewport checkpoint is accepted; the local engine correction recognizes that approval, but separate automated material gates and workflow/evidence closure remain incomplete. Current task status and diagnostic references are recorded in the surface brief. This document does not certify shipping completion.
+Evidence: current source in `src/styles/global.css`, `src/components/`, `src/pages/index.astro`, `src/pages/tools/[id].astro`, and `src/layouts/Layout.astro`; composition direction in `.impeccable/surfaces/src-pages-index-astro.md` and the authorized typography replacement in `.impeccable/surfaces/typography.md`; product constraints in `PRODUCT.md`. The independent review's follow-up verdict records overflow, dock clearance, and package heading fixes as resolved. The historical human first-viewport checkpoint applies to the prior composition, not the newly replaced typography; separate automated material gates and workflow/evidence closure remain incomplete. Current task status and diagnostic references are recorded in the surface brief. This document does not certify shipping completion.

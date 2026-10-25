@@ -1,9 +1,17 @@
 @import 'tailwindcss';
 
 @font-face {
-  font-family: 'Goldman';
-  src: url('/fonts/Goldman-Bold.ttf') format('truetype');
+  font-family: 'Barlow Condensed';
+  src: url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
@@ -16,11 +24,23 @@
   --muted: #50627a;
   --glacier: #075cce;
   --line: #d9e3ed;
+  --font-heading: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --type-display: clamp(3rem, 10vw, 6rem);
+  --type-title: clamp(2.5rem, 6vw, 5rem);
+  --type-section: clamp(2.25rem, 3.5vw, 3.25rem);
+  --type-package: 2rem;
+  --type-reading: 1.125rem;
+  --type-body: 1.0625rem;
+  --type-label: 0.9375rem;
+  --type-meta: 0.875rem;
+  --type-compact: 0.8125rem;
+  --type-code: 0.875rem;
+  --type-subheading: 1.625rem;
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --page-gutter: clamp(20px, 3.6vw, 64px);
   --dock-clearance: calc(116px + env(safe-area-inset-bottom, 0px));
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-body);
   color: var(--slate);
   background: var(--snow);
   scroll-behavior: smooth;
@@ -30,6 +50,8 @@
 body {
   margin: 0;
   min-width: 320px;
+  font-size: var(--type-body);
+  line-height: 1.6;
 }
 *,
 *::before,
@@ -115,10 +137,12 @@ a {
   background: #f0f5f9;
   color: var(--muted);
   padding: 11px 24px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: var(--type-label);
+  font-weight: 600;
   min-height: 44px;
-  white-space: nowrap;
+  white-space: normal;
+  max-inline-size: 100%;
+  line-height: 1.4;
   transition:
     background-color 0.15s ease,
     color 0.15s ease;
@@ -155,11 +179,11 @@ a {
   top: 9.57svh;
   margin: 0;
   color: white;
-  font-family: 'Goldman', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(28px, 5.18vw, 88px);
-  line-height: 1;
-  letter-spacing: 0.5em;
+  font-size: var(--type-display);
+  line-height: 0.95;
+  letter-spacing: 0.12em;
   text-shadow: 0 2px 12px rgb(12 54 83 / 0.18);
 }
 
@@ -192,7 +216,9 @@ a {
   min-height: 50px;
   padding: 4px;
   color: #344a64;
-  font-size: 14px;
+  font-size: var(--type-label);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
   text-decoration: none;
   border-radius: 12px;
 }
@@ -225,12 +251,17 @@ a {
   margin-bottom: 28px;
 }
 h2 {
-  font-size: clamp(28px, 2.8vw, 44px);
+  font-family: var(--font-heading);
+  font-size: var(--type-section);
   font-weight: 700;
   line-height: 1.15;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   margin: 0;
 }
+:where(h2, .principle h3, .terminal-heading, article.prose h3) {
+  text-wrap: balance;
+}
+
 .catalog-filters {
   min-inline-size: 0;
   border: 0;
@@ -244,7 +275,7 @@ h2 {
   max-width: 70ch;
   color: var(--muted);
   margin: 24px 0 0;
-  font-size: 16px;
+  font-size: var(--type-body);
   line-height: 1.6;
 }
 .tool-list {
@@ -279,28 +310,32 @@ h2 {
   color: var(--glacier);
 }
 .tool-entry h3 {
-  font-size: 24px;
+  font-family: var(--font-heading);
+  font-size: var(--type-package);
+  overflow-wrap: anywhere;
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  letter-spacing: 0;
+  line-height: 1.1;
   margin: 0 0 8px;
 }
 .tool-tagline {
-  font-size: 16px;
-  line-height: 1.55;
+  max-width: 65ch;
+  font-size: 1.25rem;
+  line-height: 1.45;
   margin: 0 0 12px;
   color: var(--muted);
 }
 .tool-summary {
-  font-size: 15px;
+  font-size: var(--type-body);
   line-height: 1.65;
   margin: 0 0 16px;
   max-width: 70ch;
   color: var(--muted);
 }
 .tool-features {
+  max-width: 70ch;
   padding-left: 18px;
-  font-size: 14px;
+  font-size: var(--type-body);
   line-height: 1.7;
   color: var(--muted);
   margin: 0 0 18px;
@@ -316,7 +351,9 @@ h2 {
   align-items: center;
   gap: 8px;
   color: var(--glacier);
-  font-size: 15px;
+  font-size: var(--type-body);
+  font-weight: 600;
+  line-height: 1.5;
   text-decoration: none;
 }
 .text-link:hover {
@@ -333,7 +370,7 @@ h2 {
   max-width: 600px;
 }
 .tool-status {
-  font-size: 13px;
+  font-size: var(--type-meta);
   color: var(--muted);
   margin: 0;
 }
@@ -357,7 +394,8 @@ h2 {
   min-width: 0;
   flex: 1;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--type-code);
+  line-height: 1.7;
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -385,7 +423,7 @@ h2 {
   padding-block: 24px 64px;
 }
 .demo-section h2 {
-  font-size: 28px;
+  font-size: var(--type-section);
   margin-bottom: 20px;
 }
 .install-tap {
@@ -393,7 +431,7 @@ h2 {
   margin-top: 24px;
 }
 .install-tap > p {
-  font-size: 14px;
+  font-size: var(--type-label);
   color: var(--muted);
   margin-bottom: 10px;
 }
@@ -413,12 +451,15 @@ h2 {
   border-bottom: 1px solid var(--line);
 }
 .terminal-heading {
-  font-size: 18px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
   margin: 0;
 }
 .terminal-demo-label {
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--type-compact);
   margin: 4px 0 0;
 }
 .terminal-controls {
@@ -438,7 +479,7 @@ h2 {
 .terminal-command code {
   display: block;
   overflow-x: auto;
-  font: 13px/1.7 var(--mono);
+  font: var(--type-code)/1.7 var(--mono);
   background: var(--ice);
   padding: 16px;
   white-space: pre;
@@ -453,7 +494,7 @@ h2 {
   overflow-x: auto;
   min-height: 290px;
   margin: 0;
-  font: 13px/1.65 var(--mono);
+  font: var(--type-code)/1.7 var(--mono);
   padding-right: 44px;
   color: #134b82;
 }
@@ -470,7 +511,9 @@ h2 {
   border-top: 1px solid var(--line);
   padding: 12px 24px;
   color: var(--muted);
-  font: 12px/1.5 var(--mono);
+  font-size: var(--type-meta);
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
 }
 .terminal-output pre[data-sample='invalid'] {
   color: #a5243b;
@@ -478,7 +521,7 @@ h2 {
 .terminal-feedback {
   display: block;
   color: #a5243b;
-  font-size: 13px;
+  font-size: var(--type-meta);
   padding-inline: 24px;
 }
 
@@ -488,7 +531,7 @@ h2 {
 }
 .philosophy-intro {
   color: var(--muted);
-  font-size: 16px;
+  font-size: var(--type-body);
   line-height: 1.6;
   max-width: 70ch;
   margin: 16px 0 36px;
@@ -499,16 +542,23 @@ h2 {
   gap: 40px;
 }
 .principle h3 {
-  font-size: 20px;
+  font-family: var(--font-heading);
+  font-size: var(--type-subheading);
+  font-weight: 700;
+  line-height: 1.3;
   margin: 12px 0;
 }
 .principle p {
+  max-width: 65ch;
   color: var(--muted);
-  font-size: 15px;
+  font-size: var(--type-body);
   line-height: 1.75;
 }
 .principle strong {
-  font-size: 13px;
+  display: block;
+  max-width: 70ch;
+  font-size: var(--type-label);
+  line-height: 1.6;
   color: #215887;
   font-weight: 600;
 }
@@ -532,8 +582,15 @@ h2 {
   width: 40px;
   height: 40px;
 }
+.footer-brand strong {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+}
 .footer-brand p {
-  font-size: 13px;
+  font-size: var(--type-meta);
   color: var(--muted);
   margin: 4px 0 0;
 }
@@ -541,7 +598,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  font-size: 13px;
+  font-size: var(--type-meta);
 }
 .footer-links > div {
   display: flex;
@@ -564,7 +621,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
-  font-size: 12px;
+  font-size: var(--type-compact);
   line-height: 1.6;
   color: var(--muted);
   padding-top: 24px;
@@ -576,11 +633,14 @@ h2 {
   padding: 40px var(--page-gutter) 80px;
 }
 .doc-home {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
   display: inline-flex;
   gap: 10px;
   align-items: center;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 40px;
 }
 .doc-home img {
@@ -600,19 +660,21 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px 24px;
-  font-size: 13px;
+  font-size: var(--type-meta);
   color: var(--muted);
 }
 .doc-header h1 {
-  font-size: clamp(32px, 5vw, 64px);
+  font-family: var(--font-heading);
+  font-size: var(--type-title);
+  font-weight: 700;
   overflow-wrap: anywhere;
-  letter-spacing: -0.035em;
-  line-height: 1.1;
+  letter-spacing: -0.01em;
+  line-height: 1;
   margin: 20px 0;
 }
 .doc-header > p {
-  font-size: 18px;
-  line-height: 1.7;
+  font-size: 1.375rem;
+  line-height: 1.5;
   color: var(--muted);
   max-width: 65ch;
 }
@@ -624,7 +686,7 @@ h2 {
   margin-block: 40px;
 }
 .doc-guarantees h2 {
-  font-size: 28px;
+  font-size: var(--type-section);
 }
 .doc-guarantees ul {
   padding: 0;
@@ -635,26 +697,30 @@ h2 {
   padding: 16px 0;
   border-bottom: 1px solid var(--line);
   color: var(--muted);
-  font-size: 15px;
+  font-size: var(--type-body);
   line-height: 1.6;
 }
 article.prose {
-  max-width: 72ch;
+  overflow-wrap: anywhere;
+  max-width: 68ch;
   color: #344b63;
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: var(--type-reading);
+  line-height: 1.75;
 }
 article.prose :is(h1, h2, h3, h4) {
+  font-family: var(--font-heading);
   color: var(--slate);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 article.prose h2 {
-  font-size: 28px;
+  font-size: 2.25rem;
+  line-height: 1.1;
   margin: 48px 0 18px;
 }
 article.prose h3 {
-  font-size: 21px;
+  font-size: 1.75rem;
+  line-height: 1.2;
   margin: 32px 0 14px;
 }
 article.prose p {
@@ -678,9 +744,10 @@ article.prose a {
   text-decoration: underline;
 }
 article.prose code {
-  font: 0.85em/1.7 var(--mono);
+  font: 0.875em/1.7 var(--mono);
 }
 article.prose :not(pre) > code {
+  overflow-wrap: anywhere;
   background: #edf3f9;
   padding: 3px 5px;
   color: #214c78;
@@ -695,6 +762,8 @@ article.prose pre {
   margin-block: 24px;
 }
 article.prose pre code {
+  font-size: var(--type-code);
+  letter-spacing: 0.01em;
   background: transparent;
 }
 
@@ -725,8 +794,8 @@ article.prose pre code {
 @media (max-width: 600px) {
   .alpine-hero__title {
     top: 9.57svh;
-    font-size: 5.4vw;
-    letter-spacing: 0.3em;
+    font-size: var(--type-display);
+    letter-spacing: 0.1em;
     left: 6%;
   }
   .alpine-hero__image {
@@ -738,7 +807,8 @@ article.prose pre code {
     bottom: calc(12px + env(safe-area-inset-bottom, 0px));
   }
   .dock-link {
-    font-size: 12px;
+    font-size: 0.8125rem;
+    padding-inline: 0;
     min-height: 52px;
     gap: 6px;
   }
@@ -755,7 +825,6 @@ article.prose pre code {
     gap: 6px;
   }
   .catalog-filters .glacial-control {
-    font-size: 12px;
     padding-inline: 14px;
   }
   .tool-entry {
@@ -772,13 +841,7 @@ article.prose pre code {
     height: 32px;
   }
   .tool-entry h3 {
-    font-size: 21px;
-  }
-  .tool-tagline {
-    font-size: 15px;
-  }
-  .tool-features {
-    font-size: 13px;
+    font-size: 1.75rem;
   }
   .tool-install {
     grid-column: 1 / -1;
@@ -797,10 +860,6 @@ article.prose pre code {
   }
   .terminal-controls .glacial-control {
     padding-inline: 18px;
-    font-size: 12px;
-  }
-  .terminal-output pre {
-    font-size: 12px;
   }
   .footer-links {
     gap: 28px;
