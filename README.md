@@ -9,10 +9,20 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Fluidise/site/actions/workflows/deploy.yml"><img src="https://github.com/Fluidise/site/actions/workflows/deploy.yml/badge.svg" alt="CI/CD Pipeline"></a>
-  <a href="package.json"><img src="https://img.shields.io/badge/version-0.1.0-blue.svg" alt="Version"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-amber.svg" alt="License: MIT"></a>
-  <a href="https://fluidise.dev"><img src="https://img.shields.io/badge/website-fluidise.dev-8B2635.svg" alt="Website"></a>
+  <a href="package.json">
+    <img src="https://img.shields.io/badge/version-0.1.0-informational?style=flat&labelColor=11243B&color=075CCE" alt="Version 0.1.0"></a>
+  <a href="https://astro.build">
+    <img src="https://img.shields.io/badge/astro-v7-informational?style=flat&labelColor=11243B&color=075CCE&logo=Astro&logoColor=white" alt="Astro v7"></a>
+  <a href="https://bun.sh">
+    <img src="https://img.shields.io/badge/bun-1.4%2B-informational?style=flat&labelColor=11243B&color=075CCE&logo=Bun&logoColor=white" alt="Bun 1.4+"></a>
+  <br>
+  <a href="https://github.com/Fluidise/site/actions/workflows/deploy.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/Fluidise/site/deploy.yml?branch=main&style=flat&labelColor=11243B&color=075CCE&logo=GitHub%20Actions&logoColor=white" alt="CI/CD Pipeline"></a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-informational?style=flat&labelColor=11243B&color=075CCE" alt="License: MIT"></a>
+  <a href="https://fluidise.dev">
+    <img src="https://img.shields.io/badge/website-fluidise.dev-informational?style=flat&labelColor=11243B&color=075CCE" alt="Website fluidise.dev"></a>
+  <br>
 </p>
 
 ---
