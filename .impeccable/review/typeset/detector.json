@@ -1,0 +1,60 @@
+[
+  {
+    "antipattern": "design-system-font",
+    "name": "Font outside DESIGN.md",
+    "description": "A font is used that is not declared in DESIGN.md typography. Use the documented type system or update DESIGN.md if this is an intentional brand addition.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/acrazie/.codex/worktrees/04a0/site/src/styles/global.css",
+    "line": 4,
+    "snippet": "font-family: Barlow Condensed is not declared in DESIGN.md typography",
+    "ignoreValue": "Barlow Condensed"
+  },
+  {
+    "antipattern": "design-system-font",
+    "name": "Font outside DESIGN.md",
+    "description": "A font is used that is not declared in DESIGN.md typography. Use the documented type system or update DESIGN.md if this is an intentional brand addition.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/acrazie/.codex/worktrees/04a0/site/src/styles/global.css",
+    "line": 12,
+    "snippet": "font-family: Source Sans 3 is not declared in DESIGN.md typography",
+    "ignoreValue": "Source Sans 3"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/acrazie/.codex/worktrees/04a0/site/src/styles/global.css",
+    "line": 676,
+    "snippet": "font-size: 1.375rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.375rem"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/acrazie/.codex/worktrees/04a0/site/src/styles/global.css",
+    "line": 717,
+    "snippet": "font-size: 2.25rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "2.25rem"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/acrazie/.codex/worktrees/04a0/site/src/styles/global.css",
+    "line": 810,
+    "snippet": "font-size: 0.8125rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "0.8125rem"
+  }
+]

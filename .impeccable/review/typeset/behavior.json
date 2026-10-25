@@ -1,0 +1,24 @@
+{
+  "filter": {
+    "label": "Production Ready",
+    "visiblePackages": 1,
+    "resetAll": true
+  },
+  "terminal": {
+    "textModeAndInvalidSample": true,
+    "restoredJsonValid": true
+  },
+  "realZoom200": "Not verified: IAB keyboard zoom shortcut did not change width or devicePixelRatio. Reflow checked at 320px instead.",
+  "fontFilesBytes": {
+    "BarlowCondensed-Bold-latin.woff2": 14888,
+    "SourceSans3-Variable-latin.woff2": 28804
+  },
+  "validation": [
+    "bun run check",
+    "bun run build: 3 routes",
+    "bun run test: 5 passed",
+    "bun run lint",
+    "font preloads in all built routes",
+    "WOFF2 signatures and OFL licenses"
+  ]
+}
