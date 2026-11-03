@@ -1,5 +1,51 @@
 # Alpine Banner and Title Depth
 
+## Current mandate: immersive hero art direction (2026-11-03)
+
+### Objective and scope
+
+Design a distinctive Fluidise hero within the suite's shared visual family. The initial exploration compared three concepts; the user rejected industrial and typographic directions in favor of a coherent painterly landscape family, then selected **La grande traversée**. This document now records the site-specific decisions, not another copy of the shared art direction.
+
+Shared art-direction owner: `Fluidise/core`, `docs/brand.md`, section **Landscape art direction**. That new section is a local draft awaiting final human approval and is not claimed to be published on GitHub. It governs common rendering and the proposed bounded repertoire; this contract owns the hero composition, future integration scope, and acceptance evidence. The older alpine requirements and delivery records below remain historical evidence, not authorization for a new implementation.
+
+Composition, hero height, short supporting copy, a relevant action, and motion may be reconsidered under a future realization mandate. Preserve the Fluidise name, official logo rules, navigation, tool catalog, interactive terminal, and the rest of the site. No runtime code, assets, dependencies, or site-wide design-system files may change during this EGM phase.
+
+### Selected direction and current design decisions
+
+- **La grande traversée:** an asymmetrical dark rocky terrace opens onto a broad, gently curving desert valley and a distant luminous horizon. The generated preview uses slate/indigo/lavender with peach/cream light and a large partly cropped planet. Preserve the calm, open traversal rather than treating the scene as a generic mountain photograph.
+- The user explicitly likes the soft generated rendering and rejects requiring rich detail or more elaborate relief. The image is the working rendering reference, not a failed draft that must become denser. Its planet is part of this candidate composition, not a mandatory suite-wide signature.
+- The user supports flow as a motif and requests complementary motifs for diversity. The bounded proposed repertoire belongs in Core; no new motif-to-project assignments or replacement banners are approved here.
+- **Image status:** one generation was separately authorized and completed as a preview only. The original is `/Users/acrazie/.codex/generated_images/01a1a2a1-8032-7682-8a39-254891930753/exec-b8e0cb89-6ceb-43db-87a0-7231a72c2106.png` (SHA-256 `c4c4c88faf203ea2747a12aa3d95970017b2d41616e6c2e9572df4ba1e4f5a23`). The user reattached a separate image file showing that treatment (SHA-256 `3e93bd7eb147d9a60038afd086c38bfbf4d4638dc184f0c9fbb8f5700c160430`). Neither file has been copied into the site or Core as a project asset. Liking the rendering does not authorize media integration.
+- **Possible medium, not an implementation commitment:** a painted plate with a few independent depth layers may support gentle natural-scroll depth without reconstructing the scenery procedurally. No animation, segmentation quality, renderer, or performance claim has been validated. A useful static state remains necessary if realization is later approved.
+- **Decisions deferred to a realization brief:** final asset selection and placement, wide/narrow crop, exact heading/supporting copy/action, hero height, optional interactions, loading/failure behavior, performance budgets, and authorized source paths. They are not blocking questions for this concept-only document, but must not be silently decided during implementation.
+
+`DESIGN.md` still describes the existing Alpine Glass implementation and historical typography scope. It is not being rewritten in this phase and does not prove this proposal is integrated. A future authorized realization must reconcile affected hero documentation without expanding into an unsolicited whole-site redesign.
+
+### Success criteria and expected evidence
+
+- R-C1: One canonical shared visual direction in Core reflects the user's simplified painterly preference and complementary motifs, without making detailed rendering, rivers, or planets mandatory. Evidence: comparison with the selected reference and independent concept review.
+- R-C2: This site contract points to that owner and distinguishes the selected composition from deferred realization decisions. Evidence: documentation review against the current hero, homepage, `DESIGN.md`, and the Core draft; no claim of implementation readiness.
+- R-C3: Change only this document and `Fluidise/core:docs/brand.md`; retain previous records, logo rules, unrelated local work, source, and assets. Evidence: exact preservation checks, targeted diffs, whitespace checks, and Core's inspected documentation verifier. No build or runtime validation is required to claim completion of these documentation edits.
+- R-C4: Obtain one independent read-only concept review in a fresh context with the inherited model, then request final human approval of the exact substantive revision. Evidence: actual reviewer result, content/source digests, coverage and limits recorded in Core. A completed concept review is not browser, visual-generation, or runtime proof.
+
+### Decisions and approval
+
+Status: documentation edits and one independent concept review authorized; final artistic-design approval pending.
+
+The user originally approved full-hero exploration and recording in this existing document, then selected **La grande traversée** and separately authorized one preview generation. After comparing earlier banners, the user clarified that the generated image's softer treatment is preferred and explicitly invoked `egm:egm-design` to refine the art direction.
+
+The exact reply "1 et ajoute egalement dans le repo core" approved the proposed EGM mandate: update the existing design documentation and use one fresh-context read-only reviewer with the inherited model to check coherence, diversity, and clarity, not implementation readiness. The user then replied "1" to confirm the exact Core destination `/Users/acrazie/Fluidise/core/docs/brand.md`, outside this site's workspace. Core owns the shared draft; this contract retains only local decisions. No further generation, media integration, production implementation, other repository changes, installation, automatic review loops, staging, commits, pushes, pull requests, or deployment are authorized.
+
+### Evidence and limits
+
+- Source discovery on 2026-11-03 inspected `AGENTS.md`, `PRODUCT.md`, `DESIGN.md`, `package.json`, `src/pages/index.astro`, `src/components/Hero.astro`, hero-specific global CSS, the existing task history, Core's instructions/brand rules, and the actual local banners. The current hero remains the alpine image and semantic title with event-driven scroll occlusion; this is source evidence, not a new browser preview.
+- The historical chat **Explorer un style visuel pour Fluidï** (`01a14f59-f890-71b0-a756-97c8c8d9b702`) was read back to its opening. Current corrections take precedence over earlier detail preferences. They do not authorize copying third-party reference art.
+- The site initially had a clean working tree; Core contains unrelated tracked and untracked work. The initial states and file identities were captured before these design edits. No unrelated work may be reset, staged, or modified.
+- Core's inspected `./scripts/verify.sh` passed before editing (valid JSON and 165 internal links). Post-edit documentation checks and independent review are initially pending; the durable review result belongs to Core's marked metadata section, not a second report here.
+- No further image generation, asset copying, implementation, dependency installation, build, or runtime/browser checks have been performed in this EGM phase. Asset rights, actual responsive crops, motion accessibility, loading/failure behavior, APIs, and performance remain realization-stage obligations, not satisfied criteria.
+
+---
+
 ## Objective
 
 Use the approved, simplified photographic-style alpine banner (v3). The existing FLUIDISE title is initially visible in the sky and is progressively occluded by the main massif during normal scrolling. No Canvas, procedural clouds, ambient animation, or scroll locking.
