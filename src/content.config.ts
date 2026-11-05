@@ -6,6 +6,7 @@ const tools = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/tools' }),
   schema: z.object({
     name: z.string(),
+    taskTitle: z.string().trim().min(1),
     tagline: z.string(),
     summary: z.string(),
     status: z.enum(['released', 'in-progress', 'scoping']),

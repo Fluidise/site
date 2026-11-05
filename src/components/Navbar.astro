@@ -1,25 +1,13 @@
 ---
-import { IconBook2, IconBrandGithub, IconCirclesRelation } from '@tabler/icons-react';
+import { IconDownload, IconBrandGithub, IconCirclesRelation } from '@tabler/icons-react';
 ---
 <fluidise-navbar>
-<nav class="floating-dock" aria-label="Main navigation">
-  <a class="dock-link" href="/#tools" data-section="tools">
-    <img src="/brand/logo.svg" alt="" width="25" height="25" />
-    <span>Tools</span>
-  </a>
-  <a class="dock-link" href="/#philosophy" data-section="philosophy">
-    <IconCirclesRelation size={23} aria-hidden="true" />
-    <span>Philosophy</span>
-  </a>
-  <a class="dock-link" aria-label="Specifications (opens in new tab)" href="https://github.com/Fluidise/core/tree/main/docs" target="_blank" rel="noreferrer noopener">
-    <IconBook2 size={23} aria-hidden="true" />
-    <span class="dock-label-full" aria-hidden="true">Specifications</span><span class="dock-label-compact" aria-hidden="true">Docs</span>
-  </a>
-  <a class="dock-link" href="https://github.com/Fluidise" target="_blank" rel="noreferrer noopener">
-    <IconBrandGithub size={23} aria-hidden="true" />
-    <span>GitHub<span class="sr-only"> (opens in new tab)</span></span>
-  </a>
-</nav>
+  <nav class="floating-dock" aria-label="Main navigation">
+    <a class="dock-link" href="/#tools" data-section="tools"><img src="/brand/logo-white.svg" alt="" width="25" height="25" /><span>Explore</span></a>
+    <a class="dock-link" href="/#install" data-section="install"><IconDownload size={23} aria-hidden="true" /><span>Install</span></a>
+    <a class="dock-link" href="/#philosophy" data-section="philosophy"><IconCirclesRelation size={23} aria-hidden="true" /><span>Principles</span></a>
+    <a class="dock-link" href="https://github.com/Fluidise" target="_blank" rel="noreferrer noopener"><IconBrandGithub size={23} aria-hidden="true" /><span>GitHub<span class="sr-only"> (opens in new tab)</span></span></a>
+  </nav>
 </fluidise-navbar>
 <script>
   class FluidiseNavbar extends HTMLElement {
@@ -41,38 +29,56 @@ import { IconBook2, IconBrandGithub, IconCirclesRelation } from '@tabler/icons-r
           else link.removeAttribute('aria-current');
         }
       };
+      const markHash = () => {
+        if (!hero) return markCurrent('');
+        const hash = location.hash;
+        markCurrent(hash === '#philosophy' ? 'philosophy' : /^#install(?:-|$)/.test(hash) ? 'install' : !hash || hash === '#tools' ? 'tools' : '');
+      };
       const cancel = () => {
         if (frame !== null) cancelAnimationFrame(frame);
         frame = null;
       };
-      const syncHero = () => {
+      const sync = () => {
         frame = null;
         if (disposed || document.hidden) return;
-        // The dock returns as the catalog enters, including deep links and reverse scroll.
+        // Preserve the exact hero boundary, including reverse scroll and deep entry.
         nav.hidden = Boolean(hero?.isConnected && hero.getBoundingClientRect().bottom > window.innerHeight - 1);
+        if (!hero || nav.hidden) return;
+        const readingLine = Math.max(28, window.innerHeight * 0.28);
+        let current = '';
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top <= readingLine) current = section.id;
+        }
+        markCurrent(current);
       };
       const schedule = () => {
-        if (!disposed && !document.hidden && frame === null) frame = requestAnimationFrame(syncHero);
+        if (!disposed && !document.hidden && frame === null) frame = requestAnimationFrame(sync);
       };
-      const observer = sections.length && 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
-        if (disposed) return;
-        for (const entry of entries) if (entry.isIntersecting) markCurrent(entry.target.id);
+      const observer = hero && sections.length && 'IntersectionObserver' in window ? new IntersectionObserver(() => {
+        if (!disposed) schedule();
       }, { rootMargin: '-10% 0px -35% 0px' }) : null;
       sections.forEach((section) => observer?.observe(section));
-      markCurrent(location.hash === '#philosophy' ? 'philosophy' : 'tools');
+      markHash();
       const signal = events.signal;
-      for (const link of links) link.addEventListener('click', () => markCurrent(link.dataset.section ?? 'tools'), { signal });
+      for (const link of links) link.addEventListener('click', () => {
+        if (hero && !disposed) markCurrent(link.dataset.section ?? '');
+      }, { signal });
       const resizeObserver = hero && 'ResizeObserver' in window ? new ResizeObserver(schedule) : null;
       if (hero) {
         resizeObserver?.observe(hero);
+        sections.forEach((section) => resizeObserver?.observe(section));
         window.addEventListener('scroll', schedule, { passive: true, signal });
         window.addEventListener('resize', schedule, { signal });
+        for (const event of ['hashchange', 'popstate']) window.addEventListener(event, () => {
+          markHash();
+          schedule();
+        }, { signal });
         document.addEventListener('visibilitychange', () => {
           if (document.hidden) cancel();
           else schedule();
         }, { signal });
       }
-      syncHero();
+      sync();
       this.dispose = () => {
         disposed = true;
         cancel();
@@ -80,6 +86,7 @@ import { IconBook2, IconBrandGithub, IconCirclesRelation } from '@tabler/icons-r
         observer?.disconnect();
         resizeObserver?.disconnect();
         nav.hidden = false;
+        markCurrent('');
       };
     }
 

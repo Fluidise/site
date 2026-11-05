@@ -23,7 +23,13 @@ const hero = {
     return { bottom: this.bottom };
   },
 };
-const sections = ['tools', 'philosophy'].map((id) => ({ id }));
+const sections = ['tools', 'install', 'philosophy'].map((id, index) => ({
+  id,
+  top: index * 900,
+  getBoundingClientRect() {
+    return { top: this.top };
+  },
+}));
 let selectedHero = hero;
 const doc = Object.assign(new EventTarget(), {
   hidden: false,
@@ -45,7 +51,7 @@ class Link extends EventTarget {
 }
 class Host {
   nav = { hidden: false };
-  links = [new Link('tools'), new Link('philosophy')];
+  links = [new Link('tools'), new Link('install'), new Link('philosophy')];
   querySelector() {
     return this.nav;
   }
@@ -150,10 +156,13 @@ doc.hidden = false;
 event(doc, 'visibilitychange');
 flush();
 assert(nav.nav.hidden);
-event(nav.links[1], 'click');
-assert.equal(nav.links[1].attributes.get('aria-current'), 'location');
+event(nav.links[2], 'click');
+assert.equal(nav.links[2].attributes.get('aria-current'), 'location');
+hero.bottom = 500;
 observers.at(-1).callback([{ isIntersecting: true, target: sections[0] }]);
+flush();
 assert.equal(nav.links[0].attributes.get('aria-current'), 'location');
+hero.bottom = 2160;
 hero.isConnected = false;
 resizes.at(-1).callback([]);
 flush();
@@ -184,6 +193,12 @@ selectedHero = null;
 const docs = new Navbar();
 docs.connectedCallback();
 assert(!docs.nav.hidden);
+assert(
+  docs.links.every((link) => !link.attributes.has('aria-current')),
+  'Docs have no false homepage marker',
+);
+event(docs.links[0], 'click');
+assert(docs.links.every((link) => !link.attributes.has('aria-current')));
 event(win, 'scroll');
 assert.equal(frames.size, 0);
 docs.disconnectedCallback();
@@ -202,4 +217,40 @@ assert(page.includes('fluidise-navbar'));
 assert(!page.includes('<archipelago-hero'));
 console.log(
   'PASS: independent lifecycle/remount, cleanup, unchanged documentation navigation, optional observers',
+);
+
+// Per-tool install anchors, history and deterministic intersecting-section ties.
+hero.bottom = -100;
+sections[0].top = -900;
+sections[1].top = 28;
+sections[2].top = 900;
+location.hash = '#install-clint';
+const deep = new Navbar();
+deep.connectedCallback();
+assert.equal(deep.links[1].attributes.get('aria-current'), 'location');
+location.hash = '#philosophy';
+sections[2].top = 28;
+event(win, 'hashchange');
+flush();
+assert.equal(deep.links[2].attributes.get('aria-current'), 'location');
+location.hash = '#install-relay';
+sections[2].top = 900;
+sections[1].top = 100;
+event(win, 'popstate');
+flush();
+assert.equal(deep.links[1].attributes.get('aria-current'), 'location');
+assert.equal(deep.links.filter((link) => link.attributes.has('aria-current')).length, 1);
+location.hash = '#unknown';
+sections.forEach((section) => {
+  section.top = 1000;
+});
+event(win, 'hashchange');
+flush();
+assert(deep.links.every((link) => !link.attributes.has('aria-current')));
+deep.disconnectedCallback();
+event(win, 'hashchange');
+event(win, 'popstate');
+assert.equal(frames.size, 0);
+console.log(
+  'PASS: install deep links, history, section ties, unknown hashes and current-state cleanup',
 );

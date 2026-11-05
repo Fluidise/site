@@ -22,8 +22,9 @@ const canonicalImageSrc = new URL('/brand/banner.png', Astro.site ?? 'https://fl
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preload" href="/fonts/BarlowCondensed-Bold-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/SourceSans3-Variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="color-scheme" content="dark" />
+    {Astro.url.pathname === "/" && <link rel="preload" href="/fonts/BarlowCondensed-Bold-latin.woff2" as="font" type="font/woff2" crossorigin />}
+    <link rel="preload" href="/fonts/InstrumentSans-Variable-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalUrl} />
 
@@ -35,7 +36,7 @@ const canonicalImageSrc = new URL('/brand/banner.png', Astro.site ?? 'https://fl
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#eff5fa" />
+    <meta name="theme-color" content="#151515" />
 
     {/* Open Graph / Facebook */}
     <meta property="og:type" content="website" />

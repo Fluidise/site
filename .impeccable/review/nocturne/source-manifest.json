@@ -1,0 +1,31 @@
+{
+  "approved_substantive_body": "224218d791dff7085754bd2e0c491f39848b2c36f71daec66909fa8acd4ecc68",
+  "files": {
+    ".impeccable/design.json": "f66d25d4b648d9e9f528cb5fb444899a785bece5023ede809ad1027c22409f91",
+    ".impeccable/surfaces/src-pages-index-astro.md": "151c54dd058905ed195c4463688fffb136e268afde8513df5bcdc4912ae5d65e",
+    ".impeccable/surfaces/typography.md": "ac52657f6c139eb134cd430e27c941c41031b4a62afb1cc1863f4d9f33ab3f24",
+    "DESIGN.md": "a0edafe6309e3dba6e3d458e4ab635682dda1c2329423175f52751f34c6eccf9",
+    "PRODUCT.md": "78352d79ef724751a659ebb6af2795f707c3c2ec09d8e5ba53f7795331f92b3f",
+    "astro.config.mjs": "8a203ffea01d89ff1d6565b64af9641922c407113f7e3e4de31f1a3eb858f301",
+    "docs/specs/dark-design-system.md": "bf5cc4557018fa1e7118d6e57fb0e24acab0f4b33f1fc3071b6bf1afe4e65ea3",
+    "public/fonts/InstrumentSans-Italic-Variable-latin.woff2": "d228ca3e0dab07c775322956926b1981275a0cdc79f894b3f979087d085e556c",
+    "public/fonts/InstrumentSans-OFL.txt": "9e27a72ed30eb49a08678f6a5d6ed98ec7ba5368f541637ee0683ec9134ef966",
+    "public/fonts/InstrumentSans-Variable-latin.woff2": "6219bc4bfdfc5d9b2201dcdf046218b122a758f932e25ed5f168f929b7ca2311",
+    "public/fonts/README.md": "4ddb3909394beb9a11fb6b6c33de9ba2588814284a0dd54ac6f808588c45df1d",
+    "src/components/Design.test.mjs": "39e4cc95ecd8fcbe6e531baaf32bb49d9c5ebe66acf2802cf49588b1d114a3c8",
+    "src/components/Footer.astro": "63054990d8f6cdf2fb9f75d9e6f2771562a0055d84548558a23debf781affb85",
+    "src/components/ManifestoSection.astro": "c2c6db631512218284076856bbc996d0c91210e1c64644c9f56edce6de3804bb",
+    "src/components/Navbar.astro": "f3e659ab78bd1d4cd698d79e554c5ed5d982fcabeb102a344d53cf2f3a05b70a",
+    "src/components/Navbar.test.mjs": "4a5737085b6ef7bda4b829b3fc32bd3ff74d2ea4e6047cb69e5545583902b055",
+    "src/components/ToolCard.tsx": "6b0152de8656caec9c4395729dfa366e77c40ab1227c1fb35cdc7b561cdb2f85",
+    "src/components/ToolGrid.test.tsx": "58848e18cf6cc7b0dfccdbc54e3435554dadcdba2d142a7fa8b78e619b6d2fb1",
+    "src/components/ToolGrid.tsx": "33d99c74f2154a531d9ff4bc6c77f04568d4ce06d0f1cb2ebca1641db521ba8d",
+    "src/content.config.ts": "2cd037b754b48ad2b6958d4111916eccdfc71f1c8d8a20ad0d611e58d5d228b7",
+    "src/content/tools/clint.md": "0adaa0e8bd808cd7eaf972de52941701904fadcf916bd38cc552ab827934c709",
+    "src/content/tools/relay.md": "dd4c694562090dcef1e14a1fee58ea8be319e813f16f44111f78ef85e6b65f2c",
+    "src/layouts/Layout.astro": "281627e3690691061e37c109b68100df6bdb68f7ee36897e6d5f2261e826cb7a",
+    "src/pages/index.astro": "85ce64bee65e35cbacd3dc4099db3ddd79255c75475b3429cd4773f2f5d4a632",
+    "src/pages/tools/[id].astro": "4c26a8cea88ef183cffc19fc0d3a8c01f0b0fc8f222540dd163e97a644be1151",
+    "src/styles/global.css": "e79be7f578eb8d6b74367b1597ea7506f2fab7cad7f1f23549f4251337b42dad"
+  }
+}

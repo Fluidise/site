@@ -1,0 +1,88 @@
+[
+  {
+    "dockTop": 0,
+    "firstTaskTop": 2834.59375,
+    "height": 844,
+    "overflow": 0,
+    "route": "/",
+    "toolsTop": 2527.5,
+    "width": 390,
+    "y": 4.5
+  },
+  {
+    "dockTop": 761.1015625,
+    "firstTaskTop": 363.09375,
+    "height": 844,
+    "overflow": 0,
+    "route": "/",
+    "toolsTop": 56,
+    "width": 390,
+    "y": 2476
+  },
+  {
+    "contents": "static",
+    "current": 0,
+    "height": 844,
+    "overflow": 0,
+    "route": "/tools/clint/",
+    "startTop": 455.234375,
+    "width": 390
+  },
+  {
+    "contents": "static",
+    "current": 0,
+    "height": 844,
+    "overflow": 0,
+    "route": "/tools/relay/",
+    "startTop": 455.234375,
+    "width": 390
+  },
+  {
+    "dockTop": 290.5,
+    "firstTaskTop": 333.9375,
+    "height": 390,
+    "overflow": 0,
+    "route": "/",
+    "width": 844,
+    "y": 1114
+  },
+  {
+    "contents": "static",
+    "height": 390,
+    "overflow": 0,
+    "route": "/tools/clint/",
+    "width": 844
+  },
+  {
+    "contents": "static",
+    "height": 390,
+    "overflow": 0,
+    "route": "/tools/relay/",
+    "width": 844
+  },
+  {
+    "dockTop": 626.1015625,
+    "firstTaskTop": 414.984375,
+    "height": 720,
+    "overflow": 0,
+    "route": "/",
+    "width": 320,
+    "y": 2104
+  },
+  {
+    "contents": "static",
+    "height": 720,
+    "overflow": 0,
+    "route": "/tools/clint/",
+    "width": 320
+  },
+  {
+    "clientWidth": 309,
+    "contents": "static",
+    "height": 720,
+    "overflow": 11,
+    "route": "/tools/relay/",
+    "scrollWidth": 320,
+    "width": 320
+  }
+]

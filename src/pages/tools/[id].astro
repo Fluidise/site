@@ -1,30 +1,65 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import { IconBrandGithub, IconArrowLeft } from '@tabler/icons-react';
+import { IconBrandGithub, IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
 import { CopyCommand } from '../../components/CopyCommand';
+import { InteractiveTerminal } from '../../components/InteractiveTerminal';
 
 export async function getStaticPaths() {
-  return (await getCollection('tools')).map((tool) => ({ params: { id: tool.id }, props: { tool } }));
+  const tools = (await getCollection('tools')).sort((a, b) => a.data.order - b.data.order);
+  return tools.map((tool) => ({ params: { id: tool.id }, props: { tool, sibling: tools.find((entry) => entry.id !== tool.id) } }));
 }
-const { tool } = Astro.props;
-const { Content } = await render(tool);
+const { tool, sibling } = Astro.props;
+const { Content, headings } = await render(tool);
+const hasExample = tool.id === 'clint';
+const contents = [
+  ...headings.filter((heading) => heading.depth === 2),
+  ...(hasExample ? [{ slug: 'example-output', text: 'Example output' }] : []),
+  { slug: 'guarantees-heading', text: 'Operational guarantees' },
+];
 ---
 <Layout title={`${tool.data.name} — Fluidise Tool Specification`} description={tool.data.summary}>
   <div class="doc-shell">
-    <a class="doc-home" href="/"><img src="/brand/logo.svg" width="32" height="32" alt="" /> FLUIDISE</a>
-    <a class="text-link doc-back" href="/#tools"><IconArrowLeft size={16} aria-hidden="true" /> Back to Suite Hub</a>
-    <header class="doc-header">
-      <div class="doc-meta"><span>{tool.data.status === 'released' ? `${tool.data.version ?? ''} Stable` : 'In Development'}</span><span>Standalone Native Binary</span></div>
-      <h1>{tool.data.name}</h1>
-      <p>{tool.data.tagline}</p>
-      <a class="text-link" href={tool.data.repoUrl} target="_blank" rel="noreferrer noopener"><IconBrandGithub size={18} aria-hidden="true" /> View on GitHub<span class="sr-only"> (opens in new tab)</span></a>
-      {tool.data.brewCommand && <CopyCommand client:idle command={tool.data.brewCommand} label={`Copy install command: ${tool.data.brewCommand}`} />}
-    </header>
-    <section class="doc-guarantees" aria-labelledby="guarantees-heading">
-      <h2 id="guarantees-heading">Operational Guarantees</h2>
-      <ul>{tool.data.keyFeatures.map((feature: string) => <li>{feature}</li>)}</ul>
-    </section>
-    <article class="prose"><Content /></article>
+    <a class="doc-home" href="/" aria-label="Fluidise home"><img src="/brand/logo-white.svg" width="28" height="28" alt="" /> Fluidise</a>
+    <nav class="doc-breadcrumb" aria-label="Breadcrumb">
+      <a class="text-link" href="/#tools"><IconArrowLeft size={16} aria-hidden="true" /> Tools</a>
+      <span aria-hidden="true">/</span><span aria-current="page">{tool.data.name}</span>
+    </nav>
+    <div class="doc-opening">
+      <header class="doc-header">
+        <h1>{tool.data.name}</h1>
+        <p class="doc-task">{tool.data.taskTitle}</p>
+        <p class="doc-description">{tool.data.tagline}</p>
+        <a class="text-link" href={tool.data.repoUrl} target="_blank" rel="noreferrer noopener"><IconBrandGithub size={18} aria-hidden="true" /> View on GitHub<span class="sr-only"> (opens in new tab)</span></a>
+      </header>
+      <section class="doc-start" id="get-started" aria-labelledby="start-heading">
+        <h2 id="start-heading">Get started</h2>
+        <p class="tool-status">{tool.data.status === 'released' ? `${tool.data.version ?? ''} Released` : 'In Development'}</p>
+        {tool.data.brewCommand && <CopyCommand client:idle command={tool.data.brewCommand} label={`Copy install command: ${tool.data.brewCommand}`} />}
+        <a class="text-link" href="#installation">All installation options <IconArrowRight size={16} aria-hidden="true" /></a>
+      </section>
+    </div>
+    <div class="doc-reading">
+      {contents.length >= 2 && <nav class="doc-contents" aria-label="Reference contents">
+        <strong>Reference contents</strong>
+        <ul>{contents.map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ul>
+      </nav>}
+      <div class="doc-reference">
+        <article class="prose"><Content /></article>
+        {hasExample && <section class="doc-example" id="example-output" aria-labelledby="example-heading">
+          <h2 id="example-heading">Example output</h2>
+          <p class="section-description">Inspect the Clint interface. These are samples, not live execution.</p>
+          <InteractiveTerminal client:visible />
+        </section>}
+        <section class="doc-guarantees" aria-labelledby="guarantees-heading">
+          <h2 id="guarantees-heading">Operational guarantees</h2>
+          <ul>{tool.data.keyFeatures.map((feature: string) => <li>{feature}</li>)}</ul>
+        </section>
+        <nav class="doc-onward" aria-label="More tools">
+          <a class="text-link" href="/#tools"><IconArrowLeft size={16} aria-hidden="true" /> Back to Tools</a>
+          {sibling && <a class="text-link" href={`/tools/${sibling.id}`}>Explore {sibling.data.name} <IconArrowRight size={16} aria-hidden="true" /></a>}
+        </nav>
+      </div>
+    </div>
   </div>
 </Layout>

@@ -1,0 +1,49 @@
+{
+  "installDeepLink": {
+    "active": ["Install"],
+    "hash": "#install-relay",
+    "heroHeight": 2160,
+    "targetTop": 56.1875
+  },
+  "back": {
+    "active": ["Explore"],
+    "hash": "#tools"
+  },
+  "forward": {
+    "active": ["Install"],
+    "hash": "#install-relay"
+  },
+  "reload": {
+    "active": ["Install"],
+    "hash": "#install-relay",
+    "heroHeight": 2160,
+    "targetTop": 56.1875
+  },
+  "clipboardDenial": [
+    "Copy failed. Select and copy the command manually.",
+    "Copy failed. Select and copy the output manually.",
+    "JSON format, valid sample"
+  ],
+  "fontFailure": {
+    "csp": "font-src 'none'",
+    "overflow": 0,
+    "title": "fluidise-clint",
+    "titleWidth": 507.890625
+  },
+  "enlargedText": {
+    "clientWidth": 309,
+    "dockHeight": 121.59375,
+    "fixture": "CSS root font-size 200%, not OS/browser zoom",
+    "overflow": 0,
+    "rootFont": "32px",
+    "scrollWidth": 309,
+    "width": 320
+  },
+  "enlargedFocus": {
+    "bottom": 110.1015625,
+    "clear": true,
+    "dockTop": 586.40625,
+    "name": "All installation options",
+    "top": 26.1015625
+  }
+}
