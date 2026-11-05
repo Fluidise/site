@@ -1,0 +1,56 @@
+[
+  {
+    "antipattern": "overused-font",
+    "name": "Overused font",
+    "description": "Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/acrazie/.codex/worktrees/35e0/site/src/styles/global.css",
+    "line": 11,
+    "snippet": "font-family: 'Instrument Sans"
+  },
+  {
+    "antipattern": "overused-font",
+    "name": "Overused font",
+    "description": "Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/acrazie/.codex/worktrees/35e0/site/src/styles/global.css",
+    "line": 18,
+    "snippet": "font-family: 'Instrument Sans"
+  },
+  {
+    "antipattern": "design-system-font",
+    "name": "Font outside DESIGN.md",
+    "description": "A font is used that is not declared in DESIGN.md typography. Use the documented type system or update DESIGN.md if this is an intentional brand addition.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/acrazie/.codex/worktrees/35e0/site/src/styles/global.css",
+    "line": 11,
+    "snippet": "font-family: Instrument Sans is not declared in DESIGN.md typography",
+    "ignoreValue": "Instrument Sans"
+  },
+  {
+    "antipattern": "design-system-font",
+    "name": "Font outside DESIGN.md",
+    "description": "A font is used that is not declared in DESIGN.md typography. Use the documented type system or update DESIGN.md if this is an intentional brand addition.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/acrazie/.codex/worktrees/35e0/site/src/styles/global.css",
+    "line": 18,
+    "snippet": "font-family: Instrument Sans is not declared in DESIGN.md typography",
+    "ignoreValue": "Instrument Sans"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/acrazie/.codex/worktrees/35e0/site/src/styles/global.css",
+    "line": 366,
+    "snippet": "Undocumented color rgb(0 0 0 / 0.24) is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "rgb(0 0 0 / 0.24)"
+  }
+]

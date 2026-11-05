@@ -20,7 +20,7 @@ Fluidise takes an agent-first approach: structured outputs, deterministic execut
 
 ## Operating Context
 
-Visitors discover the suite on the homepage, explore the tool catalog, read dedicated tool pages, and follow installation instructions or links to GitHub. The homepage also provides an interactive terminal demonstration; demonstrations must not be presented as proof of actual tool execution.
+Visitors discover the suite on the homepage, explore the tool catalog, read dedicated tool pages, and follow installation instructions or links to GitHub. The Clint tool page provides the interactive terminal demonstration; demonstrations must not be presented as proof of actual tool execution.
 
 ## Capabilities and Constraints
 

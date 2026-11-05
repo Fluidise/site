@@ -1,348 +1,332 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-04T09:50:45.459447+00:00",
-  "title": "Design System: Fluidise Alpine Glass",
+  "generatedAt": "2026-11-05T12:23:15.082474+00:00",
+  "title": "Design System: Fluidise Nocturne",
   "extensions": {
     "colorMeta": {
-      "snow": {
+      "canvas": {
         "role": "neutral",
-        "displayName": "Snow",
-        "canonical": "#ffffff",
+        "displayName": "Canvas",
+        "canonical": "#151515",
         "tonalRamp": [
-          "oklch(15% .02 250)",
-          "oklch(26% .02 250)",
-          "oklch(37% .02 250)",
-          "oklch(49% .02 250)",
-          "oklch(61% .02 250)",
-          "oklch(73% .02 250)",
-          "oklch(85% .02 250)",
-          "oklch(95% .02 250)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "ice": {
+      "surface": {
         "role": "neutral",
-        "displayName": "Ice",
-        "canonical": "#eff5fa",
+        "displayName": "Surface",
+        "canonical": "#1d1d1d",
         "tonalRamp": [
-          "oklch(15% .02 250)",
-          "oklch(26% .02 250)",
-          "oklch(37% .02 250)",
-          "oklch(49% .02 250)",
-          "oklch(61% .02 250)",
-          "oklch(73% .02 250)",
-          "oklch(85% .02 250)",
-          "oklch(95% .02 250)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "slate": {
+      "raised": {
         "role": "neutral",
-        "displayName": "Slate",
-        "canonical": "#11243b",
+        "displayName": "Raised surface",
+        "canonical": "#272727",
         "tonalRamp": [
-          "oklch(15% .02 257)",
-          "oklch(26% .02 257)",
-          "oklch(37% .02 257)",
-          "oklch(49% .02 257)",
-          "oklch(61% .02 257)",
-          "oklch(73% .02 257)",
-          "oklch(85% .02 257)",
-          "oklch(95% .02 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "muted": {
+      "hover": {
         "role": "neutral",
-        "displayName": "Muted",
-        "canonical": "#50627a",
+        "displayName": "Hover surface",
+        "canonical": "#313131",
         "tonalRamp": [
-          "oklch(15% .02 257)",
-          "oklch(26% .02 257)",
-          "oklch(37% .02 257)",
-          "oklch(49% .02 257)",
-          "oklch(61% .02 257)",
-          "oklch(73% .02 257)",
-          "oklch(85% .02 257)",
-          "oklch(95% .02 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
-      },
-      "glacier": {
-        "role": "primary",
-        "displayName": "Glacier",
-        "canonical": "#075cce",
-        "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
-        ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
       "line": {
         "role": "neutral",
-        "displayName": "Line",
-        "canonical": "#d9e3ed",
+        "displayName": "Divider",
+        "canonical": "#808080",
         "tonalRamp": [
-          "oklch(15% .02 250)",
-          "oklch(26% .02 250)",
-          "oklch(37% .02 250)",
-          "oklch(49% .02 250)",
-          "oklch(61% .02 250)",
-          "oklch(73% .02 250)",
-          "oklch(85% .02 250)",
-          "oklch(95% .02 250)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
-      },
-      "control-ground": {
-        "role": "neutral",
-        "displayName": "Control Ground",
-        "canonical": "#f0f5f9",
-        "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
-        ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
       "control-border": {
         "role": "neutral",
-        "displayName": "Control Border",
-        "canonical": "#d3e0ee",
+        "displayName": "Control boundary",
+        "canonical": "#898989",
         "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "control-hover": {
+      "ink": {
         "role": "neutral",
-        "displayName": "Control Hover",
-        "canonical": "#e3effb",
+        "displayName": "Primary ink",
+        "canonical": "#f2f2f2",
         "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "control-selected": {
+      "secondary": {
         "role": "neutral",
-        "displayName": "Control Selected",
-        "canonical": "#e6f1ff",
+        "displayName": "Secondary ink",
+        "canonical": "#c2c2c2",
         "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "control-selected-border": {
+      "quiet": {
         "role": "neutral",
-        "displayName": "Control Selected Border",
-        "canonical": "#bcd9ff",
+        "displayName": "Quiet ink",
+        "canonical": "#a2a2a2",
         "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "dock-glass": {
+      "action": {
         "role": "neutral",
-        "displayName": "Dock Glass",
-        "canonical": "rgb(244 250 255 / .92)",
+        "displayName": "Action",
+        "canonical": "#dedede",
         "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "dock-ink": {
+      "action-hover": {
         "role": "neutral",
-        "displayName": "Dock Ink",
-        "canonical": "#344a64",
+        "displayName": "Action hover",
+        "canonical": "#ffffff",
         "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "symbol-ground": {
+      "selected": {
         "role": "neutral",
-        "displayName": "Symbol Ground",
-        "canonical": "#eaf3fc",
+        "displayName": "Selected ground",
+        "canonical": "#353535",
         "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "terminal-ground": {
-        "role": "neutral",
-        "displayName": "Terminal Ground",
-        "canonical": "#f9fbfd",
+      "accent": {
+        "role": "primary",
+        "displayName": "Mineral accent",
+        "canonical": "#aabad9",
         "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
+          "oklch(15% 0.0476 263.65)",
+          "oklch(26% 0.0476 263.65)",
+          "oklch(37% 0.0476 263.65)",
+          "oklch(49% 0.0476 263.65)",
+          "oklch(61% 0.0476 263.65)",
+          "oklch(73% 0.0476 263.65)",
+          "oklch(85% 0.0476 263.65)",
+          "oklch(95% 0.0476 263.65)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "terminal-border": {
-        "role": "neutral",
-        "displayName": "Terminal Border",
-        "canonical": "#cbd9e7",
+      "positive": {
+        "role": "success",
+        "displayName": "Positive",
+        "canonical": "#aecbb3",
         "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
+          "oklch(15% 0.0457 150.21)",
+          "oklch(26% 0.0457 150.21)",
+          "oklch(37% 0.0457 150.21)",
+          "oklch(49% 0.0457 150.21)",
+          "oklch(61% 0.0457 150.21)",
+          "oklch(73% 0.0457 150.21)",
+          "oklch(85% 0.0457 150.21)",
+          "oklch(95% 0.0457 150.21)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "terminal-output": {
-        "role": "neutral",
-        "displayName": "Terminal Output",
-        "canonical": "#134b82",
-        "tonalRamp": [
-          "oklch(15% .08 257)",
-          "oklch(26% .08 257)",
-          "oklch(37% .08 257)",
-          "oklch(49% .08 257)",
-          "oklch(61% .08 257)",
-          "oklch(73% .08 257)",
-          "oklch(85% .08 257)",
-          "oklch(95% .08 257)"
-        ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
-      },
-      "error": {
+      "negative": {
         "role": "error",
-        "displayName": "Error",
-        "canonical": "#a5243b",
+        "displayName": "Negative",
+        "canonical": "#e7a3ae",
         "tonalRamp": [
-          "oklch(15% .08 15)",
-          "oklch(26% .08 15)",
-          "oklch(37% .08 15)",
-          "oklch(49% .08 15)",
-          "oklch(61% .08 15)",
-          "oklch(73% .08 15)",
-          "oklch(85% .08 15)",
-          "oklch(95% .08 15)"
+          "oklch(15% 0.0817 8.44)",
+          "oklch(26% 0.0817 8.44)",
+          "oklch(37% 0.0817 8.44)",
+          "oklch(49% 0.0817 8.44)",
+          "oklch(61% 0.0817 8.44)",
+          "oklch(73% 0.0817 8.44)",
+          "oklch(85% 0.0817 8.44)",
+          "oklch(95% 0.0817 8.44)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
+      },
+      "warning": {
+        "role": "warning",
+        "displayName": "Warning",
+        "canonical": "#e8c58e",
+        "tonalRamp": [
+          "oklch(15% 0.0815 78.57)",
+          "oklch(26% 0.0815 78.57)",
+          "oklch(37% 0.0815 78.57)",
+          "oklch(49% 0.0815 78.57)",
+          "oklch(61% 0.0815 78.57)",
+          "oklch(73% 0.0815 78.57)",
+          "oklch(85% 0.0815 78.57)",
+          "oklch(95% 0.0815 78.57)"
+        ],
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
       "code-ground": {
         "role": "neutral",
-        "displayName": "Code Ground",
-        "canonical": "#10283e",
+        "displayName": "Code ground",
+        "canonical": "#111111",
         "tonalRamp": [
-          "oklch(15% .02 257)",
-          "oklch(26% .02 257)",
-          "oklch(37% .02 257)",
-          "oklch(49% .02 257)",
-          "oklch(61% .02 257)",
-          "oklch(73% .02 257)",
-          "oklch(85% .02 257)",
-          "oklch(95% .02 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
       "code-ink": {
         "role": "neutral",
-        "displayName": "Code Ink",
-        "canonical": "#edf6ff",
+        "displayName": "Code ink",
+        "canonical": "#e6e6e6",
         "tonalRamp": [
-          "oklch(15% .02 257)",
-          "oklch(26% .02 257)",
-          "oklch(37% .02 257)",
-          "oklch(49% .02 257)",
-          "oklch(61% .02 257)",
-          "oklch(73% .02 257)",
-          "oklch(85% .02 257)",
-          "oklch(95% .02 257)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
-      "selection-ground": {
+      "code-comments": {
         "role": "neutral",
-        "displayName": "Selection Ground",
-        "canonical": "#c7e3ff",
+        "displayName": "Code comments",
+        "canonical": "#a3a3a3",
         "tonalRamp": [
-          "oklch(15% .04 250)",
-          "oklch(26% .04 250)",
-          "oklch(37% .04 250)",
-          "oklch(49% .04 250)",
-          "oklch(61% .04 250)",
-          "oklch(73% .04 250)",
-          "oklch(85% .04 250)",
-          "oklch(95% .04 250)"
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
+      },
+      "selection": {
+        "role": "neutral",
+        "displayName": "Selection ground",
+        "canonical": "#464646",
+        "tonalRamp": [
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(37% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(73% 0.0000 0.00)",
+          "oklch(85% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
+        ],
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
       "hero-fallback": {
         "role": "neutral",
-        "displayName": "Hero Fallback",
+        "displayName": "Hero fallback",
         "canonical": "#697399",
         "tonalRamp": [
           "oklch(15% 0.0603 272.92)",
@@ -354,71 +338,7 @@
           "oklch(85% 0.0603 272.92)",
           "oklch(95% 0.0603 272.92)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
-      },
-      "dock-hover": {
-        "role": "neutral",
-        "displayName": "Dock Hover",
-        "canonical": "rgb(212 232 255 / .55)",
-        "tonalRamp": [
-          "oklch(15% .04 250)",
-          "oklch(26% .04 250)",
-          "oklch(37% .04 250)",
-          "oklch(49% .04 250)",
-          "oklch(61% .04 250)",
-          "oklch(73% .04 250)",
-          "oklch(85% .04 250)",
-          "oklch(95% .04 250)"
-        ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
-      },
-      "copy-hover": {
-        "role": "neutral",
-        "displayName": "Copy Hover",
-        "canonical": "#dbeaf9",
-        "tonalRamp": [
-          "oklch(15% .04 250)",
-          "oklch(26% .04 250)",
-          "oklch(37% .04 250)",
-          "oklch(49% .04 250)",
-          "oklch(61% .04 250)",
-          "oklch(73% .04 250)",
-          "oklch(85% .04 250)",
-          "oklch(95% .04 250)"
-        ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
-      },
-      "principle-highlight": {
-        "role": "neutral",
-        "displayName": "Principle Highlight",
-        "canonical": "#215887",
-        "tonalRamp": [
-          "oklch(15% .04 250)",
-          "oklch(26% .04 250)",
-          "oklch(37% .04 250)",
-          "oklch(49% .04 250)",
-          "oklch(61% .04 250)",
-          "oklch(73% .04 250)",
-          "oklch(85% .04 250)",
-          "oklch(95% .04 250)"
-        ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
-      },
-      "inline-code-ink": {
-        "role": "neutral",
-        "displayName": "Inline Code Ink",
-        "canonical": "#214c78",
-        "tonalRamp": [
-          "oklch(15% .04 250)",
-          "oklch(26% .04 250)",
-          "oklch(37% .04 250)",
-          "oklch(49% .04 250)",
-          "oklch(61% .04 250)",
-          "oklch(73% .04 250)",
-          "oklch(85% .04 250)",
-          "oklch(95% .04 250)"
-        ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
       "hero-title-ink": {
         "role": "neutral",
@@ -434,262 +354,257 @@
           "oklch(85% 0.0148 80.71)",
           "oklch(95% 0.0148 80.71)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       },
       "hero-title-wash": {
         "role": "neutral",
         "displayName": "Hero title pigment wash",
-        "canonical": "rgb(250 245 234 / .78)",
+        "canonical": "rgb(250 245 234 / 0.78)",
         "tonalRamp": [
-          "oklch(15% 0.0155 86.42 / .78)",
-          "oklch(26% 0.0155 86.42 / .78)",
-          "oklch(37% 0.0155 86.42 / .78)",
-          "oklch(49% 0.0155 86.42 / .78)",
-          "oklch(61% 0.0155 86.42 / .78)",
-          "oklch(73% 0.0155 86.42 / .78)",
-          "oklch(85% 0.0155 86.42 / .78)",
-          "oklch(95% 0.0155 86.42 / .78)"
+          "oklch(15% 0.0155 86.42 / 0.78)",
+          "oklch(26% 0.0155 86.42 / 0.78)",
+          "oklch(37% 0.0155 86.42 / 0.78)",
+          "oklch(49% 0.0155 86.42 / 0.78)",
+          "oklch(61% 0.0155 86.42 / 0.78)",
+          "oklch(73% 0.0155 86.42 / 0.78)",
+          "oklch(85% 0.0155 86.42 / 0.78)",
+          "oklch(95% 0.0155 86.42 / 0.78)"
         ],
-        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+        "rampPurpose": "Synthesized panel-preview metadata only; not normative source colors or approved additional UI shades."
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Monumental centered ivory FLUIDISE wordmark; same Barlow family. 3svh top, 8svh narrow; short landscape uses 2svh and min(26vw,38svh). Other headings unchanged. Static brushwork from the approved background is clipped to both coincident faces with opaque-color and forced-color fallbacks."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Shared catalog, demonstration and guarantees section headings."
+        "purpose": "Protected Barlow hero only; numerical geometry/material remain in the hero contract."
       },
       "doc-title": {
         "displayName": "Doc Title",
-        "purpose": "Tool-page title with long-name wrapping."
+        "purpose": "Tool-page single h1."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2 and large task statements; prose h2 shares the role."
       },
       "package-title": {
         "displayName": "Package Title",
-        "purpose": "Catalog package name on wider screens."
+        "purpose": "Exact tool identity in installation rows."
+      },
+      "subheading": {
+        "displayName": "Subheading",
+        "purpose": "Principles and prose h3. Starting-panel h2 shares size/tracking but uses 1.15 leading."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Interface baseline and introductory supporting copy."
+        "purpose": "Interface baseline and supporting copy."
       },
       "prose": {
         "displayName": "Prose",
-        "purpose": "Long-form documentation with a 68ch maximum measure."
+        "purpose": "Long-form reference reading at 68ch maximum."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Task tagline and tool-page task context."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Wrapping small-control label."
-      },
-      "code": {
-        "displayName": "Code",
-        "purpose": "Native monospace commands, samples and preformatted documentation."
-      },
-      "compact-label": {
-        "displayName": "Compact Label",
-        "purpose": "Legal copy and terminal demonstration label; inherits component leading."
-      },
-      "catalog-summary": {
-        "displayName": "Catalog Summary",
-        "purpose": "Catalog summary with distinct reading rhythm."
-      },
-      "documentation-lead": {
-        "displayName": "Documentation Lead",
-        "purpose": "Tool-page introductory paragraph, capped at 65ch."
-      },
-      "principle-heading": {
-        "displayName": "Principle Heading",
-        "purpose": "Condensed principle subheading."
-      },
-      "compact-package-title": {
-        "displayName": "Compact Package Title",
-        "purpose": "Catalog package name at widths up to 600px."
+        "purpose": "Actions, filters and sample controls."
       },
       "metadata": {
         "displayName": "Metadata",
-        "purpose": "Shared status, documentation metadata and footer-link size; component leading may differ."
+        "purpose": "Status, demo label and legal copy. Terminal footer uses 1.5 leading."
       },
       "dock-label": {
         "displayName": "Dock Label",
-        "purpose": "Wide-screen dock labels."
+        "purpose": "Dock labels above 600px."
       },
       "compact-dock-label": {
         "displayName": "Compact Dock Label",
-        "purpose": "Dock labels at widths up to 600px."
-      },
-      "action": {
-        "displayName": "Action",
-        "purpose": "Documentation and repository text links."
-      },
-      "catalog-tagline": {
-        "displayName": "Catalog Tagline",
-        "purpose": "Tool-entry lead line, capped at 65ch."
-      },
-      "feature-list": {
-        "displayName": "Feature List",
-        "purpose": "Tool feature list with open line rhythm."
-      },
-      "principle-copy": {
-        "displayName": "Principle Copy",
-        "purpose": "Principle paragraphs, capped at 65ch."
-      },
-      "principle-highlight": {
-        "displayName": "Principle Highlight",
-        "purpose": "Emphasized supporting principle statement."
-      },
-      "prose-section": {
-        "displayName": "Prose Section",
-        "purpose": "Second-level documentation heading."
-      },
-      "prose-subheading": {
-        "displayName": "Prose Subheading",
-        "purpose": "Third-level documentation heading."
-      },
-      "brand-small": {
-        "displayName": "Brand Small",
-        "purpose": "Footer lettering; documentation home link inherits body leading instead."
+        "purpose": "Dock labels only at widths up to 600px, never a general reading reduction."
       },
       "terminal-heading": {
         "displayName": "Terminal Heading",
-        "purpose": "Humanist body-family terminal heading, not condensed editorial type."
+        "purpose": "Quiet heading inside the sample panel."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Native monospace commands, fenced blocks and samples; inline prose code is .875em."
       }
     },
     "shadows": [
       {
         "name": "dock-lift",
-        "value": "0 10px 32px rgb(26 65 105 / .16), inset 0 1px 1px white",
-        "purpose": "Luminous floating navigation material."
+        "value": "0 10px 32px rgb(0 0 0 / 0.24)",
+        "purpose": "Restrained neutral lift on the opaque Raised navigation dock, not a tinted ambient effect."
+      },
+      {
+        "name": "selected-control-marker",
+        "value": "inset 0 -2px var(--accent)",
+        "purpose": "Pressed filter/selected tab line; an active marker, not elevation."
       },
       {
         "name": "wordmark-separation",
-        "value": "drop-shadow(0 3px 12px rgb(20 30 58 / .32)); text-shadow fallback: 0 3px 24px rgb(20 30 58 / .32)",
-        "purpose": "Clipped semantic title only; front face has neither shadow nor filter, and forced colors disable both."
+        "value": "drop-shadow(0 3px 12px rgb(20 30 58 / 0.32))",
+        "purpose": "Clipped semantic hero title only. The front face adds no filter; forced colors disable it."
+      },
+      {
+        "name": "wordmark-text-fallback",
+        "value": "0 3px 24px rgb(20 30 58 / 0.32)",
+        "purpose": "Hero text-shadow fallback when clipping is unavailable; never copied to UI headings."
       }
     ],
     "motion": [
       {
         "name": "control-color-transition",
-        "value": "background-color .15s ease, color .15s ease",
-        "purpose": "Existing small-control state transition, independent of the dedicated hero animation."
+        "value": "background-color 0.15s ease, color 0.15s ease",
+        "purpose": "Existing small-control state treatment; reduced motion suppresses it."
       },
       {
-        "name": "archipelago-scroll-journey",
-        "value": "300dvh track, 100dvh sticky viewport; two viewport heights of native scroll. Island scale 1..1.6 (1..1.35 narrow); foreground 1..1.85; cloud phase .252/-.432 source widths per full journey; opacity clears over final 40%. Title grows to 1.08, descends .25 viewport height, front face fades over progress 0..16%, semantic title fades over 18..68%.",
-        "purpose": "One event-driven draw per input batch. No idle loop, clock, pointer response or pause button. Reverse scroll reconstructs every layer. Dock hidden until catalog entry, including keyboard/assistive technology. Reduced motion/no JavaScript: static, unpinned one-viewport hero. GPU/decode fallback preserves reserved scroll geometry. One semantic h1 behind rock planes and a coincident aria-hidden front face keep the initial name whole without a stacking-order cut."
+        "name": "native-scroll",
+        "value": "smooth; reduced-motion: auto",
+        "purpose": "Native anchor scrolling, never input capture or a synthetic scroll engine."
+      },
+      {
+        "name": "protected-archipelago-journey",
+        "value": "300dvh reserved track / 100dvh sticky viewport; static one-viewport reduced-motion/no-JavaScript alternative",
+        "purpose": "Dedicated existing scene, not a reusable UI animation. Numerical phases, painted lettering, source contours and resource budgets remain owned by docs/specs/alpine-canvas-hero.md; unchanged by Nocturne."
       }
     ],
     "breakpoints": [
       {
-        "name": "compact-layout",
-        "value": "900px"
+        "name": "stacked-layout",
+        "value": "max-width: 900px"
       },
       {
-        "name": "mobile",
-        "value": "600px"
+        "name": "compact-controls",
+        "value": "max-width: 600px"
+      },
+      {
+        "name": "in-flow-reference-contents",
+        "value": "max-height: 700px"
+      },
+      {
+        "name": "short-landscape-hero",
+        "value": "min-aspect-ratio: 2/1"
       }
     ]
   },
   "components": [
     {
-      "name": "Glacial control",
+      "name": "Primary task action",
       "kind": "button",
-      "refersTo": "glacial-control",
-      "description": "Filter or sample-format control; unselected state.",
-      "html": "<button class=\"ds-control\" type=\"button\" aria-pressed=\"false\">All Packages</button>",
-      "css": "@font-face{font-family:'Barlow Condensed';src:url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Source Sans 3';src:url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-control{font-family:'Source Sans 3', 'Segoe UI', sans-serif;font-size:0.9375rem;font-weight:600;line-height:1.4;min-height:44px;white-space:normal;max-inline-size:100%;cursor:pointer;border:1px solid #d3e0ee;border-radius:16px;background:#f0f5f9;color:var(--muted,#50627a);padding:11px 24px;transition:background-color .15s ease,color .15s ease}.ds-control:hover{background:#e3effb;color:var(--slate,#11243b)}.ds-control[aria-pressed=\"true\"]{color:var(--glacier,#075cce);background:#e6f1ff;border-color:#bcd9ff}.ds-control:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-control{transition:none}}"
+      "refersTo": "primary-link",
+      "description": "The existing Get started anchor, not a new form button; native hover/focus states.",
+      "html": "<div class=\"ds-preview\"><a class=\"ds-primary-link\" href=\"/tools/clint\" aria-label=\"Get started with fluidise-clint\">Get started <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-arrow-right\" aria-hidden=\"true\"><path d=\"M5 12l14 0\"></path><path d=\"M13 18l6 -6\"></path><path d=\"M13 6l6 6\"></path></svg></a></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-text-link,\n.ds-primary-link{\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  min-height: 44px;\n  max-width: 100%;\n  line-height: 1.4;\n  font-size: var(--type-label, 0.9375rem);\n  font-weight: 500;\n}.ds-primary-link{\n  padding: 12px 20px;\n  background: var(--accent, #aabad9);\n  color: var(--canvas, #151515);\n  border: 1px solid transparent;\n  border-radius: 16px;\n  text-decoration: none;\n}.ds-primary-link:hover{\n  color: var(--canvas, #151515);\n  text-decoration: underline;\n}@supports(corner-shape:squircle){.ds-primary-link{corner-shape:squircle;border-radius:40px}}@media(forced-colors:active){.ds-primary-link{border-color:ButtonText;background:Canvas;color:CanvasText}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
     },
     {
-      "name": "Selected glacial control",
+      "name": "Quiet filter control",
       "kind": "button",
-      "refersTo": "glacial-control-selected",
-      "description": "Pressed filter appearance with accessible state.",
-      "html": "<button class=\"ds-control\" type=\"button\" aria-pressed=\"true\">All Packages</button>",
-      "css": "@font-face{font-family:'Barlow Condensed';src:url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Source Sans 3';src:url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-control{font-family:'Source Sans 3', 'Segoe UI', sans-serif;font-size:0.9375rem;font-weight:600;line-height:1.4;min-height:44px;white-space:normal;max-inline-size:100%;cursor:pointer;border:1px solid #d3e0ee;border-radius:16px;background:#f0f5f9;color:var(--muted,#50627a);padding:11px 24px;transition:background-color .15s ease,color .15s ease}.ds-control:hover{background:#e3effb;color:var(--slate,#11243b)}.ds-control[aria-pressed=\"true\"]{color:var(--glacier,#075cce);background:#e6f1ff;border-color:#bcd9ff}.ds-control:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-control{transition:none}}"
+      "refersTo": "control",
+      "description": "An unpressed task filter. This static preview does not change results.",
+      "html": "<div class=\"ds-preview\"><button type=\"button\" class=\"ds-glacial-control\" aria-pressed=\"false\" aria-controls=\"ds-tool-results\">Released</button></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-glacial-control{\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 16px;\n  background: var(--surface, #1d1d1d);\n  color: var(--secondary, #c2c2c2);\n  padding: 11px 20px;\n  font-size: var(--type-label, 0.9375rem);\n  font-weight: 500;\n  min-height: 44px;\n  white-space: normal;\n  max-inline-size: 100%;\n  line-height: 1.4;\n  transition:\n    background-color 0.15s ease,\n    color 0.15s ease;\n}.ds-glacial-control:hover{\n  background: var(--hover, #313131);\n  color: var(--ink, #f2f2f2);\n}.ds-glacial-control[aria-pressed='true'],\n.ds-glacial-control[aria-selected='true']{\n  color: var(--action, #dedede);\n  background: var(--selected, #353535);\n  box-shadow: inset 0 -2px var(--accent, #aabad9);\n}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}@supports(corner-shape:squircle){.ds-glacial-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-glacial-control{transition-duration:.01ms}}@media(forced-colors:active){.ds-glacial-control{border-color:ButtonText;background:Canvas;color:CanvasText}.ds-glacial-control[aria-pressed=\"true\"],.ds-glacial-control[aria-selected=\"true\"]{outline:1px solid Highlight}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
     },
     {
-      "name": "Glacial navigation dock",
+      "name": "Selected filter control",
+      "kind": "button",
+      "refersTo": "control-selected",
+      "description": "Neutral pressed label with the existing inset mineral selection marker; no preview state handler.",
+      "html": "<div class=\"ds-preview\"><button type=\"button\" class=\"ds-glacial-control\" aria-pressed=\"true\" aria-controls=\"ds-tool-results\">All tools</button></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-glacial-control{\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 16px;\n  background: var(--surface, #1d1d1d);\n  color: var(--secondary, #c2c2c2);\n  padding: 11px 20px;\n  font-size: var(--type-label, 0.9375rem);\n  font-weight: 500;\n  min-height: 44px;\n  white-space: normal;\n  max-inline-size: 100%;\n  line-height: 1.4;\n  transition:\n    background-color 0.15s ease,\n    color 0.15s ease;\n}.ds-glacial-control:hover{\n  background: var(--hover, #313131);\n  color: var(--ink, #f2f2f2);\n}.ds-glacial-control[aria-pressed='true'],\n.ds-glacial-control[aria-selected='true']{\n  color: var(--action, #dedede);\n  background: var(--selected, #353535);\n  box-shadow: inset 0 -2px var(--accent, #aabad9);\n}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}@supports(corner-shape:squircle){.ds-glacial-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-glacial-control{transition-duration:.01ms}}@media(forced-colors:active){.ds-glacial-control{border-color:ButtonText;background:Canvas;color:CanvasText}.ds-glacial-control[aria-pressed=\"true\"],.ds-glacial-control[aria-selected=\"true\"]{outline:1px solid Highlight}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
+    },
+    {
+      "name": "Matte navigation dock",
       "kind": "nav",
       "refersTo": "floating-dock",
-      "description": "Four labeled destinations. Preview stays in flow; production dock is fixed bottom-center with safe-area clearance.",
-      "html": "<nav class=\"ds-dock\" aria-label=\"Main navigation\"><a class=\"ds-dock-link\" href=\"/#tools\" aria-current=\"location\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\" color=\"#111111\">\n  <title>Fluidise logo</title>\n  <path fill=\"currentColor\" stroke=\"none\" d=\"M45 17H36C24 17 19 24 19 35V47C19 53 16 57 8 59V71C16 73 19 77 19 83V93C19 105 25 112 37 112H45V96H40C35 96 34 94 34 89V80C34 73 31 68 26 65C31 61 34 56 34 49V39C34 34 35 32 40 32H45ZM83 17H92C104 17 109 24 109 35V47C109 53 112 57 120 59V71C112 73 109 77 109 83V93C109 105 103 112 91 112H83V96H88C93 96 94 94 94 89V80C94 73 97 68 102 65C97 61 94 56 94 49V39C94 34 93 32 88 32H83Z\" />\n  <rect x=\"47\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <rect x=\"69\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <path d=\"M56 83Q66 87 74 78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n</svg><span>Tools</span></a><a class=\"ds-dock-link\" href=\"/#philosophy\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"12\" r=\"6\"/><circle cx=\"15\" cy=\"12\" r=\"6\"/></svg><span>Philosophy</span></a><a class=\"ds-dock-link\" href=\"https://github.com/Fluidise/core/tree/main/docs\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 4v16h-12a3 3 0 0 1 0 -6h12\"/><path d=\"M19 4h-12a3 3 0 0 0 -3 3v10\"/><path d=\"M9 8h6\"/></svg><span>Specifications</span></a><a class=\"ds-dock-link\" href=\"https://github.com/Fluidise\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 6v-3.9a3.4 3.4 0 0 0 -.9 -2.7c3 -.3 6.2 -1.5 6.2 -6.8a5.3 5.3 0 0 0 -1.5 -3.7a4.9 4.9 0 0 0 -.1 -3.7s-1.2 -.3 -3.9 1.5a13.4 13.4 0 0 0 -7 0c-2.7 -1.8 -3.9 -1.5 -3.9 -1.5a4.9 4.9 0 0 0 -.1 3.7a5.3 5.3 0 0 0 -1.5 3.7c0 5.3 3.2 6.5 6.2 6.8a3.4 3.4 0 0 0 -.9 2.7v3.9\"/></svg><span>GitHub</span></a></nav>",
-      "css": "@font-face{font-family:'Barlow Condensed';src:url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Source Sans 3';src:url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-dock{box-sizing:border-box;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;width:min(532px,calc(100% - 24px));padding:10px 25px;border:1px solid rgb(255 255 255 / .9);border-radius:28px;background:rgb(244 250 255 / .92);box-shadow:0 10px 32px rgb(26 65 105 / .16),inset 0 1px 1px white;backdrop-filter:blur(24px) saturate(1.25);-webkit-backdrop-filter:blur(24px) saturate(1.25)}.ds-dock-link{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;min-height:50px;padding:4px;color:#344a64;font-family:'Source Sans 3', 'Segoe UI', sans-serif;font-size:0.9375rem;line-height:1.3;overflow-wrap:anywhere;text-decoration:none;border-radius:12px}.ds-dock-link svg{width:23px;height:23px}.ds-dock-link:hover{color:var(--glacier,#075cce);background:rgb(212 232 255 / .55)}.ds-dock-link[aria-current]{color:var(--glacier,#075cce)}.ds-dock-link:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-dock,.ds-dock-link{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-transparency:reduce){.ds-dock{background:#f4f9ff;backdrop-filter:none;-webkit-backdrop-filter:none}}@media(forced-colors:active){.ds-dock{border:1px solid ButtonText;background:Canvas}.ds-dock-link[aria-current]{outline:1px solid Highlight}}@media(max-width:600px){.ds-dock-link{font-size:0.8125rem}}"
+      "description": "The four actual destinations; shown in flow with Explore current to expose that existing homepage state. Production is fixed and hero-boundary controlled.",
+      "html": "<div class=\"ds-preview\"><nav class=\"ds-floating-dock\" aria-label=\"Main navigation\"><a class=\"ds-dock-link\" href=\"/#tools\" data-section=\"tools\" aria-current=\"location\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\" color=\"#ffffff\">\n  \n  <path fill=\"currentColor\" stroke=\"none\" d=\"M45 17H36C24 17 19 24 19 35V47C19 53 16 57 8 59V71C16 73 19 77 19 83V93C19 105 25 112 37 112H45V96H40C35 96 34 94 34 89V80C34 73 31 68 26 65C31 61 34 56 34 49V39C34 34 35 32 40 32H45ZM83 17H92C104 17 109 24 109 35V47C109 53 112 57 120 59V71C112 73 109 77 109 83V93C109 105 103 112 91 112H83V96H88C93 96 94 94 94 89V80C94 73 97 68 102 65C97 61 94 56 94 49V39C94 34 93 32 88 32H83Z\" />\n  <rect x=\"47\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <rect x=\"69\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <path d=\"M56 83Q66 87 74 78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n</svg><span>Explore</span></a><a class=\"ds-dock-link\" href=\"/#install\" data-section=\"install\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-download\" aria-hidden=\"true\"><path d=\"M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2\"></path><path d=\"M7 11l5 5l5 -5\"></path><path d=\"M12 4l0 12\"></path></svg><span>Install</span></a><a class=\"ds-dock-link\" href=\"/#philosophy\" data-section=\"philosophy\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-circles-relation\" aria-hidden=\"true\"><path d=\"M9.183 6.117a6 6 0 1 0 4.511 3.986\"></path><path d=\"M14.813 17.883a6 6 0 1 0 -4.496 -3.954\"></path></svg><span>Principles</span></a><a class=\"ds-dock-link\" href=\"https://github.com/Fluidise\" target=\"_blank\" rel=\"noreferrer noopener\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-brand-github\" aria-hidden=\"true\"><path d=\"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5\"></path></svg><span>GitHub<span class=\"ds-sr-only\"> (opens in new tab)</span></span></a></nav></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-floating-dock{\n  display: grid;\n  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 4px;\n  width: min(532px, calc(100% - 24px));\n  padding: 10px 25px;\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 28px;\n  background: var(--raised, #272727);\n  box-shadow: 0 10px 32px rgb(0 0 0 / 0.24);\n}.ds-dock-link{\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 5px;\n  min-height: 50px;\n  min-width: 0;\n  padding: 4px;\n  color: var(--secondary, #c2c2c2);\n  font-size: var(--type-label, 0.9375rem);\n  line-height: 1.3;\n  overflow-wrap: anywhere;\n  text-decoration: none;\n  border-radius: 12px;\n}.ds-dock-link :is(img, svg){\n  width: 25px;\n  height: 25px;\n  flex-shrink: 0;\n}.ds-dock-link:hover{\n  color: var(--action-hover, #ffffff);\n  background: var(--hover, #313131);\n}.ds-dock-link[aria-current]{\n  color: var(--action, #dedede);\n  text-decoration: underline;\n  text-decoration-color: var(--accent, #aabad9);\n  text-decoration-thickness: 2px;\n  text-underline-offset: 5px;\n}.ds-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:600px){.ds-floating-dock{padding:8px 12px;gap:0}.ds-dock-link{font-size:.8125rem;padding-inline:0;min-height:52px;gap:6px}.ds-dock-link :is(svg,img){width:22px;height:22px}}@supports(corner-shape:squircle){.ds-floating-dock,.ds-dock-link{corner-shape:squircle;border-radius:40px}}@media(forced-colors:active){.ds-floating-dock{border-color:ButtonText;background:Canvas;color:CanvasText}.ds-dock-link[aria-current]{outline:1px solid Highlight}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
     },
     {
-      "name": "Open catalog entry",
-      "kind": "card",
-      "refersTo": "catalog-entry",
-      "description": "Divider-separated package identity and documentation link, not a raised card.",
-      "html": "<article class=\"ds-entry\"><div class=\"ds-symbol\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\" color=\"#111111\">\n  <title>Fluidise logo</title>\n  <path fill=\"currentColor\" stroke=\"none\" d=\"M45 17H36C24 17 19 24 19 35V47C19 53 16 57 8 59V71C16 73 19 77 19 83V93C19 105 25 112 37 112H45V96H40C35 96 34 94 34 89V80C34 73 31 68 26 65C31 61 34 56 34 49V39C34 34 35 32 40 32H45ZM83 17H92C104 17 109 24 109 35V47C109 53 112 57 120 59V71C112 73 109 77 109 83V93C109 105 103 112 91 112H83V96H88C93 96 94 94 94 89V80C94 73 97 68 102 65C97 61 94 56 94 49V39C94 34 93 32 88 32H83Z\" />\n  <rect x=\"47\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <rect x=\"69\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <path d=\"M56 83Q66 87 74 78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n</svg></div><div><h3>fluidise-clint</h3><a href=\"/tools/clint\">Read Specification &amp; Docs</a></div></article>",
-      "css": "@font-face{font-family:'Barlow Condensed';src:url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Source Sans 3';src:url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-entry{display:grid;grid-template-columns:80px minmax(0,1fr);gap:32px;padding:28px 0 34px;border-bottom:1px solid var(--line,#d9e3ed);background:var(--snow,#fff);color:var(--slate,#11243b);font-family:'Source Sans 3', 'Segoe UI', sans-serif}.ds-symbol{display:grid;place-items:center;width:80px;height:80px;background:#eaf3fc;border-radius:20px}.ds-symbol svg{width:52px;height:52px}.ds-entry h3{font-family:'Barlow Condensed', 'Arial Narrow', sans-serif;font-size:2rem;font-weight:700;line-height:1.1;letter-spacing:0;overflow-wrap:anywhere;margin:0 0 8px}.ds-entry a{color:var(--glacier,#075cce);font-size:1.0625rem;font-weight:600;line-height:1.5;text-decoration:none}.ds-entry a:hover{text-decoration:underline}.ds-entry a:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@media(max-width:600px){.ds-entry{grid-template-columns:44px minmax(0,1fr);gap:16px}.ds-symbol{width:44px;height:44px;border-radius:12px}.ds-symbol svg{width:32px;height:32px}.ds-entry h3{font-size:1.75rem}}@supports(corner-shape:squircle){.ds-symbol{corner-shape:squircle;border-radius:40px}}"
+      "name": "Open task lanes",
+      "kind": "custom",
+      "refersTo": "task-entry",
+      "description": "Both actual task choices in the source-defined split/stack composition, not a generic card library.",
+      "html": "<div class=\"ds-preview\"><div class=\"ds-task-list\" id=\"ds-tool-results\"><article class=\"ds-task-entry\" aria-labelledby=\"ds-tool-clint\"><h3 id=\"ds-tool-clint\">Validate commit messages</h3><div class=\"ds-tool-identity\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\" color=\"#ffffff\">\n  \n  <path fill=\"currentColor\" stroke=\"none\" d=\"M45 17H36C24 17 19 24 19 35V47C19 53 16 57 8 59V71C16 73 19 77 19 83V93C19 105 25 112 37 112H45V96H40C35 96 34 94 34 89V80C34 73 31 68 26 65C31 61 34 56 34 49V39C34 34 35 32 40 32H45ZM83 17H92C104 17 109 24 109 35V47C109 53 112 57 120 59V71C112 73 109 77 109 83V93C109 105 103 112 91 112H83V96H88C93 96 94 94 94 89V80C94 73 97 68 102 65C97 61 94 56 94 49V39C94 34 93 32 88 32H83Z\" />\n  <rect x=\"47\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <rect x=\"69\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <path d=\"M56 83Q66 87 74 78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n</svg><span>fluidise-clint</span><span class=\"ds-tool-status\">v1.0.0 Released</span></div><p class=\"ds-tool-tagline\">Deterministic Conventional Commits validator designed for AI agents and automated workflows</p><div class=\"ds-tool-links\"><a class=\"ds-primary-link\" href=\"/tools/clint\" aria-label=\"Get started with fluidise-clint\">Get started <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-arrow-right\" aria-hidden=\"true\"><path d=\"M5 12l14 0\"></path><path d=\"M13 18l6 -6\"></path><path d=\"M13 6l6 6\"></path></svg></a><a class=\"ds-text-link\" href=\"/#install-clint\">Install command</a></div></article><article class=\"ds-task-entry\" aria-labelledby=\"ds-tool-relay\"><h3 id=\"ds-tool-relay\">Manage Git hooks</h3><div class=\"ds-tool-identity\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-git-fork\" aria-hidden=\"true\"><path d=\"M10 18a2 2 0 1 0 4 0a2 2 0 1 0 -4 0\"></path><path d=\"M5 6a2 2 0 1 0 4 0a2 2 0 1 0 -4 0\"></path><path d=\"M15 6a2 2 0 1 0 4 0a2 2 0 1 0 -4 0\"></path><path d=\"M7 8v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2 -2v-2\"></path><path d=\"M12 12l0 4\"></path></svg><span>fluidise-relay</span><span class=\"ds-tool-status\">In Development</span></div><p class=\"ds-tool-tagline\">Agent-first Git hook manager for deterministic orchestration and safe process control</p><div class=\"ds-tool-links\"><a class=\"ds-primary-link\" href=\"/tools/relay\" aria-label=\"Get started with fluidise-relay\">Get started <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-arrow-right\" aria-hidden=\"true\"><path d=\"M5 12l14 0\"></path><path d=\"M13 18l6 -6\"></path><path d=\"M13 6l6 6\"></path></svg></a><a class=\"ds-text-link\" href=\"/#install-relay\">Install command</a></div></article></div></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-task-list{\n  display: grid;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  border-top: 1px solid var(--line, #808080);\n}.ds-task-entry{\n  display: flex;\n  flex-direction: column;\n  padding: 40px 48px 0 0;\n  min-width: 0;\n}.ds-task-entry + .ds-task-entry{\n  padding: 40px 0 0 48px;\n  border-left: 1px solid var(--line, #808080);\n}.ds-task-entry h3{\n  min-height: 2.3em;\n  font: 500 var(--type-section, clamp(2rem, 3.4vw, 3rem))/1.15 var(--font-heading, 'Instrument Sans', 'Segoe UI', sans-serif);\n  letter-spacing: -0.025em;\n  margin: 0 0 24px;\n  max-width: 15ch;\n}.ds-tool-identity{\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 12px;\n  font-size: var(--type-label, 0.9375rem);\n}.ds-tool-identity :is(img, svg){\n  flex-shrink: 0;\n}.ds-tool-status{\n  font-size: var(--type-meta, 0.875rem);\n  line-height: 1.6;\n  color: var(--quiet, #a2a2a2);\n  margin: 0;\n}.ds-tool-identity .ds-tool-status{\n  width: 100%;\n  padding-left: 36px;\n}.ds-tool-tagline{\n  font-size: clamp(1.125rem, 1.6vw, 1.375rem);\n  line-height: 1.55;\n  color: var(--secondary, #c2c2c2);\n  max-width: 45ch;\n  margin: 24px 0 32px;\n}.ds-tool-links{\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 12px 24px;\n}.ds-text-link,\n.ds-primary-link{\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  min-height: 44px;\n  max-width: 100%;\n  line-height: 1.4;\n  font-size: var(--type-label, 0.9375rem);\n  font-weight: 500;\n}.ds-text-link{\n  color: var(--action, #dedede);\n  text-underline-offset: 0.25em;\n}.ds-text-link:hover{\n  color: var(--action-hover, #ffffff);\n}.ds-primary-link{\n  padding: 12px 20px;\n  background: var(--accent, #aabad9);\n  color: var(--canvas, #151515);\n  border: 1px solid transparent;\n  border-radius: 16px;\n  text-decoration: none;\n}.ds-primary-link:hover{\n  color: var(--canvas, #151515);\n  text-decoration: underline;\n}.ds-tool-identity svg{width:24px;height:24px}.ds-task-entry h3{overflow-wrap:anywhere;text-wrap:balance}@media(max-width:900px){.ds-task-list{grid-template-columns:minmax(0,1fr)}.ds-task-entry,.ds-task-entry + .ds-task-entry{padding:32px 0;border-left:0}.ds-task-entry + .ds-task-entry{border-top:1px solid var(--line, #808080)}.ds-task-entry h3{min-height:0;max-width:22ch}}@media(max-width:600px){.ds-task-entry h3{margin-bottom:20px}.ds-tool-tagline{margin-block:20px 24px}}@supports(corner-shape:squircle){.ds-primary-link{corner-shape:squircle;border-radius:40px}}@media(forced-colors:active){.ds-primary-link{border-color:ButtonText;background:Canvas;color:CanvasText}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
     },
     {
       "name": "Copy command",
       "kind": "custom",
       "refersTo": "copy-command",
-      "description": "Square installation bar with locally scrollable command; visual preview does not copy to clipboard.",
-      "html": "<div class=\"ds-copy\"><code>brew tap Fluidise/homebrew-tap</code><button class=\"ds-copy-button\" type=\"button\" aria-label=\"Copy Homebrew tap installation command\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 9a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z\"/><path d=\"M17 7v-2a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h2\"/></svg></button></div>",
-      "css": ".ds-copy{box-sizing:border-box;display:flex;align-items:center;gap:12px;justify-content:space-between;min-width:0;max-width:100%;padding:10px 12px;background:var(--ice,#eff5fa);border:1px solid var(--line,#d9e3ed);border-radius:0;color:var(--slate,#11243b)}.ds-copy code{min-width:0;flex:1;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;font-size:0.875rem;line-height:1.7;overflow-x:auto;white-space:nowrap}.ds-copy-button{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;color:var(--muted,#50627a);background:transparent;border:0;border-radius:12px;cursor:pointer}.ds-copy-button:hover{background:#dbeaf9;color:var(--glacier,#075cce)}.ds-copy-button:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-copy-button{corner-shape:squircle;border-radius:40px}}"
+      "description": "Actual installation command bar with native hover/focus states. Clipboard action, announcements and timers require the live component.",
+      "html": "<div class=\"ds-preview\"><div class=\"ds-copy-command-wrapper\"><div class=\"ds-copy-command\"><code>brew install Fluidise/homebrew-tap/fluidise-clint</code><button type=\"button\" class=\"ds-copy-button\" aria-label=\"Copy install command for fluidise-clint\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-copy\" aria-hidden=\"true\"><path d=\"M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666\"></path><path d=\"M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1\"></path></svg></button></div><output class=\"ds-sr-only\"></output></div></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-copy-command-wrapper{\n  min-width: 0;\n  width: 100%;\n  max-width: 100%;\n}.ds-copy-command{\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  min-width: 0;\n  gap: 12px;\n  padding: 12px;\n  background: var(--surface, #1d1d1d);\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 0;\n}.ds-copy-command code{\n  flex: 1;\n  min-width: 0;\n  overflow-x: auto;\n  white-space: nowrap;\n  color: var(--code-ink, #e6e6e6);\n  font: var(--type-code, 0.875rem)/1.7 var(--mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);\n}.ds-copy-button{\n  display: grid;\n  place-items: center;\n  width: 44px;\n  height: 44px;\n  flex-shrink: 0;\n  border: 0;\n  border-radius: 12px;\n  background: transparent;\n  color: var(--secondary, #c2c2c2);\n}.ds-copy-button:hover{\n  background: var(--hover, #313131);\n  color: var(--action-hover, #ffffff);\n}.ds-copy-button:has(.ds-tabler-icon-check){\n  color: var(--positive, #aecbb3);\n}@supports(corner-shape:squircle){.ds-copy-button{corner-shape:squircle;border-radius:40px}}@media(forced-colors:active){.ds-copy-command{border-color:ButtonText;background:Canvas;color:CanvasText}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}.ds-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}"
     },
     {
-      "name": "Copy icon button",
-      "kind": "button",
-      "refersTo": "copy-button",
-      "description": "44px copy affordance with native squircle corners and a 12px unsupported-browser fallback; runtime success/check feedback belongs to the live React component.",
-      "html": "<button class=\"ds-copy-button\" type=\"button\" aria-label=\"Copy terminal output\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 9a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z\"/><path d=\"M17 7v-2a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h2\"/></svg></button>",
-      "css": ".ds-copy{box-sizing:border-box;display:flex;align-items:center;gap:12px;justify-content:space-between;min-width:0;max-width:100%;padding:10px 12px;background:var(--ice,#eff5fa);border:1px solid var(--line,#d9e3ed);border-radius:0;color:var(--slate,#11243b)}.ds-copy code{min-width:0;flex:1;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;font-size:0.875rem;line-height:1.7;overflow-x:auto;white-space:nowrap}.ds-copy-button{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;color:var(--muted,#50627a);background:transparent;border:0;border-radius:12px;cursor:pointer}.ds-copy-button:hover{background:#dbeaf9;color:var(--glacier,#075cce)}.ds-copy-button:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@supports(corner-shape:squircle){.ds-copy-button{corner-shape:squircle;border-radius:40px}}"
+      "name": "Tool starting panel",
+      "kind": "custom",
+      "refersTo": "doc-start",
+      "description": "The actual Clint square starting panel and command; not a synthesized card or form. Copy is visual-only in this preview.",
+      "html": "<div class=\"ds-preview\"><section class=\"ds-doc-start\" id=\"ds-get-started\" aria-labelledby=\"ds-start-heading\"><h2 id=\"ds-start-heading\">Get started</h2><p class=\"ds-tool-status\">v1.0.0 Released</p><div class=\"ds-copy-command-wrapper\"><div class=\"ds-copy-command\"><code>brew install Fluidise/homebrew-tap/fluidise-clint</code><button type=\"button\" class=\"ds-copy-button\" aria-label=\"Copy install command: brew install Fluidise/homebrew-tap/fluidise-clint\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-copy\" aria-hidden=\"true\"><path d=\"M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666\"></path><path d=\"M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1\"></path></svg></button></div><output class=\"ds-sr-only\"></output></div><a class=\"ds-text-link\" href=\"#installation\">All installation options <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-arrow-right\" aria-hidden=\"true\"><path d=\"M5 12l14 0\"></path><path d=\"M13 18l6 -6\"></path><path d=\"M13 6l6 6\"></path></svg></a></section></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-tool-status{\n  font-size: var(--type-meta, 0.875rem);\n  line-height: 1.6;\n  color: var(--quiet, #a2a2a2);\n  margin: 0;\n}.ds-text-link,\n.ds-primary-link{\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  min-height: 44px;\n  max-width: 100%;\n  line-height: 1.4;\n  font-size: var(--type-label, 0.9375rem);\n  font-weight: 500;\n}.ds-text-link{\n  color: var(--action, #dedede);\n  text-underline-offset: 0.25em;\n}.ds-text-link:hover{\n  color: var(--action-hover, #ffffff);\n}.ds-doc-start{\n  align-self: start;\n  min-width: 0;\n  padding: 24px;\n  background: var(--surface, #1d1d1d);\n  border: 1px solid var(--control-border, #898989);\n}.ds-doc-start h2{\n  font-size: 1.5rem;\n  letter-spacing: -0.015em;\n}.ds-doc-start .ds-tool-status{\n  margin-top: 12px;\n}.ds-doc-start .ds-copy-command-wrapper{\n  margin-block: 24px 12px;\n}.ds-copy-command-wrapper{\n  min-width: 0;\n  width: 100%;\n  max-width: 100%;\n}.ds-copy-command{\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  min-width: 0;\n  gap: 12px;\n  padding: 12px;\n  background: var(--surface, #1d1d1d);\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 0;\n}.ds-copy-command code{\n  flex: 1;\n  min-width: 0;\n  overflow-x: auto;\n  white-space: nowrap;\n  color: var(--code-ink, #e6e6e6);\n  font: var(--type-code, 0.875rem)/1.7 var(--mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);\n}.ds-copy-button{\n  display: grid;\n  place-items: center;\n  width: 44px;\n  height: 44px;\n  flex-shrink: 0;\n  border: 0;\n  border-radius: 12px;\n  background: transparent;\n  color: var(--secondary, #c2c2c2);\n}.ds-copy-button:hover{\n  background: var(--hover, #313131);\n  color: var(--action-hover, #ffffff);\n}.ds-copy-button:has(.ds-tabler-icon-check){\n  color: var(--positive, #aecbb3);\n}.ds-doc-start h2{margin:0;font-weight:500;line-height:1.15;font-family:var(--font-heading, 'Instrument Sans', 'Segoe UI', sans-serif)}@media(max-width:600px){.ds-doc-start{padding:20px}}@supports(corner-shape:squircle){.ds-copy-button{corner-shape:squircle;border-radius:40px}}@media(forced-colors:active){.ds-copy-command{border-color:ButtonText;background:Canvas;color:CanvasText}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}.ds-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}"
     },
     {
-      "name": "Interactive terminal panel",
+      "name": "Clint sample terminal",
       "kind": "custom",
       "refersTo": "terminal",
-      "description": "Square command/output frame; sample content is explicitly a demonstration.",
-      "html": "<section class=\"ds-terminal\"><header><h3>fluidise-clint interactive sandbox</h3><p>Demonstration · Sample output, not live execution</p></header><div class=\"ds-terminal-body\"><code>$ fluidise-clint \"feat(core): introduce agent-first contract\"</code><pre tabindex=\"0\" aria-label=\"JSON sample output\">{\n  \"schema_version\": 1,\n  \"status\": \"valid\",\n  \"diagnostics\": []\n}</pre></div></section>",
-      "css": "@font-face{font-family:'Barlow Condensed';src:url('/fonts/BarlowCondensed-Bold-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Source Sans 3';src:url('/fonts/SourceSans3-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-terminal{border:1px solid #cbd9e7;border-radius:0;background:#f9fbfd;color:var(--slate,#11243b);font-family:'Source Sans 3', 'Segoe UI', sans-serif}.ds-terminal header{padding:20px 24px;border-bottom:1px solid var(--line,#d9e3ed)}.ds-terminal h3{font-size:1.25rem;font-weight:600;line-height:1.35;overflow-wrap:anywhere;margin:0}.ds-terminal p{font-size:0.8125rem;line-height:1.6;color:var(--muted,#50627a);margin:4px 0 0}.ds-terminal-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.ds-terminal code{display:block;margin:24px;padding:16px;overflow-x:auto;white-space:pre;background:var(--ice,#eff5fa);font:0.875rem/1.7 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}.ds-terminal pre{min-width:0;overflow-x:auto;margin:0;padding:24px;border-left:1px solid var(--line,#d9e3ed);font:0.875rem/1.7 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;color:#134b82}.ds-terminal pre:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}@media(max-width:600px){.ds-terminal-body{grid-template-columns:minmax(0,1fr)}.ds-terminal pre{border-left:0;border-top:1px solid var(--line,#d9e3ed)}}"
+      "description": "The actual server-rendered default sample and controls. Native focus/hover works; format/sample changes and clipboard handlers are not part of this static preview.",
+      "html": "<div class=\"ds-preview\"><div class=\"ds-terminal\"><div class=\"ds-terminal-header\"><div><h3 class=\"ds-terminal-heading\">fluidise-clint interactive sandbox</h3><p class=\"ds-terminal-demo-label\">Demonstration · Sample output, not live execution</p></div><div class=\"ds-terminal-controls\"><div role=\"tablist\" aria-label=\"Output format selector\" class=\"ds-terminal-controls\"><button type=\"button\" class=\"ds-glacial-control\" id=\"ds-terminal-format-json\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\" aria-controls=\"ds-terminal-output\">JSON (Agent default)</button><button type=\"button\" class=\"ds-glacial-control\" id=\"ds-terminal-format-text\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\" aria-controls=\"ds-terminal-output\">Text (--format text)</button></div><button type=\"button\" class=\"ds-glacial-control\" aria-controls=\"ds-terminal-output\">Toggle Error</button></div></div><div class=\"ds-terminal-body\"><div class=\"ds-terminal-command\"><code>$ fluidise-clint &quot;feat(core): introduce agent-first contract&quot;</code></div><div class=\"ds-terminal-output\"><pre role=\"tabpanel\" aria-labelledby=\"ds-terminal-format-json\" id=\"ds-terminal-output\" data-sample=\"valid\" tabindex=\"0\" aria-label=\"JSON sample output\">{\n  &quot;schema_version&quot;: 1,\n  &quot;status&quot;: &quot;valid&quot;,\n  &quot;diagnostics&quot;: [],\n  &quot;commit&quot;: {\n    &quot;type&quot;: &quot;feat&quot;,\n    &quot;scope&quot;: &quot;core&quot;,\n    &quot;description&quot;: &quot;introduce agent-first contract&quot;,\n    &quot;breaking&quot;: false\n  }\n}</pre><button type=\"button\" class=\"ds-copy-button\" aria-label=\"Copy terminal output\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-copy\" aria-hidden=\"true\"><path d=\"M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666\"></path><path d=\"M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1\"></path></svg></button></div></div><div class=\"ds-terminal-footer\"><span>Exit code: 0</span><span>Zero side-effects · Native Rust binary</span></div><output class=\"ds-sr-only\"></output><output class=\"ds-sr-only\">JSON format, valid sample</output></div></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-terminal{\n  min-width: 0;\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 0;\n  background: var(--code-ground, #111111);\n  color: var(--code-ink, #e6e6e6);\n}.ds-terminal-header{\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: start;\n  gap: 20px;\n  padding: 24px;\n  background: var(--surface, #1d1d1d);\n  border-bottom: 1px solid var(--line, #808080);\n}.ds-terminal-heading{\n  font-size: 1.25rem;\n  font-weight: 500;\n  line-height: 1.35;\n  margin: 0;\n}.ds-terminal-demo-label{\n  color: var(--secondary, #c2c2c2);\n  font-size: var(--type-meta, 0.875rem);\n  margin: 8px 0 0;\n}.ds-terminal-controls{\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n}.ds-terminal-body{\n  display: grid;\n  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);\n}.ds-terminal-command,\n.ds-terminal-output{\n  min-width: 0;\n  padding: 24px;\n}.ds-terminal-command code{\n  display: block;\n  overflow-x: auto;\n  font: var(--type-code, 0.875rem)/1.7 var(--mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);\n  white-space: pre;\n}.ds-terminal-output{\n  position: relative;\n  border-left: 1px solid var(--line, #808080);\n}.ds-terminal-output pre{\n  overflow-x: auto;\n  min-height: 290px;\n  margin: 0;\n  padding-right: 44px;\n  font: var(--type-code, 0.875rem)/1.7 var(--mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);\n  color: var(--code-ink, #e6e6e6);\n}.ds-terminal-output .ds-copy-button{\n  position: absolute;\n  right: 8px;\n  top: 8px;\n}.ds-terminal-footer{\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 12px;\n  border-top: 1px solid var(--line, #808080);\n  padding: 16px 24px;\n  color: var(--quiet, #a2a2a2);\n  font-size: var(--type-meta, 0.875rem);\n  line-height: 1.5;\n  font-variant-numeric: tabular-nums;\n}.ds-terminal-output pre[data-sample='invalid'],\n.ds-terminal-feedback{\n  color: var(--negative, #e7a3ae);\n}.ds-terminal-feedback{\n  display: block;\n  font-size: var(--type-meta, 0.875rem);\n  padding-inline: 12px;\n}.ds-glacial-control{\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 16px;\n  background: var(--surface, #1d1d1d);\n  color: var(--secondary, #c2c2c2);\n  padding: 11px 20px;\n  font-size: var(--type-label, 0.9375rem);\n  font-weight: 500;\n  min-height: 44px;\n  white-space: normal;\n  max-inline-size: 100%;\n  line-height: 1.4;\n  transition:\n    background-color 0.15s ease,\n    color 0.15s ease;\n}.ds-glacial-control:hover{\n  background: var(--hover, #313131);\n  color: var(--ink, #f2f2f2);\n}.ds-glacial-control[aria-pressed='true'],\n.ds-glacial-control[aria-selected='true']{\n  color: var(--action, #dedede);\n  background: var(--selected, #353535);\n  box-shadow: inset 0 -2px var(--accent, #aabad9);\n}.ds-copy-command-wrapper{\n  min-width: 0;\n  width: 100%;\n  max-width: 100%;\n}.ds-copy-command{\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  min-width: 0;\n  gap: 12px;\n  padding: 12px;\n  background: var(--surface, #1d1d1d);\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 0;\n}.ds-copy-command code{\n  flex: 1;\n  min-width: 0;\n  overflow-x: auto;\n  white-space: nowrap;\n  color: var(--code-ink, #e6e6e6);\n  font: var(--type-code, 0.875rem)/1.7 var(--mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);\n}.ds-copy-button{\n  display: grid;\n  place-items: center;\n  width: 44px;\n  height: 44px;\n  flex-shrink: 0;\n  border: 0;\n  border-radius: 12px;\n  background: transparent;\n  color: var(--secondary, #c2c2c2);\n}.ds-copy-button:hover{\n  background: var(--hover, #313131);\n  color: var(--action-hover, #ffffff);\n}.ds-copy-button:has(.ds-tabler-icon-check){\n  color: var(--positive, #aecbb3);\n}.ds-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:900px){.ds-terminal-body{grid-template-columns:minmax(0,1fr)}.ds-terminal-output{border-left:0;border-top:1px solid var(--line, #808080)}}@media(max-width:600px){.ds-terminal-header,.ds-terminal-command,.ds-terminal-output{padding:20px}.ds-terminal-controls .ds-glacial-control{padding-inline:14px}}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}@supports(corner-shape:squircle){.ds-glacial-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-glacial-control{transition-duration:.01ms}}@media(forced-colors:active){.ds-glacial-control{border-color:ButtonText;background:Canvas;color:CanvasText}.ds-glacial-control[aria-pressed=\"true\"],.ds-glacial-control[aria-selected=\"true\"]{outline:1px solid Highlight}}@supports(corner-shape:squircle){.ds-copy-button{corner-shape:squircle;border-radius:40px}}@media(forced-colors:active){.ds-copy-command{border-color:ButtonText;background:Canvas;color:CanvasText}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
     },
     {
-      "name": "Documentation code block",
+      "name": "Documentation code",
       "kind": "custom",
       "refersTo": "documentation-code",
-      "description": "Dark, square documentation code with local horizontal scrolling.",
-      "html": "<pre class=\"ds-doc-code\" tabindex=\"0\" aria-label=\"Installation command\"><code>brew tap Fluidise/homebrew-tap</code></pre>",
-      "css": ".ds-doc-code{background:#10283e;color:#edf6ff;padding:24px;border-radius:0;overflow-x:auto;margin:0;font:0.875rem/1.7 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}.ds-doc-code code{font:inherit;letter-spacing:0.01em;background:transparent}.ds-doc-code:focus-visible{outline:3px solid var(--glacier,#075cce);outline-offset:4px}"
+      "description": "An actual generated Shiki block using the single Nocturne theme and local scrolling, not runtime syntax highlighting.",
+      "html": "<div class=\"ds-preview\"><pre class=\"ds-documentation-code ds-astro-code ds-fluidise-nocturne\" style=\"background-color:#111111;color:#E6E6E6; overflow-x: auto;\" tabindex=\"0\" data-language=\"bash\"><code><span class=\"ds-line\"><span style=\"color:#E6E6E6\">brew </span><span style=\"color:#AECBB3\">tap</span><span style=\"color:#AECBB3\"> Fluidise/homebrew-tap</span></span>\n<span class=\"ds-line\"><span style=\"color:#E6E6E6\">brew </span><span style=\"color:#AECBB3\">install</span><span style=\"color:#AECBB3\"> fluidise-clint</span></span></code></pre></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-documentation-code{padding:24px;border-radius:0;overflow-x:auto;margin-block:24px;font:var(--type-code, 0.875rem)/1.7 var(--mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace)}.ds-documentation-code code{font:inherit;letter-spacing:.01em;background:transparent}@media(max-width:600px){.ds-documentation-code{padding:20px}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
     }
   ],
   "narrative": {
-    "northStar": "Alpine Glass",
-    "overview": "A painterly suspended archipelago introduces Fluidise; snow-white reading surfaces keep its independent developer tools legible. The hero's dedicated diorama replaces the alpine panorama without redesigning the surrounding Alpine Glass interface. Glacier blue marks actions and selected controls, while slate carries the documentation. Liquid/glacial glass belongs to the labeled navigation dock, not the technical panels.\n\nThe condensed wordmark and editorial headings share Barlow Condensed; Source Sans 3 supports reading and interface roles, while commands and structured samples retain native monospace. Existing black and white official SVG logos remain unmodified. The user delegated this site-wide typography replacement; historical first-viewport composition approval is not approval of the new lettering, and automated workflow closure remains incomplete.",
+    "northStar": "Nocturne",
+    "overview": "A painterly suspended archipelago introduces Fluidise; neutral-charcoal reading surfaces make its independent developer tools clear. The painting is the expressive event and the interface is the calm instrument beneath it. Matte tonal layers, open editorial divisions and restrained mineral-blue priority replace the historical Alpine Glass interface without recoloring or rebuilding the approved hero.\n\nInstrument Sans carries all non-hero headings, reading and interface roles. Barlow Condensed remains isolated to the monumental painted FLUIDISE wordmark; native monospace carries commands and samples. Official black and white SVG assets retain their geometry. The current world implements the human-approved Nocturne specification; historical alpine, typography and first-viewport approvals remain history, not validation of this runtime.",
     "keyCharacteristics": [
-      "Full-width painted archipelago led by a monumental ivory FLUIDISE wordmark with restrained painted pigments, scroll-driven lettering depth, independently layered scenery, and an original-image static fallback.",
-      "Snow-white reading ground, glacier-blue actions, and slate text.",
-      "Fixed labeled glacial-glass dock with progressive squircle corners.",
-      "Square installation, terminal, and documentation code surfaces.",
-      "Preserved source content and explicitly labeled demonstrations."
+      "A protected, full-screen painted archipelago with a monumental ivory wordmark and reversible native-scroll depth.",
+      "Achromatic reading and ordinary links on opaque charcoal surfaces; mineral blue only for primary fills, active markers and external focus.",
+      "Open task and reference compositions rather than a generic rounded-card library.",
+      "A visibly labeled matte squircle dock and square installation, starting, terminal and code surfaces.",
+      "Truthful demonstrations, selectable commands and explicit copy failure feedback."
     ],
     "rules": [
       {
-        "name": "The Brand Asset Rule",
-        "body": "Use the existing official black or white SVG logo unchanged; do not trace, recolor, or replace it with a generated mark.",
+        "name": "The Mineral Restraint Rule",
+        "body": "Use Mineral accent only for primary-action fills, active-state markers and external keyboard-focus outlines. Keep reading, ordinary links, selected labels, text selection and code syntax neutral or semantic.",
+        "section": "colors"
+      },
+      {
+        "name": "The Hero Family Rule",
+        "body": "Bind Barlow Condensed directly to the hero title. Instrument Sans owns every non-hero heading and interface role; never let a global heading-family change alter the protected wordmark.",
         "section": "typography"
       },
       {
-        "name": "The Material Contrast Rule",
-        "body": "Keep glass on navigation and square corners on technical surfaces; do not turn commands or terminal output into glass cards.",
+        "name": "The Matte Instrument Rule",
+        "body": "Use opaque tonal surfaces and fine borders for the interface. The dock may lift softly; technical panels stay square and flat. Do not extend the painting, glass blur or decorative texture into reading surfaces.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do preserve the full-viewport scroll journey, dock-free hero, reduced-motion/static alternatives, and the dock-safe transition before the first tool entry.",
-      "Do retain visible dock labels, safe-area spacing, keyboard focus, and local command scrolling.",
-      "Do use the official black and white SVG assets without modification.",
-      "Do preserve original tool names, source copy, filters, links, sample modes, and copy feedback.",
-      "Do label terminal samples as demonstrations, not live execution."
+      "Do preserve the approved hero, its one semantic h1, painted title material, native-scroll journey, static alternatives and dock-free opening.",
+      "Do keep ordinary reading and links neutral, and distinguish selected controls with a visible marker as well as semantic state.",
+      "Do retain visible dock labels, safe-area clearance, focus outlines and bounded local scrolling for commands, tables and code.",
+      "Do use the existing official white mark on dark surfaces and the official black mark on light-filled contexts without modifying either asset.",
+      "Do preserve tool identity, factual data, exact command/sample payloads and visible manual-copy fallback.",
+      "Do identify the Clint terminal as sample output, not live execution."
     ],
     "donts": [
-      "Don't add a conventional top navigation bar, homepage marketing headline, or right reading rail to this approved composition.",
-      "Don't apply glass or rounded corners to installation bars, terminal panels, or documentation code blocks.",
-      "Don't expand the dedicated hero's motion into unrelated page regions, take over native scrolling, or make pointer input necessary.",
-      "Don't treat existing release, availability, performance, or execution claims as evidence verified by the redesign."
+      "Don't tint the charcoal grounds, headings, prose links or syntax with Mineral accent.",
+      "Don't turn open task lanes into interchangeable rounded marketing cards or apply glass to technical panels.",
+      "Don't replace the approved labeled bottom dock with a top header, icon-only navigation or a hamburger on these routes.",
+      "Don't shrink mobile reading/code text, impose a 320px body minimum or hide overflow to conceal a layout defect.",
+      "Don't add ambient motion, pointer-required behavior, a theme toggle or a second runtime highlighter.",
+      "Don't treat design approval, screenshots, token contrast calculations or sample timing strings as release, performance or accessibility-conformance evidence."
     ]
   }
 }

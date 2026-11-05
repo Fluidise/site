@@ -31,7 +31,7 @@ const PRINCIPLES = [
 
 <section id="philosophy" class="philosophy-section" aria-labelledby="philosophy-heading">
   <div class="shell">
-    <h2 id="philosophy-heading">The Product Contract</h2>
+    <h2 id="philosophy-heading">The contract behind the tools</h2>
     <p class="philosophy-intro">Every package published under Fluidise conforms to foundational invariants established in our core specifications.</p>
     <div class="principles">
       {PRINCIPLES.map((principle) => {
@@ -45,6 +45,14 @@ const PRINCIPLES = [
           </article>
         );
       })}
+    </div>
+    <div class="contract-resources">
+      <a class="text-link" href="https://github.com/Fluidise/core/tree/main/docs" target="_blank" rel="noreferrer noopener">Core specifications<span class="sr-only"> (opens in new tab)</span></a>
+      <div id="demo" class="example-pointer">
+        <h3 id="demo-heading">Clint output example</h3>
+        <p>Inspect JSON and text sample output, not live execution.</p>
+        <a class="text-link" href="/tools/clint#example-output">Explore the example</a>
+      </div>
     </div>
   </div>
 </section>
