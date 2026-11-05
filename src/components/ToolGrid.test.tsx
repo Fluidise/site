@@ -14,9 +14,38 @@ const tool: ToolData = {
   icon: 'Icon',
   repoUrl: 'https://example.com',
   keyFeatures: [],
+  banner: {
+    src: '/_astro/example-banner.webp',
+    srcSet: '/_astro/example-banner-small.webp 320w, /_astro/example-banner.webp 1280w',
+    sizes: '(max-width: 900px) 92vw, 46vw',
+    width: 2048,
+    height: 768,
+  },
 };
 
 describe('task gateway and installation desk', () => {
+  it('server-renders the decorative banner between the task and live identity', () => {
+    const html = renderToStaticMarkup(<ToolGrid tools={[tool]} />);
+    const task = html.slice(html.indexOf('<article'), html.indexOf('</article>'));
+    expect(task.indexOf('A useful task')).toBeLessThan(task.indexOf('example-banner.webp'));
+    expect(task.indexOf('example-banner.webp')).toBeLessThan(task.indexOf('fluidise-example'));
+    expect(task).toContain('class="tool-banner"');
+    expect(task).toContain('alt=""');
+    expect(task).toContain('width="2048" height="768"');
+    expect(task).toContain('loading="lazy"');
+    expect(task).toContain('decoding="async"');
+    expect(task).toContain('srcSet=');
+    expect(task).toContain('sizes=');
+    expect(task.match(/<svg/g)).toHaveLength(1);
+  });
+
+  it('does not repeat banners in the independent installation desk', () => {
+    const html = renderToStaticMarkup(<ToolGrid tools={[tool]} />);
+    const install = html.slice(html.indexOf('id="install"'));
+    expect(install).not.toContain('example-banner');
+    expect(install).toContain('fluidise-example');
+  });
+
   it('renders an empty task result without inventing a package', () => {
     const html = renderToStaticMarkup(<ToolGrid tools={[]} />);
     expect(html).toContain('0 tools shown');

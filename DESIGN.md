@@ -281,7 +281,9 @@ Four stable icon/label pairs read Explore, Install, Principles and GitHub. Explo
 
 ### Task gateway and installation desk
 
-Task statements lead open lanes; small package identity/status supports them. A mineral Get started link opens the responsible tool page, while neutral Install command reaches its stable installation row. Quiet pressed-button filters and the announced count affect only task results. The separately titled installation desk always renders the unfiltered ordered collection, exact source commands when present, docs/source links and one Homebrew tap control. There is no exclusive task state, hidden installation prerequisite or generic card library.
+Task statements lead open lanes, followed by a full-width landscape and a dark, untextured presentation block with live package identity/status, purpose and actions. Clint uses its existing plum/lavender forest; Relay uses its existing emerald coastal currents. The square-edged banners retain their full 8:3 composition at every width, with no overlay, crop or additional identity symbol beside the live name. Their embedded white marks and lettering repeat live identity decoratively: images have empty alt text, no link and no focus target. A mineral Get started link opens the responsible tool page, while neutral Install command reaches its stable installation row. Quiet pressed-button filters and the announced count affect only task results. The separately titled installation desk always renders the unfiltered ordered collection, exact source commands when present, docs/source links and one Homebrew tap control. There is no exclusive task state, hidden installation prerequisite or generic card library; installation, principles and footer remain image-free.
+
+Both routes use the same required collection banner field and server-only preparation in `src/lib/tool-banner.ts`. It produces local WebP variants at widths 320, 640, 960, 1280, 1600 and 2048 with quality 85; native image attributes carry resolved URLs, responsive sizes and intrinsic 2048×768 dimensions, not raw source metadata or the optimization result, into the catalog island. Native lazy loading and asynchronous decoding add no preload, animation or image-fetch runtime. Responsive width, automatic height and the reserved 8:3 Surface area keep the full artwork and useful live identity/actions independent of image loading. The exact unmodified PNG originals, source paths and SHA-256 digests are recorded in `src/assets/tools/README.md`; provenance stays there rather than altering their pinned bytes.
 
 ### Copy command
 
@@ -289,7 +291,7 @@ A square Surface bar holds locally scrolling, fully selectable Code ink text and
 
 ### Tool-page starting and reading regions
 
-The same template gives both tools an identity/task masthead, square Surface getting-started panel, generated Reference contents, article, full operational guarantees and collection-derived sibling link. The starting panel preserves source status and command data and links to the existing Installation heading. Its content stacks below the masthead at 900px. Breadcrumb, global navigation and contents have distinct accessible names; native anchors preserve the reading model.
+The same template gives both tools an identity/task masthead, square Surface getting-started panel, full 8:3 banner, generated Reference contents, article, full operational guarantees and collection-derived sibling link, in that order. The starting panel preserves source status and command data and links to the existing Installation heading. Its content stacks below the masthead at 900px, before the banner, so installation never depends on imagery. The banner adds no heading or contents entry; its reserved media area separates the opening from reference without covering either. Breadcrumb, global navigation and contents have distinct accessible names; native anchors preserve the reading model.
 
 ### Clint terminal and documentation code
 

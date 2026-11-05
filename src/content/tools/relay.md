@@ -1,6 +1,7 @@
 ---
 name: 'fluidise-relay'
 taskTitle: 'Manage Git hooks'
+banner: '../../assets/tools/relay-banner.png'
 tagline: 'Agent-first Git hook manager for deterministic orchestration and safe process control'
 summary: 'High-integrity Git lifecycle orchestrator written in Rust. Enforces deterministic command execution, read-only plan inspection before mutation, and structured diagnostics with bounded resource usage.'
 status: 'in-progress'

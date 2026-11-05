@@ -1,9 +1,11 @@
-import { IconArrowRight, IconGitFork } from '@tabler/icons-react';
+import { IconArrowRight } from '@tabler/icons-react';
+import type { ToolBanner } from '../lib/tool-banner';
 
 export interface ToolData {
   id: string;
   name: string;
   taskTitle: string;
+  banner: ToolBanner;
   tagline: string;
   summary: string;
   status: 'released' | 'in-progress' | 'scoping';
@@ -20,29 +22,37 @@ export function ToolCard({ tool }: { tool: ToolData }) {
   return (
     <article className="task-entry" aria-labelledby={`tool-${tool.id}`}>
       <h3 id={`tool-${tool.id}`}>{tool.taskTitle}</h3>
-      <div className="tool-identity">
-        {tool.id === 'clint' ? (
-          <img src="/brand/logo-white.svg" alt="" width={24} height={24} />
-        ) : (
-          <IconGitFork size={24} aria-hidden="true" />
-        )}
-        <span>{tool.name}</span>
-        <span className="tool-status">
-          {tool.status === 'released' ? `${tool.version ?? ''} Released` : 'In Development'}
-        </span>
-      </div>
-      <p className="tool-tagline">{tool.tagline}</p>
-      <div className="tool-links">
-        <a
-          className="primary-link"
-          href={`/tools/${tool.id}`}
-          aria-label={`Get started with ${tool.name}`}
-        >
-          Get started <IconArrowRight size={18} aria-hidden="true" />
-        </a>
-        <a className="text-link" href={`/#install-${tool.id}`}>
-          Install command
-        </a>
+      <img
+        className="tool-banner"
+        src={tool.banner.src}
+        srcSet={tool.banner.srcSet}
+        sizes={tool.banner.sizes}
+        width={tool.banner.width}
+        height={tool.banner.height}
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+      <div className="tool-presentation">
+        <div className="tool-identity">
+          <span>{tool.name}</span>
+          <span className="tool-status">
+            {tool.status === 'released' ? `${tool.version ?? ''} Released` : 'In Development'}
+          </span>
+        </div>
+        <p className="tool-tagline">{tool.tagline}</p>
+        <div className="tool-links">
+          <a
+            className="primary-link"
+            href={`/tools/${tool.id}`}
+            aria-label={`Get started with ${tool.name}`}
+          >
+            Get started <IconArrowRight size={18} aria-hidden="true" />
+          </a>
+          <a className="text-link" href={`/#install-${tool.id}`}>
+            Install command
+          </a>
+        </div>
       </div>
     </article>
   );

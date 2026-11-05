@@ -4,11 +4,17 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import { ToolGrid } from '../components/ToolGrid';
 import ManifestoSection from '../components/ManifestoSection.astro';
+import { getToolBanner } from '../lib/tool-banner';
 
 const toolEntries = await getCollection('tools');
-const tools = toolEntries
-  .map((entry) => ({ id: entry.id, ...entry.data }))
-  .sort((a, b) => a.order - b.order);
+const tools = await Promise.all(toolEntries
+  .sort((a, b) => a.data.order - b.data.order)
+  .map(async (entry) => ({
+    id: entry.id,
+    ...entry.data,
+    banner: await getToolBanner(entry.data.banner,
+      '(max-width: 500px) calc(100vw - 40px), (max-width: 900px) 92vw, (max-width: 1440px) calc(46vw - 48px), (max-width: 1600px) calc(672px - 4vw), 608px'),
+  })));
 ---
 
 <Layout>

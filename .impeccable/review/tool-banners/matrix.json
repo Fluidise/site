@@ -1,0 +1,1217 @@
+[
+  {
+    "viewport": "desktop",
+    "route": "home",
+    "banners": [
+      {
+        "complete": true,
+        "height": 202.796875,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_z0Pya.webp",
+        "width": 540.8046875
+      },
+      {
+        "complete": true,
+        "height": 202.421875,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_czLR0.webp",
+        "width": 539.8046875
+      }
+    ],
+    "client": 1280,
+    "dock": {
+      "bottom": 700,
+      "height": 79.5,
+      "left": 374,
+      "right": 906,
+      "top": 620.5,
+      "width": 532,
+      "x": 374,
+      "y": 620.5
+    },
+    "heading": {
+      "bottom": 440.1875,
+      "height": 100.09375,
+      "left": 51.1953125,
+      "right": 489.4375,
+      "top": 340.09375,
+      "width": 438.2421875,
+      "x": 51.1953125,
+      "y": 340.09375
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 202.796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 540.8046875
+            },
+            {
+              "complete": false,
+              "height": 202.421875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 539.8046875
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 202.796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 540.8046875
+            },
+            {
+              "complete": false,
+              "height": 202.421875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 539.8046875
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 202.796875,
+              "naturalWidth": 540,
+              "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_z0Pya.webp",
+              "width": 540.8046875
+            },
+            {
+              "complete": false,
+              "height": 202.421875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 539.8046875
+            }
+          ],
+          "label": "image-load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 202.796875,
+              "naturalWidth": 540,
+              "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_z0Pya.webp",
+              "width": 540.8046875
+            },
+            {
+              "complete": true,
+              "height": 202.421875,
+              "naturalWidth": 540,
+              "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_czLR0.webp",
+              "width": 539.8046875
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 202.796875,
+          "naturalWidth": 540,
+          "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_z0Pya.webp",
+          "width": 540.8046875
+        },
+        {
+          "complete": true,
+          "height": 202.421875,
+          "naturalWidth": 540,
+          "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_czLR0.webp",
+          "width": 539.8046875
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 161524,
+          "transfer": 161824,
+          "url": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_z0Pya.webp"
+        },
+        {
+          "encoded": 93822,
+          "transfer": 94122,
+          "url": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_czLR0.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 1280
+  },
+  {
+    "viewport": "desktop",
+    "route": "clint",
+    "banners": [
+      {
+        "complete": true,
+        "height": 381.6015625,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_z0Pya.webp",
+        "width": 1017.609375
+      }
+    ],
+    "client": 1280,
+    "dock": {
+      "bottom": 700,
+      "height": 79.5,
+      "left": 374,
+      "right": 906,
+      "top": 620.5,
+      "width": 532,
+      "x": 374,
+      "y": 620.5
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 381.6015625,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 1017.609375
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 381.6015625,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 1017.609375
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 381.6015625,
+              "naturalWidth": 1017,
+              "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_z0Pya.webp",
+              "width": 1017.609375
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 381.6015625,
+          "naturalWidth": 1017,
+          "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_z0Pya.webp",
+          "width": 1017.609375
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 161524,
+          "transfer": 161824,
+          "url": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_z0Pya.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 1280
+  },
+  {
+    "viewport": "desktop",
+    "route": "relay",
+    "banners": [
+      {
+        "complete": true,
+        "height": 381.6015625,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_czLR0.webp",
+        "width": 1017.609375
+      }
+    ],
+    "client": 1280,
+    "dock": {
+      "bottom": 700,
+      "height": 79.5,
+      "left": 374,
+      "right": 906,
+      "top": 620.5,
+      "width": 532,
+      "x": 374,
+      "y": 620.5
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 381.6015625,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 1017.609375
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 381.6015625,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 1017.609375
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 381.6015625,
+              "naturalWidth": 1017,
+              "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_czLR0.webp",
+              "width": 1017.609375
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 381.6015625,
+          "naturalWidth": 1017,
+          "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_czLR0.webp",
+          "width": 1017.609375
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 93822,
+          "transfer": 94122,
+          "url": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_czLR0.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 1280
+  },
+  {
+    "viewport": "mobile",
+    "route": "home",
+    "banners": [
+      {
+        "complete": false,
+        "height": 131.25,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "",
+        "width": 350
+      },
+      {
+        "complete": false,
+        "height": 131.25,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "",
+        "width": 350
+      }
+    ],
+    "client": 390,
+    "dock": {
+      "bottom": 0,
+      "height": 0,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0
+    },
+    "heading": {
+      "bottom": 2352.6875,
+      "height": 73.59375,
+      "left": 20,
+      "right": 370,
+      "top": 2279.09375,
+      "width": 350,
+      "x": 20,
+      "y": 2279.09375
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 131.25,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 350
+            },
+            {
+              "complete": false,
+              "height": 131.25,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 350
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 131.25,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 350
+            },
+            {
+              "complete": false,
+              "height": 131.25,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 350
+            }
+          ],
+          "label": "load"
+        }
+      ],
+      "images": [
+        {
+          "complete": false,
+          "height": 131.25,
+          "naturalWidth": 0,
+          "src": "",
+          "width": 350
+        },
+        {
+          "complete": false,
+          "height": 131.25,
+          "naturalWidth": 0,
+          "src": "",
+          "width": 350
+        }
+      ],
+      "resources": [],
+      "shifts": []
+    },
+    "scroll": 390
+  },
+  {
+    "viewport": "mobile",
+    "route": "clint",
+    "banners": [
+      {
+        "complete": true,
+        "height": 131.25,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_ks6yV.webp",
+        "width": 350
+      }
+    ],
+    "client": 390,
+    "dock": {
+      "bottom": 832,
+      "height": 70.8984375,
+      "left": 12,
+      "right": 378,
+      "top": 761.1015625,
+      "width": 366,
+      "x": 12,
+      "y": 761.1015625
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 131.25,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 350
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 131.25,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 350
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 131.25,
+              "naturalWidth": 350,
+              "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_ks6yV.webp",
+              "width": 350
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 131.25,
+          "naturalWidth": 350,
+          "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_ks6yV.webp",
+          "width": 350
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 46506,
+          "transfer": 46806,
+          "url": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_ks6yV.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 390
+  },
+  {
+    "viewport": "mobile",
+    "route": "relay",
+    "banners": [
+      {
+        "complete": true,
+        "height": 131.25,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_Z2imhLi.webp",
+        "width": 350
+      }
+    ],
+    "client": 390,
+    "dock": {
+      "bottom": 832,
+      "height": 70.8984375,
+      "left": 12,
+      "right": 378,
+      "top": 761.1015625,
+      "width": 366,
+      "x": 12,
+      "y": 761.1015625
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 131.25,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 350
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 131.25,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 350
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 131.25,
+              "naturalWidth": 350,
+              "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_Z2imhLi.webp",
+              "width": 350
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 131.25,
+          "naturalWidth": 350,
+          "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_Z2imhLi.webp",
+          "width": 350
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 29524,
+          "transfer": 29824,
+          "url": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_Z2imhLi.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 390
+  },
+  {
+    "viewport": "landscape",
+    "route": "home",
+    "banners": [
+      {
+        "complete": true,
+        "height": 291.1796875,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_Z5Xk4j.webp",
+        "width": 776.484375
+      },
+      {
+        "complete": true,
+        "height": 291.1796875,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_2lopoo.webp",
+        "width": 776.484375
+      }
+    ],
+    "client": 844,
+    "dock": {
+      "bottom": 0,
+      "height": 0,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0
+    },
+    "heading": {
+      "bottom": 745.234375,
+      "height": 36.796875,
+      "left": 33.7578125,
+      "right": 506.375,
+      "top": 708.4375,
+      "width": 472.6171875,
+      "x": 33.7578125,
+      "y": 708.4375
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 291.1796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 776.484375
+            },
+            {
+              "complete": false,
+              "height": 291.1796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 776.484375
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 291.1796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 776.484375
+            },
+            {
+              "complete": false,
+              "height": 291.1796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 776.484375
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 291.1796875,
+              "naturalWidth": 776,
+              "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_Z5Xk4j.webp",
+              "width": 776.484375
+            },
+            {
+              "complete": false,
+              "height": 291.1796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 776.484375
+            }
+          ],
+          "label": "image-load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 291.1796875,
+              "naturalWidth": 776,
+              "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_Z5Xk4j.webp",
+              "width": 776.484375
+            },
+            {
+              "complete": true,
+              "height": 291.1796875,
+              "naturalWidth": 776,
+              "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_2lopoo.webp",
+              "width": 776.484375
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 291.1796875,
+          "naturalWidth": 776,
+          "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_Z5Xk4j.webp",
+          "width": 776.484375
+        },
+        {
+          "complete": true,
+          "height": 291.1796875,
+          "naturalWidth": 776,
+          "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_2lopoo.webp",
+          "width": 776.484375
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 97624,
+          "transfer": 97924,
+          "url": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_Z5Xk4j.webp"
+        },
+        {
+          "encoded": 58266,
+          "transfer": 58566,
+          "url": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_2lopoo.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 844
+  },
+  {
+    "viewport": "landscape",
+    "route": "clint",
+    "banners": [
+      {
+        "complete": true,
+        "height": 291.1796875,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_Z5Xk4j.webp",
+        "width": 776.484375
+      }
+    ],
+    "client": 844,
+    "dock": {
+      "bottom": 370,
+      "height": 79.5,
+      "left": 156,
+      "right": 688,
+      "top": 290.5,
+      "width": 532,
+      "x": 156,
+      "y": 290.5
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 291.1796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 776.484375
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 291.1796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 776.484375
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 291.1796875,
+              "naturalWidth": 776,
+              "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_Z5Xk4j.webp",
+              "width": 776.484375
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 291.1796875,
+          "naturalWidth": 776,
+          "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_Z5Xk4j.webp",
+          "width": 776.484375
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 97624,
+          "transfer": 97924,
+          "url": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_Z5Xk4j.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 844
+  },
+  {
+    "viewport": "landscape",
+    "route": "relay",
+    "banners": [
+      {
+        "complete": true,
+        "height": 291.1796875,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_2lopoo.webp",
+        "width": 776.484375
+      }
+    ],
+    "client": 844,
+    "dock": {
+      "bottom": 370,
+      "height": 79.5,
+      "left": 156,
+      "right": 688,
+      "top": 290.5,
+      "width": 532,
+      "x": 156,
+      "y": 290.5
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 291.1796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 776.484375
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 291.1796875,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 776.484375
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 291.1796875,
+              "naturalWidth": 776,
+              "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_2lopoo.webp",
+              "width": 776.484375
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 291.1796875,
+          "naturalWidth": 776,
+          "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_2lopoo.webp",
+          "width": 776.484375
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 58266,
+          "transfer": 58566,
+          "url": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_2lopoo.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 844
+  },
+  {
+    "viewport": "narrow",
+    "route": "home",
+    "banners": [
+      {
+        "complete": true,
+        "height": 105,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_KSxdb.webp",
+        "width": 280
+      },
+      {
+        "complete": false,
+        "height": 105,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "",
+        "width": 280
+      }
+    ],
+    "client": 320,
+    "dock": {
+      "bottom": 0,
+      "height": 0,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "width": 0,
+      "x": 0,
+      "y": 0
+    },
+    "heading": {
+      "bottom": 1832.578125,
+      "height": 73.59375,
+      "left": 20,
+      "right": 300,
+      "top": 1758.984375,
+      "width": 280,
+      "x": 20,
+      "y": 1758.984375
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 105,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 280
+            },
+            {
+              "complete": false,
+              "height": 105,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 280
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 105,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 280
+            },
+            {
+              "complete": false,
+              "height": 105,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 280
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 105,
+              "naturalWidth": 279,
+              "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_KSxdb.webp",
+              "width": 280
+            },
+            {
+              "complete": false,
+              "height": 105,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 280
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 105,
+          "naturalWidth": 279,
+          "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_KSxdb.webp",
+          "width": 280
+        },
+        {
+          "complete": false,
+          "height": 105,
+          "naturalWidth": 0,
+          "src": "",
+          "width": 280
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 12660,
+          "transfer": 12960,
+          "url": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_KSxdb.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 320
+  },
+  {
+    "viewport": "narrow",
+    "route": "clint",
+    "banners": [
+      {
+        "complete": true,
+        "height": 105,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_KSxdb.webp",
+        "width": 280
+      }
+    ],
+    "client": 320,
+    "dock": {
+      "bottom": 708,
+      "height": 70.8984375,
+      "left": 12,
+      "right": 308,
+      "top": 637.1015625,
+      "width": 296,
+      "x": 12,
+      "y": 637.1015625
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 105,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 280
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 105,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 280
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 105,
+              "naturalWidth": 279,
+              "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_KSxdb.webp",
+              "width": 280
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 105,
+          "naturalWidth": 279,
+          "src": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_KSxdb.webp",
+          "width": 280
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 12660,
+          "transfer": 12960,
+          "url": "http://127.0.0.1:8768/_astro/clint-banner.C-RYQm95_KSxdb.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 320
+  },
+  {
+    "viewport": "narrow",
+    "route": "relay",
+    "banners": [
+      {
+        "complete": true,
+        "height": 105,
+        "objectFit": "fill",
+        "overflow": "visible",
+        "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_Z1QUQ83.webp",
+        "width": 280
+      }
+    ],
+    "client": 320,
+    "dock": {
+      "bottom": 708,
+      "height": 70.8984375,
+      "left": 12,
+      "right": 308,
+      "top": 637.1015625,
+      "width": 296,
+      "x": 12,
+      "y": 637.1015625
+    },
+    "metrics": {
+      "cls": 0,
+      "events": [
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 105,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 280
+            }
+          ],
+          "label": "dom"
+        },
+        {
+          "images": [
+            {
+              "complete": false,
+              "height": 105,
+              "naturalWidth": 0,
+              "src": "",
+              "width": 280
+            }
+          ],
+          "label": "load"
+        },
+        {
+          "images": [
+            {
+              "complete": true,
+              "height": 105,
+              "naturalWidth": 279,
+              "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_Z1QUQ83.webp",
+              "width": 280
+            }
+          ],
+          "label": "image-load"
+        }
+      ],
+      "images": [
+        {
+          "complete": true,
+          "height": 105,
+          "naturalWidth": 279,
+          "src": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_Z1QUQ83.webp",
+          "width": 280
+        }
+      ],
+      "resources": [
+        {
+          "encoded": 9364,
+          "transfer": 9664,
+          "url": "http://127.0.0.1:8768/_astro/relay-banner.DtWH5l16_Z1QUQ83.webp"
+        }
+      ],
+      "shifts": []
+    },
+    "scroll": 320
+  }
+]

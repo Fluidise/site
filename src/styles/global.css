@@ -464,15 +464,22 @@ h2 {
   margin: 0 0 24px;
   max-width: 15ch;
 }
+.tool-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 3;
+  background: var(--surface);
+}
+.tool-presentation {
+  padding-top: 24px;
+}
 .tool-identity {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 12px;
   font-size: var(--type-label);
-}
-.tool-identity :is(img, svg) {
-  flex-shrink: 0;
 }
 .tool-status {
   font-size: var(--type-meta);
@@ -482,7 +489,6 @@ h2 {
 }
 .tool-identity .tool-status {
   width: 100%;
-  padding-left: 36px;
 }
 .tool-tagline {
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
@@ -856,6 +862,9 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: 32px 48px;
+  margin-bottom: 32px;
+}
+.doc-banner {
   margin-bottom: 64px;
 }
 .doc-header h1 {
@@ -1088,6 +1097,9 @@ article.prose :is(th, td) {
     flex-direction: column;
   }
   .doc-opening {
+    margin-bottom: 32px;
+  }
+  .doc-banner {
     margin-bottom: 48px;
   }
   .doc-contents {
