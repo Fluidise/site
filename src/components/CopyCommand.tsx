@@ -35,7 +35,10 @@ export function CopyCommand({
           )}
         </button>
       </div>
-      <output className={status.startsWith('Copy failed') ? 'terminal-feedback' : 'sr-only'}>
+      <output
+        aria-live="polite"
+        className={status.startsWith('Copy failed') ? 'terminal-feedback' : 'sr-only'}
+      >
         {status}
       </output>
     </div>

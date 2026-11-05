@@ -159,7 +159,10 @@ export function InteractiveTerminal() {
         <span>Exit code: {sample === 'valid' ? '0' : '1'}</span>
         <span>Zero side-effects · Native Rust binary</span>
       </div>
-      <output className={feedback.startsWith('Copy failed') ? 'terminal-feedback' : 'sr-only'}>
+      <output
+        aria-live="polite"
+        className={feedback.startsWith('Copy failed') ? 'terminal-feedback' : 'sr-only'}
+      >
         {feedback}
       </output>
       <output className="sr-only">
