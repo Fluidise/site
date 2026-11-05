@@ -1,0 +1,1528 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#151515" />
+    <meta
+      name="description"
+      content="Fluidise Nocturne palette study: neutral charcoal, untinted reading, a restrained mineral-blue accent for priority actions and focus, and discreet pastel semantics."
+    />
+    <meta
+      name="source-sha256"
+      content="2995c31f28b9b54dcd53bceb0f508b7aa7da69341a9cdacbc61e603d102f7a9c"
+    />
+    <title>Fluidise Nocturne — Palette study</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --canvas: #151515;
+        --surface: #1d1d1d;
+        --raised: #272727;
+        --hover: #313131;
+        --divider: #808080;
+        --boundary: #898989;
+        --ink: #f2f2f2;
+        --secondary: #c2c2c2;
+        --quiet: #a2a2a2;
+        --action: #dedede;
+        --action-hover: #ffffff;
+        --selected: #353535;
+        --accent: #aabad9;
+        --positive: #aecbb3;
+        --negative: #e7a3ae;
+        --warning: #e8c58e;
+        --code-ground: #111111;
+        --code-ink: #e6e6e6;
+        --comment: #a3a3a3;
+        --selection: #464646;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--canvas);
+        font-synthesis: none;
+        scrollbar-color: var(--boundary) var(--canvas);
+        scroll-padding-top: 24px;
+        scroll-padding-bottom: 24px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-width: 320px;
+        font-size: 1.0625rem;
+        line-height: 1.65;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin: 0;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 500;
+        text-wrap: balance;
+      }
+      h1 {
+        font-size: clamp(3.5rem, 8vw, 6rem);
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+      }
+      h2 {
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+      }
+      h3 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        letter-spacing: -0.015em;
+      }
+      a {
+        color: var(--action);
+        text-underline-offset: 0.22em;
+      }
+      a:not(.control):hover {
+        color: var(--action-hover);
+      }
+      button,
+      select {
+        font: inherit;
+      }
+      button,
+      select,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+      button,
+      select {
+        touch-action: manipulation;
+      }
+      button {
+        cursor: pointer;
+      }
+      :where(a, button, select, [tabindex]):focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+      ::selection {
+        color: var(--ink);
+        background: var(--selection);
+      }
+      code,
+      pre,
+      output {
+        font-family: var(--mono);
+        font-variant-numeric: tabular-nums;
+      }
+      code {
+        font-size: 0.875rem;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      .shell {
+        max-width: 1440px;
+        margin-inline: auto;
+        padding-inline: clamp(20px, 4vw, 64px);
+      }
+      .skip {
+        position: fixed;
+        top: -100px;
+        left: 20px;
+        z-index: 10;
+        padding: 12px 20px;
+        color: var(--canvas);
+        background: var(--ink);
+      }
+      .skip:focus {
+        top: 20px;
+      }
+      .masthead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding-block: 28px;
+        border-bottom: 1px solid var(--divider);
+      }
+      .brand {
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .masthead nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+        font-size: 0.9375rem;
+      }
+      .masthead a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+      }
+      .intro {
+        padding-block: 64px 40px;
+      }
+      .intro-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+      .intro-line p {
+        max-width: 46ch;
+        color: var(--secondary);
+        font-size: 1.125rem;
+      }
+      .scope-note {
+        margin-top: 24px;
+        max-width: 85ch;
+        font-size: 0.875rem;
+        color: var(--quiet);
+      }
+      .composition {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        border: 1px solid var(--divider);
+      }
+      .composition-copy {
+        padding: clamp(24px, 4vw, 56px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 24px;
+      }
+      .composition h2 {
+        font-size: clamp(2rem, 3.5vw, 3.25rem);
+        max-width: 12ch;
+      }
+      .composition p {
+        color: var(--secondary);
+        max-width: 45ch;
+      }
+      .surface-stack {
+        display: grid;
+        grid-template-rows: repeat(4, minmax(76px, 1fr));
+      }
+      .surface-step {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 24px 32px;
+        font-size: 0.9375rem;
+      }
+      .surface-step code {
+        color: var(--quiet);
+      }
+      .surface-step:nth-child(1) {
+        background: var(--code-ground);
+      }
+      .surface-step:nth-child(2) {
+        background: var(--surface);
+      }
+      .surface-step:nth-child(3) {
+        background: var(--raised);
+      }
+      .surface-step:nth-child(4) {
+        background: var(--hover);
+      }
+      .color-balance {
+        display: flex;
+        height: 16px;
+        margin-top: 16px;
+        overflow: hidden;
+      }
+      .color-balance span:nth-child(1) {
+        flex: 48;
+        background: var(--surface);
+      }
+      .color-balance span:nth-child(2) {
+        flex: 26;
+        background: var(--raised);
+      }
+      .color-balance span:nth-child(3) {
+        flex: 14;
+        background: var(--ink);
+      }
+      .color-balance span:nth-child(4) {
+        flex: 8;
+        background: var(--action);
+      }
+      .color-balance span:nth-child(5) {
+        flex: 4;
+        background: var(--accent);
+      }
+      .balance-note {
+        margin-top: 12px;
+        color: var(--quiet);
+        font-size: 0.875rem;
+      }
+      .chapter {
+        padding-block: 96px 0;
+      }
+      .section-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 16px 32px;
+        margin-bottom: 32px;
+      }
+      .section-heading p {
+        max-width: 58ch;
+        color: var(--secondary);
+      }
+      .family-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 12px 32px;
+        margin-bottom: 20px;
+      }
+      .family-heading h3 {
+        font-size: 1.25rem;
+      }
+      .family-heading p {
+        color: var(--quiet);
+        font-size: 0.875rem;
+      }
+      .token-family + .token-family {
+        margin-top: 40px;
+      }
+      .token-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 24px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .token {
+        min-width: 0;
+      }
+      .swatch {
+        height: 108px;
+        background: var(--swatch);
+        border: 1px solid var(--boundary);
+        margin-bottom: 16px;
+      }
+      .token h4 {
+        font-size: 0.9375rem;
+        line-height: 1.4;
+        min-height: 2.8em;
+      }
+      .token code {
+        display: block;
+        color: var(--secondary);
+        margin-top: 4px;
+      }
+      .token p {
+        color: var(--quiet);
+        font-size: 0.875rem;
+        line-height: 1.6;
+        margin-top: 12px;
+      }
+      .specimen {
+        border-block: 1px solid var(--divider);
+        padding-block: 32px;
+      }
+      .specimen-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+      }
+      .specimen-grid > * {
+        min-width: 0;
+      }
+      .specimen h3 {
+        font-size: clamp(1.625rem, 2.6vw, 2.25rem);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+      .specimen .lead {
+        color: var(--secondary);
+        font-size: 1.125rem;
+        margin-top: 16px;
+        max-width: 55ch;
+      }
+      .meta {
+        color: var(--quiet);
+        font-size: 0.875rem;
+        margin-top: 16px;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .control {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 44px;
+        max-width: 100%;
+        padding: 11px 24px;
+        border: 1px solid var(--boundary);
+        border-radius: 16px;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        line-height: 1.4;
+        background: var(--surface);
+        color: var(--secondary);
+        text-align: center;
+        text-decoration: none;
+      }
+      .control:hover {
+        color: var(--ink);
+        background: var(--hover);
+      }
+      .control.primary {
+        color: var(--canvas);
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+      .control.primary:hover {
+        color: var(--canvas);
+        background: var(--accent);
+        border-color: var(--accent);
+        text-decoration: underline;
+      }
+      .control[aria-pressed='true'] {
+        position: relative;
+        color: var(--action);
+        background: var(--selected);
+      }
+      .control[aria-pressed='true']::after {
+        content: '';
+        position: absolute;
+        inset: auto 20px 5px;
+        height: 2px;
+        background: var(--accent);
+      }
+      .control:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .focus-example {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+      .state-row {
+        margin-top: 32px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .state-caption {
+        color: var(--quiet);
+        font-size: 0.875rem;
+        margin-top: 20px;
+      }
+      .feedback {
+        display: grid;
+        gap: 8px;
+        margin-top: 24px;
+        font-size: 0.9375rem;
+      }
+      .positive {
+        color: var(--positive);
+      }
+      .negative {
+        color: var(--negative);
+      }
+      .warning {
+        color: var(--warning);
+      }
+      .code-panel {
+        background: var(--code-ground);
+        color: var(--code-ink);
+      }
+      .code-header {
+        background: var(--surface);
+        padding: 20px 24px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 20px;
+        font-size: 0.9375rem;
+      }
+      .code-header small {
+        color: var(--quiet);
+        font-size: 0.875rem;
+      }
+      pre {
+        overflow-x: auto;
+        margin: 0;
+        padding: 24px;
+        font-size: 0.875rem;
+        line-height: 1.7;
+        white-space: pre;
+      }
+      pre code {
+        font: inherit;
+      }
+      .syntax-keyword {
+        color: var(--action);
+      }
+      .syntax-string {
+        color: var(--positive);
+      }
+      .syntax-number {
+        color: var(--code-ink);
+      }
+      .syntax-comment {
+        color: var(--comment);
+      }
+      .syntax-note {
+        padding: 24px 24px 0;
+        font: 0.875rem/1.7 var(--mono);
+      }
+      .syntax-punctuation {
+        color: var(--secondary);
+      }
+      .reading {
+        max-width: 68ch;
+        margin-top: 32px;
+        font-size: 1.125rem;
+        line-height: 1.75;
+        color: var(--secondary);
+      }
+      .reading h3 {
+        color: var(--ink);
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+      }
+      .reading strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .explorer {
+        margin-top: 32px;
+      }
+      .pair-controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+        align-items: end;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+      .pair-controls label {
+        display: grid;
+        gap: 12px;
+        color: var(--secondary);
+        font-size: 0.9375rem;
+        min-width: 0;
+      }
+      select {
+        width: 100%;
+        min-width: 0;
+        min-height: 48px;
+        color: var(--ink);
+        background: var(--surface);
+        border: 1px solid var(--boundary);
+        border-radius: 12px;
+        padding: 12px;
+        font-size: 0.9375rem;
+      }
+      .pair-result {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+      }
+      .live-sample {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: clamp(24px, 4vw, 48px);
+        color: var(--quiet);
+        background: var(--hover);
+        overflow-wrap: anywhere;
+      }
+      .live-sample h3 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+      .live-sample p {
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+      .result-details {
+        background: var(--surface);
+        padding: 32px;
+      }
+      .result-details > p {
+        color: var(--secondary);
+        font-size: 0.875rem;
+      }
+      .ratio-output {
+        display: block;
+        color: var(--ink);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.25;
+        letter-spacing: -0.035em;
+        margin-block: 12px 24px;
+      }
+      .thresholds {
+        display: grid;
+        gap: 12px;
+        font-size: 0.9375rem;
+      }
+      .thresholds p {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px;
+      }
+      .pass {
+        color: var(--positive);
+      }
+      .fail {
+        color: var(--negative);
+      }
+      .pair-description {
+        margin-block: 16px 32px;
+        font-size: 0.875rem;
+        color: var(--quiet);
+      }
+      .table-scroll {
+        overflow-x: auto;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        text-align: left;
+        font-size: 0.9375rem;
+      }
+      caption {
+        color: var(--secondary);
+        font-size: 0.9375rem;
+        text-align: left;
+        padding-block: 0 20px;
+      }
+      th,
+      td {
+        padding: 16px 12px;
+        border-bottom: 1px solid var(--divider);
+        vertical-align: middle;
+      }
+      thead th {
+        color: var(--secondary);
+        font-weight: 500;
+        font-size: 0.875rem;
+        white-space: nowrap;
+      }
+      tbody th {
+        font-weight: 400;
+        min-width: 200px;
+      }
+      .pair-ground {
+        display: block;
+        color: var(--quiet);
+        font-size: 0.875rem;
+      }
+      .pair-sample {
+        display: inline-flex;
+        width: 60px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+      }
+      .boundary-sample {
+        display: block;
+        width: 32px;
+        height: 24px;
+        border: 2px solid currentColor;
+      }
+      .ratio-cell {
+        font-family: var(--mono);
+        white-space: nowrap;
+      }
+      .verdict {
+        font-size: 0.875rem;
+        white-space: nowrap;
+      }
+      .method {
+        margin-top: 24px;
+        max-width: 80ch;
+        font-size: 0.875rem;
+        color: var(--quiet);
+      }
+      details {
+        margin-top: 24px;
+        color: var(--secondary);
+        font-size: 0.875rem;
+      }
+      summary {
+        cursor: pointer;
+        padding-block: 12px;
+        min-height: 44px;
+      }
+      details p {
+        max-width: 80ch;
+        margin-block: 12px;
+      }
+      .source-hash {
+        overflow-wrap: anywhere;
+        color: var(--quiet);
+      }
+      footer {
+        margin-top: 96px;
+        border-top: 1px solid var(--divider);
+        padding-block: 28px 48px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        color: var(--quiet);
+        font-size: 0.875rem;
+      }
+      @supports (corner-shape: squircle) {
+        .control,
+        select {
+          corner-shape: squircle;
+          border-radius: 40px;
+        }
+      }
+      @media (max-width: 900px) {
+        .token-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .specimen-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .intro-line {
+          align-items: start;
+        }
+        .pair-controls {
+          grid-template-columns: 1fr 1fr;
+        }
+        .pair-controls button {
+          grid-column: 1 / -1;
+          justify-self: start;
+        }
+      }
+      @media (max-width: 600px) {
+        .intro {
+          padding-top: 40px;
+        }
+        .chapter {
+          padding-top: 64px;
+        }
+        .composition,
+        .pair-result {
+          grid-template-columns: 1fr;
+        }
+        .token-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 24px 16px;
+        }
+        .swatch {
+          height: 88px;
+        }
+        .token h4 {
+          min-height: 0;
+        }
+        .family-heading {
+          gap: 8px;
+        }
+        .pair-controls {
+          grid-template-columns: 1fr;
+        }
+        .surface-step {
+          padding-inline: 24px;
+        }
+        footer {
+          margin-top: 64px;
+        }
+      }
+      @media (forced-colors: active) {
+        .swatch {
+          forced-color-adjust: none;
+        }
+        .control,
+        select {
+          border-color: ButtonText;
+        }
+        .control[aria-pressed='true']::after {
+          background: Highlight;
+        }
+        .focus-example,
+        :where(a, button, select, [tabindex]):focus-visible {
+          outline-color: Highlight;
+        }
+        .composition,
+        th,
+        td,
+        .specimen {
+          border-color: CanvasText;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to palette study</a>
+    <div class="shell">
+      <header class="masthead">
+        <span class="brand">Fluidise / Nocturne</span>
+        <nav aria-label="Palette study sections">
+          <a href="#palette">Palette</a><a href="#in-use">In use</a><a href="#contrast">Contrast</a
+          ><a href="dark-design-system.md">Specification</a>
+        </nav>
+      </header>
+      <main id="main">
+        <section class="intro" aria-labelledby="title">
+          <div class="intro-line">
+            <h1 id="title">Nocturne</h1>
+            <p id="direction-description">
+              Neutral charcoal. Clear white type. One mineral blue, used sparingly.
+            </p>
+          </div>
+          <p class="scope-note">
+            Revised exploration, not the live site: neutral charcoal foundations and untinted
+            reading are retained. Mineral blue (#AABAD9), inspired by the approved hero’s sky and
+            stone, is limited to primary-action fill, the active marker and keyboard focus. Pastel
+            success, error and warning colors are unchanged. The complete design is now approved in
+            the adjacent specification; this page remains a non-production color study. Instrument
+            Sans is used only if installed; otherwise system sans is shown. No fonts, images or
+            libraries are downloaded.
+          </p>
+        </section>
+        <section aria-label="Palette composition">
+          <div class="composition">
+            <div class="composition-copy">
+              <h2>One palette.<br />Different depths.</h2>
+              <p>
+                The interface recedes. Text stays neutral. Mineral blue singles out the primary
+                action, active marker and keyboard focus; pastel feedback keeps its own semantic
+                colors.
+              </p>
+              <a class="control primary" href="#contrast">Explore the contrast</a>
+            </div>
+            <div class="surface-stack" aria-label="Dark surface progression">
+              <div class="surface-step">
+                <span>Code ground</span><code data-color-value="code-ground">#111111</code>
+              </div>
+              <div class="surface-step">
+                <span>Surface</span><code data-color-value="surface">#1D1D1D</code>
+              </div>
+              <div class="surface-step">
+                <span>Raised surface</span><code data-color-value="raised">#272727</code>
+              </div>
+              <div class="surface-step">
+                <span>Hover surface</span><code data-color-value="hover">#313131</code>
+              </div>
+            </div>
+          </div>
+          <div class="color-balance" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p class="balance-note">
+            Visual emphasis: mostly dark ground, then readable ink, then small accents. This strip
+            is illustrative, not a prescribed percentage split.
+          </p>
+        </section>
+        <section class="chapter" id="palette" aria-labelledby="palette-heading">
+          <div class="section-heading">
+            <h2 id="palette-heading">The palette</h2>
+            <p>
+              Twenty roles, arranged by what they do.<br />Neutral foundations and reading
+              retained.<br />A single mineral accent marks priority interactions.
+            </p>
+          </div>
+          <section class="token-family" aria-label="Foundations">
+            <div class="family-heading">
+              <h3>Foundations</h3>
+              <p>Depth comes from neighboring tones, not from glass.</p>
+            </div>
+            <ul class="token-grid">
+              <li class="token" data-token="canvas" data-name="Canvas">
+                <div class="swatch" style="--swatch: var(--canvas)" aria-hidden="true"></div>
+                <h4>Canvas</h4>
+                <code data-color-value="canvas">#151515</code>
+                <p>Page, catalog, documentation reading ground and footer</p>
+              </li>
+              <li class="token" data-token="surface" data-name="Surface">
+                <div class="swatch" style="--swatch: var(--surface)" aria-hidden="true"></div>
+                <h4>Surface</h4>
+                <code data-color-value="surface">#1D1D1D</code>
+                <p>Installation bars, technical headers and quiet grouped controls</p>
+              </li>
+              <li class="token" data-token="raised" data-name="Raised surface">
+                <div class="swatch" style="--swatch: var(--raised)" aria-hidden="true"></div>
+                <h4>Raised surface</h4>
+                <code data-color-value="raised">#272727</code>
+                <p>Dock and restrained selected/hover-adjacent surfaces</p>
+              </li>
+              <li class="token" data-token="hover" data-name="Hover surface">
+                <div class="swatch" style="--swatch: var(--hover)" aria-hidden="true"></div>
+                <h4>Hover surface</h4>
+                <code data-color-value="hover">#313131</code>
+                <p>Lightest permitted ordinary-text ground for contrast checks</p>
+              </li>
+              <li class="token" data-token="code-ground" data-name="Code ground">
+                <div class="swatch" style="--swatch: var(--code-ground)" aria-hidden="true"></div>
+                <h4>Code ground</h4>
+                <code data-color-value="code-ground">#111111</code>
+                <p>Terminal output and documentation code</p>
+              </li>
+            </ul>
+          </section>
+          <section class="token-family" aria-label="Reading">
+            <div class="family-heading">
+              <h3>Reading</h3>
+              <p>Untinted whites and grays, with three clear levels of emphasis.</p>
+            </div>
+            <ul class="token-grid">
+              <li class="token" data-token="ink" data-name="Primary ink">
+                <div class="swatch" style="--swatch: var(--ink)" aria-hidden="true"></div>
+                <h4>Primary ink</h4>
+                <code data-color-value="ink">#F2F2F2</code>
+                <p>Text and strong labels; primary-action fill uses the mineral accent</p>
+              </li>
+              <li class="token" data-token="secondary" data-name="Secondary ink">
+                <div class="swatch" style="--swatch: var(--secondary)" aria-hidden="true"></div>
+                <h4>Secondary ink</h4>
+                <code data-color-value="secondary">#C2C2C2</code>
+                <p>Descriptions, secondary links and supporting copy</p>
+              </li>
+              <li class="token" data-token="quiet" data-name="Quiet ink">
+                <div class="swatch" style="--swatch: var(--quiet)" aria-hidden="true"></div>
+                <h4>Quiet ink</h4>
+                <code data-color-value="quiet">#A2A2A2</code>
+                <p>Small metadata that is still readable text</p>
+              </li>
+              <li class="token" data-token="code-ink" data-name="Code ink">
+                <div class="swatch" style="--swatch: var(--code-ink)" aria-hidden="true"></div>
+                <h4>Code ink</h4>
+                <code data-color-value="code-ink">#E6E6E6</code>
+                <p>Plain commands, JSON samples and default code tokens</p>
+              </li>
+              <li class="token" data-token="comment" data-name="Code comments">
+                <div class="swatch" style="--swatch: var(--comment)" aria-hidden="true"></div>
+                <h4>Code comments</h4>
+                <code data-color-value="comment">#A3A3A3</code>
+                <p>Comments, not faint body text</p>
+              </li>
+            </ul>
+          </section>
+          <section class="token-family" aria-label="Interaction">
+            <div class="family-heading">
+              <h3>Interaction</h3>
+              <p>
+                Ordinary links stay neutral. Mineral blue is reserved for primary actions, the
+                active marker and focus.
+              </p>
+            </div>
+            <ul class="token-grid">
+              <li class="token" data-token="action" data-name="Action">
+                <div class="swatch" style="--swatch: var(--action)" aria-hidden="true"></div>
+                <h4>Action</h4>
+                <code data-color-value="action">#DEDEDE</code>
+                <p>Ordinary text links and selected-control labels</p>
+              </li>
+              <li class="token" data-token="action-hover" data-name="Action hover">
+                <div class="swatch" style="--swatch: var(--action-hover)" aria-hidden="true"></div>
+                <h4>Action hover</h4>
+                <code data-color-value="action-hover">#FFFFFF</code>
+                <p>Hover/focus link ink</p>
+              </li>
+              <li class="token" data-token="selected" data-name="Selected ground">
+                <div class="swatch" style="--swatch: var(--selected)" aria-hidden="true"></div>
+                <h4>Selected ground</h4>
+                <code data-color-value="selected">#353535</code>
+                <p>Pressed filters and selected tabs, with a visible selection marker</p>
+              </li>
+              <li class="token" data-token="accent" data-name="Mineral accent">
+                <div class="swatch" style="--swatch: var(--accent)" aria-hidden="true"></div>
+                <h4>Mineral accent</h4>
+                <code data-color-value="accent">#AABAD9</code>
+                <p>Primary-action fill, active marker and external keyboard-focus outline</p>
+              </li>
+              <li class="token" data-token="selection" data-name="Selection ground">
+                <div class="swatch" style="--swatch: var(--selection)" aria-hidden="true"></div>
+                <h4>Selection ground</h4>
+                <code data-color-value="selection">#464646</code>
+                <p>Text selection with Primary ink</p>
+              </li>
+            </ul>
+          </section>
+          <section class="token-family" aria-label="Meaning & structure">
+            <div class="family-heading">
+              <h3>Meaning & structure</h3>
+              <p>Semantic color stays sparse; dividers are not control boundaries.</p>
+            </div>
+            <ul class="token-grid">
+              <li class="token" data-token="positive" data-name="Positive">
+                <div class="swatch" style="--swatch: var(--positive)" aria-hidden="true"></div>
+                <h4>Positive</h4>
+                <code data-color-value="positive">#AECBB3</code>
+                <p>
+                  Existing success/check feedback and status when its text already identifies
+                  success
+                </p>
+              </li>
+              <li class="token" data-token="negative" data-name="Negative">
+                <div class="swatch" style="--swatch: var(--negative)" aria-hidden="true"></div>
+                <h4>Negative</h4>
+                <code data-color-value="negative">#E7A3AE</code>
+                <p>Copy failure and invalid sample output</p>
+              </li>
+              <li class="token" data-token="warning" data-name="Warning">
+                <div class="swatch" style="--swatch: var(--warning)" aria-hidden="true"></div>
+                <h4>Warning</h4>
+                <code data-color-value="warning">#E8C58E</code>
+                <p>
+                  Existing warning semantics, if encountered; not a reason to add a new warning UI
+                </p>
+              </li>
+              <li class="token" data-token="divider" data-name="Divider">
+                <div class="swatch" style="--swatch: var(--divider)" aria-hidden="true"></div>
+                <h4>Divider</h4>
+                <code data-color-value="divider">#808080</code>
+                <p>Nonessential section/row separation only</p>
+              </li>
+              <li class="token" data-token="boundary" data-name="Control boundary">
+                <div class="swatch" style="--swatch: var(--boundary)" aria-hidden="true"></div>
+                <h4>Control boundary</h4>
+                <code data-color-value="boundary">#898989</code>
+                <p>Meaningful input/button boundary; do not substitute Divider</p>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section class="chapter" id="in-use" aria-labelledby="use-heading">
+          <div class="section-heading">
+            <h2 id="use-heading">Color, in context</h2>
+            <p>Reading, action and feedback on the same quiet ground.</p>
+          </div>
+          <div class="specimen">
+            <div class="specimen-grid">
+              <div>
+                <h3>fluidise-clint</h3>
+                <p class="lead">
+                  Deterministic Conventional Commits validator designed for AI agents and automated
+                  workflows
+                </p>
+                <p class="meta">
+                  Catalog specimen · product wording from the existing content, not a verified
+                  release claim.
+                </p>
+                <div class="actions">
+                  <a class="control primary" href="dark-design-system.md">Read the specification</a
+                  ><a href="#reading-sample">Read Specification &amp; Docs</a>
+                </div>
+                <div class="state-row" aria-label="Control appearance specimens">
+                  <button
+                    type="button"
+                    class="control"
+                    id="selection-demo"
+                    aria-pressed="false"
+                    hidden
+                  >
+                    Toggle selection
+                  </button>
+                  <span class="control focus-example">Mineral accent</span>
+                  <button type="button" class="control" disabled>Disabled example</button>
+                </div>
+                <p class="state-caption">
+                  Blue outline is an always-visible mineral-accent specimen. Use Tab to inspect
+                  actual keyboard focus. The selection button only changes its own appearance.
+                </p>
+                <div class="feedback" aria-label="Illustrative semantic feedback">
+                  <p class="positive">Success example: command copied.</p>
+                  <p class="negative">
+                    Error example: copy failed. Select and copy the output manually.
+                  </p>
+                  <p class="warning">Warning color specimen only; no new warning UI is proposed.</p>
+                </div>
+              </div>
+              <div>
+                <div class="code-panel">
+                  <div class="code-header">
+                    <span>JSON / color specimen</span
+                    ><small>Sample output, not live execution</small>
+                  </div>
+                  <p class="syntax-comment syntax-note">
+                    Illustrative syntax colors · not Shiki output.
+                  </p>
+                  <pre><code><span class="syntax-punctuation">{</span>
+  <span class="syntax-keyword">"schema_version"</span><span class="syntax-punctuation">:</span> <span class="syntax-number">1</span><span class="syntax-punctuation">,</span>
+  <span class="syntax-keyword">"status"</span><span class="syntax-punctuation">:</span> <span class="syntax-string">"valid"</span><span class="syntax-punctuation">,</span>
+  <span class="syntax-keyword">"diagnostics"</span><span class="syntax-punctuation">:</span> <span class="syntax-punctuation">[]</span>
+<span class="syntax-punctuation">}</span></code></pre>
+                </div>
+                <article class="reading" id="reading-sample">
+                  <h3>Machine-readable output</h3>
+                  <p>
+                    By default, <strong>fluidise-clint</strong> outputs structured JSON, enabling
+                    coding agents to parse errors with byte-level precision.
+                    <a href="../../src/content/tools/clint.md"
+                      >View the existing documentation source</a
+                    >.
+                  </p>
+                  <p><em>A reading specimen, with restrained links and room between lines.</em></p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="chapter" id="contrast" aria-labelledby="contrast-heading">
+          <div class="section-heading">
+            <h2 id="contrast-heading">Contrast, not guesswork</h2>
+            <p>
+              Check the intended combinations below, or try any two roles. Failed pairs are useful
+              evidence, not alternate recommendations.
+            </p>
+          </div>
+          <div class="explorer" id="explorer" hidden>
+            <form class="pair-controls" aria-label="Choose a contrast pair">
+              <label
+                >Foreground<select id="foreground">
+                  <option value="canvas">Canvas · #151515</option>
+                  <option value="surface">Surface · #1D1D1D</option>
+                  <option value="raised">Raised surface · #272727</option>
+                  <option value="hover">Hover surface · #313131</option>
+                  <option value="divider">Divider · #808080</option>
+                  <option value="boundary">Control boundary · #898989</option>
+                  <option value="ink">Primary ink · #F2F2F2</option>
+                  <option value="secondary">Secondary ink · #C2C2C2</option>
+                  <option value="quiet">Quiet ink · #A2A2A2</option>
+                  <option value="action">Action · #DEDEDE</option>
+                  <option value="action-hover">Action hover · #FFFFFF</option>
+                  <option value="selected">Selected ground · #353535</option>
+                  <option value="accent">Mineral accent · #AABAD9</option>
+                  <option value="positive">Positive · #AECBB3</option>
+                  <option value="negative">Negative · #E7A3AE</option>
+                  <option value="warning">Warning · #E8C58E</option>
+                  <option value="code-ground">Code ground · #111111</option>
+                  <option value="code-ink">Code ink · #E6E6E6</option>
+                  <option value="comment">Code comments · #A3A3A3</option>
+                  <option value="selection">Selection ground · #464646</option>
+                </select></label
+              >
+              <label
+                >Background<select id="background">
+                  <option value="canvas">Canvas · #151515</option>
+                  <option value="surface">Surface · #1D1D1D</option>
+                  <option value="raised">Raised surface · #272727</option>
+                  <option value="hover">Hover surface · #313131</option>
+                  <option value="divider">Divider · #808080</option>
+                  <option value="boundary">Control boundary · #898989</option>
+                  <option value="ink">Primary ink · #F2F2F2</option>
+                  <option value="secondary">Secondary ink · #C2C2C2</option>
+                  <option value="quiet">Quiet ink · #A2A2A2</option>
+                  <option value="action">Action · #DEDEDE</option>
+                  <option value="action-hover">Action hover · #FFFFFF</option>
+                  <option value="selected">Selected ground · #353535</option>
+                  <option value="accent">Mineral accent · #AABAD9</option>
+                  <option value="positive">Positive · #AECBB3</option>
+                  <option value="negative">Negative · #E7A3AE</option>
+                  <option value="warning">Warning · #E8C58E</option>
+                  <option value="code-ground">Code ground · #111111</option>
+                  <option value="code-ink">Code ink · #E6E6E6</option>
+                  <option value="comment">Code comments · #A3A3A3</option>
+                  <option value="selection">Selection ground · #464646</option>
+                </select></label
+              >
+              <button class="control" type="button" id="swap">Swap colors</button>
+            </form>
+            <div class="pair-result">
+              <div class="live-sample" id="live-sample">
+                <h3>Details deserve to be read.</h3>
+                <p>
+                  Quiet text should still be readable. This sample shows the exact foreground and
+                  background you selected, without opacity or a color overlay.
+                </p>
+              </div>
+              <div class="result-details">
+                <p>Relative sRGB luminance contrast</p>
+                <output class="ratio-output" id="ratio" aria-live="polite" aria-atomic="true"
+                  >5.10:1</output
+                >
+                <div class="thresholds">
+                  <p>Normal text · AA ≥ 4.5:1 <span id="normal-result" class="pass">Pass</span></p>
+                  <p>Large text · AA ≥ 3:1 <span id="large-result" class="pass">Pass</span></p>
+                  <p>UI adjacency · ≥ 3:1 <span id="ui-result" class="pass">Pass</span></p>
+                </div>
+              </div>
+            </div>
+            <p class="pair-description" id="pair-description">
+              Quiet ink on Hover surface · #A2A2A2 on #313131
+            </p>
+          </div>
+          <noscript
+            ><p class="method">
+              Interactive pairing requires JavaScript. All swatches, specimens and reference ratios
+              below remain visible without it.
+            </p></noscript
+          >
+          <div
+            class="table-scroll"
+            role="region"
+            aria-label="Reference contrast pairs, horizontally scrollable"
+            tabindex="0"
+          >
+            <table>
+              <caption>
+                Revised neutral combinations. Ratios use exact opaque hex values; pass/fail uses
+                unrounded values.
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Sample</th>
+                  <th scope="col">Color pair</th>
+                  <th scope="col">Ratio</th>
+                  <th scope="col">Purpose</th>
+                  <th scope="col">Threshold check</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-foreground="ink" data-background="hover" data-threshold="4.5">
+                  <td>
+                    <span class="pair-sample" style="color: var(--ink); background: var(--hover)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">Primary ink<span class="pair-ground">on Hover surface</span></th>
+                  <td class="ratio-cell">11.62:1</td>
+                  <td>Normal text</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="secondary" data-background="hover" data-threshold="4.5">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--secondary); background: var(--hover)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">
+                    Secondary ink<span class="pair-ground">on Hover surface</span>
+                  </th>
+                  <td class="ratio-cell">7.30:1</td>
+                  <td>Normal text</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="quiet" data-background="hover" data-threshold="4.5">
+                  <td>
+                    <span class="pair-sample" style="color: var(--quiet); background: var(--hover)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">Quiet ink<span class="pair-ground">on Hover surface</span></th>
+                  <td class="ratio-cell">5.10:1</td>
+                  <td>Normal text</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="action" data-background="hover" data-threshold="4.5">
+                  <td>
+                    <span class="pair-sample" style="color: var(--action); background: var(--hover)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">Action<span class="pair-ground">on Hover surface</span></th>
+                  <td class="ratio-cell">9.67:1</td>
+                  <td>Normal text</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="boundary" data-background="hover" data-threshold="3">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--boundary); background: var(--hover)"
+                      ><span class="boundary-sample" aria-hidden="true"></span
+                    ></span>
+                  </td>
+                  <th scope="row">
+                    Control boundary<span class="pair-ground">on Hover surface</span>
+                  </th>
+                  <td class="ratio-cell">3.72:1</td>
+                  <td>UI boundary</td>
+                  <td><span class="verdict pass">Meets 3:1</span></td>
+                </tr>
+                <tr data-foreground="action" data-background="selected" data-threshold="4.5">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--action); background: var(--selected)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">Action<span class="pair-ground">on Selected ground</span></th>
+                  <td class="ratio-cell">9.12:1</td>
+                  <td>Normal text</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="canvas" data-background="accent" data-threshold="4.5">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--canvas); background: var(--accent)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">Canvas<span class="pair-ground">on Mineral accent</span></th>
+                  <td class="ratio-cell">9.33:1</td>
+                  <td>Primary-action text</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="ink" data-background="selection" data-threshold="4.5">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--ink); background: var(--selection)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">
+                    Primary ink<span class="pair-ground">on Selection ground</span>
+                  </th>
+                  <td class="ratio-cell">8.43:1</td>
+                  <td>Selected text</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="code-ink" data-background="code-ground" data-threshold="4.5">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--code-ink); background: var(--code-ground)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">Code ink<span class="pair-ground">on Code ground</span></th>
+                  <td class="ratio-cell">15.13:1</td>
+                  <td>Code text</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="comment" data-background="code-ground" data-threshold="4.5">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--comment); background: var(--code-ground)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">Code comments<span class="pair-ground">on Code ground</span></th>
+                  <td class="ratio-cell">7.49:1</td>
+                  <td>Code comments</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="accent" data-background="selected" data-threshold="3">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--accent); background: var(--selected)"
+                      ><span class="boundary-sample" aria-hidden="true"></span
+                    ></span>
+                  </td>
+                  <th scope="row">
+                    Mineral accent<span class="pair-ground">on Selected ground</span>
+                  </th>
+                  <td class="ratio-cell">6.27:1</td>
+                  <td>Active indicator</td>
+                  <td><span class="verdict pass">Meets 3:1</span></td>
+                </tr>
+                <tr data-foreground="accent" data-background="hover" data-threshold="3">
+                  <td>
+                    <span class="pair-sample" style="color: var(--accent); background: var(--hover)"
+                      ><span class="boundary-sample" aria-hidden="true"></span
+                    ></span>
+                  </td>
+                  <th scope="row">
+                    Mineral accent<span class="pair-ground">on Hover surface</span>
+                  </th>
+                  <td class="ratio-cell">6.65:1</td>
+                  <td>External focus outline</td>
+                  <td><span class="verdict pass">Meets 3:1</span></td>
+                </tr>
+                <tr data-foreground="positive" data-background="hover" data-threshold="4.5">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--positive); background: var(--hover)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">Positive<span class="pair-ground">on Hover surface</span></th>
+                  <td class="ratio-cell">7.43:1</td>
+                  <td>Success text</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="negative" data-background="hover" data-threshold="4.5">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--negative); background: var(--hover)"
+                      >Aa</span
+                    >
+                  </td>
+                  <th scope="row">Negative<span class="pair-ground">on Hover surface</span></th>
+                  <td class="ratio-cell">6.35:1</td>
+                  <td>Error text</td>
+                  <td><span class="verdict pass">Meets 4.5:1</span></td>
+                </tr>
+                <tr data-foreground="divider" data-background="hover" data-threshold="3">
+                  <td>
+                    <span
+                      class="pair-sample"
+                      style="color: var(--divider); background: var(--hover)"
+                      ><span class="boundary-sample" aria-hidden="true"></span
+                    ></span>
+                  </td>
+                  <th scope="row">Divider<span class="pair-ground">on Hover surface</span></th>
+                  <td class="ratio-cell">3.29:1</td>
+                  <td>Section / row separation</td>
+                  <td><span class="verdict pass">Meets 3:1</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="method">
+            “Large text” means at least 24 CSS px regular or about 18.67 CSS px bold at default
+            scaling. UI adjacency refers only to the selected pair, not the complete control or
+            focus area. Divider now has at least 3:1 contrast against Canvas, Surface, Raised
+            surface and Hover surface. It remains a section/row separator, not a text color;
+            interactive controls retain their separate Control boundary role.
+          </p>
+          <details>
+            <summary>Method, source and limits</summary>
+            <p>
+              Each sRGB channel is divided by 255, linearized with c / 12.92 when c ≤ 0.04045,
+              otherwise ((c + 0.055) / 1.055) ^ 2.4. Luminance is 0.2126 R + 0.7152 G + 0.0722 B;
+              contrast is (lighter + 0.05) / (darker + 0.05). No APCA score is implied.
+            </p>
+            <p>
+              These calculations are not a WCAG conformance certificate. Font rasterization,
+              rendered components, actual focus area/adjacent colors, images, transparency,
+              disabled-state exceptions and real assistive settings require separate validation.
+              Under forced colors, the browser may remap the specimens; only empty color swatches
+              retain their original pigments. Ratios always describe the specified sRGB values, not
+              forced system colors.
+            </p>
+            <p>
+              The live site, approved hero, font files and implementation design metadata are
+              unchanged. The complete design is approved in the specification; neither this
+              companion nor design approval authorizes production implementation, font acquisition,
+              Git shipping or deployment. The canonical reference is
+              <a href="dark-design-system.md">dark-design-system.md</a>.
+            </p>
+            <p class="source-hash">
+              Synchronized specification SHA-256:
+              <code>2995c31f28b9b54dcd53bceb0f508b7aa7da69341a9cdacbc61e603d102f7a9c</code>. Palette
+              values match the linked specification; resynchronize this companion if that contract
+              changes.
+            </p>
+          </details>
+        </section>
+      </main>
+      <footer>
+        <span>Fluidise Nocturne · Palette study</span
+        ><span>Neutral foundations. One mineral accent. Pastel semantics.</span>
+      </footer>
+    </div>
+    <script>
+      (() => {
+        const rootStyle = getComputedStyle(document.documentElement);
+        const tokenElements = Array.from(document.querySelectorAll('[data-token]'));
+        const tokens = new Map(
+          tokenElements.map((element) => [
+            element.dataset.token,
+            {
+              name: element.dataset.name,
+              hex: rootStyle.getPropertyValue(`--${element.dataset.token}`).trim(),
+            },
+          ]),
+        );
+        const foreground = document.getElementById('foreground');
+        const background = document.getElementById('background');
+        const ratioOutput = document.getElementById('ratio');
+        const sample = document.getElementById('live-sample');
+        const description = document.getElementById('pair-description');
+
+        function luminance(hex) {
+          const channels = [1, 3, 5].map((offset) => {
+            const c = parseInt(hex.slice(offset, offset + 2), 16) / 255;
+            return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+          });
+          return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+        }
+
+        function contrast(ink, ground) {
+          const a = luminance(ink);
+          const b = luminance(ground);
+          return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+        }
+
+        function update() {
+          const ink = tokens.get(foreground.value);
+          const ground = tokens.get(background.value);
+          const ratio = contrast(ink.hex, ground.hex);
+          sample.style.color = ink.hex;
+          sample.style.backgroundColor = ground.hex;
+          const normal = ratio >= 4.5;
+          const large = ratio >= 3;
+          ratioOutput.value = `${ratio.toFixed(2)}:1`;
+          ratioOutput.setAttribute(
+            'aria-label',
+            `${ratio.toFixed(2)} to 1. Normal text AA: ${normal ? 'pass' : 'fail'}. Large text AA and UI adjacency: ${large ? 'pass' : 'fail'}.`,
+          );
+          for (const [id, passed] of [
+            ['normal-result', normal],
+            ['large-result', large],
+            ['ui-result', large],
+          ]) {
+            const element = document.getElementById(id);
+            element.textContent = passed ? 'Pass' : 'Fail';
+            element.className = passed ? 'pass' : 'fail';
+          }
+          description.textContent = `${ink.name} on ${ground.name} · ${ink.hex} on ${ground.hex}`;
+        }
+
+        foreground.value = 'quiet';
+        background.value = 'hover';
+        foreground.addEventListener('change', update);
+        background.addEventListener('change', update);
+        document.getElementById('swap').addEventListener('click', () => {
+          const previous = foreground.value;
+          foreground.value = background.value;
+          background.value = previous;
+          update();
+        });
+        document
+          .querySelector('.pair-controls')
+          .addEventListener('submit', (event) => event.preventDefault());
+        update();
+        document.getElementById('explorer').hidden = false;
+        const selection = document.getElementById('selection-demo');
+        selection.hidden = false;
+        selection.addEventListener('click', () => {
+          selection.setAttribute(
+            'aria-pressed',
+            String(selection.getAttribute('aria-pressed') !== 'true'),
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

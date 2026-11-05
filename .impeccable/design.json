@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-25T20:51:09.788608Z",
+  "generatedAt": "2026-11-04T09:50:45.459447+00:00",
   "title": "Design System: Fluidise Alpine Glass",
   "extensions": {
     "colorMeta": {
@@ -343,16 +343,16 @@
       "hero-fallback": {
         "role": "neutral",
         "displayName": "Hero Fallback",
-        "canonical": "#3d8ec7",
+        "canonical": "#697399",
         "tonalRamp": [
-          "oklch(15% .04 250)",
-          "oklch(26% .04 250)",
-          "oklch(37% .04 250)",
-          "oklch(49% .04 250)",
-          "oklch(61% .04 250)",
-          "oklch(73% .04 250)",
-          "oklch(85% .04 250)",
-          "oklch(95% .04 250)"
+          "oklch(15% 0.0603 272.92)",
+          "oklch(26% 0.0603 272.92)",
+          "oklch(37% 0.0603 272.92)",
+          "oklch(49% 0.0603 272.92)",
+          "oklch(61% 0.0603 272.92)",
+          "oklch(73% 0.0603 272.92)",
+          "oklch(85% 0.0603 272.92)",
+          "oklch(95% 0.0603 272.92)"
         ],
         "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
       },
@@ -419,12 +419,44 @@
           "oklch(95% .04 250)"
         ],
         "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+      },
+      "hero-title-ink": {
+        "role": "neutral",
+        "displayName": "Hero title ivory",
+        "canonical": "#f6f0e6",
+        "tonalRamp": [
+          "oklch(15% 0.0148 80.71)",
+          "oklch(26% 0.0148 80.71)",
+          "oklch(37% 0.0148 80.71)",
+          "oklch(49% 0.0148 80.71)",
+          "oklch(61% 0.0148 80.71)",
+          "oklch(73% 0.0148 80.71)",
+          "oklch(85% 0.0148 80.71)",
+          "oklch(95% 0.0148 80.71)"
+        ],
+        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
+      },
+      "hero-title-wash": {
+        "role": "neutral",
+        "displayName": "Hero title pigment wash",
+        "canonical": "rgb(250 245 234 / .78)",
+        "tonalRamp": [
+          "oklch(15% 0.0155 86.42 / .78)",
+          "oklch(26% 0.0155 86.42 / .78)",
+          "oklch(37% 0.0155 86.42 / .78)",
+          "oklch(49% 0.0155 86.42 / .78)",
+          "oklch(61% 0.0155 86.42 / .78)",
+          "oklch(73% 0.0155 86.42 / .78)",
+          "oklch(85% 0.0155 86.42 / .78)",
+          "oklch(95% 0.0155 86.42 / .78)"
+        ],
+        "rampPurpose": "Synthesized panel preview metadata only; not additional normative source colors."
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Homepage condensed white FLUIDISE wordmark; mobile tracking override is documented in DESIGN.md."
+        "purpose": "Monumental centered ivory FLUIDISE wordmark; same Barlow family. 3svh top, 8svh narrow; short landscape uses 2svh and min(26vw,38svh). Other headings unchanged. Static brushwork from the approved background is clipped to both coincident faces with opaque-color and forced-color fallbacks."
       },
       "headline": {
         "displayName": "Headline",
@@ -531,15 +563,20 @@
       },
       {
         "name": "wordmark-separation",
-        "value": "0 2px 12px rgb(12 54 83 / .18)",
-        "purpose": "Text shadow over the photograph, not panel elevation."
+        "value": "drop-shadow(0 3px 12px rgb(20 30 58 / .32)); text-shadow fallback: 0 3px 24px rgb(20 30 58 / .32)",
+        "purpose": "Clipped semantic title only; front face has neither shadow nor filter, and forced colors disable both."
       }
     ],
     "motion": [
       {
         "name": "control-color-transition",
         "value": "background-color .15s ease, color .15s ease",
-        "purpose": "Existing small-control state transition; banner animation is deferred."
+        "purpose": "Existing small-control state transition, independent of the dedicated hero animation."
+      },
+      {
+        "name": "archipelago-scroll-journey",
+        "value": "300dvh track, 100dvh sticky viewport; two viewport heights of native scroll. Island scale 1..1.6 (1..1.35 narrow); foreground 1..1.85; cloud phase .252/-.432 source widths per full journey; opacity clears over final 40%. Title grows to 1.08, descends .25 viewport height, front face fades over progress 0..16%, semantic title fades over 18..68%.",
+        "purpose": "One event-driven draw per input batch. No idle loop, clock, pointer response or pause button. Reverse scroll reconstructs every layer. Dock hidden until catalog entry, including keyboard/assistive technology. Reduced motion/no JavaScript: static, unpinned one-viewport hero. GPU/decode fallback preserves reserved scroll geometry. One semantic h1 behind rock planes and a coincident aria-hidden front face keep the initial name whole without a stacking-order cut."
       }
     ],
     "breakpoints": [
@@ -621,9 +658,9 @@
   ],
   "narrative": {
     "northStar": "Alpine Glass",
-    "overview": "An alpine panorama establishes the Fluidise identity; snow-white reading surfaces keep its independent developer tools legible. Glacier blue marks actions and selected controls, while slate carries the documentation. Liquid/glacial glass belongs to the labeled navigation dock, not the technical panels.\n\nThe condensed wordmark and editorial headings share Barlow Condensed; Source Sans 3 supports reading and interface roles, while commands and structured samples retain native monospace. Existing black and white official SVG logos remain unmodified. The user delegated this site-wide typography replacement; historical first-viewport composition approval is not approval of the new lettering, and automated workflow closure remains incomplete.",
+    "overview": "A painterly suspended archipelago introduces Fluidise; snow-white reading surfaces keep its independent developer tools legible. The hero's dedicated diorama replaces the alpine panorama without redesigning the surrounding Alpine Glass interface. Glacier blue marks actions and selected controls, while slate carries the documentation. Liquid/glacial glass belongs to the labeled navigation dock, not the technical panels.\n\nThe condensed wordmark and editorial headings share Barlow Condensed; Source Sans 3 supports reading and interface roles, while commands and structured samples retain native monospace. Existing black and white official SVG logos remain unmodified. The user delegated this site-wide typography replacement; historical first-viewport composition approval is not approval of the new lettering, and automated workflow closure remains incomplete.",
     "keyCharacteristics": [
-      "Full-width alpine photography with an uninterrupted sky wordmark.",
+      "Full-width painted archipelago led by a monumental ivory FLUIDISE wordmark with restrained painted pigments, scroll-driven lettering depth, independently layered scenery, and an original-image static fallback.",
       "Snow-white reading ground, glacier-blue actions, and slate text.",
       "Fixed labeled glacial-glass dock with progressive squircle corners.",
       "Square installation, terminal, and documentation code surfaces.",
@@ -642,7 +679,7 @@
       }
     ],
     "dos": [
-      "Do preserve the 75% viewport homepage banner and the dock-safe transition before the first tool entry.",
+      "Do preserve the full-viewport scroll journey, dock-free hero, reduced-motion/static alternatives, and the dock-safe transition before the first tool entry.",
       "Do retain visible dock labels, safe-area spacing, keyboard focus, and local command scrolling.",
       "Do use the official black and white SVG assets without modification.",
       "Do preserve original tool names, source copy, filters, links, sample modes, and copy feedback.",
@@ -651,7 +688,7 @@
     "donts": [
       "Don't add a conventional top navigation bar, homepage marketing headline, or right reading rail to this approved composition.",
       "Don't apply glass or rounded corners to installation bars, terminal panels, or documentation code blocks.",
-      "Don't add banner animation in this task; it is deferred to a dedicated skill.",
+      "Don't expand the dedicated hero's motion into unrelated page regions, take over native scrolling, or make pointer input necessary.",
       "Don't treat existing release, availability, performance, or execution claims as evidence verified by the redesign."
     ]
   }

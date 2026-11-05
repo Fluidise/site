@@ -1,6 +1,6 @@
 ---
 name: 'Fluidise Alpine Glass'
-description: 'Snow-white tool discovery, alpine photography, glacial navigation, and square technical surfaces.'
+description: 'Snow-white tool discovery, a painterly suspended archipelago, glacial navigation, and square technical surfaces.'
 colors:
   snow: '#ffffff'
   ice: '#eff5fa'
@@ -23,7 +23,9 @@ colors:
   code-ground: '#10283e'
   code-ink: '#edf6ff'
   selection-ground: '#c7e3ff'
-  hero-fallback: '#3d8ec7'
+  hero-fallback: '#697399'
+  hero-title-ink: '#f6f0e6'
+  hero-title-wash: 'rgb(250 245 234 / .78)'
   dock-hover: 'rgb(212 232 255 / .55)'
   copy-hover: '#dbeaf9'
   principle-highlight: '#215887'
@@ -31,10 +33,10 @@ colors:
 typography:
   display:
     fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
-    fontSize: 'clamp(3rem, 10vw, 6rem)'
+    fontSize: 'clamp(3rem, 26vw, 38rem)'
     fontWeight: 700
-    lineHeight: 0.95
-    letterSpacing: '0.12em'
+    lineHeight: 0.82
+    letterSpacing: '0.055em'
   headline:
     fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
     fontSize: 'clamp(2.25rem, 3.5vw, 3.25rem)'
@@ -229,13 +231,13 @@ components:
 
 **Creative North Star: "Alpine Glass"**
 
-An alpine panorama establishes the Fluidise identity; snow-white reading surfaces keep its independent developer tools legible. Glacier blue marks actions and selected controls, while slate carries the documentation. Liquid/glacial glass belongs to the labeled navigation dock, not the technical panels.
+A painterly suspended archipelago introduces Fluidise; snow-white reading surfaces keep its independent developer tools legible. The hero's dedicated diorama replaces the alpine panorama without redesigning the surrounding Alpine Glass interface. Glacier blue marks actions and selected controls, while slate carries the documentation. Liquid/glacial glass belongs to the labeled navigation dock, not the technical panels.
 
 The condensed wordmark and editorial headings share Barlow Condensed; Source Sans 3 supports reading and interface roles, while commands and structured samples retain native monospace. Existing black and white official SVG logos remain unmodified. The user delegated this site-wide typography replacement; historical first-viewport composition approval is not approval of the new lettering, and automated workflow closure remains incomplete.
 
 **Key Characteristics:**
 
-- Full-width alpine photography with an uninterrupted sky wordmark.
+- Full-width painted archipelago led by a monumental semantic FLUIDISE wordmark, scroll-driven lettering depth, independently layered scenery, and an original-image static fallback.
 - Snow-white reading ground, glacier-blue actions, and slate text.
 - Fixed labeled glacial-glass dock with progressive squircle corners.
 - Square installation, terminal, and documentation code surfaces.
@@ -260,7 +262,7 @@ Cool white and glacier blue establish the alpine world; slate provides reading c
 - **Terminal ground / border / output:** light demonstration panel with blue structured output.
 - **Code ground / ink:** dark documentation blocks, distinct from the light interactive terminal.
 - **Selection ground:** pale blue text-selection backing, paired with slate text.
-- **Hero fallback:** blue banner backing while the photographic asset loads.
+- **Hero fallback:** slate-blue banner backing while the painted asset loads.
 - **Dock hover / Copy hover:** the actual translucent dock-link hover and opaque copy-button hover surfaces; neither is a new brand accent.
 - **Principle highlight / Inline code ink:** supporting blue emphasis within principles and pale-backed inline documentation code.
 
@@ -272,11 +274,11 @@ The error token is functional: invalid sample output and visible copy-failure fe
 **Body and Interface Font:** self-hosted Source Sans 3 variable, with Segoe UI and sans-serif fallbacks.
 **Code Font:** native monospace stack recorded in frontmatter.
 
-The “Expedition Field Guide” pairing uses condensed, emphatic headings against open humanist reading copy. The typography replacement is explicitly authorized in `.impeccable/surfaces/typography.md`; it does not replace the alpine photograph, palette, shapes, official SVG marks, copy, or behavior.
+The “Expedition Field Guide” pairing uses condensed, emphatic headings against open humanist reading copy. The historical typography replacement was authorized in `.impeccable/surfaces/typography.md` without changing imagery or behavior. The separate archipelago hero mandate in `docs/specs/alpine-canvas-hero.md` now replaces that imagery and owns its motion; the existing type families, non-hero hierarchy, surrounding palette, shapes, official SVG marks, and product copy remain unchanged. The later organization-title refinement enlarges only the hero display role.
 
 ### Hierarchy
 
-- **Display:** the white homepage wordmark uses the display token. At widths up to 600px, tracking becomes .1em; the same size clamp remains active and left position becomes 6%.
+- **Display:** the centered ivory homepage wordmark uses the monumental display token, .82 line height and .055em tracking. This hero-specific approved exception to the former 6rem display cap leaves other headings unchanged. The top offset is 3svh (8svh at widths up to 600px). Short landscape layouts use 2svh and `min(26vw, 38svh)` to keep the whole name visible. A 94% text-width bound permits wrapping with wider fallback fonts or enlarged text; the loaded Barlow wordmark stays on one line.
 - **Headlines and titles:** the headline token serves catalog, demonstration, and guarantees section headings. Documentation titles use their own larger clamp and wrap long names. Package titles use the package-title token, switching to compact-package-title at 600px and below. All use the heading family at 700.
 - **Editorial subheadings:** principles use principle-heading; long-form documentation uses prose-section and prose-subheading. Section, principle, terminal, and prose third-level headings balance lines. Prose headings reset tracking to zero.
 - **Body and reading:** body is the shared interface and introductory-copy baseline; catalog-summary, feature-list, principle-copy, and prose distinguish line rhythm without mobile body reductions. Measures are 70ch for catalog summary, features and introductory copy; 65ch for taglines, principle paragraphs and documentation leads; and 68ch for article prose.
@@ -294,7 +296,7 @@ Shared sizes use rem units or rem-bounded clamps. The two local WOFF2 faces use 
 
 The shared shell is centered, capped at 1600px, with the fluid page gutter in frontmatter. Documentation has its own 1120px maximum shell and a narrower prose measure. The site supports a 320px minimum body width.
 
-The homepage photograph spans the viewport width and occupies exactly 75% of its height, implemented as 75vh followed by 75svh for small-viewport support. The image covers the banner; desktop uses a centered crop and mobile uses 56% center. The wordmark sits in the upper-left sky. Terminal and installation content remain below the photograph.
+The homepage painting fills a sticky viewport edge to edge, using 100% width and 100dvh height with a 100vh fallback. Its 300dvh track reserves two viewport heights of native scroll before releasing into the catalog. Dynamic units follow the visible mobile viewport. Both the static image and enhanced SVG planes use a centered cover crop (`xMidYMid slice` for SVG), including on narrow screens. The centered, almost full-width ivory wordmark is entirely readable on arrival. It grows slightly and descends into the island silhouette before fading later in the journey. No pause button or dock overlays the hero; the dock returns as the catalog enters and stays unchanged on documentation routes. Reduced motion and no JavaScript use a normal, one-viewport static hero without pinning.
 
 The catalog follows directly on white. Its heading/filter region reserves a deliberate dock-safe transition with min-height calc(25svh - 30px); the first tool entry starts after that transition, not underneath the dock. The fixed dock is bottom-centered, capped at 532px and bounded by calc(100% - 24px). Desktop bottom offset is calc(20px + env(safe-area-inset-bottom, 0px)); mobile uses 12px plus the safe area. Shared clearance is calc(116px + env(safe-area-inset-bottom, 0px)), used for footer padding, focus scrolling, and scroll padding.
 
@@ -304,12 +306,12 @@ The terminal uses paired command/output columns, stacking at 600px and below. Th
 
 ## Elevation & Depth
 
-Photography supplies landscape depth. The white catalog and ice-toned reading surfaces remain flat, separated by space and fine borders. The dock alone carries the main floating material: a luminous translucent fill, white edge, 24px backdrop blur with saturation 1.25, diffuse shadow, and an inset white highlight. Reduced-transparency preferences replace this material with an opaque pale-blue surface and no backdrop filter.
+The hero combines an approved painted background with source-coordinate SVG cutouts of the original island and foreground rock. One native WebGL canvas adds painted cloud bands and faint near mist, sampling the approved background rather than reconstructing the scenery. Their phase and clearing follow scroll progress only. Source-bound silhouettes occlude the atmosphere in the same centered-cover coordinates as the moving DOM planes. An event-driven scheduler draws once per input batch, with no ambient clock, pointer response, or idle loop. Native scroll approaches the island (up to 1.6 scale desktop, 1.35 narrow), sends the foreground out of view, and recedes the wordmark behind the actual island silhouette before fading it; reversing scroll restores the exact composition. The title material reuses the approved optimized background as stationary brushwork clipped inside the glyphs: an opaque ivory ground, a constant 78%-opacity warm wash, and faint lavender/peach pigments. Both title faces share the same 180% texture scale and 68%/88% crop; this is painted material, not a moving cloud scene inside letters. No generated noise, new raster, text holes or embossing is used. A solid ivory fallback remains when the texture is unavailable or text clipping is unsupported; forced colors use CanvasText with no image or shadow. One semantic h1 sits behind the rock planes, while an aria-hidden coincident front face fades out over progress 0..16%, avoiding a sudden stacking-order cut. Both share the same title transforms: up to 8% growth, downward travel up to 25% of viewport height, and opacity fade over progress 18..68%. The decorative front face is visible only after successful scene readiness; reduced motion, failure and no JavaScript retain the fully readable semantic title. Reduced motion, offscreen/hidden suspension, and the original-painting fallback bound the enhancement; no scroll capture or new copy is introduced. The white catalog and ice-toned reading surfaces remain flat, separated by space and fine borders. The dock alone carries the main floating UI material: a luminous translucent fill, white edge, 24px backdrop blur with saturation 1.25, diffuse shadow, and an inset white highlight. Reduced-transparency preferences replace this material with an opaque pale-blue surface and no backdrop filter.
 
 ### Shadow Vocabulary
 
 - **Dock lift:** `0 10px 32px rgb(26 65 105 / .16), inset 0 1px 1px white`.
-- **Wordmark separation:** `0 2px 12px rgb(12 54 83 / .18)` text shadow over the photograph.
+- **Wordmark separation:** `drop-shadow(0 3px 12px rgb(20 30 58 / .32))` on the clipped semantic wordmark, avoiding shadow ink inside the pigment fill. Without text-clipping support, use `0 3px 24px rgb(20 30 58 / .32)` text shadow. Its coincident decorative front face has neither shadow nor filter.
 
 **The Material Contrast Rule.** Keep glass on navigation and square corners on technical surfaces; do not turn commands or terminal output into glass cards.
 
@@ -345,13 +347,13 @@ A square bordered light panel with header controls, command/output split, and me
 
 Dark square code blocks contrast with the light demonstration terminal. Blocks scroll locally, use 24px padding, and retain syntax-rendered source content. Inline code has a small pale backing and square corners. Documentation links are blue and underlined.
 
-All interactive elements retain a 3px glacier focus outline with 4px offset. Reduced-motion preferences disable smooth scrolling and effectively suppress transitions. Banner animation remains explicitly deferred; do not infer a new motion grammar from existing control transitions. No input-field component exists in the current system.
+All interactive elements retain a 3px glacier focus outline with 4px offset. Reduced-motion preferences disable smooth scrolling and suppress transitions. The dedicated archipelago hero is entirely scroll-driven, so stopping scroll freezes all layers and no pause/resume control is rendered. Reduced motion shows the original static painting without pinning, disables atmosphere and spatial offsets, and requires no GPU initialization. Missing or lost WebGL also exposes the original painting; restoration rebuilds resources and paints the current scroll position once. GPU/decode failure preserves the reserved track instead of unexpectedly moving the reader; the original image remains visible throughout. This local scene behavior does not establish a site-wide motion grammar. No input-field component exists in the current system.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** preserve the 75% viewport homepage banner and the dock-safe transition before the first tool entry.
+- **Do** preserve the full-viewport scroll journey, dock-free hero, reduced-motion/static alternatives, and the dock-safe transition before the first tool entry.
 - **Do** retain visible dock labels, safe-area spacing, keyboard focus, and local command scrolling.
 - **Do** use the official black and white SVG assets without modification.
 - **Do** preserve original tool names, source copy, filters, links, sample modes, and copy feedback.
@@ -361,7 +363,7 @@ All interactive elements retain a 3px glacier focus outline with 4px offset. Red
 
 - **Don't** add a conventional top navigation bar, homepage marketing headline, or right reading rail to this approved composition.
 - **Don't** apply glass or rounded corners to installation bars, terminal panels, or documentation code blocks.
-- **Don't** add banner animation in this task; it is deferred to a dedicated skill.
+- **Don't** expand the dedicated hero's motion into unrelated page regions, take over native scrolling, or make pointer input necessary.
 - **Don't** treat existing release, availability, performance, or execution claims as evidence verified by the redesign.
 
 Evidence: current source in `src/styles/global.css`, `src/components/`, `src/pages/index.astro`, `src/pages/tools/[id].astro`, and `src/layouts/Layout.astro`; composition direction in `.impeccable/surfaces/src-pages-index-astro.md` and the authorized typography replacement in `.impeccable/surfaces/typography.md`; product constraints in `PRODUCT.md`. The independent review's follow-up verdict records overflow, dock clearance, and package heading fixes as resolved. The historical human first-viewport checkpoint applies to the prior composition, not the newly replaced typography; separate automated material gates and workflow/evidence closure remain incomplete. Current task status and diagnostic references are recorded in the surface brief. This document does not certify shipping completion.
