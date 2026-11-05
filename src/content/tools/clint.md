@@ -1,6 +1,7 @@
 ---
 name: 'fluidise-clint'
 taskTitle: 'Validate commit messages'
+banner: '../../assets/tools/clint-banner.png'
 tagline: 'Deterministic Conventional Commits validator designed for AI agents and automated workflows'
 summary: 'High-performance commit message linter that emits structured, versioned JSON diagnostics by default with exact byte-range spans, guaranteed bounded execution, and zero filesystem side effects.'
 status: 'released'

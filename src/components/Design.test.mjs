@@ -1,8 +1,10 @@
 // Run after the static build: node src/components/Design.test.mjs
 // Assert actual route output and the real collection schema without installing test tooling.
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 import { z } from 'astro/zod';
 
 const root = new URL('../../', import.meta.url);
@@ -90,14 +92,29 @@ console.log(
 const collectionSource = read('src/content.config.ts')
   .replace(/^import .*;\n/gm, '')
   .replace('export const collections =', 'return');
-const schema = new Function('z', 'defineCollection', 'glob', collectionSource)(
+const collectionSchema = new Function('z', 'defineCollection', 'glob', collectionSource)(
   z,
   (value) => value,
   () => ({}),
 ).tools.schema;
+// Exercise the installed image validator with real local files, not a string-schema stand-in.
+const { createImage } = await import(
+  new URL('../../node_modules/astro/dist/content/runtime-assets.js', import.meta.url)
+);
+const entryPath = fileURLToPath(new URL('src/content/tools/clint.md', root));
+const schema = collectionSchema({
+  image: createImage(
+    {
+      resolve: async (path) => ({ id: fileURLToPath(new URL(path, new URL(entryPath, 'file:'))) }),
+    },
+    false,
+    entryPath,
+  ),
+});
 const valid = {
   name: 'tool',
   taskTitle: 'A task',
+  banner: '../../assets/tools/clint-banner.png',
   tagline: 'Purpose',
   summary: 'Summary',
   status: 'scoping',
@@ -106,11 +123,18 @@ const valid = {
   repoUrl: 'https://example.com',
   keyFeatures: [],
 };
-assert(schema.safeParse(valid).success);
+assert((await schema.safeParseAsync(valid)).success);
 for (const taskTitle of [undefined, '', '   '])
-  assert(!schema.safeParse({ ...valid, taskTitle }).success);
-assert(!schema.safeParse({ ...valid, repoUrl: 'javascript:alert(1)' }).success);
-assert.equal(schema.parse({ ...valid, taskTitle: '  A task  ' }).taskTitle, 'A task');
+  assert(!(await schema.safeParseAsync({ ...valid, taskTitle })).success);
+for (const banner of [undefined, '../../assets/tools/missing-banner.png'])
+  assert(!(await schema.safeParseAsync({ ...valid, banner })).success);
+for (const banner of ['', '../../assets/tools/README.md'])
+  await assert.rejects(
+    schema.safeParseAsync({ ...valid, banner }),
+    /Could not process image metadata/,
+  );
+assert(!(await schema.safeParseAsync({ ...valid, repoUrl: 'javascript:alert(1)' })).success);
+assert.equal((await schema.parseAsync({ ...valid, taskTitle: '  A task  ' })).taskTitle, 'A task');
 for (const name of ['clint', 'relay']) {
   const path = `src/content/tools/${name}.md`;
   const before = execFileSync('git', ['show', `HEAD:${path}`], { cwd: root, encoding: 'utf8' });
@@ -118,9 +142,14 @@ for (const name of ['clint', 'relay']) {
   const metadata = (text) =>
     text
       .split('---')[1]
-      .replace(/^taskTitle:.*\n/gm, '')
+      .replace(/^banner:.*\n/gm, '')
       .trim();
   assert.equal(metadata(after), metadata(before), 'All prior product metadata is unchanged');
+  assert.equal(
+    after.slice(after.indexOf('\n---', 4)),
+    before.slice(before.indexOf('\n---', 4)),
+    'The entire Markdown body remains unchanged',
+  );
   const fences = (text) =>
     [...text.matchAll(/^```[^\n]*\n[\s\S]*?^```/gm)].map((match) => match[0]).sort();
   assert.deepEqual(
@@ -129,6 +158,47 @@ for (const name of ['clint', 'relay']) {
     'Commands/configuration/example fences remain exact',
   );
 }
+const banners = (html) =>
+  [...html.matchAll(/<img\b[^>]*class="tool-banner(?: doc-banner)?"[^>]*>/g)].map(([tag]) => tag);
+assert.equal(banners(home).length, 2);
+assert(!home.includes('ASTRO_ASSET'));
+for (const [name, html] of [
+  ['clint', clint],
+  ['relay', relay],
+]) {
+  const tags = banners(html);
+  assert.equal(tags.length, 1);
+  const banner = tags[0];
+  for (const tag of [...banners(home), banner]) {
+    assert(tag.includes('alt=""'));
+    assert(tag.includes('loading="lazy"'));
+    assert(tag.includes('decoding="async"'));
+    assert(tag.includes('width="2048" height="768"'));
+    assert(/src[Ss]et="[^"]+320w[^"]+2048w"/.test(tag));
+    assert(tag.includes('sizes="'));
+    assert(!tag.includes('fetchpriority'));
+    assert(!tag.includes('.png'));
+    assert(!tag.includes('tabindex'));
+  }
+  assert(banner.includes(`/_astro/${name}-banner.`));
+  assert(html.indexOf('id="get-started"') < html.indexOf(banner));
+  assert(html.indexOf(banner) < html.indexOf('class="doc-reading"'));
+  assert(
+    !readdirSync(new URL('dist/_astro/', root)).some(
+      (file) => file.startsWith(`${name}-banner.`) && file.endsWith('.png'),
+    ),
+  );
+}
+for (const [name, expected] of [
+  ['clint', '4bf506a8d6f97cf8832b0d7db3363f54fab42a82d34f96ab5c8283edd5cc6234'],
+  ['relay', 'b473c25f597ec406b79c388782c95c617dc3f0aff7cc984eae27d6bd145d8452'],
+]) {
+  const original = readFileSync(new URL(`src/assets/tools/${name}-banner.png`, root));
+  assert.equal(createHash('sha256').update(original).digest('hex'), expected);
+}
+console.log(
+  'PASS: real local image validation, optimized SSR banners, preserved artwork and start-before-image order',
+);
 const normal = readFileSync(new URL('public/fonts/InstrumentSans-Variable-latin.woff2', root));
 const italic = readFileSync(
   new URL('public/fonts/InstrumentSans-Italic-Variable-latin.woff2', root),

@@ -1,0 +1,347 @@
+{
+  "cases": [
+    {
+      "mode": "blocked",
+      "route": "/?qa=blocked#tools",
+      "banners": [
+        {
+          "height": 105,
+          "loaded": false,
+          "width": 280
+        },
+        {
+          "height": 105,
+          "loaded": false,
+          "width": 280
+        }
+      ],
+      "links": ["/tools/clint", "/#install-clint", "/tools/relay", "/#install-relay"],
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]}],\"resources\":[]}",
+      "names": ["fluidise-clintv1.0.0 Released", "fluidise-relayIn Development"],
+      "scripts": 6,
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "mode": "blocked",
+      "route": "/tools/clint?qa=blocked",
+      "banners": [
+        {
+          "height": 105,
+          "loaded": false,
+          "width": 280
+        }
+      ],
+      "links": ["#installation"],
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8768/__blocked/_astro/clint-banner.C-RYQm95_KSxdb.webp\",\"width\":280,\"height\":105,\"complete\":true,\"naturalWidth\":0}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-error\",\"images\":[{\"src\":\"http://127.0.0.1:8768/__blocked/_astro/clint-banner.C-RYQm95_KSxdb.webp\",\"width\":280,\"height\":105,\"complete\":true,\"naturalWidth\":0}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8768/__blocked/_astro/clint-banner.C-RYQm95_KSxdb.webp\",\"transfer\":774,\"encoded\":474}]}",
+      "names": ["fluidise-clint"],
+      "scripts": 6,
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "mode": "blocked",
+      "route": "/tools/relay?qa=blocked",
+      "banners": [
+        {
+          "height": 105,
+          "loaded": false,
+          "width": 280
+        }
+      ],
+      "links": ["#installation"],
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8768/__blocked/_astro/relay-banner.DtWH5l16_Z1QUQ83.webp\",\"width\":280,\"height\":105,\"complete\":true,\"naturalWidth\":0}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-error\",\"images\":[{\"src\":\"http://127.0.0.1:8768/__blocked/_astro/relay-banner.DtWH5l16_Z1QUQ83.webp\",\"width\":280,\"height\":105,\"complete\":true,\"naturalWidth\":0}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8768/__blocked/_astro/relay-banner.DtWH5l16_Z1QUQ83.webp\",\"transfer\":774,\"encoded\":474}]}",
+      "names": ["fluidise-relay"],
+      "scripts": 5,
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "mode": "corrupt",
+      "route": "/?qa=corrupt#tools",
+      "banners": [
+        {
+          "height": 105,
+          "loaded": false,
+          "width": 280
+        },
+        {
+          "height": 105,
+          "loaded": false,
+          "width": 280
+        }
+      ],
+      "links": ["/tools/clint", "/#install-clint", "/tools/relay", "/#install-relay"],
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]}],\"resources\":[]}",
+      "names": ["fluidise-clintv1.0.0 Released", "fluidise-relayIn Development"],
+      "scripts": 6,
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "mode": "corrupt",
+      "route": "/tools/clint?qa=corrupt",
+      "banners": [
+        {
+          "height": 105,
+          "loaded": false,
+          "width": 280
+        }
+      ],
+      "links": ["#installation"],
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8768/__corrupt/_astro/clint-banner.C-RYQm95_KSxdb.webp\",\"width\":280,\"height\":105,\"complete\":true,\"naturalWidth\":0}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-error\",\"images\":[{\"src\":\"http://127.0.0.1:8768/__corrupt/_astro/clint-banner.C-RYQm95_KSxdb.webp\",\"width\":280,\"height\":105,\"complete\":true,\"naturalWidth\":0}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8768/__corrupt/_astro/clint-banner.C-RYQm95_KSxdb.webp\",\"transfer\":313,\"encoded\":13}]}",
+      "names": ["fluidise-clint"],
+      "scripts": 6,
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "mode": "corrupt",
+      "route": "/tools/relay?qa=corrupt",
+      "banners": [
+        {
+          "height": 105,
+          "loaded": false,
+          "width": 280
+        }
+      ],
+      "links": ["#installation"],
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8768/__corrupt/_astro/relay-banner.DtWH5l16_Z1QUQ83.webp\",\"width\":280,\"height\":105,\"complete\":true,\"naturalWidth\":0}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":105,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-error\",\"images\":[{\"src\":\"http://127.0.0.1:8768/__corrupt/_astro/relay-banner.DtWH5l16_Z1QUQ83.webp\",\"width\":280,\"height\":105,\"complete\":true,\"naturalWidth\":0}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8768/__corrupt/_astro/relay-banner.DtWH5l16_Z1QUQ83.webp\",\"transfer\":313,\"encoded\":13}]}",
+      "names": ["fluidise-relay"],
+      "scripts": 5,
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "mode": "nojs",
+      "route": "/?qa=nojs#tools",
+      "banners": [
+        {
+          "height": 105,
+          "loaded": true,
+          "width": 280
+        },
+        {
+          "height": 105,
+          "loaded": true,
+          "width": 280
+        }
+      ],
+      "links": ["/tools/clint", "/#install-clint", "/tools/relay", "/#install-relay"],
+      "names": ["fluidise-clintv1.0.0 Released", "fluidise-relayIn Development"],
+      "scripts": 0,
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "mode": "nojs",
+      "route": "/tools/clint?qa=nojs",
+      "banners": [
+        {
+          "height": 105,
+          "loaded": true,
+          "width": 280
+        }
+      ],
+      "links": ["#installation"],
+      "names": ["fluidise-clint"],
+      "scripts": 0,
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "mode": "nojs",
+      "route": "/tools/relay?qa=nojs",
+      "banners": [
+        {
+          "height": 105,
+          "loaded": true,
+          "width": 280
+        }
+      ],
+      "links": ["#installation"],
+      "names": ["fluidise-relay"],
+      "scripts": 0,
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "mode": "slow",
+      "before": {
+        "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"\",\"width\":350,\"height\":131.25,\"complete\":false,\"naturalWidth\":0}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":350,\"height\":131.25,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":350,\"height\":131.25,\"complete\":false,\"naturalWidth\":0}]}],\"resources\":[]}",
+        "rect": {
+          "bottom": 872.4765625,
+          "height": 131.25,
+          "left": 20,
+          "right": 370,
+          "top": 741.2265625,
+          "width": 350,
+          "x": 20,
+          "y": 741.2265625
+        }
+      },
+      "after": {
+        "metrics": {
+          "cls": 0,
+          "events": [
+            {
+              "images": [
+                {
+                  "complete": false,
+                  "height": 131.25,
+                  "naturalWidth": 0,
+                  "src": "",
+                  "width": 350
+                }
+              ],
+              "label": "dom"
+            },
+            {
+              "images": [
+                {
+                  "complete": false,
+                  "height": 131.25,
+                  "naturalWidth": 0,
+                  "src": "",
+                  "width": 350
+                }
+              ],
+              "label": "load"
+            },
+            {
+              "images": [
+                {
+                  "complete": true,
+                  "height": 131.25,
+                  "naturalWidth": 350,
+                  "src": "http://127.0.0.1:8768/__slow/_astro/clint-banner.C-RYQm95_ks6yV.webp",
+                  "width": 350
+                }
+              ],
+              "label": "image-load"
+            }
+          ],
+          "images": [
+            {
+              "complete": true,
+              "height": 131.25,
+              "naturalWidth": 350,
+              "src": "http://127.0.0.1:8768/__slow/_astro/clint-banner.C-RYQm95_ks6yV.webp",
+              "width": 350
+            }
+          ],
+          "resources": [
+            {
+              "encoded": 46506,
+              "transfer": 46806,
+              "url": "http://127.0.0.1:8768/__slow/_astro/clint-banner.C-RYQm95_ks6yV.webp"
+            }
+          ],
+          "shifts": []
+        },
+        "rect": {
+          "bottom": 872.4765625,
+          "height": 131.25,
+          "left": 20,
+          "right": 370,
+          "top": 741.2265625,
+          "width": 350,
+          "x": 20,
+          "y": 741.2265625
+        }
+      }
+    },
+    {
+      "mode": "released-filter",
+      "count": "1 tool shown",
+      "images": 1,
+      "installs": ["install-clint", "install-relay"],
+      "taskIds": ["tool-clint"]
+    },
+    {
+      "mode": "development-filter",
+      "images": 1,
+      "installs": ["install-clint", "install-relay"],
+      "taskIds": ["tool-relay"]
+    },
+    {
+      "mode": "history",
+      "url": "http://127.0.0.1:8768/#install-relay"
+    },
+    {
+      "mode": "corrupt-settled",
+      "banner": [
+        {
+          "complete": true,
+          "height": 131.25,
+          "naturalWidth": 0,
+          "width": 350
+        }
+      ],
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8768/__corrupt/_astro/clint-banner.C-RYQm95_ks6yV.webp\",\"width\":350,\"height\":131.25,\"complete\":true,\"naturalWidth\":0}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":350,\"height\":131.25,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":350,\"height\":131.25,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-error\",\"images\":[{\"src\":\"http://127.0.0.1:8768/__corrupt/_astro/clint-banner.C-RYQm95_ks6yV.webp\",\"width\":350,\"height\":131.25,\"complete\":true,\"naturalWidth\":0}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8768/__corrupt/_astro/clint-banner.C-RYQm95_ks6yV.webp\",\"transfer\":313,\"encoded\":13}]}"
+    },
+    {
+      "mode": "200-percent-text",
+      "banner": {
+        "bottom": 1472.9765625,
+        "height": 131.25,
+        "left": 20,
+        "right": 370,
+        "top": 1341.7265625,
+        "width": 350,
+        "x": 20,
+        "y": 1341.7265625
+      },
+      "client": 390,
+      "heading": {
+        "bottom": 361.390625,
+        "height": 172.796875,
+        "left": 20,
+        "right": 370,
+        "top": 188.59375,
+        "width": 350,
+        "x": 20,
+        "y": 188.59375
+      },
+      "rootFont": "32px",
+      "scroll": 390
+    },
+    {
+      "mode": "browser-zoom-attempt",
+      "before": {
+        "dpr": 2,
+        "width": 1280
+      },
+      "after": {
+        "dpr": 2,
+        "width": 1280
+      },
+      "verified": false
+    }
+  ],
+  "baselineMetrics": [
+    {
+      "route": "/baseline/#tools",
+      "client": 1280,
+      "cls": 0,
+      "scroll": 1280
+    },
+    {
+      "route": "/baseline/tools/clint/",
+      "client": 1280,
+      "cls": 0,
+      "scroll": 1280
+    },
+    {
+      "route": "/baseline/tools/relay/",
+      "client": 1280,
+      "cls": 0,
+      "scroll": 1280
+    }
+  ],
+  "limits": [
+    "Script-free fixture, not browser JavaScript preference switching",
+    "200% root-font-size fixture, not verified browser zoom",
+    "No native forced-colors or reduced-motion preference switching"
+  ]
+}
