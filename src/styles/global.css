@@ -68,6 +68,8 @@ body {
   min-width: 0;
   font-size: var(--type-body);
   line-height: 1.65;
+  font-feature-settings: 'tnum' 1;
+  font-variant-numeric: tabular-nums;
 }
 *,
 *::before,
@@ -158,11 +160,15 @@ a {
   line-height: 1.4;
   transition:
     background-color 0.15s ease,
-    color 0.15s ease;
+    color 0.15s ease,
+    transform 0.1s ease;
 }
 .glacial-control:hover {
   background: var(--hover);
   color: var(--ink);
+}
+.glacial-control:active {
+  transform: scale(0.98);
 }
 .glacial-control[aria-pressed='true'],
 .glacial-control[aria-selected='true'] {
@@ -604,10 +610,17 @@ h2 {
   border-radius: 12px;
   background: transparent;
   color: var(--secondary);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.1s ease;
 }
 .copy-button:hover {
   background: var(--hover);
   color: var(--action-hover);
+}
+.copy-button:active {
+  transform: scale(0.95);
 }
 .copy-button:has(.tabler-icon-check) {
   color: var(--positive);
@@ -1034,7 +1047,7 @@ article.prose :is(th, td) {
 }
 .doc-example > h2,
 .doc-guarantees h2 {
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-size: var(--type-package);
 }
 .section-description {
   margin: 20px 0 24px;
