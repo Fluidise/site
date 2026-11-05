@@ -1,0 +1,36 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": ["docs/specs/dark-design-system.html"],
+        "createdAt": "2026-11-04T10:56:59.080Z",
+        "reason": "Agent: user-requested contrast study deliberately permits failing color pairs and labels the Divider/Hover failure. Primary controls explicitly use Canvas ink on ivory; generic hover analysis does not model that specificity. Exception is limited to this review artifact."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "instrument sans",
+        "files": ["docs/specs/dark-design-system.html"],
+        "createdAt": "2026-11-04T10:56:59.099Z",
+        "reason": "Agent: this companion previews Instrument Sans from dark-design-system.md, not the incumbent DESIGN.md. The page explicitly discloses its system-font fallback; no font was acquired."
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "files": ["docs/specs/dark-design-system.html"],
+        "createdAt": "2026-11-04T10:56:59.117Z",
+        "reason": "Agent: preview the named family from the user-selected source specification; this artifact is not a new font-direction decision."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": ["docs/specs/dark-design-system.html"],
+        "createdAt": "2026-11-04T10:58:20.567Z",
+        "reason": "Agent: confirmed false positives in the standalone palette study. Browser computed .composition-copy padding 37.72px, .surface-step padding 24px 32px, and .live-sample padding 37.72px at 943px viewport; responsive clamp has a 24px minimum. The composition wrapper delegates inset to its children; no text touches the visible boundary."
+      }
+    ]
+  }
+}

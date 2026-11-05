@@ -1,6 +1,7 @@
 ---
 import { IconBook2, IconBrandGithub, IconCirclesRelation } from '@tabler/icons-react';
 ---
+<fluidise-navbar>
 <nav class="floating-dock" aria-label="Main navigation">
   <a class="dock-link" href="/#tools" data-section="tools">
     <img src="/brand/logo.svg" alt="" width="25" height="25" />
@@ -19,21 +20,73 @@ import { IconBook2, IconBrandGithub, IconCirclesRelation } from '@tabler/icons-r
     <span>GitHub<span class="sr-only"> (opens in new tab)</span></span>
   </a>
 </nav>
+</fluidise-navbar>
 <script>
-  const links = document.querySelectorAll<HTMLAnchorElement>('.dock-link[data-section]');
-  const sections = [...links].map((link) => document.getElementById(link.dataset.section ?? '')).filter((section): section is HTMLElement => Boolean(section));
-  function markCurrent(id: string) {
-    for (const link of links) {
-      if (link.dataset.section === id) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
+  class FluidiseNavbar extends HTMLElement {
+    private dispose?: () => void;
+
+    connectedCallback() {
+      this.dispose?.();
+      const nav = this.querySelector<HTMLElement>('nav');
+      if (!nav) return;
+      const hero = document.querySelector<HTMLElement>('archipelago-hero');
+      const links = [...this.querySelectorAll<HTMLAnchorElement>('.dock-link[data-section]')];
+      const sections = links.map((link) => document.getElementById(link.dataset.section ?? '')).filter((section): section is HTMLElement => Boolean(section));
+      const events = new AbortController();
+      let disposed = false;
+      let frame: number | null = null;
+      const markCurrent = (id: string) => {
+        for (const link of links) {
+          if (link.dataset.section === id) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        }
+      };
+      const cancel = () => {
+        if (frame !== null) cancelAnimationFrame(frame);
+        frame = null;
+      };
+      const syncHero = () => {
+        frame = null;
+        if (disposed || document.hidden) return;
+        // The dock returns as the catalog enters, including deep links and reverse scroll.
+        nav.hidden = Boolean(hero?.isConnected && hero.getBoundingClientRect().bottom > window.innerHeight - 1);
+      };
+      const schedule = () => {
+        if (!disposed && !document.hidden && frame === null) frame = requestAnimationFrame(syncHero);
+      };
+      const observer = sections.length && 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+        if (disposed) return;
+        for (const entry of entries) if (entry.isIntersecting) markCurrent(entry.target.id);
+      }, { rootMargin: '-10% 0px -35% 0px' }) : null;
+      sections.forEach((section) => observer?.observe(section));
+      markCurrent(location.hash === '#philosophy' ? 'philosophy' : 'tools');
+      const signal = events.signal;
+      for (const link of links) link.addEventListener('click', () => markCurrent(link.dataset.section ?? 'tools'), { signal });
+      const resizeObserver = hero && 'ResizeObserver' in window ? new ResizeObserver(schedule) : null;
+      if (hero) {
+        resizeObserver?.observe(hero);
+        window.addEventListener('scroll', schedule, { passive: true, signal });
+        window.addEventListener('resize', schedule, { signal });
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) cancel();
+          else schedule();
+        }, { signal });
+      }
+      syncHero();
+      this.dispose = () => {
+        disposed = true;
+        cancel();
+        events.abort();
+        observer?.disconnect();
+        resizeObserver?.disconnect();
+        nav.hidden = false;
+      };
+    }
+
+    disconnectedCallback() {
+      this.dispose?.();
+      this.dispose = undefined;
     }
   }
-  if (sections.length) {
-    markCurrent(location.hash === '#philosophy' ? 'philosophy' : 'tools');
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) if (entry.isIntersecting) markCurrent(entry.target.id);
-    }, { rootMargin: '-10% 0px -35% 0px' });
-    sections.forEach((section) => observer.observe(section));
-    links.forEach((link) => link.addEventListener('click', () => markCurrent(link.dataset.section ?? 'tools')));
-  }
+  if (!customElements.get('fluidise-navbar')) customElements.define('fluidise-navbar', FluidiseNavbar);
 </script>
