@@ -52,6 +52,10 @@ export function InteractiveTerminal() {
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   useEffect(() => () => clearTimeout(timer.current), []);
   const current = SAMPLES[sample];
+  const renderedCommand =
+    mode === 'text'
+      ? current.command.replace('fluidise-clint', 'fluidise-clint --format text')
+      : current.command;
   const output = current[mode];
 
   function handleFormatKeyDown(event: KeyboardEvent<HTMLButtonElement>) {
@@ -128,7 +132,7 @@ export function InteractiveTerminal() {
       </div>
       <div className="terminal-body">
         <div className="terminal-command">
-          <code>$ {current.command}</code>
+          <code>$ {renderedCommand}</code>
         </div>
         <div className="terminal-output">
           <pre
