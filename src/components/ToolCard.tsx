@@ -21,37 +21,39 @@ export interface ToolData {
 export function ToolCard({ tool }: { tool: ToolData }) {
   return (
     <article className="task-entry" aria-labelledby={`tool-${tool.id}`}>
-      <h3 id={`tool-${tool.id}`}>{tool.taskTitle}</h3>
-      <img
-        className="tool-banner"
-        src={tool.banner.src}
-        srcSet={tool.banner.srcSet}
-        sizes={tool.banner.sizes}
-        width={tool.banner.width}
-        height={tool.banner.height}
-        alt=""
-        loading="lazy"
-        decoding="async"
-      />
-      <div className="tool-presentation">
-        <div className="tool-identity">
-          <span>{tool.name}</span>
-          <span className="tool-status">
-            {tool.status === 'released' ? `${tool.version ?? ''} Released` : 'In Development'}
-          </span>
-        </div>
-        <p className="tool-tagline">{tool.tagline}</p>
-        <div className="tool-links">
-          <a
-            className="primary-link"
-            href={`/tools/${tool.id}`}
-            aria-label={`Get started with ${tool.name}`}
-          >
-            Get started <IconArrowRight size={18} aria-hidden="true" />
-          </a>
-          <a className="text-link" href={`/#install-${tool.id}`}>
-            Install command
-          </a>
+      <div className="tool-feature">
+        <img
+          className="tool-banner"
+          src={tool.banner.src}
+          srcSet={tool.banner.srcSet}
+          sizes={tool.banner.sizes}
+          width={tool.banner.width}
+          height={tool.banner.height}
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="tool-presentation">
+          <h3 id={`tool-${tool.id}`}>{tool.taskTitle}</h3>
+          <div className="tool-identity">
+            <span>{tool.name}</span>
+            <span className="tool-status">
+              {tool.status === 'released' ? `${tool.version ?? ''} Released` : 'In Development'}
+            </span>
+          </div>
+          <p className="tool-tagline">{tool.tagline}</p>
+          <div className="tool-links">
+            <a
+              className="primary-link"
+              href={`/tools/${tool.id}`}
+              aria-label={`Get started with ${tool.name}`}
+            >
+              Get started <IconArrowRight size={18} aria-hidden="true" />
+            </a>
+            <a className="text-link" href={`/#install-${tool.id}`}>
+              Install command
+            </a>
+          </div>
         </div>
       </div>
     </article>

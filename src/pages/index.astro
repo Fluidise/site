@@ -12,8 +12,7 @@ const tools = await Promise.all(toolEntries
   .map(async (entry) => ({
     id: entry.id,
     ...entry.data,
-    banner: await getToolBanner(entry.data.banner,
-      '(max-width: 500px) calc(100vw - 40px), (max-width: 900px) 92vw, (max-width: 1440px) calc(46vw - 48px), (max-width: 1600px) calc(672px - 4vw), 608px'),
+    banner: await getToolBanner(entry.data.banner),
   })));
 ---
 

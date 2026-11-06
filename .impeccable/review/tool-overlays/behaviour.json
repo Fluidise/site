@@ -1,0 +1,155 @@
+{
+  "method": "Final recapture after source-selection fix. Same-origin iframe CSS viewports with smooth scrolling disabled in fixtures only. Script-free fixture and CSS-root200%, not browser/OS preferences or actual zoom.",
+  "cases": [
+    {
+      "route": "home",
+      "mode": "blocked",
+      "width": 320,
+      "height": 720,
+      "clientWidth": 320,
+      "fontSize": "16px",
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8769/__blocked/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"width\":280,\"height\":551.3359375,\"complete\":true,\"naturalWidth\":0},{\"src\":\"http://127.0.0.1:8769/__blocked/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"width\":280,\"height\":551.3359375,\"complete\":true,\"naturalWidth\":0}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":551.3359375,\"complete\":false,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":551.3359375,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":551.3359375,\"complete\":false,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":551.3359375,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-error\",\"images\":[{\"src\":\"http://127.0.0.1:8769/__blocked/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"width\":280,\"height\":551.3359375,\"complete\":true,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":551.3359375,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-error\",\"images\":[{\"src\":\"http://127.0.0.1:8769/__blocked/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"width\":280,\"height\":551.3359375,\"complete\":true,\"naturalWidth\":0},{\"src\":\"http://127.0.0.1:8769/__blocked/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"width\":280,\"height\":551.3359375,\"complete\":true,\"naturalWidth\":0}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8769/__blocked/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"transfer\":774,\"encoded\":474},{\"url\":\"http://127.0.0.1:8769/__blocked/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"transfer\":774,\"encoded\":474}]}",
+      "scrollWidth": 320,
+      "rects": [
+        {
+          "height": 551.3359375,
+          "text": "Validate commit messages\nfluidise-clint\nv1.0.0 Released\n\nDeterministic Conventional Commits validator designed for AI agents and automated workflows\n\nGet started\nInstall command",
+          "top": 23.984375,
+          "width": 280
+        },
+        {
+          "height": 551.3359375,
+          "text": "Manage Git hooks\nfluidise-relay\nIn Development\n\nAgent-first Git hook manager for deterministic orchestration and safe process control\n\nGet started\nInstall command",
+          "top": 640.3203125,
+          "width": 280
+        }
+      ],
+      "capture": "blocked-home.jpg"
+    },
+    {
+      "route": "clint",
+      "mode": "corrupt",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 390,
+      "fontSize": "16px",
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8769/__corrupt/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"width\":350,\"height\":605.2265625,\"complete\":true,\"naturalWidth\":0}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":350,\"height\":605.2265625,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":350,\"height\":605.2265625,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-error\",\"images\":[{\"src\":\"http://127.0.0.1:8769/__corrupt/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"width\":350,\"height\":605.2265625,\"complete\":true,\"naturalWidth\":0}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8769/__corrupt/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"transfer\":313,\"encoded\":13}]}",
+      "scrollWidth": 390,
+      "rects": [
+        {
+          "height": 605.2265625,
+          "text": "fluidise-clint\n\nValidate commit messages\n\nDeterministic Conventional Commits validator designed for AI agents and automated workflows\n\nView on GitHub\n(opens in new tab)\nGet started\n\nv1.0.0 Released\n\nbrew install Fluidise/homebrew-tap/fluidise-clint\nAll installation options",
+          "top": 24,
+          "width": 350
+        }
+      ],
+      "capture": "corrupt-clint.jpg"
+    },
+    {
+      "route": "relay",
+      "mode": "slow",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 390,
+      "fontSize": "16px",
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8769/__slow/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"width\":350,\"height\":605.2265625,\"complete\":true,\"naturalWidth\":2048}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":350,\"height\":605.2265625,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":350,\"height\":605.2265625,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-load\",\"images\":[{\"src\":\"http://127.0.0.1:8769/__slow/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"width\":350,\"height\":605.2265625,\"complete\":true,\"naturalWidth\":2048}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8769/__slow/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"transfer\":58036,\"encoded\":57736}]}",
+      "scrollWidth": 390,
+      "rects": [
+        {
+          "height": 605.2265625,
+          "text": "fluidise-relay\n\nManage Git hooks\n\nAgent-first Git hook manager for deterministic orchestration and safe process control\n\nView on GitHub\n(opens in new tab)\nGet started\n\nIn Development\n\nbrew install Fluidise/homebrew-tap/fluidise-relay\nAll installation options",
+          "top": 24,
+          "width": 350
+        }
+      ],
+      "capture": "slow-relay.jpg"
+    },
+    {
+      "route": "home",
+      "mode": "nojs",
+      "width": 320,
+      "height": 720,
+      "clientWidth": 320,
+      "fontSize": "16px",
+      "scrollWidth": 320,
+      "rects": [
+        {
+          "height": 551.3359375,
+          "text": "Validate commit messages\nfluidise-clint\nv1.0.0 Released\n\nDeterministic Conventional Commits validator designed for AI agents and automated workflows\n\nGet started\nInstall command",
+          "top": 23.984375,
+          "width": 280
+        },
+        {
+          "height": 551.3359375,
+          "text": "Manage Git hooks\nfluidise-relay\nIn Development\n\nAgent-first Git hook manager for deterministic orchestration and safe process control\n\nGet started\nInstall command",
+          "top": 640.3203125,
+          "width": 280
+        }
+      ],
+      "capture": "nojs-home.jpg"
+    },
+    {
+      "route": "home",
+      "mode": "large-text",
+      "width": 320,
+      "height": 720,
+      "clientWidth": 320,
+      "fontSize": "32px",
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8769/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"width\":280,\"height\":1175.046875,\"complete\":true,\"naturalWidth\":2048},{\"src\":\"http://127.0.0.1:8769/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"width\":280,\"height\":1101.453125,\"complete\":true,\"naturalWidth\":2048}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":1175.046875,\"complete\":false,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":1101.453125,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":1175.046875,\"complete\":false,\"naturalWidth\":0},{\"src\":\"\",\"width\":280,\"height\":1101.453125,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-load\",\"images\":[{\"src\":\"http://127.0.0.1:8769/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"width\":280,\"height\":1175.046875,\"complete\":true,\"naturalWidth\":2048},{\"src\":\"\",\"width\":280,\"height\":1101.453125,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-load\",\"images\":[{\"src\":\"http://127.0.0.1:8769/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"width\":280,\"height\":1175.046875,\"complete\":true,\"naturalWidth\":2048},{\"src\":\"http://127.0.0.1:8769/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"width\":280,\"height\":1101.453125,\"complete\":true,\"naturalWidth\":2048}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8769/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"transfer\":76408,\"encoded\":76108},{\"url\":\"http://127.0.0.1:8769/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"transfer\":58036,\"encoded\":57736}]}",
+      "scrollWidth": 320,
+      "rects": [
+        {
+          "height": 1175.046875,
+          "text": "Validate commit messages\nfluidise-clint\nv1.0.0 Released\n\nDeterministic Conventional Commits validator designed for AI agents and automated workflows\n\nGet started\nInstall command",
+          "top": 23.7578125,
+          "width": 280
+        },
+        {
+          "height": 1101.453125,
+          "text": "Manage Git hooks\nfluidise-relay\nIn Development\n\nAgent-first Git hook manager for deterministic orchestration and safe process control\n\nGet started\nInstall command",
+          "top": 1263.8046875,
+          "width": 280
+        }
+      ],
+      "capture": "large-text-home.jpg"
+    },
+    {
+      "route": "clint",
+      "mode": "large-text",
+      "width": 320,
+      "height": 720,
+      "clientWidth": 320,
+      "fontSize": "32px",
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8769/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"width\":280,\"height\":1523.015625,\"complete\":true,\"naturalWidth\":2048}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":1523.015625,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":1523.015625,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-load\",\"images\":[{\"src\":\"http://127.0.0.1:8769/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"width\":280,\"height\":1523.015625,\"complete\":true,\"naturalWidth\":2048}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8769/_astro/clint-banner.BE-_y-ZD_2Gwbx.webp\",\"transfer\":76408,\"encoded\":76108}]}",
+      "scrollWidth": 320,
+      "rects": [
+        {
+          "height": 1523.015625,
+          "text": "fluidise-clint\n\nValidate commit messages\n\nDeterministic Conventional Commits validator designed for AI agents and automated workflows\n\nView on GitHub\n(opens in new tab)\nGet started\n\nv1.0.0 Released\n\nbrew install Fluidise/homebrew-tap/fluidise-clint\nAll installation options",
+          "top": 23.7890625,
+          "width": 280
+        }
+      ],
+      "capture": "large-text-clint.jpg"
+    },
+    {
+      "route": "relay",
+      "mode": "large-text",
+      "width": 320,
+      "height": 720,
+      "clientWidth": 320,
+      "fontSize": "32px",
+      "metrics": "{\"cls\":0,\"shifts\":[],\"images\":[{\"src\":\"http://127.0.0.1:8769/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"width\":280,\"height\":1553.6171875,\"complete\":true,\"naturalWidth\":2048}],\"events\":[{\"label\":\"dom\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":1553.6171875,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"load\",\"images\":[{\"src\":\"\",\"width\":280,\"height\":1553.6171875,\"complete\":false,\"naturalWidth\":0}]},{\"label\":\"image-load\",\"images\":[{\"src\":\"http://127.0.0.1:8769/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"width\":280,\"height\":1553.6171875,\"complete\":true,\"naturalWidth\":2048}]}],\"resources\":[{\"url\":\"http://127.0.0.1:8769/_astro/relay-banner.DituDqKJ_Zig2Ck.webp\",\"transfer\":58036,\"encoded\":57736}]}",
+      "scrollWidth": 320,
+      "rects": [
+        {
+          "height": 1553.6171875,
+          "text": "fluidise-relay\n\nManage Git hooks\n\nAgent-first Git hook manager for deterministic orchestration and safe process control\n\nView on GitHub\n(opens in new tab)\nGet started\n\nIn Development\n\nbrew install Fluidise/homebrew-tap/fluidise-relay\nAll installation options",
+          "top": 23.7890625,
+          "width": 280
+        }
+      ],
+      "capture": "large-text-relay.jpg"
+    }
+  ]
+}

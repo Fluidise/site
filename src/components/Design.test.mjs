@@ -159,7 +159,7 @@ for (const name of ['clint', 'relay']) {
   );
 }
 const banners = (html) =>
-  [...html.matchAll(/<img\b[^>]*class="tool-banner(?: doc-banner)?"[^>]*>/g)].map(([tag]) => tag);
+  [...html.matchAll(/<img\b[^>]*class="tool-banner"[^>]*>/g)].map(([tag]) => tag);
 assert.equal(banners(home).length, 2);
 assert(!home.includes('ASTRO_ASSET'));
 for (const [name, html] of [
@@ -175,14 +175,18 @@ for (const [name, html] of [
     assert(tag.includes('decoding="async"'));
     assert(tag.includes('width="2048" height="768"'));
     assert(/src[Ss]et="[^"]+320w[^"]+2048w"/.test(tag));
-    assert(tag.includes('sizes="'));
+    assert(tag.includes('sizes="2048px"'), 'Cover crops must select the full-height source');
     assert(!tag.includes('fetchpriority'));
     assert(!tag.includes('.png'));
     assert(!tag.includes('tabindex'));
   }
   assert(banner.includes(`/_astro/${name}-banner.`));
-  assert(html.indexOf('id="get-started"') < html.indexOf(banner));
+  const feature = html.indexOf('class="doc-feature"');
+  assert(feature < html.indexOf(banner));
+  assert(html.indexOf(banner) < html.indexOf('<h1'));
+  assert(html.indexOf(banner) < html.indexOf('id="get-started"'));
   assert(html.indexOf(banner) < html.indexOf('class="doc-reading"'));
+  assert(!html.includes('doc-banner'));
   assert(
     !readdirSync(new URL('dist/_astro/', root)).some(
       (file) => file.startsWith(`${name}-banner.`) && file.endsWith('.png'),
@@ -190,14 +194,14 @@ for (const [name, html] of [
   );
 }
 for (const [name, expected] of [
-  ['clint', '4bf506a8d6f97cf8832b0d7db3363f54fab42a82d34f96ab5c8283edd5cc6234'],
-  ['relay', 'b473c25f597ec406b79c388782c95c617dc3f0aff7cc984eae27d6bd145d8452'],
+  ['clint', '833dc0e65776ab12a6df6548276f5c0e9f261d29312eecc50717e6b8205d446f'],
+  ['relay', 'a35378dcd05159f5139f859db321241df900d812c32a9a9f768458f910556b1b'],
 ]) {
   const original = readFileSync(new URL(`src/assets/tools/${name}-banner.png`, root));
   assert.equal(createHash('sha256').update(original).digest('hex'), expected);
 }
 console.log(
-  'PASS: real local image validation, optimized SSR banners, preserved artwork and start-before-image order',
+  'PASS: real local image validation, optimized SSR backgrounds, preserved v2 artwork and live overlay content',
 );
 const normal = readFileSync(new URL('public/fonts/InstrumentSans-Variable-latin.woff2', root));
 const italic = readFileSync(

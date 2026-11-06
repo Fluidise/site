@@ -1,0 +1,25 @@
+{
+  "releasedTasks": ["Validate commit messages"],
+  "installIds": ["install-clint", "install-relay"],
+  "developmentTasks": ["Manage Git hooks"],
+  "clipboard": "brew install Fluidise/homebrew-tap/fluidise-clint",
+  "status": [],
+  "focus": [
+    {
+      "dockTop": 620.5,
+      "outline": "rgb(170, 186, 217) solid 3px",
+      "rect": {
+        "bottom": 315.8046875,
+        "height": 44,
+        "left": 254.484375,
+        "right": 370.3359375,
+        "top": 271.8046875,
+        "width": 115.8515625,
+        "x": 254.484375,
+        "y": 271.8046875
+      },
+      "text": "Install command"
+    }
+  ],
+  "copyFeedback": "Command copied to clipboard"
+}
