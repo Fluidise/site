@@ -45,7 +45,7 @@ assert(!home.includes('fluidise-clint interactive sandbox'));
 assert(!relay.includes('fluidise-clint interactive sandbox'));
 assert(clint.includes('fluidise-clint interactive sandbox'));
 assert(clint.includes('client="visible"'));
-assert(home.includes('href="/tools/clint#example-output"'));
+assert(home.includes('href="/tools/clint/#example-output"'));
 assert.equal((home.match(/<code>brew tap Fluidise\/homebrew-tap<\/code>/g) ?? []).length, 1);
 assert(home.includes('Filter task results'));
 assert(home.includes('aria-controls="tool-results"'));
@@ -77,7 +77,7 @@ for (const [name, html] of [
     [...offsets].sort((a, b) => a - b),
     'Contents follows actual reference order',
   );
-  assert(html.includes(`href="/tools/${name === 'clint' ? 'relay' : 'clint'}"`));
+  assert(html.includes(`href="/tools/${name === 'clint' ? 'relay' : 'clint'}/"`));
   const allowed = new Set(['#e6e6e6', '#a3a3a3', '#dedede', '#aecbb3', '#c2c2c2', '#e7a3ae']);
   for (const [, color] of html.matchAll(/style="color:(#[0-9a-fA-F]+)/g))
     assert(allowed.has(color.toLowerCase()), color);

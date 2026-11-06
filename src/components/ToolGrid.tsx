@@ -80,7 +80,7 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
                   {tool.status === 'released' ? `${tool.version ?? ''} Released` : 'In Development'}
                 </p>
                 <div className="tool-links">
-                  <a className="text-link" href={`/tools/${tool.id}`}>
+                  <a className="text-link" href={`/tools/${tool.id}/`}>
                     Read docs <IconArrowUpRight size={16} aria-hidden="true" />
                   </a>
                   <a

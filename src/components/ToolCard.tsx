@@ -35,7 +35,7 @@ export function ToolCard({ tool }: { tool: ToolData }) {
           <div className="tool-links">
             <a
               className="primary-link"
-              href={`/tools/${tool.id}`}
+              href={`/tools/${tool.id}/`}
               aria-label={`Get started with ${tool.name}`}
             >
               Get started <IconArrowRight size={18} aria-hidden="true" />

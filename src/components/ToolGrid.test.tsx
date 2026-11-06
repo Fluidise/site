@@ -84,7 +84,7 @@ describe('task gateway and installation desk', () => {
     const html = renderToStaticMarkup(<ToolGrid tools={[tool]} />);
     expect(html).toContain('id="tool-example"');
     expect(html).toContain('id="install-example"');
-    expect(html).toContain('href="/tools/example"');
+    expect(html).toContain('href="/tools/example/"');
     expect(html).toContain('href="https://example.com"');
     expect(html).not.toContain('Copy install command for fluidise-example');
     expect(html).toContain('Copy Homebrew tap installation command');
