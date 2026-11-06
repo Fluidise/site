@@ -30,7 +30,39 @@ const tools = defineCollection({
       cargoCommand: z.string().optional(),
       keyFeatures: z.array(z.string()),
       order: z.number().default(0),
+      cli: z
+        .object({
+          binary: z.string(),
+          args: z.array(z.string()).default([]),
+          flags: z
+            .array(
+              z.object({
+                flag: z.string(),
+                description: z.string(),
+              }),
+            )
+            .default([]),
+          exitCodes: z.record(z.string(), z.string()).default({}),
+        })
+        .optional(),
     }),
 });
 
-export const collections = { tools };
+const manifesto = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/manifesto' }),
+  schema: z.object({
+    title: z.string(),
+    tagline: z.string(),
+    principles: z.array(
+      z.object({
+        number: z.string(),
+        title: z.string(),
+        description: z.string(),
+        highlight: z.string(),
+        icon: z.string(),
+      }),
+    ),
+  }),
+});
+
+export const collections = { tools, manifesto };

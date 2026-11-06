@@ -16,3 +16,9 @@
 - **Commits**: Conventional Commits convention enforced. Dogfooding via `fluidise-clint`.
 - **Co-authorship**: Never add `Co-authored-by: Claude` or similar co-author mentions in commit messages.
 - **Verification**: Run `bun run check` and `bun run build` before pushing or creating pull requests.
+
+## Architectural Invariants for Agents & LLMs
+
+- **Static Pre-rendering**: All public assets, Markdown endpoints (`/tools/*.md`, `/manifesto.md`), JSON catalogs (`/tools.json`), and discovery files (`/llms.txt`, `/llms-full.txt`) must be statically generated at build time. No runtime server process in production.
+- **Deterministic Parity**: Agent Markdown feeds must originate from the exact same single-source Content Layer markdown files (`src/content/tools/*.md`, `src/content/manifesto/index.md`) rendered into HTML.
+- **Protocol Fidelity**: Tools are native POSIX CLI binaries. Do not advertise speculative or unimplemented JSON-RPC MCP servers. Always document verifiable CLI arguments, flags, and exit codes.

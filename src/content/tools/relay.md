@@ -18,6 +18,21 @@ keyFeatures:
   - 'Zero Runtime Footprint: Standalone binary with no Node, Python, or Ruby dependencies'
   - 'Unified Configuration: Single fluidise.toml declarative format for whole-suite orchestration'
   - 'JSON Diagnostics: Machine-readable event telemetry and exit codes for AI agents'
+cli:
+  binary: 'fluidise-relay'
+  args: ['<command>']
+  flags:
+    - flag: 'plan'
+      description: 'Inspect the read-only execution plan for Git hooks without disk mutation'
+    - flag: 'run <hook-name>'
+      description: 'Execute the configured hook pipeline deterministically'
+    - flag: 'install'
+      description: 'Install Git hook shims pointing to fluidise-relay'
+    - flag: '--version'
+      description: 'Print version'
+  exitCodes:
+    '0': 'Execution or plan succeeded'
+    '1': 'Hook execution failed or plan validation error'
 ---
 
 ## Overview

@@ -1,0 +1,6 @@
+# Fluidise Agent-First Documentation Hub
+# LLM & Agent Index: https://fluidise.dev/llms.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://fluidise.dev/sitemap.xml

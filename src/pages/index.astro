@@ -7,16 +7,41 @@ import ManifestoSection from '../components/ManifestoSection.astro';
 import { getToolBanner } from '../lib/tool-banner';
 
 const toolEntries = await getCollection('tools');
-const tools = await Promise.all(toolEntries
-  .sort((a, b) => a.data.order - b.data.order)
-  .map(async (entry) => ({
-    id: entry.id,
-    ...entry.data,
-    banner: await getToolBanner(entry.data.banner),
-  })));
+const tools = await Promise.all(
+  toolEntries
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(async (entry) => ({
+      id: entry.id,
+      ...entry.data,
+      banner: await getToolBanner(entry.data.banner),
+    }))
+);
+
+const siteUrl = Astro.site?.origin ?? 'https://fluidise.dev';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: 'Fluidise',
+      description: 'The Agent-First Developer Experience Suite',
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: 'Fluidise',
+      url: siteUrl,
+      logo: `${siteUrl}/brand/logo.svg`,
+      sameAs: ['https://github.com/Fluidise'],
+    },
+  ],
+};
 ---
 
-<Layout>
+<Layout jsonLd={jsonLd}>
   <Hero />
   <ToolGrid client:visible tools={tools} />
   <noscript>

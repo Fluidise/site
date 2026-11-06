@@ -1,17 +1,32 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+
+const site = process.env.SITE_URL ?? 'https://fluidise.acrazie.dev';
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE_URL ?? 'https://fluidise.acrazie.dev',
+  site,
   trailingSlash: 'always',
   prefetch: {
     prefetchAll: false,
     defaultStrategy: 'hover',
   },
-  integrations: [react()],
+  integrations: [
+    react(),
+    sitemap({
+      customPages: [
+        `${site}/llms.txt`,
+        `${site}/llms-full.txt`,
+        `${site}/tools.json`,
+        `${site}/manifesto.md`,
+        `${site}/tools/clint.md`,
+        `${site}/tools/relay.md`,
+      ],
+    }),
+  ],
   markdown: {
     shikiConfig: {
       theme: {
