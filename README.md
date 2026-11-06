@@ -36,6 +36,31 @@ The site provides:
 - **Suite Catalog**: Centralized discovery and interactive exploration of standalone Fluidise packages, including [`fluidise-clint`](https://github.com/Fluidise/clint) (deterministic commit linter) and [`fluidise-relay`](https://github.com/Fluidise/relay) (agent-first Git hook orchestrator).
 - **Dedicated Tool Pages**: Interactive documentation, installation avenues (Homebrew, Cargo, standalone precompiled binaries), and strict CLI execution guarantees per tool.
 - **Architectural Manifesto**: Breakdown of our foundational invariants — _Agent-First_ ergonomics, RFC 2119 linting determinism, zero side-effects, and bounded resource consumption.
+- **Agent & LLM-Friendly Endpoints**: Machine-first discovery, token-efficient raw Markdown endpoints, and HTTP Content Negotiation.
+
+## Agent & LLM-First Endpoints
+
+`fluidise.dev` is engineered from the ground up for autonomous AI coding agents (Antigravity, Claude Code, Cursor, Cline, Codex) and CLI workflows:
+
+| Endpoint                                               | Format                | Description                                                                       |
+| :----------------------------------------------------- | :-------------------- | :-------------------------------------------------------------------------------- |
+| [`/llms.txt`](https://fluidise.dev/llms.txt)           | Plain text / Markdown | Standard Answer.AI index of tools, core documentation, and agent rules.           |
+| [`/llms-full.txt`](https://fluidise.dev/llms-full.txt) | Plain text / Markdown | Full documentation corpus for single-prompt LLM ingestion.                        |
+| [`/tools.json`](https://fluidise.dev/tools.json)       | JSON                  | Machine-readable tool catalog with CLI schemas, arguments, flags, and exit codes. |
+| [`/manifesto.md`](https://fluidise.dev/manifesto.md)   | Markdown              | Raw specification of the Fluidise Architectural Manifesto.                        |
+| [`/tools/:id.md`](https://fluidise.dev/tools/clint.md) | Markdown              | Synthesized, token-efficient specification and operational guarantees per tool.   |
+
+### HTTP Content Negotiation via CLI
+
+Querying document routes with `Accept: text/markdown` returns raw Markdown rather than HTML:
+
+```bash
+# Fetch raw Markdown for fluidise-clint via content negotiation
+curl -s -H "Accept: text/markdown" https://fluidise.dev/tools/clint
+
+# Query the machine-readable catalog
+curl -s https://fluidise.dev/tools.json | jq .
+```
 
 ## Tech Stack
 

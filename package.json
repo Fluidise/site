@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^7.1.1",
+    "@astrojs/sitemap": "^3.7.4",
     "@tabler/icons-react": "^3.49.0",
     "astro": "^7.4.2",
     "clsx": "^2.1.1",

@@ -6,19 +6,26 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title?: string;
   description?: string;
+  markdownUrl?: string;
+  jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 const {
   title = 'Fluidise — The Agent-First Developer Experience Suite',
   description = 'Deterministic, standalone, and high-performance developer tools designed for AI coding agents and human maintainers.',
+  markdownUrl,
+  jsonLd,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://fluidise.acrazie.dev').href;
 const canonicalImageSrc = new URL('/brand/banner.png', Astro.site ?? 'https://fluidise.acrazie.dev').href;
+const absoluteMarkdownUrl = markdownUrl
+  ? new URL(markdownUrl, Astro.site ?? 'https://fluidise.acrazie.dev').href
+  : undefined;
 ---
 
 <!doctype html>
-<html lang="en" >
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,6 +34,12 @@ const canonicalImageSrc = new URL('/brand/banner.png', Astro.site ?? 'https://fl
     <link rel="preload" href="/fonts/InstrumentSans-Variable-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalUrl} />
+
+    {/* Machine & Agent Discovery */}
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM & Agent Discovery Index" />
+    {absoluteMarkdownUrl && (
+      <link rel="alternate" type="text/markdown" href={absoluteMarkdownUrl} title="Raw Markdown specification" />
+    )}
 
     {/* Security Meta Tags */}
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
@@ -51,6 +64,11 @@ const canonicalImageSrc = new URL('/brand/banner.png', Astro.site ?? 'https://fl
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={canonicalImageSrc} />
+
+    {/* Structured Data (JSON-LD) */}
+    {jsonLd && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+    )}
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>

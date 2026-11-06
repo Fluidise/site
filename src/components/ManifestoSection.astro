@@ -1,37 +1,52 @@
 ---
-import { IconCpu, IconLayersSubtract, IconShieldCheck } from '@tabler/icons-react';
+import { getCollection } from 'astro:content';
+import { IconCpu, IconLayersSubtract, IconShieldCheck, type Icon } from '@tabler/icons-react';
 
-const PRINCIPLES = [
-  {
-    icon: IconCpu,
-    title: 'Agent-First Invariant',
-    description:
-      'Outputs and telemetry are structured as versioned, machine-readable JSON by default. AI agents parse precise byte-range diagnostic spans without error-prone regex or unstructured stdout scraping.',
-    highlight: 'JSON by default, text on request',
-  },
-  {
-    icon: IconLayersSubtract,
-    title: 'Strict Unix Philosophy',
-    description:
-      'Each tool serves a precise, singular purpose. Packages remain independently usable and composable without requiring the adoption of the entire suite or heavy runtime environments.',
-    highlight: 'Single responsibility, standalone binaries',
-  },
-  {
-    icon: IconShieldCheck,
-    title: 'Zero Unannounced Mutation',
-    description:
-      'Tools never silently rewrite repository configurations, install unannounced background hooks, or trigger unexpected network requests. Every lifecycle mutation requires explicit user or agent confirmation.',
-    highlight: 'Read-only plan inspection, bounded execution',
-  },
-];
+const ICONS: Record<string, Icon> = {
+  IconCpu,
+  IconLayersSubtract,
+  IconShieldCheck,
+};
+
+const manifestoEntries = await getCollection('manifesto');
+const manifestoDoc = manifestoEntries[0];
+
+const principles = manifestoDoc
+  ? manifestoDoc.data.principles.map((p) => ({
+      ...p,
+      icon: ICONS[p.icon] ?? IconCpu,
+    }))
+  : [
+      {
+        icon: IconCpu,
+        title: 'Agent-First Invariant',
+        description:
+          'Outputs and telemetry are structured as versioned, machine-readable JSON by default. AI agents parse precise byte-range diagnostic spans without error-prone regex or unstructured stdout scraping.',
+        highlight: 'JSON by default, text on request',
+      },
+      {
+        icon: IconLayersSubtract,
+        title: 'Strict Unix Philosophy',
+        description:
+          'Each tool serves a precise, singular purpose. Packages remain independently usable and composable without requiring the adoption of the entire suite or heavy runtime environments.',
+        highlight: 'Single responsibility, standalone binaries',
+      },
+      {
+        icon: IconShieldCheck,
+        title: 'Zero Unannounced Mutation',
+        description:
+          'Tools never silently rewrite repository configurations, install unannounced background hooks, or trigger unexpected network requests. Every lifecycle mutation requires explicit user or agent confirmation.',
+        highlight: 'Read-only plan inspection, bounded execution',
+      },
+    ];
 ---
 
-<section id="philosophy" class="philosophy-section" aria-labelledby="philosophy-heading">
+<section id="philosophy" class="philosophy-section" aria-labelledby="philosophy-heading" data-agent-section="manifesto">
   <div class="shell background-frame">
     <h2 id="philosophy-heading">The contract behind the tools</h2>
     <p class="philosophy-intro">Every package published under Fluidise conforms to foundational invariants established in our core specifications.</p>
     <div class="principles">
-      {PRINCIPLES.map((principle) => {
+      {principles.map((principle) => {
         const Icon = principle.icon;
         return (
           <article class="principle">

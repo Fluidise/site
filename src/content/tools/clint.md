@@ -18,6 +18,20 @@ keyFeatures:
   - 'Strict Operational Determinism: Exact RFC 2119 linting with stable exit codes (0 = valid, 1 = violation, 2 = usage)'
   - 'Human Ergonomics: Switch instantly to formatted visual terminal reports with --format text'
   - 'Standalone Native Binary: Built with Rust 1.85+, sub-millisecond execution with zero runtime dependencies'
+cli:
+  binary: 'fluidise-clint'
+  args: ['<commit-message>']
+  flags:
+    - flag: '--format <json|text>'
+      description: 'Output format: structured JSON (default) or formatted human-readable terminal text'
+    - flag: '--version'
+      description: 'Print version'
+    - flag: '--help'
+      description: 'Print help information'
+  exitCodes:
+    '0': 'Conventional commit convention verified successfully'
+    '1': 'Conventional commit convention violation detected'
+    '2': 'Command-line syntax or invocation error'
 ---
 
 ## Overview
@@ -52,37 +66,56 @@ Download self-contained binaries for Apple Silicon (`aarch64-apple-darwin`), Int
 By default, `fluidise-clint` outputs structured JSON (`schema_version: 1`), enabling coding agents to parse errors with byte-level precision:
 
 ```bash
-fluidise-clint "feat(core): add deterministic commit linter"
+fluidise-clint "feat: add user authentication"
 ```
+
+Output:
 
 ```json
 {
   "schema_version": 1,
   "status": "valid",
-  "diagnostics": [],
-  "commit": {
-    "type": "feat",
-    "scope": "core",
-    "description": "add deterministic commit linter"
-  }
+  "diagnostics": []
 }
 ```
 
-### Human-Readable Formatting
-
-For manual git workflow or local terminal development, pass `--format text`:
+When a violation occurs:
 
 ```bash
-fluidise-clint --format text "feat(core): add deterministic commit linter"
+fluidise-clint "bad commit message"
 ```
 
-## Configuration
+Output:
 
-`fluidise-clint` discovers configuration automatically via `fluidise.toml` or standalone `.clint.toml`:
-
-```toml
-[clint]
-max_header_length = 72
-allowed_types = ["feat", "fix", "docs", "chore", "refactor", "test", "ci"]
-require_scope = false
+```json
+{
+  "schema_version": 1,
+  "status": "invalid",
+  "diagnostics": [
+    {
+      "code": "missing_type",
+      "message": "Commit message must start with a valid type (e.g., feat, fix, chore)",
+      "span": {
+        "start": 0,
+        "end": 3
+      }
+    }
+  ]
+}
 ```
+
+### Human-Readable Terminal Reports
+
+Pass `--format text` to switch to formatted terminal diagnostics:
+
+```bash
+fluidise-clint "bad commit message" --format text
+```
+
+## Exit Codes
+
+| Code | Meaning                                                     |
+| :--- | :---------------------------------------------------------- |
+| `0`  | Commit message satisfies Conventional Commits specification |
+| `1`  | One or more linting errors detected                         |
+| `2`  | Runtime or CLI configuration error                          |
