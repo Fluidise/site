@@ -7,6 +7,27 @@ related_targets: ['src/pages/tools/[id].astro']
 
 # Homepage and tool pages
 
+## Current direction contract: background presentations (2026-11-05)
+
+THESIS: Tool landscapes are the presentation surface, not illustrations separated from the useful content.
+OWN-WORLD: Preserve Nocturne, its Instrument typography, mineral actions, square technical surfaces and untouched archipelago hero. Use the supplied simplified, text-free Clint woodland and Relay sea paintings.
+STORY: Read the task, identify the independent tool and use its existing docs/install action directly over its landscape; continue reference reading on calm charcoal.
+FIRST VIEWPORT: Keep the existing two-lane task gateway and mobile stacking. Each landscape sits behind its complete live task presentation. Tool-page identity and getting-started content share one painted opening; article and reference contents remain image-free afterward. Local contrast scrims protect text, while normal-flow content grows with wrapping and enlargement.
+FORM: User-pinned local refinement, code-led; no new world, concept roll or generated comp. The user supplied both v2 backgrounds and requested a separate worktree/branch after PR #23 merged. No extra artwork is necessary. Cropping a text-free background is allowed; cropping live text is not.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+This supersedes only the separate-image/uncropped-banner composition below. Preserve all content, commands, anchors, filtering, navigation and current main's accessibility/terminal improvements. Work is local in `feat/tool-banner-overlays`; no commit, push or PR update is included.
+
+### Current source and documentation synchronization
+
+The source now places each complete live task presentation over its square-edged landscape, and both tool routes put the identity/source masthead and opaque getting-started panel over one shared opening landscape. Absolute decorative images use cover crops behind local Canvas scrims; live content remains in normal flow and grows with wrapping and enlargement. The existing 900px stacking boundary remains; reference contents/article, installation desk, principles and footer stay image-free. Forced colors hide the decorative images/scrims, while image failure retains charcoal fallback and all useful content. This is an ordinary extension of Nocturne, not a new visual world or permission to texture long-form reading and technical controls.
+
+The unmodified supplied text-free originals are 2048×768 PNGs: Clint SHA-256 `833dc0e65776ab12a6df6548276f5c0e9f261d29312eecc50717e6b8205d446f`, Relay SHA-256 `a35378dcd05159f5139f859db321241df900d812c32a9a9f768458f910556b1b`. Exact source paths and provenance are in `src/assets/tools/README.md`; the earlier branded sources and separate-image composition below are historical. No new artwork was generated or retouched.
+
+The shared server-only helper still generates quality-85 WebP candidates at 320, 640, 960, 1280, 1600 and 2048px. Its source-width fallback and `sizes="2048px"` now select the full 2048×768 candidate for tall cover crops instead of estimating required detail from element width alone. Current encoded sizes are 76,108 bytes for Clint and 57,736 bytes for Relay; home and tool routes reuse the same cacheable asset URLs. No runtime box measurement, observer, preload or new media service is added. This choice uses the available source detail; it does not guarantee pixel-perfect imagery at arbitrary enlargement, which can exceed the original resolution.
+
+This documentation pass checked `PRODUCT.md`, the current refinement at the start of `docs/specs/dark-design-system.md`, the six-block direction above, actual task/tool-template/image-helper owners, their stylesheet rules and exact asset hashes/provenance. It updates only affected `DESIGN.md` prose, two sidecar descriptions and this current surface record. Tokens, preview HTML/CSS, metadata and all historical approvals/evidence remain unchanged. The current recapture and verification records live under `.impeccable/review/tool-overlays/`; primary-agent validation and the final finish verdict belong to the canonical specification. **The final verdict pass returned `ship`, scoring the two named fixes resolved, not approving the whole surface anew; no earlier SHIP result below approves this refinement.** The reviewer reopened all 28 recaptures and observed no fix-batch regression. This documentation pass itself does not claim a new browser run, build/test result, accessibility certification, performance improvement or deployment.
+
 Mode: Persuade on homepage; Read on documentation.
 Scope: all routes. Preserve tool content and functionality, filters, sample and format switching, copy actions, documentation and repository links. User explicitly removed the homepage marketing headline and right reading rail. No invented npm commands or Run button.
 Previous composition C and v2 are superseded. Approved comp: `.impeccable/mocks/alpine-dock-v3.png`, approved by the user with the exact 75% viewport rule and square terminals. User's exact 75% viewport requirement outranks the generated image's approximate banner height.

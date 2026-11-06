@@ -24,10 +24,11 @@ const tool: ToolData = {
 };
 
 describe('task gateway and installation desk', () => {
-  it('server-renders the decorative banner between the task and live identity', () => {
+  it('server-renders the image behind the complete live task presentation', () => {
     const html = renderToStaticMarkup(<ToolGrid tools={[tool]} />);
     const task = html.slice(html.indexOf('<article'), html.indexOf('</article>'));
-    expect(task.indexOf('A useful task')).toBeLessThan(task.indexOf('example-banner.webp'));
+    expect(task).toContain('class="tool-feature"');
+    expect(task.indexOf('example-banner.webp')).toBeLessThan(task.indexOf('A useful task'));
     expect(task.indexOf('example-banner.webp')).toBeLessThan(task.indexOf('fluidise-example'));
     expect(task).toContain('class="tool-banner"');
     expect(task).toContain('alt=""');
@@ -36,6 +37,7 @@ describe('task gateway and installation desk', () => {
     expect(task).toContain('decoding="async"');
     expect(task).toContain('srcSet=');
     expect(task).toContain('sizes=');
+    expect(task.indexOf('class="tool-presentation"')).toBeLessThan(task.indexOf('A useful task'));
     expect(task.match(/<svg/g)).toHaveLength(1);
   });
 

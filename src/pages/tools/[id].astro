@@ -11,8 +11,7 @@ export async function getStaticPaths() {
   return tools.map((tool) => ({ params: { id: tool.id }, props: { tool, sibling: tools.find((entry) => entry.id !== tool.id) } }));
 }
 const { tool, sibling } = Astro.props;
-const banner = await getToolBanner(tool.data.banner,
-  '(max-width: 500px) calc(100vw - 40px), (max-width: 1120px) 92vw, (max-width: 1600px) calc(1120px - 8vw), 992px');
+const banner = await getToolBanner(tool.data.banner);
 const { Content, headings } = await render(tool);
 const hasExample = tool.id === 'clint';
 const contents = [
@@ -28,7 +27,9 @@ const contents = [
       <a class="text-link" href="/#tools"><IconArrowLeft size={16} aria-hidden="true" /> Tools</a>
       <span aria-hidden="true">/</span><span aria-current="page">{tool.data.name}</span>
     </nav>
-    <div class="doc-opening">
+    <div class="doc-feature">
+      <img class="tool-banner" {...banner} alt="" loading="lazy" decoding="async" />
+      <div class="doc-opening">
       <header class="doc-header">
         <h1>{tool.data.name}</h1>
         <p class="doc-task">{tool.data.taskTitle}</p>
@@ -42,7 +43,7 @@ const contents = [
         <a class="text-link" href="#installation">All installation options <IconArrowRight size={16} aria-hidden="true" /></a>
       </section>
     </div>
-    <img class="tool-banner doc-banner" {...banner} alt="" loading="lazy" decoding="async" />
+    </div>
     <div class="doc-reading">
       {contents.length >= 2 && <nav class="doc-contents" aria-label="Reference contents">
         <strong>Reference contents</strong>
