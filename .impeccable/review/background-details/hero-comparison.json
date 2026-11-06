@@ -1,0 +1,56 @@
+[
+  {
+    "port": 4333,
+    "hash": "",
+    "dockDisplay": "none",
+    "scrollY": 0,
+    "titleOpacity": "1",
+    "titleTransform": "matrix(1, 0, 0, 1, 0, 0)",
+    "track": 2160,
+    "viewport": 720
+  },
+  {
+    "port": 4333,
+    "hash": "#tools",
+    "dockDisplay": "grid",
+    "scrollY": 2104,
+    "titleOpacity": "0",
+    "titleTransform": "matrix(1.08, 0, 0, 1.08, 0, 180)",
+    "track": 2160,
+    "viewport": 720
+  },
+  {
+    "port": 4333,
+    "phase": "native Home reverse",
+    "dockDisplay": "none",
+    "scrollY": 0,
+    "titleOpacity": "1"
+  },
+  {
+    "port": 4334,
+    "hash": "",
+    "dockDisplay": "none",
+    "scrollY": 0,
+    "titleOpacity": "1",
+    "titleTransform": "matrix(1, 0, 0, 1, 0, 0)",
+    "track": 2160,
+    "viewport": 720
+  },
+  {
+    "port": 4334,
+    "hash": "#tools",
+    "dockDisplay": "grid",
+    "scrollY": 2104,
+    "titleOpacity": "0",
+    "titleTransform": "matrix(1.08, 0, 0, 1.08, 0, 180)",
+    "track": 2160,
+    "viewport": 720
+  },
+  {
+    "port": 4334,
+    "phase": "native Home reverse",
+    "dockDisplay": "none",
+    "scrollY": 0,
+    "titleOpacity": "1"
+  }
+]

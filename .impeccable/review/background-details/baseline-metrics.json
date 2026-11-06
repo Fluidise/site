@@ -1,0 +1,1352 @@
+[
+  {
+    "route": "/",
+    "size": {
+      "width": 1280,
+      "height": 720
+    },
+    "boxes": {
+      "archipelago-hero-1": {
+        "height": 2160,
+        "width": 1269,
+        "x": 0,
+        "y": 0
+      },
+      "archipelago-hero__title-3": {
+        "height": 272.890625,
+        "width": 1269,
+        "x": 0,
+        "y": 21.59375
+      },
+      "archipelago-hero__viewport-2": {
+        "height": 720,
+        "width": 1269,
+        "x": 0,
+        "y": 0
+      },
+      "floating-dock-0": {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      },
+      "install-8": {
+        "height": 708.4375,
+        "width": 1269,
+        "x": 0,
+        "y": 3100.09375
+      },
+      "install-heading-9": {
+        "height": 50.03125,
+        "width": 503.375,
+        "x": 51.1875,
+        "y": 3100.09375
+      },
+      "philosophy-heading-11": {
+        "height": 50.03125,
+        "width": 1166.625,
+        "x": 51.1875,
+        "y": 3808.53125
+      },
+      "shell-10": {
+        "height": 699.296875,
+        "width": 1269,
+        "x": 0,
+        "y": 3808.53125
+      },
+      "shell-12": {
+        "height": 454.578125,
+        "width": 1269,
+        "x": 0,
+        "y": 4603.828125
+      },
+      "tool-feature-6": {
+        "height": 560,
+        "width": 535.3125,
+        "x": 51.1875,
+        "y": 2444.09375
+      },
+      "tool-feature-7": {
+        "height": 560,
+        "width": 534.3125,
+        "x": 683.5,
+        "y": 2444.09375
+      },
+      "tools-4": {
+        "height": 940.09375,
+        "width": 1269,
+        "x": 0,
+        "y": 2160
+      },
+      "tools-heading-5": {
+        "height": 50.03125,
+        "width": 441.140625,
+        "x": 51.1875,
+        "y": 2192
+      }
+    },
+    "clientWidth": 1269,
+    "dpr": 1,
+    "height": 5218,
+    "islands": ["ToolGrid"],
+    "scripts": ["module", "module", "module", "classic", "classic"],
+    "scrollWidth": 1269,
+    "viewport": [1280, 720]
+  },
+  {
+    "route": "/tools/clint",
+    "size": {
+      "width": 1280,
+      "height": 720
+    },
+    "boxes": {
+      "H1-3": {
+        "height": 71.875,
+        "width": 465.984375,
+        "x": 165.6875,
+        "y": 249.125
+      },
+      "configuration-9": {
+        "height": 50.03125,
+        "width": 777.625,
+        "x": 365.6875,
+        "y": 2691.015625
+      },
+      "doc-feature-2": {
+        "height": 357.984375,
+        "width": 1017.625,
+        "x": 125.6875,
+        "y": 200
+      },
+      "doc-reading-5": {
+        "height": 3845.15625,
+        "width": 1017.625,
+        "x": 125.6875,
+        "y": 621.984375
+      },
+      "doc-shell-1": {
+        "height": 4563.140625,
+        "width": 1120,
+        "x": 74.5,
+        "y": 0
+      },
+      "example-heading-10": {
+        "height": 38.265625,
+        "width": 777.625,
+        "x": 365.6875,
+        "y": 3090.046875
+      },
+      "floating-dock-0": {
+        "height": 79.5,
+        "width": 532,
+        "x": 368.5,
+        "y": 620.5
+      },
+      "guarantees-heading-11": {
+        "height": 38.265625,
+        "width": 777.625,
+        "x": 365.6875,
+        "y": 3830.453125
+      },
+      "installation-7": {
+        "height": 50.03125,
+        "width": 777.625,
+        "x": 365.6875,
+        "y": 1037.515625
+      },
+      "overview-6": {
+        "height": 50.03125,
+        "width": 777.625,
+        "x": 365.6875,
+        "y": 662.984375
+      },
+      "quick-start-8": {
+        "height": 50.03125,
+        "width": 777.625,
+        "x": 365.6875,
+        "y": 1714.109375
+      },
+      "shell-12": {
+        "height": 454.578125,
+        "width": 1269,
+        "x": 0,
+        "y": 4563.140625
+      },
+      "start-heading-4": {
+        "height": 27.59375,
+        "width": 373.640625,
+        "x": 704.671875,
+        "y": 273
+      }
+    },
+    "clientWidth": 1269,
+    "dpr": 1,
+    "height": 5178,
+    "islands": ["CopyCommand", "InteractiveTerminal"],
+    "scripts": ["module", "module", "classic", "classic", "classic"],
+    "scrollWidth": 1269,
+    "viewport": [1280, 720]
+  },
+  {
+    "route": "/tools/relay",
+    "size": {
+      "width": 1280,
+      "height": 720
+    },
+    "boxes": {
+      "H1-3": {
+        "height": 71.875,
+        "width": 465.984375,
+        "x": 165.6875,
+        "y": 249.125
+      },
+      "doc-feature-2": {
+        "height": 357.984375,
+        "width": 1017.625,
+        "x": 125.6875,
+        "y": 200
+      },
+      "doc-reading-5": {
+        "height": 2278.25,
+        "width": 1017.625,
+        "x": 125.6875,
+        "y": 621.984375
+      },
+      "doc-shell-1": {
+        "height": 2996.234375,
+        "width": 1120,
+        "x": 74.5,
+        "y": 0
+      },
+      "floating-dock-0": {
+        "height": 79.5,
+        "width": 532,
+        "x": 368.5,
+        "y": 620.5
+      },
+      "guarantees-heading-9": {
+        "height": 38.265625,
+        "width": 777.625,
+        "x": 365.6875,
+        "y": 2319.640625
+      },
+      "installation-7": {
+        "height": 50.03125,
+        "width": 777.625,
+        "x": 365.6875,
+        "y": 1006.015625
+      },
+      "key-capabilities-8": {
+        "height": 50.03125,
+        "width": 777.625,
+        "x": 365.6875,
+        "y": 1255.046875
+      },
+      "overview-6": {
+        "height": 50.03125,
+        "width": 777.625,
+        "x": 365.6875,
+        "y": 662.984375
+      },
+      "shell-10": {
+        "height": 454.578125,
+        "width": 1269,
+        "x": 0,
+        "y": 2996.234375
+      },
+      "start-heading-4": {
+        "height": 27.59375,
+        "width": 373.640625,
+        "x": 704.671875,
+        "y": 273
+      }
+    },
+    "clientWidth": 1269,
+    "dpr": 1,
+    "height": 3611,
+    "islands": ["CopyCommand"],
+    "scripts": ["module", "module", "classic", "classic"],
+    "scrollWidth": 1269,
+    "viewport": [1280, 720]
+  },
+  {
+    "route": "/",
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "boxes": {
+      "archipelago-hero-1": {
+        "height": 2532,
+        "width": 379,
+        "x": 0,
+        "y": 0
+      },
+      "archipelago-hero__title-3": {
+        "height": 166.28125,
+        "width": 379,
+        "x": 0,
+        "y": 67.515625
+      },
+      "archipelago-hero__viewport-2": {
+        "height": 844,
+        "width": 379,
+        "x": 0,
+        "y": 0
+      },
+      "floating-dock-0": {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      },
+      "install-8": {
+        "height": 921.796875,
+        "width": 379,
+        "x": 0,
+        "y": 3898.109375
+      },
+      "install-heading-9": {
+        "height": 36.796875,
+        "width": 339,
+        "x": 20,
+        "y": 3898.109375
+      },
+      "philosophy-heading-11": {
+        "height": 73.59375,
+        "width": 339,
+        "x": 20,
+        "y": 4819.90625
+      },
+      "shell-10": {
+        "height": 1552.828125,
+        "width": 379,
+        "x": 0,
+        "y": 4819.90625
+      },
+      "shell-12": {
+        "height": 618.5,
+        "width": 379,
+        "x": 0,
+        "y": 6436.734375
+      },
+      "tool-feature-6": {
+        "height": 467.40625,
+        "width": 339,
+        "x": 20,
+        "y": 2839.09375
+      },
+      "tool-feature-7": {
+        "height": 430.609375,
+        "width": 339,
+        "x": 20,
+        "y": 3371.5
+      },
+      "tools-4": {
+        "height": 1366.109375,
+        "width": 379,
+        "x": 0,
+        "y": 2532
+      },
+      "tools-heading-5": {
+        "height": 36.796875,
+        "width": 339,
+        "x": 20,
+        "y": 2564
+      }
+    },
+    "clientWidth": 379,
+    "dpr": 1,
+    "height": 7215,
+    "islands": ["ToolGrid"],
+    "scripts": ["module", "module", "module", "classic", "classic"],
+    "scrollWidth": 379,
+    "viewport": [390, 844]
+  },
+  {
+    "route": "/tools/clint",
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "boxes": {
+      "H1-3": {
+        "height": 43.1875,
+        "width": 291,
+        "x": 44,
+        "y": 200
+      },
+      "configuration-9": {
+        "height": 36.796875,
+        "width": 339,
+        "x": 20,
+        "y": 3547.34375
+      },
+      "doc-feature-2": {
+        "height": 605.203125,
+        "width": 339,
+        "x": 20,
+        "y": 168
+      },
+      "doc-reading-5": {
+        "height": 4983.5,
+        "width": 339,
+        "x": 20,
+        "y": 821.203125
+      },
+      "doc-shell-1": {
+        "height": 5900.703125,
+        "width": 379,
+        "x": 0,
+        "y": 0
+      },
+      "example-heading-10": {
+        "height": 29.890625,
+        "width": 339,
+        "x": 20,
+        "y": 3999.140625
+      },
+      "floating-dock-0": {
+        "height": 70.890625,
+        "width": 355,
+        "x": 12,
+        "y": 761.109375
+      },
+      "guarantees-heading-11": {
+        "height": 29.890625,
+        "width": 339,
+        "x": 20,
+        "y": 5008.109375
+      },
+      "installation-7": {
+        "height": 36.796875,
+        "width": 339,
+        "x": 20,
+        "y": 1676.25
+      },
+      "overview-6": {
+        "height": 36.796875,
+        "width": 339,
+        "x": 20,
+        "y": 1062.953125
+      },
+      "quick-start-8": {
+        "height": 36.796875,
+        "width": 339,
+        "x": 20,
+        "y": 2448.984375
+      },
+      "shell-12": {
+        "height": 618.5,
+        "width": 379,
+        "x": 0,
+        "y": 5900.703125
+      },
+      "start-heading-4": {
+        "height": 27.59375,
+        "width": 249,
+        "x": 65,
+        "y": 508.21875
+      }
+    },
+    "clientWidth": 379,
+    "dpr": 1,
+    "height": 6679,
+    "islands": ["CopyCommand", "InteractiveTerminal"],
+    "scripts": ["module", "module", "classic", "classic", "classic"],
+    "scrollWidth": 379,
+    "viewport": [390, 844]
+  },
+  {
+    "route": "/tools/relay",
+    "size": {
+      "width": 390,
+      "height": 844
+    },
+    "boxes": {
+      "H1-3": {
+        "height": 43.1875,
+        "width": 291,
+        "x": 44,
+        "y": 200
+      },
+      "doc-feature-2": {
+        "height": 605.203125,
+        "width": 339,
+        "x": 20,
+        "y": 168
+      },
+      "doc-reading-5": {
+        "height": 2936.25,
+        "width": 339,
+        "x": 20,
+        "y": 821.203125
+      },
+      "doc-shell-1": {
+        "height": 3853.453125,
+        "width": 379,
+        "x": 0,
+        "y": 0
+      },
+      "floating-dock-0": {
+        "height": 70.890625,
+        "width": 355,
+        "x": 12,
+        "y": 761.109375
+      },
+      "guarantees-heading-9": {
+        "height": 29.890625,
+        "width": 339,
+        "x": 20,
+        "y": 2988.90625
+      },
+      "installation-7": {
+        "height": 36.796875,
+        "width": 339,
+        "x": 20,
+        "y": 1533.75
+      },
+      "key-capabilities-8": {
+        "height": 36.796875,
+        "width": 339,
+        "x": 20,
+        "y": 1761.546875
+      },
+      "overview-6": {
+        "height": 36.796875,
+        "width": 339,
+        "x": 20,
+        "y": 1014.953125
+      },
+      "shell-10": {
+        "height": 618.5,
+        "width": 379,
+        "x": 0,
+        "y": 3853.453125
+      },
+      "start-heading-4": {
+        "height": 27.59375,
+        "width": 249,
+        "x": 65,
+        "y": 508.21875
+      }
+    },
+    "clientWidth": 379,
+    "dpr": 1,
+    "height": 4632,
+    "islands": ["CopyCommand"],
+    "scripts": ["module", "module", "classic", "classic"],
+    "scrollWidth": 379,
+    "viewport": [390, 844]
+  },
+  {
+    "route": "/",
+    "size": {
+      "width": 844,
+      "height": 390
+    },
+    "boxes": {
+      "archipelago-hero-1": {
+        "height": 1170,
+        "width": 833,
+        "x": 0,
+        "y": 0
+      },
+      "archipelago-hero__title-3": {
+        "height": 121.515625,
+        "width": 833,
+        "x": 0,
+        "y": 7.796875
+      },
+      "archipelago-hero__viewport-2": {
+        "height": 390,
+        "width": 833,
+        "x": 0,
+        "y": 0
+      },
+      "floating-dock-0": {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      },
+      "install-8": {
+        "height": 893.75,
+        "width": 833,
+        "x": 0,
+        "y": 2728.9375
+      },
+      "install-heading-9": {
+        "height": 36.796875,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 2728.9375
+      },
+      "philosophy-heading-11": {
+        "height": 36.796875,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 3622.6875
+      },
+      "shell-10": {
+        "height": 1251.6875,
+        "width": 833,
+        "x": 0,
+        "y": 3622.6875
+      },
+      "shell-12": {
+        "height": 565.71875,
+        "width": 833,
+        "x": 0,
+        "y": 4938.375
+      },
+      "tool-feature-6": {
+        "height": 560,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 1447.9375
+      },
+      "tool-feature-7": {
+        "height": 560,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 2072.9375
+      },
+      "tools-4": {
+        "height": 1558.9375,
+        "width": 833,
+        "x": 0,
+        "y": 1170
+      },
+      "tools-heading-5": {
+        "height": 36.796875,
+        "width": 441.140625,
+        "x": 33.75,
+        "y": 1202
+      }
+    },
+    "clientWidth": 833,
+    "dpr": 1,
+    "height": 5664,
+    "islands": ["ToolGrid"],
+    "scripts": ["module", "module", "module", "classic", "classic"],
+    "scrollWidth": 833,
+    "viewport": [844, 390]
+  },
+  {
+    "route": "/tools/clint",
+    "size": {
+      "width": 844,
+      "height": 390
+    },
+    "boxes": {
+      "H1-3": {
+        "height": 47.390625,
+        "width": 685.5,
+        "x": 73.75,
+        "y": 248
+      },
+      "configuration-9": {
+        "height": 36.796875,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 3027.4375
+      },
+      "doc-feature-2": {
+        "height": 621.359375,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 200
+      },
+      "doc-reading-5": {
+        "height": 3977.015625,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 869.359375
+      },
+      "doc-shell-1": {
+        "height": 4942.375,
+        "width": 833,
+        "x": 0,
+        "y": 0
+      },
+      "example-heading-10": {
+        "height": 29.890625,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 3413.234375
+      },
+      "floating-dock-0": {
+        "height": 79.5,
+        "width": 532,
+        "x": 150.5,
+        "y": 290.5
+      },
+      "guarantees-heading-11": {
+        "height": 29.890625,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 4218.0625
+      },
+      "installation-7": {
+        "height": 36.796875,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 1400.40625
+      },
+      "overview-6": {
+        "height": 36.796875,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 1039.109375
+      },
+      "quick-start-8": {
+        "height": 36.796875,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 2063.765625
+      },
+      "shell-12": {
+        "height": 565.71875,
+        "width": 833,
+        "x": 0,
+        "y": 4942.375
+      },
+      "start-heading-4": {
+        "height": 27.59375,
+        "width": 635.5,
+        "x": 98.75,
+        "y": 536.375
+      }
+    },
+    "clientWidth": 833,
+    "dpr": 1,
+    "height": 5668,
+    "islands": ["CopyCommand", "InteractiveTerminal"],
+    "scripts": ["module", "module", "classic", "classic", "classic"],
+    "scrollWidth": 833,
+    "viewport": [844, 390]
+  },
+  {
+    "route": "/tools/relay",
+    "size": {
+      "width": 844,
+      "height": 390
+    },
+    "boxes": {
+      "H1-3": {
+        "height": 47.390625,
+        "width": 685.5,
+        "x": 73.75,
+        "y": 248
+      },
+      "doc-feature-2": {
+        "height": 593.3125,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 200
+      },
+      "doc-reading-5": {
+        "height": 2358.921875,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 841.3125
+      },
+      "doc-shell-1": {
+        "height": 3296.234375,
+        "width": 833,
+        "x": 0,
+        "y": 0
+      },
+      "floating-dock-0": {
+        "height": 79.5,
+        "width": 532,
+        "x": 150.5,
+        "y": 290.5
+      },
+      "guarantees-heading-9": {
+        "height": 29.890625,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 2628.015625
+      },
+      "installation-7": {
+        "height": 36.796875,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 1340.859375
+      },
+      "key-capabilities-8": {
+        "height": 36.796875,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 1576.65625
+      },
+      "overview-6": {
+        "height": 36.796875,
+        "width": 765.5,
+        "x": 33.75,
+        "y": 1011.0625
+      },
+      "shell-10": {
+        "height": 565.71875,
+        "width": 833,
+        "x": 0,
+        "y": 3296.234375
+      },
+      "start-heading-4": {
+        "height": 27.59375,
+        "width": 635.5,
+        "x": 98.75,
+        "y": 508.328125
+      }
+    },
+    "clientWidth": 833,
+    "dpr": 1,
+    "height": 4022,
+    "islands": ["CopyCommand"],
+    "scripts": ["module", "module", "classic", "classic"],
+    "scrollWidth": 833,
+    "viewport": [844, 390]
+  },
+  {
+    "route": "/",
+    "size": {
+      "width": 320,
+      "height": 720
+    },
+    "boxes": {
+      "archipelago-hero-1": {
+        "height": 2160,
+        "width": 309,
+        "x": 0,
+        "y": 0
+      },
+      "archipelago-hero__title-3": {
+        "height": 136.4375,
+        "width": 309,
+        "x": 0,
+        "y": 57.59375
+      },
+      "archipelago-hero__viewport-2": {
+        "height": 720,
+        "width": 309,
+        "x": 0,
+        "y": 0
+      },
+      "floating-dock-0": {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      },
+      "install-8": {
+        "height": 921.796875,
+        "width": 309,
+        "x": 0,
+        "y": 3847.265625
+      },
+      "install-heading-9": {
+        "height": 36.796875,
+        "width": 269,
+        "x": 20,
+        "y": 3847.265625
+      },
+      "philosophy-heading-11": {
+        "height": 73.59375,
+        "width": 269,
+        "x": 20,
+        "y": 4769.0625
+      },
+      "shell-10": {
+        "height": 1808.8125,
+        "width": 309,
+        "x": 0,
+        "y": 4769.0625
+      },
+      "shell-12": {
+        "height": 663.984375,
+        "width": 309,
+        "x": 0,
+        "y": 6641.875
+      },
+      "tool-feature-6": {
+        "height": 615.984375,
+        "width": 269,
+        "x": 20,
+        "y": 2518.984375
+      },
+      "tool-feature-7": {
+        "height": 551.296875,
+        "width": 269,
+        "x": 20,
+        "y": 3199.96875
+      },
+      "tools-4": {
+        "height": 1687.265625,
+        "width": 309,
+        "x": 0,
+        "y": 2160
+      },
+      "tools-heading-5": {
+        "height": 36.796875,
+        "width": 269,
+        "x": 20,
+        "y": 2192
+      }
+    },
+    "clientWidth": 309,
+    "dpr": 1,
+    "height": 7466,
+    "islands": ["ToolGrid"],
+    "scripts": ["module", "module", "module", "classic", "classic"],
+    "scrollWidth": 309,
+    "viewport": [320, 720]
+  },
+  {
+    "route": "/tools/clint",
+    "size": {
+      "width": 320,
+      "height": 720
+    },
+    "boxes": {
+      "H1-3": {
+        "height": 43.1875,
+        "width": 221,
+        "x": 44,
+        "y": 200
+      },
+      "configuration-9": {
+        "height": 36.796875,
+        "width": 269,
+        "x": 20,
+        "y": 3908.46875
+      },
+      "doc-feature-2": {
+        "height": 661.140625,
+        "width": 269,
+        "x": 20,
+        "y": 168
+      },
+      "doc-reading-5": {
+        "height": 5519.765625,
+        "width": 269,
+        "x": 20,
+        "y": 877.140625
+      },
+      "doc-shell-1": {
+        "height": 6492.90625,
+        "width": 309,
+        "x": 0,
+        "y": 0
+      },
+      "example-heading-10": {
+        "height": 29.890625,
+        "width": 269,
+        "x": 20,
+        "y": 4360.265625
+      },
+      "floating-dock-0": {
+        "height": 70.890625,
+        "width": 285,
+        "x": 12,
+        "y": 637.109375
+      },
+      "guarantees-heading-11": {
+        "height": 59.78125,
+        "width": 269,
+        "x": 20,
+        "y": 5390.234375
+      },
+      "installation-7": {
+        "height": 36.796875,
+        "width": 269,
+        "x": 20,
+        "y": 1858.1875
+      },
+      "overview-6": {
+        "height": 36.796875,
+        "width": 269,
+        "x": 20,
+        "y": 1118.890625
+      },
+      "quick-start-8": {
+        "height": 36.796875,
+        "width": 269,
+        "x": 20,
+        "y": 2715.921875
+      },
+      "shell-12": {
+        "height": 663.984375,
+        "width": 309,
+        "x": 0,
+        "y": 6492.90625
+      },
+      "start-heading-4": {
+        "height": 27.59375,
+        "width": 179,
+        "x": 65,
+        "y": 564.15625
+      }
+    },
+    "clientWidth": 309,
+    "dpr": 1,
+    "height": 7317,
+    "islands": ["CopyCommand", "InteractiveTerminal"],
+    "scripts": ["module", "module", "classic", "classic", "classic"],
+    "scrollWidth": 309,
+    "viewport": [320, 720]
+  },
+  {
+    "route": "/tools/relay",
+    "size": {
+      "width": 320,
+      "height": 720
+    },
+    "boxes": {
+      "H1-3": {
+        "height": 86.375,
+        "width": 221,
+        "x": 44,
+        "y": 200
+      },
+      "doc-feature-2": {
+        "height": 676.4375,
+        "width": 269,
+        "x": 20,
+        "y": 168
+      },
+      "doc-reading-5": {
+        "height": 3460.15625,
+        "width": 269,
+        "x": 20,
+        "y": 892.4375
+      },
+      "doc-shell-1": {
+        "height": 4448.59375,
+        "width": 309,
+        "x": 0,
+        "y": 0
+      },
+      "floating-dock-0": {
+        "height": 70.890625,
+        "width": 285,
+        "x": 12,
+        "y": 637.109375
+      },
+      "guarantees-heading-9": {
+        "height": 59.78125,
+        "width": 269,
+        "x": 20,
+        "y": 3402.015625
+      },
+      "installation-7": {
+        "height": 36.796875,
+        "width": 269,
+        "x": 20,
+        "y": 1778.984375
+      },
+      "key-capabilities-8": {
+        "height": 36.796875,
+        "width": 269,
+        "x": 20,
+        "y": 2017.78125
+      },
+      "overview-6": {
+        "height": 36.796875,
+        "width": 269,
+        "x": 20,
+        "y": 1134.1875
+      },
+      "shell-10": {
+        "height": 663.984375,
+        "width": 309,
+        "x": 0,
+        "y": 4448.59375
+      },
+      "start-heading-4": {
+        "height": 27.59375,
+        "width": 179,
+        "x": 65,
+        "y": 579.453125
+      }
+    },
+    "clientWidth": 309,
+    "dpr": 1,
+    "height": 5273,
+    "islands": ["CopyCommand"],
+    "scripts": ["module", "module", "classic", "classic"],
+    "scrollWidth": 309,
+    "viewport": [320, 720]
+  },
+  {
+    "route": "/",
+    "size": {
+      "width": 1680,
+      "height": 900
+    },
+    "boxes": {
+      "archipelago-hero-1": {
+        "height": 2700,
+        "width": 1669,
+        "x": 0,
+        "y": 0
+      },
+      "archipelago-hero__title-3": {
+        "height": 358.171875,
+        "width": 1669,
+        "x": 0,
+        "y": 27
+      },
+      "archipelago-hero__viewport-2": {
+        "height": 900,
+        "width": 1669,
+        "x": 0,
+        "y": 0
+      },
+      "floating-dock-0": {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      },
+      "install-8": {
+        "height": 720.09375,
+        "width": 1440,
+        "x": 114.5,
+        "y": 3685.09375
+      },
+      "install-heading-9": {
+        "height": 55.1875,
+        "width": 568.796875,
+        "x": 178.5,
+        "y": 3685.09375
+      },
+      "philosophy-heading-11": {
+        "height": 55.1875,
+        "width": 1312,
+        "x": 178.5,
+        "y": 4405.1875
+      },
+      "shell-10": {
+        "height": 674.703125,
+        "width": 1440,
+        "x": 114.5,
+        "y": 4405.1875
+      },
+      "shell-12": {
+        "height": 454.578125,
+        "width": 1440,
+        "x": 114.5,
+        "y": 5175.890625
+      },
+      "tool-feature-6": {
+        "height": 560,
+        "width": 608,
+        "x": 178.5,
+        "y": 3029.09375
+      },
+      "tool-feature-7": {
+        "height": 560,
+        "width": 607,
+        "x": 883.5,
+        "y": 3029.09375
+      },
+      "tools-4": {
+        "height": 985.09375,
+        "width": 1440,
+        "x": 114.5,
+        "y": 2700
+      },
+      "tools-heading-5": {
+        "height": 55.1875,
+        "width": 441.140625,
+        "x": 178.5,
+        "y": 2732
+      }
+    },
+    "clientWidth": 1669,
+    "dpr": 1,
+    "height": 5790,
+    "islands": ["ToolGrid"],
+    "scripts": ["module", "module", "module", "classic", "classic"],
+    "scrollWidth": 1669,
+    "viewport": [1680, 900]
+  },
+  {
+    "route": "/tools/clint",
+    "size": {
+      "width": 1680,
+      "height": 900
+    },
+    "boxes": {
+      "H1-3": {
+        "height": 77.75,
+        "width": 452.5625,
+        "x": 378.5,
+        "y": 248
+      },
+      "configuration-9": {
+        "height": 55.1875,
+        "width": 752,
+        "x": 578.5,
+        "y": 2712.4375
+      },
+      "doc-feature-2": {
+        "height": 363.9375,
+        "width": 992,
+        "x": 338.5,
+        "y": 200
+      },
+      "doc-reading-5": {
+        "height": 3872.03125,
+        "width": 992,
+        "x": 338.5,
+        "y": 627.9375
+      },
+      "doc-shell-1": {
+        "height": 4595.96875,
+        "width": 1120,
+        "x": 274.5,
+        "y": 0
+      },
+      "example-heading-10": {
+        "height": 41.390625,
+        "width": 752,
+        "x": 578.5,
+        "y": 3116.625
+      },
+      "floating-dock-0": {
+        "height": 79.5,
+        "width": 532,
+        "x": 568.5,
+        "y": 800.5
+      },
+      "guarantees-heading-11": {
+        "height": 41.390625,
+        "width": 752,
+        "x": 578.5,
+        "y": 3860.15625
+      },
+      "installation-7": {
+        "height": 55.1875,
+        "width": 752,
+        "x": 578.5,
+        "y": 1048.625
+      },
+      "overview-6": {
+        "height": 55.1875,
+        "width": 752,
+        "x": 578.5,
+        "y": 668.9375
+      },
+      "quick-start-8": {
+        "height": 55.1875,
+        "width": 752,
+        "x": 578.5,
+        "y": 1730.375
+      },
+      "shell-12": {
+        "height": 454.578125,
+        "width": 1440,
+        "x": 114.5,
+        "y": 4595.96875
+      },
+      "start-heading-4": {
+        "height": 27.59375,
+        "width": 361.4375,
+        "x": 904.0625,
+        "y": 273
+      }
+    },
+    "clientWidth": 1669,
+    "dpr": 1,
+    "height": 5211,
+    "islands": ["CopyCommand", "InteractiveTerminal"],
+    "scripts": ["module", "module", "classic", "classic", "classic"],
+    "scrollWidth": 1669,
+    "viewport": [1680, 900]
+  },
+  {
+    "route": "/tools/relay",
+    "size": {
+      "width": 1680,
+      "height": 900
+    },
+    "boxes": {
+      "H1-3": {
+        "height": 77.75,
+        "width": 452.5625,
+        "x": 378.5,
+        "y": 248
+      },
+      "doc-feature-2": {
+        "height": 363.9375,
+        "width": 992,
+        "x": 338.5,
+        "y": 200
+      },
+      "doc-reading-5": {
+        "height": 2328.34375,
+        "width": 992,
+        "x": 338.5,
+        "y": 627.9375
+      },
+      "doc-shell-1": {
+        "height": 3052.28125,
+        "width": 1120,
+        "x": 274.5,
+        "y": 0
+      },
+      "floating-dock-0": {
+        "height": 79.5,
+        "width": 532,
+        "x": 568.5,
+        "y": 800.5
+      },
+      "guarantees-heading-9": {
+        "height": 41.390625,
+        "width": 752,
+        "x": 578.5,
+        "y": 2372.5625
+      },
+      "installation-7": {
+        "height": 55.1875,
+        "width": 752,
+        "x": 578.5,
+        "y": 1017.125
+      },
+      "key-capabilities-8": {
+        "height": 55.1875,
+        "width": 752,
+        "x": 578.5,
+        "y": 1271.3125
+      },
+      "overview-6": {
+        "height": 55.1875,
+        "width": 752,
+        "x": 578.5,
+        "y": 668.9375
+      },
+      "shell-10": {
+        "height": 454.578125,
+        "width": 1440,
+        "x": 114.5,
+        "y": 3052.28125
+      },
+      "start-heading-4": {
+        "height": 27.59375,
+        "width": 361.4375,
+        "x": 904.0625,
+        "y": 273
+      }
+    },
+    "clientWidth": 1669,
+    "dpr": 1,
+    "height": 3667,
+    "islands": ["CopyCommand"],
+    "scripts": ["module", "module", "classic", "classic"],
+    "scrollWidth": 1669,
+    "viewport": [1680, 900]
+  }
+]

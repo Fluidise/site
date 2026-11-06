@@ -1,0 +1,131 @@
+{
+  "fixtures": [
+    {
+      "kind": "nojs",
+      "route": "/",
+      "clientWidth": 1269,
+      "fontSize": "16px",
+      "frames": ["block", "block", "block", "block"],
+      "h1": "FLUIDISE — Agent-first developer experience suite",
+      "height": 3778,
+      "installs": 2,
+      "scripts": 0,
+      "scrollWidth": 1269,
+      "width": 1280
+    },
+    {
+      "kind": "nojs",
+      "route": "/tools/clint",
+      "clientWidth": 1269,
+      "fontSize": "16px",
+      "frames": ["block", "block"],
+      "h1": "fluidise-clint",
+      "height": 5178,
+      "installs": 0,
+      "scripts": 0,
+      "scrollWidth": 1269,
+      "width": 1280
+    },
+    {
+      "kind": "nojs",
+      "route": "/tools/relay",
+      "clientWidth": 1269,
+      "fontSize": "16px",
+      "frames": ["block", "block"],
+      "h1": "fluidise-relay",
+      "height": 3611,
+      "installs": 0,
+      "scripts": 0,
+      "scrollWidth": 1269,
+      "width": 1280
+    },
+    {
+      "kind": "text",
+      "route": "/",
+      "clientWidth": 309,
+      "fontSize": "32px",
+      "frames": ["none", "none", "none", "none"],
+      "h1": "FLUIDISE — Agent-first developer experience suite",
+      "height": 14639,
+      "installs": 2,
+      "scripts": 5,
+      "scrollWidth": 309,
+      "width": 320
+    },
+    {
+      "kind": "text",
+      "route": "/tools/clint",
+      "clientWidth": 309,
+      "fontSize": "32px",
+      "frames": ["none", "none"],
+      "h1": "fluidise-clint",
+      "height": 18396,
+      "installs": 0,
+      "scripts": 5,
+      "scrollWidth": 309,
+      "width": 320
+    },
+    {
+      "kind": "text",
+      "route": "/tools/relay",
+      "clientWidth": 309,
+      "fontSize": "32px",
+      "frames": ["none", "none"],
+      "h1": "fluidise-relay",
+      "height": 12976,
+      "installs": 0,
+      "scripts": 4,
+      "scrollWidth": 309,
+      "width": 320
+    },
+    {
+      "kind": "plain",
+      "route": "/",
+      "clientWidth": 1269,
+      "fontSize": "16px",
+      "frames": ["none", "none", "none", "none"],
+      "h1": "FLUIDISE — Agent-first developer experience suite",
+      "height": 5218,
+      "installs": 2,
+      "scripts": 5,
+      "scrollWidth": 1269,
+      "width": 1280
+    },
+    {
+      "kind": "plain",
+      "route": "/tools/clint",
+      "clientWidth": 1269,
+      "fontSize": "16px",
+      "frames": ["none", "none"],
+      "h1": "fluidise-clint",
+      "height": 5178,
+      "installs": 0,
+      "scripts": 5,
+      "scrollWidth": 1269,
+      "width": 1280
+    },
+    {
+      "kind": "plain",
+      "route": "/tools/relay",
+      "clientWidth": 1269,
+      "fontSize": "16px",
+      "frames": ["none", "none"],
+      "h1": "fluidise-relay",
+      "height": 3611,
+      "installs": 0,
+      "scripts": 4,
+      "scrollWidth": 1269,
+      "width": 1280
+    }
+  ],
+  "zoomAttempt": {
+    "before": {
+      "dpr": 1,
+      "width": 1280
+    },
+    "after": {
+      "dpr": 1,
+      "width": 1280
+    }
+  }
+}

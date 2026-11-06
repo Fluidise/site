@@ -214,3 +214,34 @@ assert(read('public/fonts/InstrumentSans-OFL.txt').includes('SIL OPEN FONT LICEN
 console.log(
   'PASS: real schema validation, unchanged factual metadata/fences and licensed two-face font budget',
 );
+
+for (const [html, frameCount, hatchCount, islands] of [
+  [home, 4, 3, ['ToolGrid']],
+  [clint, 2, 1, ['CopyCommand', 'InteractiveTerminal']],
+  [relay, 2, 1, ['CopyCommand']],
+]) {
+  const frames = [...html.matchAll(/<[^>]+class="[^"]*\bbackground-frame\b[^"]*"[^>]*>/g)];
+  assert.equal(frames.length, frameCount, 'Only the intended non-hero shells receive rails');
+  const hatches = [...html.matchAll(/<span class="background-hatch" aria-hidden="true"><\/span>/g)];
+  assert.equal(hatches.length, hatchCount, 'Hatches punctuate only major transitions');
+  const exports = [...html.matchAll(/<astro-island\b[^>]*component-export="([^"]+)"/g)]
+    .map((match) => match[1])
+    .sort();
+  assert.deepEqual(exports, [...islands].sort(), 'No decoration island or hydration owner');
+  assert(
+    !frames.some(([tag]) => /archipelago|tool-feature|doc-feature|prose|doc-reading/.test(tag)),
+  );
+}
+assert(/id="tools" class="[^"]*background-frame/.test(home));
+assert(/id="install" class="[^"]*background-frame/.test(home));
+assert(/class="doc-shell background-frame"/.test(clint));
+assert(/class="doc-shell background-frame"/.test(relay));
+const grain = readFileSync(new URL('src/assets/background/grain.png', root));
+assert(grain.length <= 8192, 'One small static grain tile');
+assert.equal(grain.subarray(1, 4).toString(), 'PNG');
+assert.equal(grain.readUInt32BE(16), 96);
+assert.equal(grain.readUInt32BE(20), 96);
+assert(grain.includes(Buffer.from('Origin\0Fluidise procedural matte grain')));
+console.log(
+  'PASS: bounded nonsemantic background details, static grain and unchanged hydration owners',
+);

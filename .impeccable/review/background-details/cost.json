@@ -1,0 +1,20 @@
+{
+  "baselineCssBytes": 32876,
+  "currentCssBytes": 34702,
+  "cssDeltaBytes": 1826,
+  "grainUrl": "/_astro/grain.DJzTbrZH.png",
+  "grainBytes": 5437,
+  "grainSha256": "2801a6a406644f9a40fbb79cb08ea74f75dae701313746cf7adfe2f4ede77874",
+  "grainAssetCount": 1,
+  "homeModule": {
+    "baseline": {
+      "url": "/_astro/ToolGrid.Rbqfv_Pu.js",
+      "bytes": 4595
+    },
+    "current": {
+      "url": "/_astro/ToolGrid.CQIznvWg.js",
+      "bytes": 4769
+    }
+  },
+  "note": "One same-origin static texture URL reused across routes; CSS delivery size and local asset bytes, not network timing or a performance improvement. Existing ToolGrid module gains static presentation strings only; no new runtime/hydration owner."
+}

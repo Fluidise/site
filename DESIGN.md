@@ -191,6 +191,7 @@ Instrument Sans carries all non-hero headings, reading and interface roles. Barl
 - A protected, full-screen painted archipelago with a monumental ivory wordmark and reversible native-scroll depth.
 - Achromatic reading and ordinary links on opaque charcoal surfaces; mineral blue only for primary fills, active markers and external focus.
 - Open task and reference compositions rather than a generic rounded-card library.
+- Quiet construction rails, gutter-only grain and short transition hatches give empty charcoal space structure without texturing reading or artwork.
 - A visibly labeled matte squircle dock and square installation, starting, terminal and code surfaces.
 - Truthful demonstrations, selectable commands and explicit copy failure feedback.
 
@@ -207,7 +208,7 @@ The interface is achromatic charcoal and white/gray, with a scarce mineral-blue 
 - **Canvas / Surface / Raised / Hover:** page and footer ground; square command/start groupings; opaque dock; ordinary interactive hover ground respectively.
 - **Primary ink / Secondary / Quiet:** strong reading, supporting copy and readable metadata. Quiet is not disabled text.
 - **Action / Action hover:** neutral ordinary-link and selected-control ink, becoming white on hover. These are not brand accents.
-- **Line / Control border:** visible section or row dividers versus meaningful control boundaries. Keep each role opaque and distinct.
+- **Line / Control border:** visible section or row dividers versus meaningful control boundaries. Keep meaningful dividers and control edges opaque and distinct. The separate empty-space decoration may mix Line at the restrained opacities documented below; it never replaces these semantic boundaries.
 - **Selected / Selection:** pressed filters and selected tabs versus native text-selection backing. Selection uses Primary ink.
 - **Code ground / Code ink / Code comments:** terminal and documentation code, default tokens and comments.
 - **Hero fallback / Hero title ink / Hero title wash:** protected scene backing and painted ivory material only. The uniform wash is not a decorative UI gradient.
@@ -247,6 +248,8 @@ The protected hero has a 100dvh sticky viewport inside a reserved 300dvh native-
 
 Current route composition is recorded in `.impeccable/surfaces/src-pages-index-astro.md`. Reused spatial patterns are open paired regions, divider-separated installation rows and a reference rail beside prose. Above 900px, task lanes split equally with one vertical divider; installation/start regions use paired minmax columns; principles use three open columns. At 900px and below these regions and terminal command/output stack in DOM order. Footer content stacks at the same breakpoint. At 600px and below panel padding becomes 20px where specified, while reading and code sizes remain unchanged. Different homepage jobs are separated by 96px, reduced to 64px in the stacked layout.
 
+Selected non-hero shells carry segmented construction rails and matte grain only in their empty outer gutters, leaving a 12px clear buffer before the content edge. Rails follow the existing homepage/footer and documentation caps rather than a viewport-fixed grid. Short hatch accents punctuate the existing blank transitions before installation, principles and the footer; documentation uses quieter accents above reference reading and before its footer. Home hatches are 96×12px, documentation hatches 64×8px. At 600px and below, rails and grain disappear and all hatches use 64×8px. These decorations add no spacing or content geometry, accept no pointer input and introduce no ancestor stacking context; all are suppressed in forced colors.
+
 Reference contents uses a 12rem left rail with a 48px gap above 900px. It is sticky only when viewport height exceeds 700px, with a 28px top offset and a dock-aware maximum height; otherwise it remains in flow. At 900px and below contents is a visible wrapping list before the article, not a drawer. It is generated from actual rendered headings rather than a second maintained inventory.
 
 The dock is bottom-centered, with its width/padding in frontmatter. Its bottom offset is `calc(20px + env(safe-area-inset-bottom, 0px))`, or 12px plus safe area at widths up to 600px. Shared anchor/focus/footer clearance is `calc(10rem + env(safe-area-inset-bottom, 0px))`; top scroll spacing is 28px. The gateway heading/filter region retains a `calc(25svh - 32px)` minimum transition. These are implemented clearance rules, not a claim of universal zoom or focus conformance; validate new long labels and resized text against the actual dock.
@@ -255,13 +258,15 @@ The dock is bottom-centered, with its width/padding in frontmatter. Its bottom o
 
 The interface is flat by default: opaque tonal layering, generous space and visible 1px boundaries establish grouping. No translucent glass or backdrop blur remains in the current dock. Its restrained neutral shadow provides the only shared floating UI lift. The approved painting keeps its dedicated layered scene and painted-glyph separation; neither becomes a general-purpose card effect.
 
+The quiet background treatment reuses Line locally: 1px rails mix it at 22% opacity and shallow diagonal hatches at 28%, without weakening meaningful dividers or control boundaries. One original static 96×96 indexed grain tile (alpha 8/255; 5437 bytes, within the 8192-byte budget) is shared only by those gutter lanes. Reading, artwork, mastheads, commands, controls and the dock retain their original grounds; no page-wide texture, new animation, filter pass or runtime owner is added. Missing grain leaves the same solid Canvas and useful content.
+
 ### Shadow Vocabulary
 
 - **Dock lift:** `0 10px 32px rgb(0 0 0 / 0.24)` on the matte Raised dock.
 - **Selected-control marker:** `inset 0 -2px var(--accent)` is a selection line, not ambient elevation.
 - **Painted wordmark separation:** `drop-shadow(0 3px 12px rgb(20 30 58 / 0.32))` on the clipped semantic title. Unsupported clipping retains `0 3px 24px rgb(20 30 58 / 0.32)` text-shadow. The coincident decorative face adds neither; forced colors remove the material/filter.
 
-**The Matte Instrument Rule.** Use opaque tonal surfaces and fine borders for the interface. The dock may lift softly; technical panels stay square and flat. Do not extend the painting, glass blur or decorative texture into reading surfaces.
+**The Matte Instrument Rule.** Use opaque tonal surfaces and fine borders for the interface. The dock may lift softly; technical panels stay square and flat. Do not extend the painting, glass blur or decorative texture into reading surfaces. Static rails, gutter-only grain and short transition hatches may mark empty shell space; never overlay reading, controls or artwork.
 
 ## Shapes
 
@@ -281,7 +286,7 @@ Four stable icon/label pairs read Explore, Install, Principles and GitHub. Explo
 
 ### Task gateway and installation desk
 
-Task statements lead open lanes inside square-edged landscape-backed presentations, together with live package identity/status, purpose and actions. Clint uses the supplied text-free plum/lavender woodland; Relay uses the supplied text-free emerald coastal currents. Decorative empty-alt images sit behind the complete live presentation with cover crops; no names, marks or actions are baked into the paintings, and the images add no link or focus target. Local Canvas scrims protect contrast while normal-flow content wraps and grows without fixed-height clipping. A mineral Get started link opens the responsible tool page, while neutral Install command reaches its stable installation row. Quiet opaque pressed-button filters and the announced count affect only task results. The separately titled installation desk always renders the unfiltered ordered collection, exact source commands when present, docs/source links and one Homebrew tap control. There is no exclusive task state, hidden installation prerequisite or generic card library; installation, principles and footer remain image-free.
+Task statements lead open lanes inside square-edged landscape-backed presentations, together with live package identity/status, purpose and actions. Clint uses the supplied text-free plum/lavender woodland; Relay uses the supplied text-free emerald coastal currents. Decorative empty-alt images sit behind the complete live presentation with cover crops; no names, marks or actions are baked into the paintings, and the images add no link or focus target. Local Canvas scrims protect contrast while normal-flow content wraps and grows without fixed-height clipping. A mineral Get started link opens the responsible tool page, while neutral Install command reaches its stable installation row. Quiet opaque pressed-button filters and the announced count affect only task results. The separately titled installation desk always renders the unfiltered ordered collection, exact source commands when present, docs/source links and one Homebrew tap control. There is no exclusive task state, hidden installation prerequisite or generic card library. Installation, principles and footer contain no landscape imagery; only their empty shell gutters and named transitions share the quiet background details.
 
 Both routes use the same required collection banner field and server-only preparation in `src/lib/tool-banner.ts`. It produces local WebP variants at widths 320, 640, 960, 1280, 1600 and 2048 with quality 85; only resolved native image attributes and intrinsic 2048×768 dimensions, not raw source metadata or the optimization result, reach the catalog island. The source-width fallback and `sizes="2048px"` select the full-size candidate because narrow, tall cover boxes need source height, not merely their element width. The current encoded paintings are 76,108 bytes for Clint and 57,736 bytes for Relay, with shared cacheable URLs across home and tool routes. Six candidates remain generated; this is not element-width-based responsive selection. Native lazy loading and asynchronous decoding add no preload, animation, observer or image-fetch runtime. Content determines the painted region's height, and charcoal fallback preserves useful live identity/actions when images fail. The 2048×768 originals are the practical resolution ceiling; enlarged content can exceed their available detail. Exact unmodified PNG source paths and SHA-256 digests are recorded in `src/assets/tools/README.md`; no new artwork or retouching is involved.
 
@@ -291,7 +296,7 @@ A square Surface bar holds locally scrolling, fully selectable Code ink text and
 
 ### Tool-page starting and reading regions
 
-The same template gives both tools home/breadcrumb navigation, one landscape-backed opening containing the live identity/task masthead and square opaque Surface getting-started panel, then generated Reference contents, article, full operational guarantees and collection-derived sibling link. The starting panel preserves source status and command data and links to the existing Installation heading. It stacks below the masthead at 900px within the same painted opening; both remain in normal flow above the decorative cover image and local contrast scrim. Commands and controls retain opaque technical grounds, and installation never depends on imagery. The background adds no heading or contents entry; reference reading stays image-free on charcoal. Breadcrumb, global navigation and contents have distinct accessible names; native anchors preserve the reading model.
+The same template gives both tools home/breadcrumb navigation, one landscape-backed opening containing the live identity/task masthead and square opaque Surface getting-started panel, then generated Reference contents, article, full operational guarantees and collection-derived sibling link. The starting panel preserves source status and command data and links to the existing Installation heading. It stacks below the masthead at 900px within the same painted opening; both remain in normal flow above the decorative cover image and local contrast scrim. Commands and controls retain opaque technical grounds, and installation never depends on imagery. The background adds no heading or contents entry; reference reading stays on untextured charcoal, with grain confined to the outer shell gutters. Breadcrumb, global navigation and contents have distinct accessible names; native anchors preserve the reading model.
 
 ### Clint terminal and documentation code
 
@@ -311,6 +316,7 @@ Every interactive/focusable element retains a 3px Mineral outline with 4px offse
 - **Do** use the existing official white mark on dark surfaces and the official black mark on light-filled contexts without modifying either asset.
 - **Do** preserve tool identity, factual data, exact command/sample payloads and visible manual-copy fallback.
 - **Do** identify the Clint terminal as sample output, not live execution.
+- **Do** confine background detail to empty gutter lanes and major transitions; omit rails/grain on narrow screens and all decoration in forced colors.
 
 ### Don't:
 
@@ -320,5 +326,8 @@ Every interactive/focusable element retains a 3px Mineral outline with 4px offse
 - **Don't** shrink mobile reading/code text, impose a 320px body minimum or hide overflow to conceal a layout defect.
 - **Don't** add ambient motion, pointer-required behavior, a theme toggle or a second runtime highlighter.
 - **Don't** treat design approval, screenshots, token contrast calculations or sample timing strings as release, performance or accessibility-conformance evidence.
+- **Don't** use quiet construction rails as meaningful control boundaries or let grain and hatching cross reading, artwork, controls or focus outlines.
+
+The sidecar contains nine scoped, framework-free HTML/CSS appearance samples. Its task lanes now embed the existing optimized paintings and grain rather than an image-free historical approximation; preview-only container queries apply the source layout thresholds to the panel's available width. The dock appears in flow instead of floating over the panel. Hover and focus styling are native, but filtering, clipboard feedback and terminal sample/format changes remain the responsibility of the live components, not these static previews.
 
 Source evidence: `src/styles/global.css`, current route/component/layout owners and `astro.config.mjs`; provenance in `public/fonts/README.md` and `src/assets/tools/README.md`; product constraints in `PRODUCT.md`; visual/task-led authority and the current refinement in `docs/specs/dark-design-system.md`; protected hero authority in `docs/specs/alpine-canvas-hero.md`. The current surface brief distinguishes historical finish-review dispositions from the current refinement's source/documentation evidence and limits. This installed-system reference is not a deployment, WCAG, OS, physical-device, multi-browser or performance certificate.

@@ -1,0 +1,9 @@
+{
+  "src/styles/global.css": "49ae3d8f78c8a9f7eaebd1ae25a4bfa8298527fbe3302dd3ea41d629642ad41d",
+  "src/components/ToolGrid.tsx": "7a74494728d66356927e7aa5403482d59f2688fdcd02531d580aad95030cc075",
+  "src/components/ManifestoSection.astro": "c498a7f6d72e3be77d300f7c435954b0461fc46a3e7df2e937a54e9c50aa9655",
+  "src/components/Footer.astro": "4b5b3d2c2a6fd23fac0dea973c3dac364da21452b0b6d896ed6a207f3529bd5d",
+  "src/pages/tools/[id].astro": "f2f4bea0b912e528cfe7f1b748faa344e907c97784a52f13aa563b86bc91b780",
+  "src/components/Design.test.mjs": "28f9133754ed4b56d8f4f2fe8428be870c708d79d259b9c62d599ee50c59c7fc",
+  "src/assets/background/grain.png": "2801a6a406644f9a40fbb79cb08ea74f75dae701313746cf7adfe2f4ede77874"
+}

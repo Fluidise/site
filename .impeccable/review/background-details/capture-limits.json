@@ -1,0 +1,38 @@
+{
+  "wideCapture": [
+    {
+      "name": "home",
+      "box": 1669,
+      "clientWidth": 1669,
+      "height": 900,
+      "scrollWidth": 1669
+    },
+    {
+      "name": "clint",
+      "box": 1669,
+      "clientWidth": 1669,
+      "height": 900,
+      "scrollWidth": 1669
+    },
+    {
+      "name": "relay",
+      "box": 1669,
+      "clientWidth": 1669,
+      "height": 900,
+      "scrollWidth": 1669
+    }
+  ],
+  "wideNote": "Host native screenshots crop the right edge above approximately 1400px. The three wide JPEGs were replaced with a real 1680x900 CSS iframe rendered at uniform 0.75 scale in a 1280x720 capture. Native top-level wide metrics remain separately in matrix.json.",
+  "baselineLargeText": {
+    "dockText": "ExploreInstallPrinciplesGitHub (opens in new tab)",
+    "height": 14639,
+    "scrollWidth": 309,
+    "width": 320
+  },
+  "largeTextNote": "The unchanged baseline reproduces the same 200% root-font dock wrapping; this is not a new decoration regression.",
+  "nativeLimits": [
+    "Actual browser zoom shortcut left DPR and viewport unchanged",
+    "No native DPR-2, forced-colors or reduced-motion media override exposed",
+    "Clipboard denial iframe cannot receive input through this host"
+  ]
+}

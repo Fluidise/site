@@ -1,0 +1,5 @@
+{
+  "cases": 15,
+  "contentGeometryDifferences": [],
+  "exclusions": "Fixed dock and scroll-transformed hero title/viewport were measured at different scroll positions. Matched hero poses are separately compared in hero-comparison.json. This does not measure CLS."
+}
