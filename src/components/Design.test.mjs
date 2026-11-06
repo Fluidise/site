@@ -183,9 +183,11 @@ for (const [name, html] of [
   assert(banner.includes(`/_astro/${name}-banner.`));
   const feature = html.indexOf('class="doc-feature"');
   assert(feature < html.indexOf(banner));
-  assert(html.indexOf(banner) < html.indexOf('<h1'));
-  assert(html.indexOf(banner) < html.indexOf('id="get-started"'));
+  assert(html.indexOf('<h1') < html.indexOf(banner));
+  assert(html.indexOf('id="get-started"') < html.indexOf(banner));
   assert(html.indexOf(banner) < html.indexOf('class="doc-reading"'));
+  assert(html.includes('<figcaption>Illustrative example'));
+  assert(html.includes(name === 'clint' ? 'JSON excerpt' : 'Plan summary'));
   assert(!html.includes('doc-banner'));
   assert(
     !readdirSync(new URL('dist/_astro/', root)).some(
@@ -201,7 +203,7 @@ for (const [name, expected] of [
   assert.equal(createHash('sha256').update(original).digest('hex'), expected);
 }
 console.log(
-  'PASS: real local image validation, optimized SSR backgrounds, preserved v2 artwork and live overlay content',
+  'PASS: real local image validation, optimized SSR scenes, preserved v2 artwork and separate live content',
 );
 const normal = readFileSync(new URL('public/fonts/InstrumentSans-Variable-latin.woff2', root));
 const italic = readFileSync(

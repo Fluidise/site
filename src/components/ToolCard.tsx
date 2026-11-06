@@ -1,5 +1,6 @@
 import { IconArrowRight } from '@tabler/icons-react';
 import type { ToolBanner } from '../lib/tool-banner';
+import { ToolPreview } from './ToolPreview';
 
 export interface ToolData {
   id: string;
@@ -22,17 +23,6 @@ export function ToolCard({ tool }: { tool: ToolData }) {
   return (
     <article className="task-entry" aria-labelledby={`tool-${tool.id}`}>
       <div className="tool-feature">
-        <img
-          className="tool-banner"
-          src={tool.banner.src}
-          srcSet={tool.banner.srcSet}
-          sizes={tool.banner.sizes}
-          width={tool.banner.width}
-          height={tool.banner.height}
-          alt=""
-          loading="lazy"
-          decoding="async"
-        />
         <div className="tool-presentation">
           <h3 id={`tool-${tool.id}`}>{tool.taskTitle}</h3>
           <div className="tool-identity">
@@ -55,6 +45,7 @@ export function ToolCard({ tool }: { tool: ToolData }) {
             </a>
           </div>
         </div>
+        <ToolPreview toolId={tool.id} banner={tool.banner} />
       </div>
     </article>
   );

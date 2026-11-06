@@ -630,24 +630,16 @@ h2 {
   border-left: 1px solid var(--line);
 }
 .task-entry h3 {
-  min-height: 2.3em;
-  font: 500 var(--type-section)/1.15 var(--font-heading);
+  font: 500 var(--type-package)/1.2 var(--font-heading);
   letter-spacing: -0.025em;
-  margin: 0 0 24px;
-  max-width: 15ch;
-}
-.tool-feature,
-.doc-feature {
-  position: relative;
-  isolation: isolate;
-  background: var(--canvas);
+  margin: 0 0 16px;
+  max-width: 22ch;
 }
 .tool-feature {
   flex: 1;
-  display: flex;
-  align-items: start;
-  min-height: 560px;
-  padding: 144px 32px 32px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 32px;
 }
 .tool-banner {
   position: absolute;
@@ -659,31 +651,14 @@ h2 {
   object-fit: cover;
   pointer-events: none;
 }
-.tool-feature::before,
-.doc-feature::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-.tool-feature::before {
-  background: linear-gradient(
-    to bottom,
-    rgb(21 21 21 / 0.04),
-    rgb(21 21 21 / 0.3) 80px,
-    rgb(21 21 21 / 0.78) 120px,
-    rgb(21 21 21 / 0.92)
-  );
-}
 .tool-presentation {
-  position: relative;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   min-width: 0;
 }
-.tool-feature .tool-status {
-  color: var(--secondary);
+.tool-presentation .tool-links {
+  margin-top: auto;
 }
 .tool-identity {
   display: flex;
@@ -698,15 +673,128 @@ h2 {
   color: var(--quiet);
   margin: 0;
 }
-.tool-identity .tool-status {
-  width: 100%;
-}
 .tool-tagline {
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
   line-height: 1.55;
   color: var(--secondary);
   max-width: 45ch;
-  margin: 24px 0 32px;
+  margin: 20px 0 24px;
+}
+.tool-scene {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  min-height: 400px;
+  margin: 0;
+  background: var(--surface);
+}
+.preview-panels {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 16px;
+  padding: 40px 32px;
+}
+.preview-panel {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgb(242 242 242 / 0.18);
+  border-radius: 12px;
+  background: #222222;
+  color: var(--ink);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.28);
+}
+.preview-input {
+  margin-right: 24px;
+}
+.preview-result {
+  margin-left: 24px;
+}
+.preview-panel-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--type-label);
+  line-height: 1.4;
+}
+.preview-panel-heading svg {
+  flex-shrink: 0;
+  color: var(--secondary);
+}
+.preview-panel-heading strong {
+  font-weight: 500;
+}
+.preview-panel-heading .preview-positive {
+  color: var(--positive);
+}
+.preview-detail,
+.preview-exit {
+  color: var(--secondary);
+  font-size: var(--type-meta);
+}
+.preview-detail {
+  margin: 16px 0 8px;
+}
+.preview-exit {
+  margin-left: auto;
+}
+.preview-message,
+.preview-panel pre,
+.preview-plan code,
+.preview-approval code {
+  font-family: var(--mono);
+  font-size: var(--type-code);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.preview-message {
+  display: block;
+  color: var(--code-ink);
+}
+.preview-panel pre {
+  margin: 16px 0 0;
+  color: var(--code-ink);
+}
+.preview-plan {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0 16px;
+  font-size: var(--type-label);
+}
+.preview-plan > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+}
+.preview-plan dt {
+  color: var(--secondary);
+}
+.preview-plan dd {
+  margin: 0;
+}
+.preview-approval {
+  padding-top: 16px;
+  border-top: 1px solid rgb(242 242 242 / 0.18);
+  margin: 0;
+  color: var(--secondary);
+  font-size: var(--type-meta);
+  line-height: 1.6;
+}
+.tool-scene figcaption {
+  position: relative;
+  z-index: 1;
+  padding: 12px 24px;
+  background: var(--surface);
+  color: var(--secondary);
+  font-size: var(--type-meta);
+  line-height: 1.6;
+  margin-top: auto;
 }
 .tool-links {
   display: flex;
@@ -1077,24 +1165,20 @@ h2 {
   font-size: inherit;
 }
 .doc-opening {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 32px 48px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 24px;
 }
 .doc-feature {
-  padding: 48px 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 32px;
   margin-bottom: 64px;
 }
-.doc-feature::before {
-  background: linear-gradient(
-    to right,
-    rgb(21 21 21 / 0.88),
-    rgb(21 21 21 / 0.78) 55%,
-    rgb(21 21 21 / 0.12)
-  );
+.doc-feature .preview-panels {
+  margin-block: auto;
 }
 .doc-header {
   min-width: 0;
@@ -1117,6 +1201,7 @@ h2 {
 }
 .doc-start {
   align-self: start;
+  width: 100%;
   min-width: 0;
   padding: 24px;
   background: var(--surface);
@@ -1351,7 +1436,7 @@ article.prose :is(th, td) {
   .install-entry,
   .principles,
   .contract-resources,
-  .doc-opening,
+  .doc-feature,
   .doc-reading {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1387,9 +1472,6 @@ article.prose :is(th, td) {
   .doc-feature {
     margin-bottom: 48px;
   }
-  .doc-feature::before {
-    background: rgb(21 21 21 / 0.78);
-  }
   .doc-contents {
     position: static;
     max-height: none;
@@ -1424,12 +1506,20 @@ article.prose :is(th, td) {
   .task-entry h3 {
     margin-bottom: 20px;
   }
-  .tool-feature {
-    min-height: 0;
-    padding: 120px 24px 24px;
+  .preview-panels {
+    padding: 32px 16px;
   }
-  .doc-feature {
-    padding: 32px 24px;
+  .preview-panel {
+    padding: 16px;
+  }
+  .preview-input {
+    margin-right: 12px;
+  }
+  .preview-result {
+    margin-left: 12px;
+  }
+  .tool-scene figcaption {
+    padding-inline: 16px;
   }
   .tool-tagline {
     margin-block: 20px 24px;
@@ -1507,13 +1597,12 @@ article.prose :is(th, td) {
   .doc-shell.background-frame .doc-reading {
     background-image: none;
   }
-  .tool-feature,
-  .doc-feature {
+  .tool-scene,
+  .preview-panel {
     background: Canvas;
     border: 1px solid CanvasText;
+    box-shadow: none;
   }
-  .tool-feature::before,
-  .doc-feature::before,
   .tool-banner {
     display: none;
   }

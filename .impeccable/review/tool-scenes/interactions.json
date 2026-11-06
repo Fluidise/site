@@ -1,0 +1,54 @@
+[
+  {
+    "name": "released-filter",
+    "count": "1 tool shown",
+    "installRows": 2,
+    "tasks": ["Validate commit messages"]
+  },
+  {
+    "name": "keyboard-development-filter",
+    "count": "1 tool shown",
+    "focus": "In development",
+    "installRows": 2,
+    "tasks": ["Manage Git hooks"]
+  },
+  {
+    "name": "relay-install-link",
+    "hash": "#install-relay",
+    "installRows": 2
+  },
+  {
+    "name": "relay-copy",
+    "feedback": "Command copied to clipboard",
+    "exactClipboard": false
+  },
+  {
+    "name": "clint-start-link",
+    "path": "/tools/clint/"
+  },
+  {
+    "name": "clint-copy",
+    "feedback": "Command copied to clipboard",
+    "exactClipboard": true
+  },
+  {
+    "name": "start-keyboard-focus",
+    "focus": "All installation options ",
+    "offset": "4px",
+    "outline": "rgb(170, 186, 217) solid 3px"
+  },
+  {
+    "name": "installation-reference-link",
+    "hash": "#installation"
+  },
+  {
+    "name": "preserved-clint-sandbox",
+    "sample": "invalid",
+    "text": "✖ Validation Error [CC001]: Missing conventional commit type prefix\n  1 | Fixed the bug and cleaned up code\n    | ^^^^^ Expected type prefix (feat, fix, docs, chore, etc.)\n\nExit code: 1 (Deterministic violation)."
+  },
+  {
+    "name": "relay-copy-separated-read-recheck",
+    "exactClipboard": true,
+    "feedback": "Command copied to clipboard"
+  }
+]
