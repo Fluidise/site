@@ -1126,6 +1126,59 @@ article.prose :is(th, td) {
   padding-top: 24px;
 }
 
+/* Empty gutter lanes carry decoration; reading and technical surfaces stay solid. */
+.background-frame {
+  position: relative;
+}
+.background-frame::before,
+.background-frame::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  width: calc(var(--page-gutter) - 12px);
+  background-image: url('../assets/background/grain.png');
+  pointer-events: none;
+  user-select: none;
+}
+.background-frame::before {
+  left: 0;
+  border-left: 1px solid color-mix(in srgb, var(--line) 22%, transparent);
+}
+.background-frame::after {
+  right: 0;
+  border-right: 1px solid color-mix(in srgb, var(--line) 22%, transparent);
+}
+.background-hatch,
+.doc-shell.background-frame .doc-reading {
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0 4px,
+    color-mix(in srgb, var(--line) 28%, transparent) 4px 5px,
+    transparent 5px 8px
+  );
+}
+.background-hatch {
+  position: absolute;
+  left: var(--page-gutter);
+  bottom: 32px;
+  width: 96px;
+  height: 12px;
+  pointer-events: none;
+  user-select: none;
+}
+.philosophy-section .background-hatch {
+  bottom: -64px;
+}
+.doc-shell.background-frame .doc-reading {
+  background-size: 64px 8px;
+  background-position: left 12px;
+  background-repeat: no-repeat;
+}
+.doc-shell > .background-hatch {
+  width: 64px;
+  height: 8px;
+}
+
 @media (max-width: 900px) {
   .task-list,
   .section-intro,
@@ -1154,6 +1207,9 @@ article.prose :is(th, td) {
   }
   .philosophy-section {
     padding-bottom: 64px;
+  }
+  .philosophy-section .background-hatch {
+    bottom: -32px;
   }
   .principle + .principle {
     border-top: 1px solid var(--line);
@@ -1188,6 +1244,14 @@ article.prose :is(th, td) {
   }
 }
 @media (max-width: 600px) {
+  .background-frame::before,
+  .background-frame::after {
+    display: none;
+  }
+  .background-hatch {
+    width: 64px;
+    height: 8px;
+  }
   .floating-dock {
     padding: 8px 12px;
     gap: 0;
@@ -1268,6 +1332,14 @@ article.prose :is(th, td) {
   }
 }
 @media (forced-colors: active) {
+  .background-frame::before,
+  .background-frame::after,
+  .background-hatch {
+    display: none;
+  }
+  .doc-shell.background-frame .doc-reading {
+    background-image: none;
+  }
   .tool-feature,
   .doc-feature {
     background: Canvas;

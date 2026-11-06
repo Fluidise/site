@@ -1,0 +1,23 @@
+{
+  "workingBaseline": "Actual tracked worktree captured before implementation; includes approved uncommitted canonical design",
+  "changedTrackedOwners": [
+    ".impeccable/config.json",
+    ".impeccable/design.json",
+    ".impeccable/surfaces/src-pages-index-astro.md",
+    "DESIGN.md",
+    "docs/specs/dark-design-system.md",
+    "src/components/Design.test.mjs",
+    "src/components/Footer.astro",
+    "src/components/ManifestoSection.astro",
+    "src/components/ToolGrid.tsx",
+    "src/pages/tools/[id].astro",
+    "src/styles/global.css"
+  ],
+  "unchangedTrackedCount": 183,
+  "reviewedSourceHashesUnchanged": true,
+  "approvedSubstantiveDesignUnchanged": true,
+  "originalDesignTokenFrontmatterUnchanged": true,
+  "sidecarChangedLeaves": ["/narrative/rules/2/body"],
+  "allPreviousSurfaceBytesPreserved": true,
+  "postCompletionHookException": "Validated CLI added only overused-font/instrument sans scoped to src/styles/global.css after the implementation audit; production hashes unchanged."
+}

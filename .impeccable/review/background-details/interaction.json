@@ -1,0 +1,53 @@
+{
+  "filter": {
+    "count": "1 tool shown",
+    "installs": 2,
+    "pressed": [
+      ["All tools", "false"],
+      ["Released", "true"],
+      ["In development", "false"]
+    ],
+    "tasks": 1
+  },
+  "terminal": {
+    "homeTab": "JSON (Agent default)",
+    "output": "\u2716 Validation Error [CC001]: Missing conventional commit type prefix\n  1 | Fixed the bug and cleaned up code\n    | ^^^^^ Expected type prefix (feat, fix, docs, chore, etc.)\n\nExit code: 1 (Deterministic violation).",
+    "selected": "Text (--format text)",
+    "text": "Exit code: 1Zero side-effects \u00b7 Native Rust binary",
+    "clipboard": "",
+    "clipboardReadNote": "Clipboard bridge returned empty text; payload not independently verified."
+  },
+  "copy": {
+    "visibleSuccessObserved": true,
+    "denialAttempt": "Top-level Permissions-Policy did not produce failure in this host; no failure pass claimed.",
+    "frameDenialAttempt": "Cross-origin denied iframe displayed the current site, but this host could not dispatch the click into the frame; failure path remains unverified."
+  },
+  "history": {
+    "reload": {
+      "current": "Install",
+      "hash": "#install-clint",
+      "targetTop": 56.125
+    },
+    "back": {
+      "current": "Install",
+      "hash": "#install-clint"
+    },
+    "forward": {
+      "current": "Principles",
+      "hash": "#philosophy"
+    }
+  },
+  "focus": {
+    "dockTop": 0,
+    "name": "Skip to content",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "rect": {
+      "bottom": 68.046875,
+      "left": 16,
+      "right": 173.75,
+      "top": 16
+    },
+    "scope": "Actual keyboard focus observed on Skip to content only; do not infer a complete focused-content conformance test."
+  }
+}

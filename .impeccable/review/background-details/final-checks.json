@@ -1,0 +1,38 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0
+  },
+  {
+    "command": "bun run build",
+    "exitCode": 0
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0
+  },
+  {
+    "command": "bun run format:check",
+    "exitCode": 0
+  },
+  {
+    "command": "node src/components/Design.test.mjs",
+    "exitCode": 0
+  },
+  {
+    "command": "node src/components/Hero.test.mjs",
+    "exitCode": 0
+  },
+  {
+    "command": "node src/components/Navbar.test.mjs",
+    "exitCode": 0
+  },
+  {
+    "command": "git diff --check",
+    "exitCode": 0
+  }
+]

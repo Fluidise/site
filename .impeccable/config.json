@@ -30,6 +30,13 @@
         "files": ["docs/specs/dark-design-system.html"],
         "createdAt": "2026-11-04T10:58:20.567Z",
         "reason": "Agent: confirmed false positives in the standalone palette study. Browser computed .composition-copy padding 37.72px, .surface-step padding 24px 32px, and .live-sample padding 37.72px at 943px viewport; responsive clamp has a 24px minimum. The composition wrapper delegates inset to its children; no text touches the visible boundary."
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "files": ["src/styles/global.css"],
+        "createdAt": "2026-11-06T12:54:37.499Z",
+        "reason": "User confirmed that the approved quiet-background refinement must preserve the existing fonts. Nocturne uses Instrument Sans; both font-face declarations predate this refinement and remain unchanged. This exception is limited to that font in the existing global stylesheet."
       }
     ]
   }

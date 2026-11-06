@@ -9,7 +9,11 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
 
   return (
     <>
-      <section id="tools" className="tool-section shell" aria-labelledby="tools-heading">
+      <section
+        id="tools"
+        className="tool-section shell background-frame"
+        aria-labelledby="tools-heading"
+      >
         <div className="catalog-header">
           <div>
             <h2 id="tools-heading">Start with the job.</h2>
@@ -49,8 +53,13 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
             </p>
           )}
         </div>
+        <span className="background-hatch" aria-hidden="true" />
       </section>
-      <section id="install" className="install-section shell" aria-labelledby="install-heading">
+      <section
+        id="install"
+        className="install-section shell background-frame"
+        aria-labelledby="install-heading"
+      >
         <div className="section-intro">
           <h2 id="install-heading">Install a tool.</h2>
           <p>Know what you need? Start here, or read the full installation options.</p>
@@ -99,6 +108,7 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
             label="Copy Homebrew tap installation command"
           />
         </div>
+        <span className="background-hatch" aria-hidden="true" />
       </section>
     </>
   );
