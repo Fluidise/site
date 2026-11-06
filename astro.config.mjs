@@ -5,7 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://fluidise.dev',
+  site: process.env.SITE_URL ?? 'https://fluidise.acrazie.dev',
+  trailingSlash: 'always',
   prefetch: {
     prefetchAll: false,
     defaultStrategy: 'hover',
