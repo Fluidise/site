@@ -19,30 +19,32 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
             <h2 id="tools-heading">Start with the job.</h2>
             <p>Independent tools. Choose the one your workflow needs.</p>
           </div>
-          <fieldset className="catalog-filters" aria-label="Filter task results">
-            {(
-              [
-                { id: 'all', label: 'All tools' },
-                { id: 'released', label: 'Released' },
-                { id: 'in-progress', label: 'In development' },
-              ] as const
-            ).map((item) => (
-              <button
-                type="button"
-                key={item.id}
-                className="glacial-control"
-                aria-pressed={filter === item.id}
-                aria-controls="tool-results"
-                onClick={() => setFilter(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </fieldset>
+          <div className="catalog-toolbar">
+            <fieldset className="catalog-filters" aria-label="Filter task results">
+              {(
+                [
+                  { id: 'all', label: 'All tools' },
+                  { id: 'released', label: 'Released' },
+                  { id: 'in-progress', label: 'In development' },
+                ] as const
+              ).map((item) => (
+                <button
+                  type="button"
+                  key={item.id}
+                  className="catalog-filter"
+                  aria-pressed={filter === item.id}
+                  aria-controls="tool-results"
+                  onClick={() => setFilter(item.id)}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </fieldset>
+            <output className="catalog-count">
+              {filteredTools.length} {filteredTools.length === 1 ? 'tool' : 'tools'} shown
+            </output>
+          </div>
         </div>
-        <output className="catalog-count">
-          {filteredTools.length} {filteredTools.length === 1 ? 'tool' : 'tools'} shown
-        </output>
         <div className="task-list" id="tool-results">
           {filteredTools.map((tool) => (
             <ToolCard key={tool.id} tool={tool} />

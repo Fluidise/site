@@ -56,7 +56,7 @@
   --type-code: 0.875rem;
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --page-gutter: clamp(20px, 4vw, 64px);
-  --dock-clearance: calc(10rem + env(safe-area-inset-bottom, 0px));
+  --dock-clearance: calc(7rem + env(safe-area-inset-bottom, 0px));
   font-family: var(--font-body);
   color: var(--ink);
   background: var(--canvas);
@@ -362,35 +362,62 @@ fluidise-navbar {
   left: 50%;
   transform: translateX(-50%);
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 44px);
   gap: 4px;
-  width: min(532px, calc(100% - 24px));
-  padding: 10px 25px;
-  border: 1px solid var(--control-border);
+  width: max-content;
+  max-width: calc(100% - 24px);
+  padding: 6px;
+  border: 1px solid color-mix(in srgb, var(--line) 50%, transparent);
   border-radius: 28px;
-  background: var(--raised);
-  box-shadow: 0 10px 32px rgb(0 0 0 / 0.24);
+  background: var(--surface);
 }
 .dock-link {
+  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  min-height: 50px;
+  min-height: 44px;
   min-width: 0;
   padding: 4px;
   color: var(--secondary);
-  font-size: var(--type-label);
-  line-height: 1.3;
-  overflow-wrap: anywhere;
   text-decoration: none;
   border-radius: 12px;
 }
 .dock-link :is(img, svg) {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
+}
+.dock-logo rect {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.dock-logo[data-blink='single'] rect {
+  animation: dock-blink 180ms ease-in-out;
+}
+.dock-logo[data-blink='double'] rect {
+  animation: dock-double-blink 560ms ease-in-out;
+}
+@keyframes dock-blink {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  33.3333% {
+    transform: scaleY(0.08);
+  }
+}
+@keyframes dock-double-blink {
+  0%,
+  32.142857%,
+  67.857143%,
+  100% {
+    transform: scaleY(1);
+  }
+  10.714286%,
+  78.571429% {
+    transform: scaleY(0.08);
+  }
 }
 .dock-link:hover {
   color: var(--action-hover);
@@ -398,10 +425,41 @@ fluidise-navbar {
 }
 .dock-link[aria-current] {
   color: var(--action);
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
+}
+.dock-link[aria-current]::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.dock-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--raised);
+  color: var(--ink);
+  font-size: var(--type-meta);
+  line-height: 1.4;
+  text-align: center;
+  visibility: hidden;
+}
+.dock-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  inset-inline: 0;
+  height: 12px;
+}
+.dock-link:is(:hover, :focus-visible):not([data-tooltip-dismissed]) .dock-tooltip {
+  visibility: visible;
 }
 
 h2 {
@@ -419,12 +477,16 @@ h2 {
   padding-block: 32px 96px;
 }
 .catalog-header {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.catalog-toolbar {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 24px 40px;
-  min-height: calc(25svh - 32px);
+  gap: 8px 24px;
 }
 .catalog-header p,
 .section-intro p {
@@ -432,18 +494,48 @@ h2 {
   max-width: 65ch;
   margin: 16px 0 0;
 }
+.catalog-header p {
+  margin-top: 8px;
+}
 .catalog-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 4px 24px;
   min-inline-size: 0;
   padding: 0;
   border: 0;
   margin: 0;
 }
+.catalog-filter {
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--secondary);
+  padding: 12px 0;
+  min-height: 44px;
+  min-inline-size: 44px;
+  max-inline-size: 100%;
+  font-size: var(--type-label);
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration-line: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 8px;
+}
+.catalog-filter:hover,
+.catalog-filter[aria-pressed='true'] {
+  color: var(--ink);
+}
+.catalog-filter[aria-pressed='true'] {
+  text-decoration-line: underline;
+}
+.catalog-filter:focus-visible {
+  outline-color: var(--ink);
+}
 .catalog-count {
   display: block;
-  margin: 16px 0 24px;
+  margin: 0;
   color: var(--quiet);
   font-size: var(--type-meta);
   font-variant-numeric: tabular-nums;
@@ -1253,25 +1345,7 @@ article.prose :is(th, td) {
     height: 8px;
   }
   .floating-dock {
-    padding: 8px 12px;
-    gap: 0;
     bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  }
-  .dock-link {
-    font-size: 0.8125rem;
-    padding-inline: 0;
-    min-height: 52px;
-    gap: 6px;
-  }
-  .dock-link :is(svg, img) {
-    width: 22px;
-    height: 22px;
-  }
-  .catalog-filters {
-    gap: 8px;
-  }
-  .catalog-filters .glacial-control {
-    padding-inline: 14px;
   }
   .task-entry h3 {
     margin-bottom: 20px;
@@ -1323,6 +1397,9 @@ article.prose :is(th, td) {
   :root {
     scroll-behavior: auto;
   }
+  .dock-logo rect {
+    animation: none !important;
+  }
   *,
   *::before,
   *::after {
@@ -1351,6 +1428,7 @@ article.prose :is(th, td) {
     display: none;
   }
   .floating-dock,
+  .dock-tooltip,
   .glacial-control,
   .primary-link,
   .doc-start,
@@ -1359,6 +1437,12 @@ article.prose :is(th, td) {
     border-color: ButtonText;
     background: Canvas;
     color: CanvasText;
+  }
+  .dock-tooltip {
+    border: 1px solid ButtonText;
+  }
+  .catalog-filter:focus-visible {
+    outline-color: Highlight;
   }
   .dock-link[aria-current],
   .glacial-control[aria-pressed='true'],
