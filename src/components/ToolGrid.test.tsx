@@ -24,12 +24,36 @@ const tool: ToolData = {
 };
 
 describe('task gateway and installation desk', () => {
-  it('server-renders the image behind the complete live task presentation', () => {
+  it('groups native text filters and the live count in one catalog toolbar', () => {
+    const html = renderToStaticMarkup(<ToolGrid tools={[tool]} />);
+    const gateway = html.slice(html.indexOf('id="tools"'), html.indexOf('id="install"'));
+    const toolbar = gateway.match(/class="catalog-toolbar">([\s\S]*?)<\/output>/)?.[1];
+    expect(toolbar).toBeDefined();
+    expect(toolbar).toContain(
+      '<fieldset class="catalog-filters" aria-label="Filter task results">',
+    );
+    expect(toolbar?.match(/<button type="button" class="catalog-filter"/g)).toHaveLength(3);
+    expect(toolbar?.match(/aria-pressed="true"/g)).toHaveLength(1);
+    expect(toolbar?.match(/aria-pressed="false"/g)).toHaveLength(2);
+    expect(toolbar?.match(/aria-controls="tool-results"/g)).toHaveLength(3);
+    for (const label of ['All tools', 'Released', 'In development']) {
+      expect(toolbar).toContain(`>${label}</button>`);
+    }
+    expect(toolbar).toContain('<output class="catalog-count">1 tool shown');
+    expect(gateway).not.toContain('glacial-control');
+    expect(gateway.match(/class="catalog-count"/g)).toHaveLength(1);
+    expect(gateway).toContain('<h2 id="tools-heading">Start with the job.</h2>');
+    expect(gateway).toContain('Independent tools. Choose the one your workflow needs.');
+  });
+
+  it('separates live task content and actions from the landscape scene', () => {
     const html = renderToStaticMarkup(<ToolGrid tools={[tool]} />);
     const task = html.slice(html.indexOf('<article'), html.indexOf('</article>'));
     expect(task).toContain('class="tool-feature"');
-    expect(task.indexOf('example-banner.webp')).toBeLessThan(task.indexOf('A useful task'));
-    expect(task.indexOf('example-banner.webp')).toBeLessThan(task.indexOf('fluidise-example'));
+    expect(task.indexOf('A useful task')).toBeLessThan(task.indexOf('class="tool-scene"'));
+    expect(task.indexOf('fluidise-example')).toBeLessThan(task.indexOf('class="tool-scene"'));
+    expect(task.indexOf('Install command')).toBeLessThan(task.indexOf('class="tool-scene"'));
+    expect(task.indexOf('class="tool-scene"')).toBeLessThan(task.indexOf('example-banner.webp'));
     expect(task).toContain('class="tool-banner"');
     expect(task).toContain('alt=""');
     expect(task).toContain('width="2048" height="768"');

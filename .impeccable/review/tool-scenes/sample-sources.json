@@ -1,0 +1,16 @@
+{
+  "clint": {
+    "localHead": "7573759d0d10a1f7e770fbbefa7db43c8822ea0b",
+    "sources": {
+      "src/main.rs": "36cb101cc58bc2c8bdc74bddc66a22ef3d69c5912a01a096633b63cf9daf8058",
+      "src/output.rs": "0facdabae7df9b88ca74da9df6ec0dd073d00479f62a1f20232c2b770696203e"
+    }
+  },
+  "relay": {
+    "localHead": "d07c985e970885241255d0cce2b226953b091648",
+    "sources": {
+      "src/main.rs": "7341023357b8f4bb44d4f037ceacaa774ad463933b4d75cde7be81b2deb6ffdc",
+      "src/lifecycle.rs": "f1438f5a24a9d06a2ef1a7b2e6f562422bc934a112988c0de75329cd9a7ecf8a"
+    }
+  }
+}

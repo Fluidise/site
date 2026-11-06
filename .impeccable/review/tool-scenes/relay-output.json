@@ -1,0 +1,67 @@
+{
+  "diagnostics": [],
+  "diagnostics_complete": true,
+  "operation": "inspect",
+  "plan": {
+    "actions": [
+      "Preserve original state, publish owned hooks, activate target and approve execution configuration"
+    ],
+    "binary": {
+      "data": "/tmp/fluidise-preview-proof/relay/debug/fluidise-relay",
+      "encoding": "utf8"
+    },
+    "configuration": {
+      "effective": {
+        "commands": [
+          {
+            "args": ["--file", "{message-file}"],
+            "id": "commit-policy",
+            "modifies_message": false,
+            "program": { "data": "fluidise-clint", "encoding": "utf8" }
+          }
+        ],
+        "timeout_seconds": 60,
+        "version": 1
+      },
+      "foreign_sections": [],
+      "sections": ["hooks"],
+      "source": {
+        "data": "/private/tmp/fluidise-tool-scenes.lw0oaf/fluidise.toml",
+        "encoding": "utf8"
+      },
+      "used_sections": ["hooks"]
+    },
+    "files": {
+      "commit-msg": {
+        "digest": "70389917e53590d8a25be66bcf4d7fd4a5488efdb8b0a0420c9f406df1fe719f",
+        "kind": "file",
+        "mode": 448
+      }
+    },
+    "id": "e2a9602e9022380fa7ed70314c2dedb6bccfc8b0de7877e71136eccc4b43c4af",
+    "inventory": {},
+    "operation": "install",
+    "preconditions": {
+      "common_config": {
+        "digest": "95a1f7d19be439847af9384dfe1a1f7678aa0902b1601b24c56cc60d783388b1",
+        "kind": "file",
+        "mode": 420
+      },
+      "inherited_hooks": { "--global": [], "--local": [], "--system": [] },
+      "owned_hooks": [],
+      "preparation": null,
+      "state": null,
+      "worktree_config": null
+    },
+    "source": { "data": "/private/tmp/fluidise-tool-scenes.lw0oaf/.git/hooks", "encoding": "utf8" },
+    "source_default": true,
+    "target": {
+      "common": { "data": "/private/tmp/fluidise-tool-scenes.lw0oaf/.git", "encoding": "utf8" },
+      "git": { "data": "/private/tmp/fluidise-tool-scenes.lw0oaf/.git", "encoding": "utf8" },
+      "root": { "data": "/private/tmp/fluidise-tool-scenes.lw0oaf", "encoding": "utf8" }
+    },
+    "version": 1
+  },
+  "schema_version": 1,
+  "status": "success"
+}

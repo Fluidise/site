@@ -1,12 +1,13 @@
 ---
 import { IconDownload, IconBrandGithub, IconCirclesRelation } from '@tabler/icons-react';
+import DockLogo from '../assets/brand/logo-white.svg';
 ---
 <fluidise-navbar>
   <nav class="floating-dock" aria-label="Main navigation">
-    <a class="dock-link" href="/#tools" data-section="tools"><img src="/brand/logo-white.svg" alt="" width="25" height="25" /><span>Explore</span></a>
-    <a class="dock-link" href="/#install" data-section="install"><IconDownload size={23} aria-hidden="true" /><span>Install</span></a>
-    <a class="dock-link" href="/#philosophy" data-section="philosophy"><IconCirclesRelation size={23} aria-hidden="true" /><span>Principles</span></a>
-    <a class="dock-link" href="https://github.com/Fluidise" target="_blank" rel="noreferrer noopener"><IconBrandGithub size={23} aria-hidden="true" /><span>GitHub<span class="sr-only"> (opens in new tab)</span></span></a>
+    <a class="dock-link" href="/#tools" data-section="tools" aria-label="Explore"><DockLogo class="dock-logo" width={22} height={22} aria-hidden="true" focusable="false" /><span class="dock-tooltip" aria-hidden="true">Explore</span></a>
+    <a class="dock-link" href="/#install" data-section="install" aria-label="Install"><IconDownload size={22} aria-hidden="true" /><span class="dock-tooltip" aria-hidden="true">Install</span></a>
+    <a class="dock-link" href="/#philosophy" data-section="philosophy" aria-label="Principles"><IconCirclesRelation size={22} aria-hidden="true" /><span class="dock-tooltip" aria-hidden="true">Principles</span></a>
+    <a class="dock-link" href="https://github.com/Fluidise" target="_blank" rel="noreferrer noopener" aria-label="GitHub (opens in new tab)"><IconBrandGithub size={22} aria-hidden="true" /><span class="dock-tooltip" aria-hidden="true">GitHub</span></a>
   </nav>
 </fluidise-navbar>
 <script>
@@ -18,11 +19,34 @@ import { IconDownload, IconBrandGithub, IconCirclesRelation } from '@tabler/icon
       const nav = this.querySelector<HTMLElement>('nav');
       if (!nav) return;
       const hero = document.querySelector<HTMLElement>('archipelago-hero');
+      const logo = this.querySelector<SVGSVGElement>('.dock-logo');
+      const eye = logo?.querySelector<SVGRectElement>('rect');
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const dockLinks = [...this.querySelectorAll<HTMLAnchorElement>('.dock-link')];
       const links = [...this.querySelectorAll<HTMLAnchorElement>('.dock-link[data-section]')];
       const sections = links.map((link) => document.getElementById(link.dataset.section ?? '')).filter((section): section is HTMLElement => Boolean(section));
       const events = new AbortController();
       let disposed = false;
       let frame: number | null = null;
+      let blinkTimer: number | undefined;
+      let hovered = nav.matches(':hover');
+      let focused = nav.contains(document.activeElement);
+      let lastScrollY = typeof window !== 'undefined' ? (window.scrollY ?? 0) : 0;
+      let scrolledHidden = false;
+      const canBlink = () => logo && eye && !disposed && !document.hidden && !nav.hidden && !scrolledHidden && !reduced.matches && !hovered && !focused;
+      const stopBlink = () => {
+        window.clearTimeout(blinkTimer);
+        blinkTimer = undefined;
+        logo?.removeAttribute('data-blink');
+      };
+      const syncBlink = () => {
+        if (!canBlink()) return stopBlink();
+        if (blinkTimer !== undefined || logo?.hasAttribute('data-blink')) return;
+        blinkTimer = window.setTimeout(() => {
+          blinkTimer = undefined;
+          if (canBlink()) logo?.setAttribute('data-blink', Math.random() < 0.2 ? 'double' : 'single');
+        }, 8000 + Math.random() * 10000);
+      };
       const markCurrent = (id: string) => {
         for (const link of links) {
           if (link.dataset.section === id) link.setAttribute('aria-current', 'location');
@@ -42,8 +66,36 @@ import { IconDownload, IconBrandGithub, IconCirclesRelation } from '@tabler/icon
         frame = null;
         if (disposed || document.hidden) return;
         // Preserve the exact hero boundary, including reverse scroll and deep entry.
-        nav.hidden = Boolean(hero?.isConnected && hero.getBoundingClientRect().bottom > window.innerHeight - 1);
-        if (!hero || nav.hidden) return;
+        const inHero = Boolean(hero?.isConnected && hero.getBoundingClientRect().bottom > window.innerHeight - 1);
+        nav.hidden = inHero;
+        if (inHero) {
+          scrolledHidden = false;
+          nav.removeAttribute('data-scrolled-hidden');
+          stopBlink();
+          return;
+        }
+
+        const currentScrollY = Math.max(0, typeof window !== 'undefined' ? (window.scrollY ?? 0) : 0);
+        const scrollDelta = currentScrollY - lastScrollY;
+
+        if (hovered || focused || currentScrollY <= 20) {
+          scrolledHidden = false;
+        } else if (scrollDelta > 8) {
+          scrolledHidden = true;
+        } else if (scrollDelta < -5) {
+          scrolledHidden = false;
+        }
+        lastScrollY = currentScrollY;
+
+        if (scrolledHidden) {
+          nav.setAttribute('data-scrolled-hidden', 'true');
+          stopBlink();
+        } else {
+          nav.removeAttribute('data-scrolled-hidden');
+          syncBlink();
+        }
+
+        if (!hero) return;
         const readingLine = Math.max(28, window.innerHeight * 0.28);
         let current = '';
         for (const section of sections) {
@@ -60,6 +112,52 @@ import { IconDownload, IconBrandGithub, IconCirclesRelation } from '@tabler/icon
       sections.forEach((section) => observer?.observe(section));
       markHash();
       const signal = events.signal;
+      eye?.addEventListener('animationend', () => {
+        logo?.removeAttribute('data-blink');
+        syncBlink();
+      }, { signal });
+      reduced.addEventListener('change', syncBlink, { signal });
+      nav.addEventListener('pointerenter', () => {
+        hovered = true;
+        if (scrolledHidden) {
+          scrolledHidden = false;
+          schedule();
+        } else {
+          syncBlink();
+        }
+      }, { signal });
+      nav.addEventListener('pointerleave', () => {
+        hovered = false;
+        syncBlink();
+      }, { signal });
+      nav.addEventListener('focusin', () => {
+        focused = true;
+        if (scrolledHidden) {
+          scrolledHidden = false;
+          schedule();
+        } else {
+          syncBlink();
+        }
+      }, { signal });
+      nav.addEventListener('focusout', (event) => {
+        focused = nav.contains(event.relatedTarget as Node | null);
+        syncBlink();
+      }, { signal });
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          cancel();
+          stopBlink();
+        } else if (hero) schedule();
+        else syncBlink();
+      }, { signal });
+      for (const link of dockLinks) {
+        const revealTooltip = () => link.removeAttribute('data-tooltip-dismissed');
+        link.addEventListener('pointerenter', revealTooltip, { signal });
+        link.addEventListener('focus', revealTooltip, { signal });
+      }
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') for (const link of dockLinks) link.setAttribute('data-tooltip-dismissed', '');
+      }, { signal });
       for (const link of links) link.addEventListener('click', () => {
         if (hero && !disposed) markCurrent(link.dataset.section ?? '');
       }, { signal });
@@ -73,18 +171,17 @@ import { IconDownload, IconBrandGithub, IconCirclesRelation } from '@tabler/icon
           markHash();
           schedule();
         }, { signal });
-        document.addEventListener('visibilitychange', () => {
-          if (document.hidden) cancel();
-          else schedule();
-        }, { signal });
       }
       sync();
       this.dispose = () => {
         disposed = true;
         cancel();
+        stopBlink();
         events.abort();
         observer?.disconnect();
         resizeObserver?.disconnect();
+        for (const link of dockLinks) link.removeAttribute('data-tooltip-dismissed');
+        nav.removeAttribute('data-scrolled-hidden');
         nav.hidden = false;
         markCurrent('');
       };

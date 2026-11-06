@@ -1,0 +1,436 @@
+[
+  {
+    "name": "desktop-home",
+    "clientWidth": 1269,
+    "height": 720,
+    "installRows": 2,
+    "panels": [
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 445,
+        "width": 445
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 445,
+        "width": 445
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 444,
+        "width": 444
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 444,
+        "width": 444
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 2,
+    "scrollWidth": 1269,
+    "width": 1280
+  },
+  {
+    "name": "desktop-clint",
+    "clientWidth": 1269,
+    "height": 720,
+    "installRows": 0,
+    "panels": [
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 403,
+        "width": 403
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 403,
+        "width": 403
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 1,
+    "scrollWidth": 1269,
+    "width": 1280
+  },
+  {
+    "name": "desktop-relay",
+    "clientWidth": 1269,
+    "height": 720,
+    "installRows": 0,
+    "panels": [
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 403,
+        "width": 403
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 403,
+        "width": 403
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 1,
+    "scrollWidth": 1269,
+    "width": 1280
+  },
+  {
+    "name": "mobile-home",
+    "clientWidth": 379,
+    "height": 844,
+    "installRows": 2,
+    "panels": [
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 293,
+        "width": 293
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 293,
+        "width": 293
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 293,
+        "width": 293
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 293,
+        "width": 293
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 2,
+    "scrollWidth": 379,
+    "width": 390
+  },
+  {
+    "name": "mobile-clint",
+    "clientWidth": 379,
+    "height": 844,
+    "installRows": 0,
+    "panels": [
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 293,
+        "width": 293
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 293,
+        "width": 293
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 1,
+    "scrollWidth": 379,
+    "width": 390
+  },
+  {
+    "name": "mobile-relay",
+    "clientWidth": 379,
+    "height": 844,
+    "installRows": 0,
+    "panels": [
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 293,
+        "width": 293
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 293,
+        "width": 293
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 1,
+    "scrollWidth": 379,
+    "width": 390
+  },
+  {
+    "name": "narrow-home",
+    "clientWidth": 309,
+    "height": 720,
+    "installRows": 2,
+    "panels": [
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 223,
+        "width": 223
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 223,
+        "width": 223
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 223,
+        "width": 223
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 223,
+        "width": 223
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 2,
+    "scrollWidth": 309,
+    "width": 320
+  },
+  {
+    "name": "narrow-clint",
+    "clientWidth": 309,
+    "height": 720,
+    "installRows": 0,
+    "panels": [
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 223,
+        "width": 223
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 223,
+        "width": 223
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 1,
+    "scrollWidth": 309,
+    "width": 320
+  },
+  {
+    "name": "narrow-relay",
+    "clientWidth": 309,
+    "height": 720,
+    "installRows": 0,
+    "panels": [
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 223,
+        "width": 223
+      },
+      {
+        "backdrop": "none",
+        "background": "rgb(34, 34, 34)",
+        "opacity": "1",
+        "scrollWidth": 223,
+        "width": 223
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 1,
+    "scrollWidth": 309,
+    "width": 320
+  },
+  {
+    "name": "200-home",
+    "clientWidth": 309,
+    "font": "\"Instrument Sans\", \"Segoe UI\", sans-serif",
+    "height": 720,
+    "imageLoaded": [true, true],
+    "panels": [
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 223,
+        "width": 223
+      },
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 223,
+        "width": 223
+      },
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 223,
+        "width": 223
+      },
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 223,
+        "width": 223
+      }
+    ],
+    "rootFont": "32px",
+    "sceneCount": 2,
+    "scrollWidth": 309,
+    "width": 320
+  },
+  {
+    "name": "200-clint",
+    "clientWidth": 309,
+    "font": "\"Instrument Sans\", \"Segoe UI\", sans-serif",
+    "height": 720,
+    "imageLoaded": [true],
+    "panels": [
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 223,
+        "width": 223
+      },
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 223,
+        "width": 223
+      }
+    ],
+    "rootFont": "32px",
+    "sceneCount": 1,
+    "scrollWidth": 309,
+    "width": 320
+  },
+  {
+    "name": "200-relay",
+    "clientWidth": 309,
+    "font": "\"Instrument Sans\", \"Segoe UI\", sans-serif",
+    "height": 720,
+    "imageLoaded": [true],
+    "panels": [
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 223,
+        "width": 223
+      },
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 223,
+        "width": 223
+      }
+    ],
+    "rootFont": "32px",
+    "sceneCount": 1,
+    "scrollWidth": 309,
+    "width": 320
+  },
+  {
+    "name": "fallback-home",
+    "clientWidth": 1269,
+    "font": "\"Instrument Sans\", \"Segoe UI\", sans-serif",
+    "height": 720,
+    "imageLoaded": [false, false],
+    "panels": [
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 445,
+        "width": 445
+      },
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 445,
+        "width": 445
+      },
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 444,
+        "width": 444
+      },
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 444,
+        "width": 444
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 2,
+    "scrollWidth": 1269,
+    "width": 1280
+  },
+  {
+    "name": "fallback-clint",
+    "clientWidth": 1269,
+    "font": "\"Instrument Sans\", \"Segoe UI\", sans-serif",
+    "height": 720,
+    "imageLoaded": [false],
+    "panels": [
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 403,
+        "width": 403
+      },
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 403,
+        "width": 403
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 1,
+    "scrollWidth": 1269,
+    "width": 1280
+  },
+  {
+    "name": "fallback-relay",
+    "clientWidth": 1269,
+    "font": "\"Instrument Sans\", \"Segoe UI\", sans-serif",
+    "height": 720,
+    "imageLoaded": [false],
+    "panels": [
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 403,
+        "width": 403
+      },
+      {
+        "background": "rgb(34, 34, 34)",
+        "scrollWidth": 403,
+        "width": 403
+      }
+    ],
+    "rootFont": "16px",
+    "sceneCount": 1,
+    "scrollWidth": 1269,
+    "width": 1280
+  }
+]
