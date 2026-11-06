@@ -102,9 +102,12 @@ class Logo extends Link {
     return this.eye;
   }
 }
-class Nav extends EventTarget {
+class Nav extends Link {
   hidden = false;
   hovered = false;
+  constructor() {
+    super();
+  }
   matches(selector) {
     assert.equal(selector, ':hover');
     return this.hovered;
@@ -224,6 +227,54 @@ flush();
 assert(nav.nav.hidden, 'Reverse scroll restores immersion');
 assert.equal(timers.size, 0, 'Reverse scroll cancels the blink timer');
 console.log('PASS: hidden hero dock, native-scroll boundary/reverse/deep entry, no idle loop');
+
+// Auto-hide on downward scroll, reveal on upward scroll, focus and hover
+win.scrollY = 0;
+hero.bottom = 500;
+event(win, 'scroll');
+flush();
+assert(!nav.nav.hidden);
+assert(!nav.nav.hasAttribute('data-scrolled-hidden'));
+
+win.scrollY = 100;
+event(win, 'scroll');
+flush();
+assert(nav.nav.hasAttribute('data-scrolled-hidden'), 'Scrolling down auto-hides the dock');
+assert.equal(timers.size, 0, 'Auto-hidden dock cancels the blink timer');
+
+event(nav.nav, 'focusin');
+flush();
+assert(!nav.nav.hasAttribute('data-scrolled-hidden'), 'Keyboard focus immediately reveals dock');
+assert.equal(timers.size, 0, 'Focused dock stays open without blinking');
+
+event(nav.nav, 'focusout');
+flush();
+assert.equal(timers.size, 1, 'Revealed dock reschedules blink timer once focus leaves');
+
+win.scrollY = 200;
+event(win, 'scroll');
+flush();
+assert(nav.nav.hasAttribute('data-scrolled-hidden'));
+
+event(nav.nav, 'pointerenter');
+flush();
+assert(!nav.nav.hasAttribute('data-scrolled-hidden'), 'Hover restores dock');
+assert.equal(timers.size, 0, 'Hovered dock does not blink');
+
+event(nav.nav, 'pointerleave');
+flush();
+assert.equal(timers.size, 1, 'Unhovered visible dock reschedules blink timer');
+
+win.scrollY = 180;
+event(win, 'scroll');
+flush();
+assert(!nav.nav.hasAttribute('data-scrolled-hidden'), 'Scrolling up restores dock');
+
+win.scrollY = 0;
+event(win, 'scroll');
+flush();
+assert(!nav.nav.hasAttribute('data-scrolled-hidden'), 'Top of page keeps dock visible');
+console.log('PASS: auto-hide on downward scroll, reveal on upward scroll, focus and hover');
 
 hero.bottom = 500;
 resizes.at(-1).callback([]);

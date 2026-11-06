@@ -370,6 +370,24 @@ fluidise-navbar {
   border: 1px solid color-mix(in srgb, var(--line) 50%, transparent);
   border-radius: 28px;
   background: var(--surface);
+  transform-origin: center bottom;
+  animation: dock-pop-in 320ms cubic-bezier(0.34, 1.28, 0.64, 1);
+  transition:
+    transform 320ms cubic-bezier(0.34, 1.28, 0.64, 1),
+    opacity 240ms ease-out,
+    visibility 320ms ease;
+  will-change: transform, opacity;
+}
+.floating-dock[data-scrolled-hidden='true'] {
+  transform: translate(-50%, calc(100% + 28px)) scale(0.96);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  animation: none;
+  transition:
+    transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 180ms ease-in,
+    visibility 180ms ease;
 }
 .dock-link {
   position: relative;
@@ -382,6 +400,62 @@ fluidise-navbar {
   color: var(--secondary);
   text-decoration: none;
   border-radius: 12px;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease,
+    transform 280ms cubic-bezier(0.34, 1.28, 0.64, 1),
+    opacity 240ms ease-out;
+}
+.floating-dock:not([data-scrolled-hidden='true']) .dock-link:nth-child(1) {
+  animation: dock-item-pop-in 280ms cubic-bezier(0.34, 1.28, 0.64, 1) 0ms backwards;
+  transition-delay: 0ms;
+}
+.floating-dock:not([data-scrolled-hidden='true']) .dock-link:nth-child(2) {
+  animation: dock-item-pop-in 280ms cubic-bezier(0.34, 1.28, 0.64, 1) 25ms backwards;
+  transition-delay: 25ms;
+}
+.floating-dock:not([data-scrolled-hidden='true']) .dock-link:nth-child(3) {
+  animation: dock-item-pop-in 280ms cubic-bezier(0.34, 1.28, 0.64, 1) 50ms backwards;
+  transition-delay: 50ms;
+}
+.floating-dock:not([data-scrolled-hidden='true']) .dock-link:nth-child(4) {
+  animation: dock-item-pop-in 280ms cubic-bezier(0.34, 1.28, 0.64, 1) 75ms backwards;
+  transition-delay: 75ms;
+}
+.floating-dock[data-scrolled-hidden='true'] .dock-link {
+  transform: translateY(6px);
+  opacity: 0;
+  animation: none;
+  transition-delay: 0ms;
+  transition-duration: 150ms;
+}
+@keyframes dock-pop-in {
+  0% {
+    transform: translate(-50%, calc(100% + 28px)) scale(0.96);
+    opacity: 0;
+  }
+  70% {
+    transform: translate(-50%, -4px) scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes dock-item-pop-in {
+  0% {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .dock-link :is(img, svg) {
   width: 22px;
@@ -1399,6 +1473,22 @@ article.prose :is(th, td) {
   }
   .dock-logo rect {
     animation: none !important;
+  }
+  .floating-dock,
+  .floating-dock .dock-link {
+    animation: none !important;
+    transform: translateX(-50%) !important;
+  }
+  .floating-dock .dock-link {
+    transform: none !important;
+  }
+  .floating-dock[data-scrolled-hidden='true'] {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  .floating-dock:not([data-scrolled-hidden='true']) {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
   *,
   *::before,

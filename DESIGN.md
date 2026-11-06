@@ -283,6 +283,8 @@ Four stable icon links retain the accessible names Explore, Install, Principles 
 
 The maintainer separately approved a small authored eye blink in this dock instance only. Both original eye rectangles compress vertically together around their own centers; the silhouette and smile do not move. A blink closes in 60ms and reopens over 120ms. Each sequence follows a fresh random 8–18-second pause; 20% contain a second blink after a 200ms open-eye gap (560ms total). CSS owns the bounded single/double animation and Navbar owns one pending timeout, using the first eye's animation-end event to schedule the next pause. No new dependency, animation-frame loop or layout-driving property is introduced.
 
+The maintainer separately approved an entrance and exit motion choreography for this dock: a macOS-style vertical slide with a natural overshoot rebound (`cubic-bezier(0.34, 1.28, 0.64, 1)`) and a 25ms icon stagger on reveal, and a faster 180ms ease-in exit downwards when scrolling down or hiding. Auto-hide on scroll hides the dock during downward reading scroll and restores it immediately on upward scroll, keyboard focus, or hover. Reduced motion falls back to an instantaneous and pure opacity fade with zero spatial translation.
+
 Hover anywhere over the dock, focus anywhere inside it, a hidden document, a dock hidden behind the hero, reduced motion and disconnection all cancel pending work and immediately restore open eyes. Resuming starts a full new random pause, never a catch-up blink. Reduced motion has both a runtime media-query listener and a CSS static fallback; without JavaScript the inline logo is the original static face. Other logo instances remain static external images.
 
 The labels appear 12px above their links on hover or visible keyboard focus. They repeat the accessible names visually, so their spans are hidden from assistive technology to avoid duplicate announcements. A transparent bridge keeps each tooltip reachable by pointer; Escape dismisses labels even when keyboard focus is elsewhere. Pointer re-entry or a new focus restores them. Tooltips use Raised/Primary ink, an 8px radius and 6×10px padding. Native links activate directly on touch without requiring a label-reveal tap.
@@ -329,7 +331,7 @@ Interactive/focusable elements retain a 3px Mineral outline with 4px offset exce
 - **Don't** turn open task lanes into interchangeable rounded marketing cards or apply glass to technical panels.
 - **Don't** replace the compact bottom dock with a top header or hamburger, or remove its accessible names and hover/focus labels.
 - **Don't** shrink mobile reading/code text, impose a 320px body minimum or hide overflow to conceal a layout defect.
-- **Don't** add ambient motion beyond the explicitly approved dock-eye blinks, pointer-required behavior, a theme toggle or a second runtime highlighter.
+- **Don't** add ambient motion beyond the explicitly approved dock-eye blinks and dock entrance/exit transitions, pointer-required behavior, a theme toggle or a second runtime highlighter.
 - **Don't** treat design approval, screenshots, token contrast calculations or sample timing strings as release, performance or accessibility-conformance evidence.
 - **Don't** use quiet construction rails as meaningful control boundaries or let grain and hatching cross reading, artwork, controls or focus outlines.
 

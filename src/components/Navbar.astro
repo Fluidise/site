@@ -31,7 +31,9 @@ import DockLogo from '../assets/brand/logo-white.svg';
       let blinkTimer: number | undefined;
       let hovered = nav.matches(':hover');
       let focused = nav.contains(document.activeElement);
-      const canBlink = () => logo && eye && !disposed && !document.hidden && !nav.hidden && !reduced.matches && !hovered && !focused;
+      let lastScrollY = typeof window !== 'undefined' ? (window.scrollY ?? 0) : 0;
+      let scrolledHidden = false;
+      const canBlink = () => logo && eye && !disposed && !document.hidden && !nav.hidden && !scrolledHidden && !reduced.matches && !hovered && !focused;
       const stopBlink = () => {
         window.clearTimeout(blinkTimer);
         blinkTimer = undefined;
@@ -64,9 +66,36 @@ import DockLogo from '../assets/brand/logo-white.svg';
         frame = null;
         if (disposed || document.hidden) return;
         // Preserve the exact hero boundary, including reverse scroll and deep entry.
-        nav.hidden = Boolean(hero?.isConnected && hero.getBoundingClientRect().bottom > window.innerHeight - 1);
-        syncBlink();
-        if (!hero || nav.hidden) return;
+        const inHero = Boolean(hero?.isConnected && hero.getBoundingClientRect().bottom > window.innerHeight - 1);
+        nav.hidden = inHero;
+        if (inHero) {
+          scrolledHidden = false;
+          nav.removeAttribute('data-scrolled-hidden');
+          stopBlink();
+          return;
+        }
+
+        const currentScrollY = Math.max(0, typeof window !== 'undefined' ? (window.scrollY ?? 0) : 0);
+        const scrollDelta = currentScrollY - lastScrollY;
+
+        if (hovered || focused || currentScrollY <= 20) {
+          scrolledHidden = false;
+        } else if (scrollDelta > 8) {
+          scrolledHidden = true;
+        } else if (scrollDelta < -5) {
+          scrolledHidden = false;
+        }
+        lastScrollY = currentScrollY;
+
+        if (scrolledHidden) {
+          nav.setAttribute('data-scrolled-hidden', 'true');
+          stopBlink();
+        } else {
+          nav.removeAttribute('data-scrolled-hidden');
+          syncBlink();
+        }
+
+        if (!hero) return;
         const readingLine = Math.max(28, window.innerHeight * 0.28);
         let current = '';
         for (const section of sections) {
@@ -90,7 +119,12 @@ import DockLogo from '../assets/brand/logo-white.svg';
       reduced.addEventListener('change', syncBlink, { signal });
       nav.addEventListener('pointerenter', () => {
         hovered = true;
-        syncBlink();
+        if (scrolledHidden) {
+          scrolledHidden = false;
+          schedule();
+        } else {
+          syncBlink();
+        }
       }, { signal });
       nav.addEventListener('pointerleave', () => {
         hovered = false;
@@ -98,7 +132,12 @@ import DockLogo from '../assets/brand/logo-white.svg';
       }, { signal });
       nav.addEventListener('focusin', () => {
         focused = true;
-        syncBlink();
+        if (scrolledHidden) {
+          scrolledHidden = false;
+          schedule();
+        } else {
+          syncBlink();
+        }
       }, { signal });
       nav.addEventListener('focusout', (event) => {
         focused = nav.contains(event.relatedTarget as Node | null);
@@ -142,6 +181,7 @@ import DockLogo from '../assets/brand/logo-white.svg';
         observer?.disconnect();
         resizeObserver?.disconnect();
         for (const link of dockLinks) link.removeAttribute('data-tooltip-dismissed');
+        nav.removeAttribute('data-scrolled-hidden');
         nav.hidden = false;
         markCurrent('');
       };

@@ -38,3 +38,14 @@ The implementation reuses `src/assets/brand/logo-white.svg` as an Astro SVG comp
 The native browser rendered the built CSS and actual Navbar in a temporary diagnostic fixture with only `Math.random` fixed to zero, selecting the minimum pause and double-blink branch. Its first sequence started at 8039ms, sampled identical eye scales of 0.0859505 near the first closure and 0.0804081 near the second closure, then restored untransformed eyes at 8597ms. This verifies rendered synchronization/timing with frame scheduling, not a performance benchmark or statistical randomness claim. Pointer hover kept the sequence-start count unchanged at nine; native keyboard focus restored open eyes and retained the Install tooltip. Diagnostic files are generated-only and are removed from the preview output after inspection.
 
 The built home, Clint and Relay routes were remeasured at 1280×720, 390×844 and 320×720: every dock remains 202×58px, its inline logo 22×22px with two eyes, and all nine cases remain free of page-level horizontal overflow. The in-thread source/visual polish pass found no remaining material issue. Runtime media-query changes and document hiding are deterministic test coverage, not a new physical-device, native OS preference, multi-browser, WCAG or performance certification. No Git shipping or deployment is included.
+
+## Approved motion extension: dock entrance, exit, and scroll auto-hide (2026-11-06)
+
+The maintainer approved and requested implementation of animated entrance and exit for the compact dock:
+
+- A macOS-style vertical slide with a natural spring-like rebound overshoot (`cubic-bezier(0.34, 1.28, 0.64, 1)`) over 320ms and an icon entrance stagger of 25ms (0ms, 25ms, 50ms, 75ms).
+- A faster, crisp 180ms ease-in exit downwards when scrolling down or hiding (`cubic-bezier(0.4, 0, 0.2, 1)`).
+- Directional scroll auto-hide on the catalog: scrolling down hides the dock; scrolling up immediately restores it.
+- Immediate reveal on keyboard focus (`focusin`) or hover (`pointerenter`), keeping the dock visible while interactive.
+- Top of page keeps the dock visible; homepage hero immersion hides the dock until crossing the task gateway.
+- `prefers-reduced-motion` provides an instantaneous opacity-only transition without spatial movement or rebound.
