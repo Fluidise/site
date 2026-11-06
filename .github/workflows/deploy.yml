@@ -124,12 +124,16 @@ jobs:
           deploy_token="${DOKPLOY_DEPLOY_URL##*/}"
           echo "::add-mask::$deploy_token"
 
+          # Enforce https:// scheme to avoid Cloudflare HTTP-to-HTTPS 301 redirect
+          dokploy_url="$(echo -n "$DOKPLOY_DEPLOY_URL" | xargs)"
+          target_url="${dokploy_url/#http:\/\//https://}"
+
           payload=$(jq -nc \
             --arg ref "refs/heads/main" \
             --arg sha "$GITHUB_SHA" \
             '{ref: $ref, head_commit: {id: $sha, message: "CI passed"}, commits: []}')
 
-          http_code=$(curl --silent --show-error --write-out "%{http_code}" \
+          http_code=$(curl --silent --show-error --location --post301 --post302 --write-out "%{http_code}" \
             --output /tmp/dokploy_response.json \
             --request POST \
             --header "CF-Access-Client-Id: $CLOUDFLARE_ACCESS_CLIENT_ID" \
@@ -137,7 +141,7 @@ jobs:
             --header "X-GitHub-Event: push" \
             --header "Content-Type: application/json" \
             --data "$payload" \
-            "$DOKPLOY_DEPLOY_URL")
+            "$target_url")
 
           echo "Dokploy HTTP response code: $http_code"
           cat /tmp/dokploy_response.json || true
