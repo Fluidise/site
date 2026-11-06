@@ -84,20 +84,28 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    outputs:
+      merged: ${{ steps.merge.outputs.merged }}
     steps:
       - name: Merge pull request
+        id: merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
         run: |
           gh pr merge "$PR_URL" --squash --delete-branch
+          echo "merged=true" >> "$GITHUB_OUTPUT"
 
   deploy:
     name: Déploiement en production via Dokploy
-    needs: check
+    needs: [check, auto-merge]
     if: >-
-      github.ref == 'refs/heads/main' &&
-      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+      always() &&
+      needs.check.result == 'success' &&
+      (
+        (github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')) ||
+        (needs.auto-merge.result == 'success' && needs.auto-merge.outputs.merged == 'true')
+      )
     runs-on: ubuntu-latest
     timeout-minutes: 5
     environment: production
@@ -117,7 +125,7 @@ jobs:
           echo "::add-mask::$deploy_token"
 
           payload=$(jq -nc \
-            --arg ref "$GITHUB_REF" \
+            --arg ref "refs/heads/main" \
             --arg sha "$GITHUB_SHA" \
             '{ref: $ref, head_commit: {id: $sha, message: "CI passed"}, commits: []}')
 
