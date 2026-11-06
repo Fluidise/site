@@ -129,11 +129,21 @@ jobs:
             --arg sha "$GITHUB_SHA" \
             '{ref: $ref, head_commit: {id: $sha, message: "CI passed"}, commits: []}')
 
-          curl --fail --silent --show-error --output /dev/null \
+          http_code=$(curl --silent --show-error --write-out "%{http_code}" \
+            --output /tmp/dokploy_response.json \
             --request POST \
             --header "CF-Access-Client-Id: $CLOUDFLARE_ACCESS_CLIENT_ID" \
             --header "CF-Access-Client-Secret: $CLOUDFLARE_ACCESS_CLIENT_SECRET" \
             --header "X-GitHub-Event: push" \
             --header "Content-Type: application/json" \
             --data "$payload" \
-            "$DOKPLOY_DEPLOY_URL"
+            "$DOKPLOY_DEPLOY_URL")
+
+          echo "Dokploy HTTP response code: $http_code"
+          cat /tmp/dokploy_response.json || true
+          echo ""
+
+          if [ "$http_code" -lt 200 ] || [ "$http_code" -ge 300 ]; then
+            echo "::error::Dokploy deployment trigger failed with HTTP $http_code"
+            exit 1
+          fi
