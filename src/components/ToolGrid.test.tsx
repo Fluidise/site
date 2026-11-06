@@ -62,7 +62,7 @@ describe('task gateway and installation desk', () => {
     expect(task).toContain('srcSet=');
     expect(task).toContain('sizes=');
     expect(task.indexOf('class="tool-presentation"')).toBeLessThan(task.indexOf('A useful task'));
-    expect(task.match(/<svg/g)).toHaveLength(1);
+    expect(task.match(/<svg/g)).toHaveLength(2);
   });
 
   it('does not repeat banners in the independent installation desk', () => {
@@ -70,6 +70,29 @@ describe('task gateway and installation desk', () => {
     const install = html.slice(html.indexOf('id="install"'));
     expect(install).not.toContain('example-banner');
     expect(install).toContain('fluidise-example');
+  });
+
+  it('server-renders independent collapsed preview controls without removing examples', () => {
+    const second = { ...tool, id: 'second', name: 'fluidise-second' };
+    const html = renderToStaticMarkup(<ToolGrid tools={[tool, second]} />);
+    for (const id of ['example', 'second']) {
+      expect(html).toContain(`aria-expanded="false" aria-controls="preview-${id}"`);
+      expect(html).toContain(
+        `id="preview-${id}" class="task-preview-content" data-expanded="false"`,
+      );
+      expect(html).toContain(`for fluidise-${id}`);
+    }
+    expect(html.match(/class="tool-scene"/g)).toHaveLength(2);
+    expect(html.match(/View illustrative example/g)).toHaveLength(2);
+  });
+
+  it('identifies the macOS Homebrew path and links directly to installation alternatives', () => {
+    const html = renderToStaticMarkup(<ToolGrid tools={[tool]} />);
+    expect(html).toContain('Install with Homebrew.');
+    expect(html).toContain('These Homebrew commands are for macOS.');
+    expect(html).toContain('href="/tools/example/#installation"');
+    expect(html).toContain('Installation options');
+    expect(html).toContain('No separate tap step is required.');
   });
 
   it('renders an empty task result without inventing a package', () => {

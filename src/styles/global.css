@@ -192,6 +192,7 @@ a {
   height: 300dvh;
 }
 .archipelago-hero__viewport {
+  container-type: inline-size;
   position: sticky;
   top: 0;
   width: 100%;
@@ -251,6 +252,7 @@ a {
   font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
   font-weight: 700;
   font-size: var(--type-display);
+  font-size: clamp(3rem, 26cqi, 38rem);
   line-height: 0.82;
   letter-spacing: 0.055em;
   text-align: center;
@@ -640,6 +642,9 @@ h2 {
   display: grid;
   grid-template-rows: 1fr auto;
   gap: 32px;
+}
+.task-preview-toggle {
+  display: none;
 }
 .tool-banner {
   position: absolute;
@@ -1431,6 +1436,36 @@ article.prose :is(th, td) {
 }
 
 @media (max-width: 900px) {
+  .task-preview-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 12px 0;
+    border: 0;
+    background: transparent;
+    color: var(--action);
+    font: 500 var(--type-label)/1.4 var(--font-body);
+    text-align: left;
+  }
+  .task-preview-toggle:hover {
+    color: var(--action-hover);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .task-preview-toggle svg {
+    flex-shrink: 0;
+  }
+  .task-preview-toggle[aria-expanded='true'] svg {
+    transform: rotate(180deg);
+  }
+  .task-preview-content[data-expanded='false'] {
+    display: none;
+  }
+  .task-preview-content[data-expanded='true'] {
+    margin-top: 16px;
+  }
   .task-list,
   .section-intro,
   .install-entry,

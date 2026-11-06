@@ -50,6 +50,13 @@ assert.equal((home.match(/<code>brew tap Fluidise\/homebrew-tap<\/code>/g) ?? []
 assert(home.includes('Filter task results'));
 assert(home.includes('aria-controls="tool-results"'));
 assert(home.indexOf('id="install"') > home.indexOf('id="tool-results"'));
+for (const name of ['clint', 'relay']) {
+  assert(home.includes(`aria-expanded="false" aria-controls="preview-${name}"`));
+  assert(home.includes(`id="preview-${name}" class="task-preview-content" data-expanded="false"`));
+  assert(home.includes(`href="/tools/${name}/#installation"`));
+}
+assert(home.includes('<noscript>'));
+assert(home.includes('.task-preview-content[data-expanded] { display: block; margin-top: 0; }'));
 console.log(
   'PASS: task/install landmarks, compatibility anchors, dark shell and Clint-only example',
 );
@@ -144,7 +151,17 @@ for (const name of ['clint', 'relay']) {
       .split('---')[1]
       .replace(/^banner:.*\n/gm, '')
       .trim();
-  assert.equal(metadata(after), metadata(before), 'All prior product metadata is unchanged');
+  if (name === 'relay') {
+    const withoutRelease = (text) => metadata(text).replace(/^(status|version):.*\n/gm, '');
+    assert.equal(
+      withoutRelease(after),
+      withoutRelease(before),
+      'Only verified Relay release metadata changes',
+    );
+    assert(after.includes("status: 'released'\nversion: 'v0.1.0'"));
+  } else {
+    assert.equal(metadata(after), metadata(before), 'All prior product metadata is unchanged');
+  }
   assert.equal(
     after.slice(after.indexOf('\n---', 4)),
     before.slice(before.indexOf('\n---', 4)),
@@ -214,7 +231,7 @@ assert.equal(italic.subarray(0, 4).toString(), 'wOF2');
 assert(normal.length + italic.length <= 100000);
 assert(read('public/fonts/InstrumentSans-OFL.txt').includes('SIL OPEN FONT LICENSE'));
 console.log(
-  'PASS: real schema validation, unchanged factual metadata/fences and licensed two-face font budget',
+  'PASS: real schema validation, verified Relay release, preserved other metadata/fences and licensed font budget',
 );
 
 for (const [html, frameCount, hatchCount, islands] of [

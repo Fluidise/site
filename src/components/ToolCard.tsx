@@ -1,4 +1,5 @@
-import { IconArrowRight } from '@tabler/icons-react';
+import { useState } from 'react';
+import { IconArrowRight, IconChevronDown } from '@tabler/icons-react';
 import type { ToolBanner } from '../lib/tool-banner';
 import { ToolPreview } from './ToolPreview';
 
@@ -20,6 +21,9 @@ export interface ToolData {
 }
 
 export function ToolCard({ tool }: { tool: ToolData }) {
+  const [previewExpanded, setPreviewExpanded] = useState(false);
+  const previewId = `preview-${tool.id}`;
+
   return (
     <article className="task-entry" aria-labelledby={`tool-${tool.id}`}>
       <div className="tool-feature">
@@ -45,7 +49,22 @@ export function ToolCard({ tool }: { tool: ToolData }) {
             </a>
           </div>
         </div>
-        <ToolPreview toolId={tool.id} banner={tool.banner} />
+        <div className="task-preview">
+          <button
+            type="button"
+            className="task-preview-toggle"
+            aria-expanded={previewExpanded}
+            aria-controls={previewId}
+            onClick={() => setPreviewExpanded((expanded) => !expanded)}
+          >
+            {previewExpanded ? 'Hide illustrative example' : 'View illustrative example'}
+            <span className="sr-only"> for {tool.name}</span>
+            <IconChevronDown size={18} aria-hidden="true" />
+          </button>
+          <div id={previewId} className="task-preview-content" data-expanded={previewExpanded}>
+            <ToolPreview toolId={tool.id} banner={tool.banner} />
+          </div>
+        </div>
       </div>
     </article>
   );

@@ -28,7 +28,7 @@ colors:
 typography:
   display:
     fontFamily: "'Barlow Condensed', 'Arial Narrow', sans-serif"
-    fontSize: 'clamp(3rem, 26vw, 38rem)'
+    fontSize: 'clamp(3rem, 26cqi, 38rem)'
     fontWeight: 700
     lineHeight: 0.82
     letterSpacing: '0.055em'
@@ -236,7 +236,8 @@ The monumental condensed name contrasts with calm, medium-weight interface headi
 
 ### Hierarchy
 
-- **Display:** the protected wordmark uses the display token. Its top offset is 3svh, or 8svh at widths up to 600px. Short landscape uses 2svh and `min(26vw, 38svh)`. A 94% text-width bound allows wider fallbacks or enlarged text to wrap.
+- **Display:** the protected wordmark uses the available-width size below, with the historical viewport-based display token as fallback. Its top offset is 3svh, or 8svh at widths up to 600px. Short landscape uses 2svh and `min(26vw, 38svh)`. A 94% text-width bound allows wider fallbacks or enlarged text to wrap.
+- **Available-width display correction:** the viewport is an inline-size container and title size is `clamp(3rem, 26cqi, 38rem)`, with the existing display token as the unsupported-unit fallback. This keeps the complete loaded Barlow name on one line at standard 320px and 390px portrait sizes, including classic-scrollbar space. This also prevents the same scrollbar-related wrap at intermediate widths. The width bound and enlarged-text wrapping remain; the subsequent short-landscape rule still wins. No painting, material, scroll phase or hero navigation changes.
 - **Documentation title:** the doc-title role is the tool page's single h1. It wraps long tool names rather than forcing page overflow.
 - **Headlines:** the headline role serves section headings.
 - **Package titles and subheadings:** install identities and catalog task headings use package-title; task headings stay bounded to 22ch at every breakpoint and use -.025em tracking. Principles and prose h3 use subheading. The square starting panel uses the same 1.5rem size but inherits h2 leading (1.15). The example and guarantees h2 use `clamp(1.75rem, 3vw, 2.25rem)` with the shared heading weight/leading/tracking.
@@ -309,6 +310,10 @@ The labels appear 12px above their links on hover or visible keyboard focus. The
 The homepage dock is hidden from view/focus/assistive navigation while the hero fills the viewport and returns at the task gateway boundary. Tool pages keep it visible without falsely marking a homepage destination as current. Homepage current state uses neutral icon ink and a 4px mineral dot, reconciled with native anchors/history and visible section context. The lifecycle retains cleanup, bounded scheduling and optional-observer fallbacks, including disposal of tooltip listeners. Without JavaScript the named native links and CSS hover/focus labels remain usable; Escape dismissal requires JavaScript.
 
 ### Task gateway and installation desk
+
+The scoped homepage critique fixes add independently collapsible examples beneath each task at widths up to 900px. The existing React owner keeps one expansion state per task; CSS, not viewport listeners, selects the presentation. Controls expose their tool name, `aria-expanded` and the unique content target, retain native button keyboard behavior and show a 3px focus outline. Mobile examples start collapsed without an expanded-first hydration shift; above 900px both existing scenes remain visible and controls are absent from layout and accessibility navigation. One copy of each unchanged scene stays in server HTML. Without JavaScript, homepage-local noscript CSS exposes both scenes and hides the inert controls. Reference-page scenes are not collapsible. This supersedes only the always-expanded homepage mobile preview treatment below.
+
+The installation desk identifies its macOS Homebrew fast path, links each tool directly to its installation section, and explains that a separate tap step is optional for the fully qualified commands. Relay's collection status/version now match the published non-prerelease v0.1.0 and current formula, rather than the stale development/alpha labels. Publication and formula inspection are not installation or production-safety certification. Owning evidence and verification limits are recorded in `docs/specs/homepage-critique-fixes.md`. No sidecar refresh is part of this refinement.
 
 Task statements lead open charcoal lanes together with live package identity/status, purpose and actions. A separate landscape-backed product scene follows each identity/action region; neither identity nor installation actions overlay the painting. Clint uses the supplied text-free plum/lavender woodland; Relay uses the supplied text-free emerald coastal currents. Decorative empty-alt images cover only the scene behind opaque illustrative panels; no names, marks or actions are baked into the paintings, and the images add no link or focus target. The opaque panels and caption ground provide contrast without a scene scrim. Normal-flow content wraps and grows without fixed-height clipping. A mineral Get started link opens the responsible tool page, while neutral Install command reaches its stable installation row. The three neutral text status choices and the announced count affect only task results; they do not gate access to tool links or installation. The separately titled installation desk always renders the unfiltered ordered collection, exact source commands when present, docs/source links and one Homebrew tap control. There is no exclusive task state, hidden installation prerequisite or generic card library. Installation, principles and footer contain no landscape imagery; only their empty shell gutters and named transitions share the quiet background details.
 
