@@ -1,5 +1,9 @@
 # Alpine Banner and Title Depth
 
+## Scoped narrow-title correction (2026-11-07)
+
+The user approved the homepage critique fixes but explicitly retained the hero without any orientation cue. Only its name sizing is permitted to change: the viewport becomes an inline-size container and the title uses `clamp(3rem, 26cqi, 38rem)` instead of measuring scrollbar-inclusive viewport width. The existing display token remains as the unsupported-unit fallback. This repairs the isolated final E at standard mobile and intermediate sizes with classic scrollbars while retaining the near-full-width composition. The subsequent short-landscape rule, 94% width bound, enlarged-text wrapping, Barlow family, pigments, painting, source contours, semantic/front title faces, renderer, dock and complete native-scroll journey remain unchanged. Current evidence belongs to `docs/specs/homepage-critique-fixes.md`; historical approvals and measurements below are not retroactive proof of this correction.
+
 ## Current extension: matte painted title pigments (2026-11-04)
 
 ### Approval and scope

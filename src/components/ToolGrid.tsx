@@ -63,8 +63,11 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
         aria-labelledby="install-heading"
       >
         <div className="section-intro">
-          <h2 id="install-heading">Install a tool.</h2>
-          <p>Know what you need? Start here, or read the full installation options.</p>
+          <h2 id="install-heading">Install with Homebrew.</h2>
+          <p>
+            These Homebrew commands are for macOS. Review each tool’s installation options for other
+            methods.
+          </p>
         </div>
         <div className="install-list">
           {tools.map((tool) => (
@@ -80,8 +83,8 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
                   {tool.status === 'released' ? `${tool.version ?? ''} Released` : 'In Development'}
                 </p>
                 <div className="tool-links">
-                  <a className="text-link" href={`/tools/${tool.id}/`}>
-                    Read docs <IconArrowUpRight size={16} aria-hidden="true" />
+                  <a className="text-link" href={`/tools/${tool.id}/#installation`}>
+                    Installation options <IconArrowUpRight size={16} aria-hidden="true" />
                   </a>
                   <a
                     className="text-link"
@@ -104,7 +107,10 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
           ))}
         </div>
         <div className="install-tap">
-          <p>Homebrew tap</p>
+          <p>Optional: add the Homebrew tap separately</p>
+          <p className="install-tap-note">
+            The commands above add the tap automatically. No separate tap step is required.
+          </p>
           <CopyCommand
             command="brew tap Fluidise/homebrew-tap"
             label="Copy Homebrew tap installation command"

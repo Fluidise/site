@@ -14,6 +14,10 @@ related_targets:
 
 # Floating product scenes
 
+## Scoped homepage mobile disclosure (2026-11-07)
+
+The user selected collapsible previews beneath each mobile task after the homepage critique. At the existing 900px stacking boundary, each card now owns an independent initially collapsed button/content pair with tool-specific accessible naming and expansion state. The unchanged ToolPreview figure remains in server HTML once. CSS keeps it always visible and hides its button above 900px; homepage noscript rules expose the content without inert controls. No new hydration owner, viewport listener, dependency, animation or modification to reference-page scenes is introduced. `docs/specs/homepage-critique-fixes.md` owns current evidence and limits. All earlier composition authority remains except the always-expanded homepage mobile treatment.
+
 Mode: Read/discovery on the catalog; Read/getting started on tool references. This is a local composition replacement inside Nocturne, not a replacement visual world. The user explicitly approved this brief and then requested implementation.
 
 ## Direction contract

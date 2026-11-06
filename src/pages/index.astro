@@ -19,5 +19,11 @@ const tools = await Promise.all(toolEntries
 <Layout>
   <Hero />
   <ToolGrid client:visible tools={tools} />
+  <noscript>
+    <style is:inline>
+      .task-preview-toggle { display: none; }
+      .task-preview-content[data-expanded] { display: block; margin-top: 0; }
+    </style>
+  </noscript>
   <ManifestoSection />
 </Layout>

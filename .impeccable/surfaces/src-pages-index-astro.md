@@ -7,6 +7,12 @@ related_targets: ['src/pages/tools/[id].astro']
 
 # Homepage and tool pages
 
+## Current refinement: homepage critique fixes (2026-11-07)
+
+The maintainer approved four findings, explicitly retained the cue-free hero and then selected collapsible previews beneath each mobile task. At up to 900px, named native buttons independently disclose the existing scenes; above that boundary both scenes remain visible without controls. CSS determines responsive visibility and existing React state owns expansion, avoiding viewport listeners, duplicate scenes and initial expanded-to-collapsed hydration movement. Homepage-local noscript CSS keeps examples available without JavaScript. Dedicated tool-page scenes remain unchanged.
+
+The painted hero viewport is an inline-size container; its title uses `clamp(3rem, 26cqi, 38rem)` to follow actual available width, including scrollbar space, at mobile and intermediate sizes. The existing display token remains the unsupported-unit fallback, and enlarged text and wider fallback fonts may still wrap. Painting, typography family/material, 300dvh journey, dock and absence of an orientation cue remain settled. The Homebrew desk now identifies macOS, links directly to installation sections and explains the optional separate tap. Relay status/version are corrected to the verified published v0.1.0 in the collection owner. Details, publication evidence, checks and limits live in `docs/specs/homepage-critique-fixes.md`; this does not repair historical sidecar drift or claim broader certification.
+
 ## Current refinement: quiet background details (2026-11-06)
 
 THESIS: Empty charcoal space gains quiet construction detail without competing with choosing, installing or reference reading.

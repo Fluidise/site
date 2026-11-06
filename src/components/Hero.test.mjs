@@ -628,6 +628,11 @@ assert(css.includes('opacity: calc(var(--title-opacity, 1) * var(--title-front, 
 assert.equal((html.match(/archipelago-hero__wordmark/g) || []).length, 2);
 assert.equal((html.match(/<h1\b/g) || []).length, 1, 'Front face adds no semantic heading');
 assert(css.includes('--type-display: clamp(3rem, 26vw, 38rem)'));
+assert(
+  css.includes('font-size: clamp(3rem, 26cqi, 38rem)'),
+  'Title sizing follows available content width without disabling enlarged-text wrapping',
+);
+assert(css.includes('container-type: inline-size'));
 assert(css.includes('max-width: 94%'));
 assert(css.includes('overflow-wrap: anywhere'));
 console.log(
