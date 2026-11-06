@@ -135,6 +135,18 @@ components:
     typography: '{typography.label}'
     rounded: '{rounded.control-fallback}'
     padding: '11px 20px'
+  catalog-filter:
+    backgroundColor: 'transparent'
+    textColor: '{colors.secondary}'
+    typography: '{typography.label}'
+    rounded: '{rounded.square}'
+    padding: '12px 0'
+  catalog-filter-selected:
+    backgroundColor: 'transparent'
+    textColor: '{colors.ink}'
+    typography: '{typography.label}'
+    rounded: '{rounded.square}'
+    padding: '12px 0'
   floating-dock:
     backgroundColor: '{colors.surface}'
     textColor: '{colors.secondary}'
@@ -335,6 +347,6 @@ Interactive/focusable elements retain a 3px Mineral outline with 4px offset exce
 - **Don't** treat design approval, screenshots, token contrast calculations or sample timing strings as release, performance or accessibility-conformance evidence.
 - **Don't** use quiet construction rails as meaningful control boundaries or let grain and hatching cross reading, artwork, controls or focus outlines.
 
-The sidecar contains nine scoped, framework-free HTML/CSS appearance samples. Its catalog filter samples still depict the historical rounded, filled controls and mineral selection marker; they are stale previews, not authority for the current neutral text choices. This ordinary local refinement does not regenerate the sidecar or repair its pre-existing drift. Its task lanes now embed the existing optimized paintings and grain rather than an image-free historical approximation; preview-only container queries apply the source layout thresholds to the panel's available width. The dock appears in flow instead of floating over the panel. Hover and focus styling are native, but filtering, clipboard feedback and terminal sample/format changes remain the responsibility of the live components, not these static previews.
+The sidecar contains nine scoped, framework-free HTML/CSS appearance samples, refreshed to match the compact icon-only dock and neutral catalog text choices. Its task lanes embed the existing optimized paintings and grain rather than an image-free historical approximation; preview-only container queries apply the source layout thresholds to the panel's available width. The dock appears in flow instead of floating over the panel. Hover and focus styling are native, but filtering, clipboard feedback and terminal sample/format changes remain the responsibility of the live components, not these static previews.
 
 Source evidence: `src/styles/global.css`, current route/component/layout owners and `astro.config.mjs`; provenance in `public/fonts/README.md` and `src/assets/tools/README.md`; product constraints in `PRODUCT.md`; visual/task-led authority and the current refinement in `docs/specs/dark-design-system.md`; protected hero authority in `docs/specs/alpine-canvas-hero.md`. The current surface brief distinguishes historical finish-review dispositions from the current refinement's source/documentation evidence and limits. This installed-system reference is not a deployment, WCAG, OS, physical-device, multi-browser or performance certificate.

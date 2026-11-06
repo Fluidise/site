@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-06T13:32:01.126145Z",
+  "generatedAt": "2026-11-06T19:41:50.995Z",
   "title": "Design System: Fluidise Nocturne",
   "extensions": {
     "colorMeta": {
@@ -414,14 +414,6 @@
         "displayName": "Metadata",
         "purpose": "Status, demo label and legal copy. Terminal footer uses 1.5 leading."
       },
-      "dock-label": {
-        "displayName": "Dock Label",
-        "purpose": "Dock labels above 600px."
-      },
-      "compact-dock-label": {
-        "displayName": "Compact Dock Label",
-        "purpose": "Dock labels only at widths up to 600px, never a general reading reduction."
-      },
       "terminal-heading": {
         "displayName": "Terminal Heading",
         "purpose": "Quiet heading inside the sample panel."
@@ -429,18 +421,17 @@
       "code": {
         "displayName": "Code",
         "purpose": "Native monospace commands, fenced blocks and samples; inline prose code is .875em."
+      },
+      "dock-tooltip": {
+        "displayName": "Dock Tooltip",
+        "purpose": "Dock tooltip labels on hover or keyboard focus, 0.875rem with 1.4 leading."
       }
     },
     "shadows": [
       {
-        "name": "dock-lift",
-        "value": "0 10px 32px rgb(0 0 0 / 0.24)",
-        "purpose": "Restrained neutral lift on the opaque Raised navigation dock, not a tinted ambient effect."
-      },
-      {
         "name": "selected-control-marker",
         "value": "inset 0 -2px var(--accent)",
-        "purpose": "Pressed filter/selected tab line; an active marker, not elevation."
+        "purpose": "Shared terminal tab selection line; an active marker, not elevation. Catalog status choices use a neutral text underline instead."
       },
       {
         "name": "wordmark-separation",
@@ -460,6 +451,11 @@
         "purpose": "Existing small-control state treatment; reduced motion suppresses it."
       },
       {
+        "name": "dock-eye-blink",
+        "value": "single 180ms ease-in-out / double 560ms ease-in-out; 8-18s random interval",
+        "purpose": "Explicitly approved eye blink animation on the inline dock logo; paused on hover, focus, hidden document, or reduced motion."
+      },
+      {
         "name": "native-scroll",
         "value": "smooth; reduced-motion: auto",
         "purpose": "Native anchor scrolling, never input capture or a synthetic scroll engine."
@@ -468,6 +464,11 @@
         "name": "protected-archipelago-journey",
         "value": "300dvh reserved track / 100dvh sticky viewport; static one-viewport reduced-motion/no-JavaScript alternative",
         "purpose": "Dedicated existing scene, not a reusable UI animation. Numerical phases, painted lettering, source contours and resource budgets remain owned by docs/specs/alpine-canvas-hero.md; unchanged by Nocturne."
+      },
+      {
+        "name": "dock-entrance-exit",
+        "value": "entrance cubic-bezier(0.34, 1.28, 0.64, 1) 25ms stagger / exit 180ms ease-in",
+        "purpose": "Explicitly approved macOS-style dock vertical slide entrance with natural rebound and scroll auto-hide exit; reduced motion disables spatial translation."
       }
     ],
     "breakpoints": [
@@ -499,28 +500,28 @@
       "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-text-link,\n.ds-primary-link{\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  min-height: 44px;\n  max-width: 100%;\n  line-height: 1.4;\n  font-size: var(--type-label, 0.9375rem);\n  font-weight: 500;\n}.ds-primary-link{\n  padding: 12px 20px;\n  background: var(--accent, #aabad9);\n  color: var(--canvas, #151515);\n  border: 1px solid transparent;\n  border-radius: 16px;\n  text-decoration: none;\n}.ds-primary-link:hover{\n  color: var(--canvas, #151515);\n  text-decoration: underline;\n}@supports(corner-shape:squircle){.ds-primary-link{corner-shape:squircle;border-radius:40px}}@media(forced-colors:active){.ds-primary-link{border-color:ButtonText;background:Canvas;color:CanvasText}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
     },
     {
-      "name": "Quiet filter control",
+      "name": "Quiet catalog filter",
       "kind": "button",
-      "refersTo": "control",
-      "description": "An unpressed task filter. This static preview does not change results.",
-      "html": "<div class=\"ds-preview\"><button type=\"button\" class=\"ds-glacial-control\" aria-pressed=\"false\" aria-controls=\"ds-tool-results\">Released</button></div>",
-      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-glacial-control{\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 16px;\n  background: var(--surface, #1d1d1d);\n  color: var(--secondary, #c2c2c2);\n  padding: 11px 20px;\n  font-size: var(--type-label, 0.9375rem);\n  font-weight: 500;\n  min-height: 44px;\n  white-space: normal;\n  max-inline-size: 100%;\n  line-height: 1.4;\n  transition:\n    background-color 0.15s ease,\n    color 0.15s ease;\n}.ds-glacial-control:hover{\n  background: var(--hover, #313131);\n  color: var(--ink, #f2f2f2);\n}.ds-glacial-control[aria-pressed='true'],\n.ds-glacial-control[aria-selected='true']{\n  color: var(--action, #dedede);\n  background: var(--selected, #353535);\n  box-shadow: inset 0 -2px var(--accent, #aabad9);\n}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}@supports(corner-shape:squircle){.ds-glacial-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-glacial-control{transition-duration:.01ms}}@media(forced-colors:active){.ds-glacial-control{border-color:ButtonText;background:Canvas;color:CanvasText}.ds-glacial-control[aria-pressed=\"true\"],.ds-glacial-control[aria-selected=\"true\"]{outline:1px solid Highlight}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
+      "refersTo": "catalog-filter",
+      "description": "Unselected catalog status choice: transparent, borderless, neutral secondary ink. This static preview does not change results.",
+      "html": "<div class=\"ds-preview\"><button type=\"button\" class=\"ds-catalog-filter\" aria-pressed=\"false\" aria-controls=\"ds-tool-results\">Released</button></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-catalog-filter{appearance:none;border:0;border-radius:0;background:transparent;color:var(--secondary, #c2c2c2);padding:12px 0;min-height:44px;min-inline-size:44px;max-inline-size:100%;font-size:var(--type-label, 0.9375rem);font-weight:500;line-height:1.4;text-decoration-line:none;text-decoration-thickness:1px;text-underline-offset:8px;cursor:pointer}.ds-catalog-filter:hover{color:var(--ink, #f2f2f2)}.ds-catalog-filter:focus-visible{outline:3px solid var(--ink, #f2f2f2);outline-offset:4px}@media(forced-colors:active){.ds-catalog-filter:focus-visible{outline-color:Highlight}}"
     },
     {
-      "name": "Selected filter control",
+      "name": "Selected catalog filter",
       "kind": "button",
-      "refersTo": "control-selected",
-      "description": "Neutral pressed label with the existing inset mineral selection marker; no preview state handler.",
-      "html": "<div class=\"ds-preview\"><button type=\"button\" class=\"ds-glacial-control\" aria-pressed=\"true\" aria-controls=\"ds-tool-results\">All tools</button></div>",
-      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-glacial-control{\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 16px;\n  background: var(--surface, #1d1d1d);\n  color: var(--secondary, #c2c2c2);\n  padding: 11px 20px;\n  font-size: var(--type-label, 0.9375rem);\n  font-weight: 500;\n  min-height: 44px;\n  white-space: normal;\n  max-inline-size: 100%;\n  line-height: 1.4;\n  transition:\n    background-color 0.15s ease,\n    color 0.15s ease;\n}.ds-glacial-control:hover{\n  background: var(--hover, #313131);\n  color: var(--ink, #f2f2f2);\n}.ds-glacial-control[aria-pressed='true'],\n.ds-glacial-control[aria-selected='true']{\n  color: var(--action, #dedede);\n  background: var(--selected, #353535);\n  box-shadow: inset 0 -2px var(--accent, #aabad9);\n}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}@supports(corner-shape:squircle){.ds-glacial-control{corner-shape:squircle;border-radius:40px}}@media(prefers-reduced-motion:reduce){.ds-glacial-control{transition-duration:.01ms}}@media(forced-colors:active){.ds-glacial-control{border-color:ButtonText;background:Canvas;color:CanvasText}.ds-glacial-control[aria-pressed=\"true\"],.ds-glacial-control[aria-selected=\"true\"]{outline:1px solid Highlight}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
+      "refersTo": "catalog-filter-selected",
+      "description": "Selected catalog status choice: primary ink with a 1px neutral text underline offset by 8px; no box, no fill, no shadow.",
+      "html": "<div class=\"ds-preview\"><button type=\"button\" class=\"ds-catalog-filter\" aria-pressed=\"true\" aria-controls=\"ds-tool-results\">All tools</button></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-catalog-filter{appearance:none;border:0;border-radius:0;background:transparent;color:var(--ink, #f2f2f2);padding:12px 0;min-height:44px;min-inline-size:44px;max-inline-size:100%;font-size:var(--type-label, 0.9375rem);font-weight:500;line-height:1.4;text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:8px;cursor:pointer}.ds-catalog-filter:hover{color:var(--ink, #f2f2f2)}.ds-catalog-filter:focus-visible{outline:3px solid var(--ink, #f2f2f2);outline-offset:4px}@media(forced-colors:active){.ds-catalog-filter:focus-visible{outline-color:Highlight}}"
     },
     {
       "name": "Matte navigation dock",
       "kind": "nav",
       "refersTo": "floating-dock",
-      "description": "The four actual destinations; shown in flow with Explore current to expose that existing homepage state. Production is fixed and hero-boundary controlled.",
-      "html": "<div class=\"ds-preview\"><nav class=\"ds-floating-dock\" aria-label=\"Main navigation\"><a class=\"ds-dock-link\" href=\"/#tools\" data-section=\"tools\" aria-current=\"location\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\" color=\"#ffffff\">\n  \n  <path fill=\"currentColor\" stroke=\"none\" d=\"M45 17H36C24 17 19 24 19 35V47C19 53 16 57 8 59V71C16 73 19 77 19 83V93C19 105 25 112 37 112H45V96H40C35 96 34 94 34 89V80C34 73 31 68 26 65C31 61 34 56 34 49V39C34 34 35 32 40 32H45ZM83 17H92C104 17 109 24 109 35V47C109 53 112 57 120 59V71C112 73 109 77 109 83V93C109 105 103 112 91 112H83V96H88C93 96 94 94 94 89V80C94 73 97 68 102 65C97 61 94 56 94 49V39C94 34 93 32 88 32H83Z\" />\n  <rect x=\"47\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <rect x=\"69\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" />\n  <path d=\"M56 83Q66 87 74 78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n</svg><span>Explore</span></a><a class=\"ds-dock-link\" href=\"/#install\" data-section=\"install\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-download\" aria-hidden=\"true\"><path d=\"M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2\"></path><path d=\"M7 11l5 5l5 -5\"></path><path d=\"M12 4l0 12\"></path></svg><span>Install</span></a><a class=\"ds-dock-link\" href=\"/#philosophy\" data-section=\"philosophy\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-circles-relation\" aria-hidden=\"true\"><path d=\"M9.183 6.117a6 6 0 1 0 4.511 3.986\"></path><path d=\"M14.813 17.883a6 6 0 1 0 -4.496 -3.954\"></path></svg><span>Principles</span></a><a class=\"ds-dock-link\" href=\"https://github.com/Fluidise\" target=\"_blank\" rel=\"noreferrer noopener\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-brand-github\" aria-hidden=\"true\"><path d=\"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5\"></path></svg><span>GitHub<span class=\"ds-sr-only\"> (opens in new tab)</span></span></a></nav></div>",
-      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515)}.ds-preview :is(a,button,[tabindex]):focus-visible{outline:3px solid var(--accent, #aabad9);outline-offset:4px}.ds-floating-dock{box-sizing:border-box;\n  display: grid;\n  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 4px;\n  width: min(532px, calc(100% - 24px));\n  padding: 10px 25px;\n  border: 1px solid var(--control-border, #898989);\n  border-radius: 28px;\n  background: var(--raised, #272727);\n  box-shadow: 0 10px 32px rgb(0 0 0 / 0.24);\n}.ds-dock-link{\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 5px;\n  min-height: 50px;\n  min-width: 0;\n  padding: 4px;\n  color: var(--secondary, #c2c2c2);\n  font-size: var(--type-label, 0.9375rem);\n  line-height: 1.3;\n  overflow-wrap: anywhere;\n  text-decoration: none;\n  border-radius: 12px;\n}.ds-dock-link :is(img, svg){\n  width: 25px;\n  height: 25px;\n  flex-shrink: 0;\n}.ds-dock-link:hover{\n  color: var(--action-hover, #ffffff);\n  background: var(--hover, #313131);\n}.ds-dock-link[aria-current]{\n  color: var(--action, #dedede);\n  text-decoration: underline;\n  text-decoration-color: var(--accent, #aabad9);\n  text-decoration-thickness: 2px;\n  text-underline-offset: 5px;\n}.ds-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:600px){.ds-floating-dock{padding:8px 12px;gap:0}.ds-dock-link{font-size:.8125rem;padding-inline:0;min-height:52px;gap:6px}.ds-dock-link :is(svg,img){width:22px;height:22px}}@supports(corner-shape:squircle){.ds-floating-dock,.ds-dock-link{corner-shape:squircle;border-radius:40px}}@media(forced-colors:active){.ds-floating-dock{border-color:ButtonText;background:Canvas;color:CanvasText}.ds-dock-link[aria-current]{outline:1px solid Highlight}}.ds-preview button{font-family:inherit;cursor:pointer}.ds-preview button:disabled{cursor:not-allowed;opacity:.5}"
+      "description": "The four actual destinations in the compact 202px icon-only dock; shown in flow with Explore current and tooltip visible to expose that existing state. Production is fixed, hero-boundary controlled, with random eye blinks.",
+      "html": "<div class=\"ds-preview\"><nav class=\"ds-floating-dock\" aria-label=\"Main navigation\"><a class=\"ds-dock-link\" href=\"/#tools\" data-section=\"tools\" aria-label=\"Explore\" aria-current=\"location\"><svg class=\"ds-dock-logo\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\" width=\"22\" height=\"22\" color=\"#ffffff\"><path fill=\"currentColor\" stroke=\"none\" d=\"M45 17H36C24 17 19 24 19 35V47C19 53 16 57 8 59V71C16 73 19 77 19 83V93C19 105 25 112 37 112H45V96H40C35 96 34 94 34 89V80C34 73 31 68 26 65C31 61 34 56 34 49V39C34 34 35 32 40 32H45ZM83 17H92C104 17 109 24 109 35V47C109 53 112 57 120 59V71C112 73 109 77 109 83V93C109 105 103 112 91 112H83V96H88C93 96 94 94 94 89V80C94 73 97 68 102 65C97 61 94 56 94 49V39C94 34 93 32 88 32H83Z\" /><rect x=\"47\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" /><rect x=\"69\" y=\"46\" width=\"12\" height=\"23\" rx=\"6\" fill=\"currentColor\" stroke=\"none\" /><path d=\"M56 83Q66 87 74 78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" /></svg><span class=\"ds-dock-tooltip\" aria-hidden=\"true\" style=\"visibility: visible;\">Explore</span></a><a class=\"ds-dock-link\" href=\"/#install\" data-section=\"install\" aria-label=\"Install\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-download\" aria-hidden=\"true\"><path d=\"M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2\"></path><path d=\"M7 11l5 5l5 -5\"></path><path d=\"M12 4l0 12\"></path></svg><span class=\"ds-dock-tooltip\" aria-hidden=\"true\">Install</span></a><a class=\"ds-dock-link\" href=\"/#philosophy\" data-section=\"philosophy\" aria-label=\"Principles\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-circles-relation\" aria-hidden=\"true\"><path d=\"M9.183 6.117a6 6 0 1 0 4.511 3.986\"></path><path d=\"M14.813 17.883a6 6 0 1 0 -4.496 -3.954\"></path></svg><span class=\"ds-dock-tooltip\" aria-hidden=\"true\">Principles</span></a><a class=\"ds-dock-link\" href=\"https://github.com/Fluidise\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"GitHub (opens in new tab)\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-tabler-icon ds-tabler-icon-brand-github\" aria-hidden=\"true\"><path d=\"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5\"></path></svg><span class=\"ds-dock-tooltip\" aria-hidden=\"true\">GitHub</span></a></nav></div>",
+      "css": "@font-face{font-family:'Instrument Sans';src:url('/fonts/InstrumentSans-Variable-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}.ds-preview{font-family:var(--font-body, 'Instrument Sans', 'Segoe UI', sans-serif);font-size:var(--type-body, 1.0625rem);line-height:1.65;color:var(--ink, #f2f2f2);background:var(--canvas, #151515);display:flex;justify-content:center;padding:48px 16px}.ds-floating-dock{box-sizing:border-box;display:grid;grid-template-columns:repeat(4, 44px);gap:4px;width:max-content;max-width:calc(100% - 24px);padding:6px;border:1px solid color-mix(in srgb, var(--line, #808080) 50%, transparent);border-radius:28px;background:var(--surface, #1d1d1d)}.ds-dock-link{position:relative;display:flex;justify-content:center;align-items:center;min-height:44px;min-width:0;padding:4px;color:var(--secondary, #c2c2c2);text-decoration:none;border-radius:12px}.ds-dock-link :is(img, svg){width:22px;height:22px;flex-shrink:0}.ds-dock-logo rect{transform-box:fill-box;transform-origin:center}.ds-dock-link:hover{color:var(--action-hover, #ffffff);background:var(--hover, #313131)}.ds-dock-link[aria-current]{color:var(--action, #dedede)}.ds-dock-link[aria-current]::after{content:'';position:absolute;bottom:4px;width:4px;height:4px;border-radius:50%;background:var(--accent, #aabad9)}.ds-dock-tooltip{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 32px);padding:6px 10px;border-radius:8px;background:var(--raised, #272727);color:var(--ink, #f2f2f2);font-size:var(--type-meta, 0.875rem);line-height:1.4;text-align:center;visibility:hidden}.ds-dock-tooltip::after{content:'';position:absolute;top:100%;inset-inline:0;height:12px}.ds-dock-link:is(:hover, :focus-visible) .ds-dock-tooltip{visibility:visible}@supports(corner-shape:squircle){.ds-floating-dock{corner-shape:squircle;border-radius:40px}.ds-dock-link{corner-shape:squircle;border-radius:40px}}@media(forced-colors:active){.ds-floating-dock{border-color:ButtonText;background:Canvas;color:CanvasText}.ds-dock-link[aria-current]{outline:1px solid Highlight}}"
     },
     {
       "name": "Open task lanes",
@@ -571,7 +572,7 @@
       "Achromatic reading and ordinary links on opaque charcoal surfaces; mineral blue only for primary fills, active markers and external focus.",
       "Open task and reference compositions rather than a generic rounded-card library.",
       "Quiet construction rails, gutter-only grain and short transition hatches give empty charcoal space structure without texturing reading or artwork.",
-      "A visibly labeled matte squircle dock and square installation, starting, terminal and code surfaces.",
+      "A compact icon-only matte dock with hover/focus labels, and square installation, starting, terminal and code surfaces.",
       "Truthful demonstrations, selectable commands and explicit copy failure feedback."
     ],
     "rules": [
@@ -587,14 +588,14 @@
       },
       {
         "name": "The Matte Instrument Rule",
-        "body": "Use opaque tonal surfaces and fine borders for the interface. The dock may lift softly; technical panels stay square and flat. Do not extend the painting, glass blur or decorative texture into reading surfaces. Static rails, gutter-only grain and short transition hatches may mark empty shell space; never overlay reading, controls or artwork.",
+        "body": "Use opaque tonal surfaces and fine borders for the interface. The dock stays compact and unshadowed; technical panels stay square and flat. Do not extend the painting, glass blur or decorative texture into reading surfaces. Static rails, gutter-only grain and short transition hatches may mark empty shell space; never overlay reading, controls or artwork.",
         "section": "elevation"
       }
     ],
     "dos": [
       "Do preserve the approved hero, its one semantic h1, painted title material, native-scroll journey, static alternatives and dock-free opening.",
       "Do keep ordinary reading and links neutral, and distinguish selected controls with a visible marker as well as semantic state.",
-      "Do retain visible dock labels, safe-area clearance, focus outlines and bounded local scrolling for commands, tables and code.",
+      "Do retain accessible dock names, hover/focus labels, safe-area clearance, focus outlines and bounded local scrolling for commands, tables and code.",
       "Do use the existing official white mark on dark surfaces and the official black mark on light-filled contexts without modifying either asset.",
       "Do preserve tool identity, factual data, exact command/sample payloads and visible manual-copy fallback.",
       "Do identify the Clint terminal as sample output, not live execution.",
@@ -603,9 +604,9 @@
     "donts": [
       "Don't tint the charcoal grounds, headings, prose links or syntax with Mineral accent.",
       "Don't turn open task lanes into interchangeable rounded marketing cards or apply glass to technical panels.",
-      "Don't replace the approved labeled bottom dock with a top header, icon-only navigation or a hamburger on these routes.",
+      "Don't replace the compact bottom dock with a top header or hamburger, or remove its accessible names and hover/focus labels.",
       "Don't shrink mobile reading/code text, impose a 320px body minimum or hide overflow to conceal a layout defect.",
-      "Don't add ambient motion, pointer-required behavior, a theme toggle or a second runtime highlighter.",
+      "Don't add ambient motion beyond the explicitly approved dock-eye blinks and dock entrance/exit transitions, pointer-required behavior, a theme toggle or a second runtime highlighter.",
       "Don't treat design approval, screenshots, token contrast calculations or sample timing strings as release, performance or accessibility-conformance evidence.",
       "Don't use quiet construction rails as meaningful control boundaries or let grain and hatching cross reading, artwork, controls or focus outlines."
     ]
