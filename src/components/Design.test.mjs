@@ -179,6 +179,17 @@ const banners = (html) =>
   [...html.matchAll(/<img\b[^>]*class="tool-banner"[^>]*>/g)].map(([tag]) => tag);
 assert.equal(banners(home).length, 2);
 assert(!home.includes('ASTRO_ASSET'));
+for (const tag of banners(home)) {
+  assert(tag.includes('alt=""'));
+  assert(tag.includes('loading="lazy"'));
+  assert(tag.includes('decoding="async"'));
+  assert(tag.includes('width="2048" height="768"'));
+  assert(/src[Ss]et="[^"]+320w[^"]+2048w"/.test(tag));
+  assert(tag.includes('sizes="2048px"'), 'Cover crops must select the full-height source');
+  assert(!tag.toLowerCase().includes('fetchpriority'));
+  assert(!tag.includes('.png'));
+  assert(!tag.includes('tabindex'));
+}
 for (const [name, html] of [
   ['clint', clint],
   ['relay', relay],
@@ -186,17 +197,15 @@ for (const [name, html] of [
   const tags = banners(html);
   assert.equal(tags.length, 1);
   const banner = tags[0];
-  for (const tag of [...banners(home), banner]) {
-    assert(tag.includes('alt=""'));
-    assert(tag.includes('loading="lazy"'));
-    assert(tag.includes('decoding="async"'));
-    assert(tag.includes('width="2048" height="768"'));
-    assert(/src[Ss]et="[^"]+320w[^"]+2048w"/.test(tag));
-    assert(tag.includes('sizes="2048px"'), 'Cover crops must select the full-height source');
-    assert(!tag.includes('fetchpriority'));
-    assert(!tag.includes('.png'));
-    assert(!tag.includes('tabindex'));
-  }
+  assert(banner.includes('alt=""'));
+  assert(banner.includes('loading="eager"'), 'Doc feature banner is above-the-fold LCP');
+  assert(banner.includes('decoding="async"'));
+  assert(banner.includes('width="2048" height="768"'));
+  assert(/src[Ss]et="[^"]+320w[^"]+2048w"/.test(banner));
+  assert(banner.includes('sizes="2048px"'), 'Cover crops must select the full-height source');
+  assert(/fetch[Pp]riority="high"/.test(banner), 'LCP candidate must declare high fetch priority');
+  assert(!banner.includes('.png'));
+  assert(!banner.includes('tabindex'));
   assert(banner.includes(`/_astro/${name}-banner.`));
   const feature = html.indexOf('class="doc-feature"');
   assert(feature < html.indexOf(banner));
