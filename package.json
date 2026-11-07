@@ -15,7 +15,8 @@
     "format": "oxfmt --write",
     "format:check": "oxfmt --check",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "ci": "dagger call check"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.1",
