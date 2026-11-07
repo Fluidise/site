@@ -10,5 +10,12 @@ export default defineConfig({
   test: {
     environment: 'node',
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'lcov', 'html'],
+      reportsDirectory: './coverage',
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/**/*.{test,spec}.{ts,tsx}', 'src/content.config.ts', 'src/pages/**'],
+    },
   },
 });
