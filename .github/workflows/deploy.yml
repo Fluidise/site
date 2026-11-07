@@ -107,6 +107,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      workflows: write
     outputs:
       merged: ${{ steps.merge.outputs.merged }}
     steps:
