@@ -1,0 +1,32 @@
+# Typos configuration for Fluidise/site
+# Documentation: https://github.com/crate-ci/typos
+
+[files]
+extend-exclude = [".astro/", "dist/", "node_modules/", ".git/", "bun.lock", "public/fonts/"]
+
+[default.extend-words]
+fluidise = "fluidise"
+Fluidise = "Fluidise"
+dokploy = "dokploy"
+Dokploy = "Dokploy"
+oxlint = "oxlint"
+Oxlint = "Oxlint"
+oxfmt = "oxfmt"
+Oxfmt = "Oxfmt"
+conneg = "conneg"
+clint = "clint"
+tabler = "tabler"
+unannounced = "unannounced"
+vitest = "vitest"
+tailwindcss = "tailwindcss"
+lefthook = "lefthook"
+nocturne = "nocturne"
+archipelago = "archipelago"
+interessan = "interessan"
+pn = "pn"
+PN = "PN"
+pngs = "pngs"
+PNGs = "PNGs"
+iy = "iy"
+unparseable = "unparseable"
+approuves = "approuves"
