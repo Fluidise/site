@@ -1,0 +1,35 @@
+# Lychee link checker configuration for Fluidise/site
+# Documentation: https://lychee.cli.rs/
+
+# Root directory for resolving root-relative links like /manifesto.md
+root_dir = "dist"
+
+# Base URL used for resolving root-relative paths
+base = "https://fluidise.dev"
+
+# Remap production URLs to local dist/ folder for hermetic offline link checking
+remap = ["https://fluidise.dev/ dist/"]
+
+# Maximum number of retries before failing
+max_retries = 3
+
+# Wait time in seconds between retries
+retry_wait_time = 2
+
+# Request timeout in seconds
+timeout = 20
+
+# Accept these HTTP status codes as valid
+accept = [200, 204, 301, 302, 307, 308]
+
+# Exclude rate-limiting platforms, private IP ranges, and local developer hosts
+exclude = [
+  '^https?://localhost(:[0-9]+)?',
+  '^https?://127\.0\.0\.1(:[0-9]+)?',
+  '^https?://(www\.)?twitter\.com/.*',
+  '^https?://(www\.)?x\.com/.*',
+  '^https?://(www\.)?linkedin\.com/.*',
+]
+
+# Include code blocks, raw markdown links, and attributes
+include_verbatim = true

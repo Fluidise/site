@@ -1,0 +1,52 @@
+name: External Link Health Check
+
+on:
+  schedule:
+    # Run every Sunday at midnight UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  link-health:
+    name: Validate External Links
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: '.bun-version'
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build static site
+        run: bun run build
+        env:
+          ASTRO_TELEMETRY_DISABLED: 1
+
+      - name: Run Lychee external link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --config lychee.toml
+            dist/**/*.html
+            dist/llms.txt
+            dist/llms-full.txt
+            dist/tools.json
+            *.md
+            docs/**/*.md
+          fail: false
+          token: ${{ secrets.GITHUB_TOKEN }}

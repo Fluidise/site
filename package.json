@@ -8,7 +8,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro sync && tsc --noEmit",
+    "check:endpoints": "bun run src/tests/verify-endpoints.ts",
     "lint": "oxlint",
+    "lint:spelling": "typos",
+    "lint:links": "lychee --offline --config lychee.toml dist/**/*.html dist/llms.txt dist/llms-full.txt dist/tools.json dist/manifesto.md",
     "format": "oxfmt --write",
     "format:check": "oxfmt --check",
     "test": "vitest run"

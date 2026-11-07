@@ -27,6 +27,9 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Check typos
+        uses: crate-ci/typos@master
+
       - name: Validate PR title (Conventional Commits)
         if: github.event_name == 'pull_request'
         env:
@@ -54,6 +57,9 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Audit dependencies for vulnerabilities
+        run: bun audit
+
       - name: Check code formatting with Oxfmt
         run: bun run format:check
 
@@ -72,6 +78,23 @@ jobs:
         run: bun run build
         env:
           ASTRO_TELEMETRY_DISABLED: 1
+
+      - name: Verify static machine endpoints against schema contracts
+        run: bun run check:endpoints
+
+      - name: Verify internal link integrity with Lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --offline
+            --config lychee.toml
+            dist/**/*.html
+            dist/llms.txt
+            dist/llms-full.txt
+            dist/tools.json
+            dist/manifesto.md
+          fail: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and verify Docker container
         run: docker build -t fluidise-site-ci .
