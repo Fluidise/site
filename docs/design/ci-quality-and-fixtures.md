@@ -100,7 +100,7 @@ Modernize the quality assurance pipeline of `Fluidise/site` by adopting the high
   1. **Tier 1 (Gating CI - Hermetic & Offline)**:
      - Runs on every PR and commit to `main` within the `check` job.
      - Invoked with `--offline --root-dir dist` targeting `dist/**/*.html`, `dist/llms.txt`, `dist/llms-full.txt`, and `dist/tools.json`.
-     - Uses `base = "https://fluidise.dev"`, `root_dir = "dist"`, and `remap = ["https://fluidise.dev/ dist/"]` in `lychee.toml` so that both root-relative URLs (`/manifesto.md`) and fully-qualified production URLs (`https://fluidise.dev/tools/clint.md`) resolve directly to static files in `dist/` in offline mode.
+     - Uses `base_url = "https://fluidise.dev"`, `root_dir = "dist"`, and `remap = ["https://fluidise.dev/ dist/"]` in `lychee.toml` so that both root-relative URLs (`/manifesto.md`) and fully-qualified production URLs (`https://fluidise.dev/tools/clint.md`) resolve directly to static files in `dist/` in offline mode.
      - Validates that internal links, fragment anchors, and local asset references resolve with 100% determinism.
   2. **Tier 2 (Advisory Health Check - Scheduled / Non-blocking)**:
      - Runs via a standalone scheduled workflow (`.github/workflows/link-health.yml`) on a weekly cron and `workflow_dispatch`.
@@ -156,15 +156,15 @@ _(Advisory specification for `Fluidise/clint`; does not modify files in `Fluidis
 
 ## 4. Change Boundaries & Deliverables in `Fluidise/site`
 
-| Action     | Path                                      | Description                                                                                                                                                                                                                     |
-| :--------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Create** | `src/tests/verify-endpoints.ts`           | Post-build verification script validating static machine endpoints (`dist/llms.txt`, `dist/llms-full.txt`, `dist/tools.json`, `dist/manifesto.md`) against schema contracts and structural invariants.                          |
-| **Create** | `lychee.toml`                             | Configuration for Lychee link checker specifying `root_dir = "dist"`, `base = "https://fluidise.dev"`, `remap = ["https://fluidise.dev/ dist/"]`, file types (`.html`, `.txt`, `.json`, `.md`), and offline mode for gating CI. |
-| **Create** | `typos.toml`                              | Configuration for Typos spell-checker with repository-specific allowlist.                                                                                                                                                       |
-| **Create** | `.github/workflows/dependency-review.yml` | Dedicated PR workflow executing `actions/dependency-review-action` strictly on `pull_request` events.                                                                                                                           |
-| **Create** | `.github/workflows/link-health.yml`       | Standalone scheduled workflow checking external documentation URLs weekly without gating deployments.                                                                                                                           |
-| **Modify** | `.github/workflows/deploy.yml`            | Add `typos` step, `bun audit` step, `bun run check:endpoints` step post-build, and offline `lychee` verification step.                                                                                                          |
-| **Modify** | `package.json`                            | Add `check:endpoints`, `lint:spelling`, and `lint:links` scripts for developer ergonomics.                                                                                                                                      |
+| Action     | Path                                      | Description                                                                                                                                                                                                                         |
+| :--------- | :---------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Create** | `src/tests/verify-endpoints.ts`           | Post-build verification script validating static machine endpoints (`dist/llms.txt`, `dist/llms-full.txt`, `dist/tools.json`, `dist/manifesto.md`) against schema contracts and structural invariants.                              |
+| **Create** | `lychee.toml`                             | Configuration for Lychee link checker specifying `root_dir = "dist"`, `base_url = "https://fluidise.dev"`, `remap = ["https://fluidise.dev/ dist/"]`, file types (`.html`, `.txt`, `.json`, `.md`), and offline mode for gating CI. |
+| **Create** | `typos.toml`                              | Configuration for Typos spell-checker with repository-specific allowlist.                                                                                                                                                           |
+| **Create** | `.github/workflows/dependency-review.yml` | Dedicated PR workflow executing `actions/dependency-review-action` strictly on `pull_request` events.                                                                                                                               |
+| **Create** | `.github/workflows/link-health.yml`       | Standalone scheduled workflow checking external documentation URLs weekly without gating deployments.                                                                                                                               |
+| **Modify** | `.github/workflows/deploy.yml`            | Add `typos` step, `bun audit` step, `bun run check:endpoints` step post-build, and offline `lychee` verification step.                                                                                                              |
+| **Modify** | `package.json`                            | Add `check:endpoints`, `lint:spelling`, and `lint:links` scripts for developer ergonomics.                                                                                                                                          |
 
 ---
 

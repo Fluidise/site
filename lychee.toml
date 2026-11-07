@@ -5,7 +5,7 @@
 root_dir = "dist"
 
 # Base URL used for resolving root-relative paths
-base = "https://fluidise.dev"
+base_url = "https://fluidise.dev"
 
 # Remap production URLs to local dist/ folder for hermetic offline link checking
 remap = ["https://fluidise.dev/ dist/"]
