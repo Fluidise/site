@@ -107,7 +107,6 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      workflows: write
     outputs:
       merged: ${{ steps.merge.outputs.merged }}
     steps:
@@ -117,8 +116,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
         run: |
-          gh pr merge "$PR_URL" --squash --delete-branch
-          echo "merged=true" >> "$GITHUB_OUTPUT"
+          if gh pr merge "$PR_URL" --squash --delete-branch; then
+            echo "merged=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::Automatic squash-merge could not be performed by GITHUB_TOKEN (typically because workflow files were modified, which requires administrator privileges). Please merge manually."
+            echo "merged=false" >> "$GITHUB_OUTPUT"
+          fi
 
   deploy:
     name: Déploiement en production via Dokploy
