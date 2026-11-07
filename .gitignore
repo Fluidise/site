@@ -9,6 +9,7 @@ pnpm-debug.log*
 # Build outputs
 dist/
 .astro/
+coverage/
 
 # Environment variables
 .env

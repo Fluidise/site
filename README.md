@@ -18,6 +18,8 @@
   <br>
   <a href="https://github.com/Fluidise/site/actions/workflows/deploy.yml">
     <img src="https://img.shields.io/github/actions/workflow/status/Fluidise/site/deploy.yml?branch=main&style=flat&labelColor=11243B&color=075CCE&logo=GitHub%20Actions&logoColor=white" alt="CI/CD Pipeline"></a>
+  <a href="https://codecov.io/gh/Fluidise/site">
+    <img src="https://img.shields.io/codecov/c/github/Fluidise/site?style=flat&labelColor=11243B&color=075CCE&logo=codecov&logoColor=white" alt="Code Coverage"></a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-informational?style=flat&labelColor=11243B&color=075CCE" alt="License: MIT"></a>
   <a href="https://fluidise.dev">
