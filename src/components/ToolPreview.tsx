@@ -1,7 +1,19 @@
 import { IconCircleCheck, IconFileText, IconGitBranch, IconLock } from '@tabler/icons-react';
 import type { ToolBanner } from '../lib/tool-banner';
 
-export function ToolPreview({ toolId, banner }: { toolId: string; banner: ToolBanner }) {
+export interface ToolPreviewProps {
+  toolId: string;
+  banner: ToolBanner;
+  priority?: 'high' | 'auto';
+  loading?: 'eager' | 'lazy';
+}
+
+export function ToolPreview({
+  toolId,
+  banner,
+  priority = 'auto',
+  loading = 'lazy',
+}: ToolPreviewProps) {
   const hasPreview = toolId === 'clint' || toolId === 'relay';
 
   return (
@@ -14,8 +26,9 @@ export function ToolPreview({ toolId, banner }: { toolId: string; banner: ToolBa
         width={banner.width}
         height={banner.height}
         alt=""
-        loading="lazy"
+        loading={loading}
         decoding="async"
+        fetchPriority={priority === 'high' ? 'high' : undefined}
       />
       {hasPreview && (
         <>

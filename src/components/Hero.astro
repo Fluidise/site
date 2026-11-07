@@ -5,8 +5,8 @@ import background from '../../assets/plates/suspended-archipelago-background.png
 import contours from '../../assets/plates/suspended-archipelago-contours.json';
 
 const [artwork, sky] = await Promise.all([
-  getImage({ src: plate, format: 'webp', quality: 90 }),
-  getImage({ src: background, format: 'webp', quality: 90 }),
+  getImage({ src: plate, format: 'webp', quality: 82 }),
+  getImage({ src: background, format: 'webp', quality: 82 }),
 ]);
 const id = `archipelago-${crypto.randomUUID()}`;
 ---

@@ -87,7 +87,7 @@ const jsonLd = {
           <a class="text-link" href="#installation">All installation options <IconArrowRight size={16} aria-hidden="true" /></a>
         </section>
       </div>
-      <ToolPreview toolId={tool.id} banner={banner} />
+      <ToolPreview toolId={tool.id} banner={banner} loading="eager" priority="high" />
     </div>
     <div class="doc-reading">
       {contents.length >= 2 && (

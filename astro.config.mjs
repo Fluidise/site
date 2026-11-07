@@ -11,7 +11,7 @@ export default defineConfig({
   site,
   trailingSlash: 'always',
   prefetch: {
-    prefetchAll: false,
+    prefetchAll: true,
     defaultStrategy: 'hover',
   },
   integrations: [

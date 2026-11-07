@@ -46,6 +46,14 @@ describe('static product scenes', () => {
     }
   });
 
+  it('supports eager loading and high fetch priority for above-the-fold LCP scenes', () => {
+    const html = renderToStaticMarkup(
+      <ToolPreview toolId="clint" banner={banner} loading="eager" priority="high" />,
+    );
+    expect(html).toContain('loading="eager"');
+    expect(html).toContain('fetchPriority="high"');
+  });
+
   it('does not invent preview data for another tool', () => {
     const html = renderToStaticMarkup(<ToolPreview toolId="another-tool" banner={banner} />);
     expect(html).toContain('/scene.webp');
