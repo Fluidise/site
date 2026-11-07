@@ -1,0 +1,8 @@
+{
+  "name": "fluidise-site",
+  "engineVersion": "v0.21.11",
+  "sdk": {
+    "source": "typescript"
+  },
+  "source": ".dagger"
+}
