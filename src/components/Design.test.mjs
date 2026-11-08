@@ -244,12 +244,12 @@ console.log(
 );
 
 for (const [html, frameCount, hatchCount, islands] of [
-  [home, 4, 3, ['ToolGrid']],
+  [home, 0, 0, ['ToolGrid']],
   [clint, 2, 1, ['CopyCommand', 'InteractiveTerminal']],
   [relay, 2, 1, ['CopyCommand']],
 ]) {
   const frames = [...html.matchAll(/<[^>]+class="[^"]*\bbackground-frame\b[^"]*"[^>]*>/g)];
-  assert.equal(frames.length, frameCount, 'Only the intended non-hero shells receive rails');
+  assert.equal(frames.length, frameCount, 'Only unchanged documentation shells retain rails');
   const hatches = [...html.matchAll(/<span class="background-hatch" aria-hidden="true"><\/span>/g)];
   assert.equal(hatches.length, hatchCount, 'Hatches punctuate only major transitions');
   const exports = [...html.matchAll(/<astro-island\b[^>]*component-export="([^"]+)"/g)]
@@ -260,8 +260,21 @@ for (const [html, frameCount, hatchCount, islands] of [
     !frames.some(([tag]) => /archipelago|tool-feature|doc-feature|prose|doc-reading/.test(tag)),
   );
 }
-assert(/id="tools" class="[^"]*background-frame/.test(home));
-assert(/id="install" class="[^"]*background-frame/.test(home));
+assert(home.includes('class="tool-workbench shell"'));
+assert(home.includes('id="tools" class="tool-section"'));
+assert(home.includes('id="install" class="install-section"'));
+assert.equal((home.match(/class="installation-hatch" aria-hidden="true"/g) ?? []).length, 1);
+assert(home.includes('--installation-hatch: url('));
+assert(home.includes('/_astro/installation-hatch.'));
+assert(!home.includes('installation-hatch.png'));
+assert.equal((clint.match(/class="terminal-control"/g) ?? []).length, 3);
+assert(!clint.includes('class="glacial-control"'));
+const css = read('src/styles/global.css');
+assert.match(
+  css,
+  /\.terminal-control\[aria-selected='true'\]\s*\{\s*text-decoration-line: underline;/,
+);
+assert.doesNotMatch(css, /\.terminal-control:hover[^}]*text-decoration-line:\s*underline/);
 assert(/class="doc-shell background-frame"/.test(clint));
 assert(/class="doc-shell background-frame"/.test(relay));
 const grain = readFileSync(new URL('src/assets/background/grain.png', root));
@@ -270,6 +283,10 @@ assert.equal(grain.subarray(1, 4).toString(), 'PNG');
 assert.equal(grain.readUInt32BE(16), 96);
 assert.equal(grain.readUInt32BE(20), 96);
 assert(grain.includes(Buffer.from('Origin\0Fluidise procedural matte grain')));
+const hatch = readFileSync(new URL('src/assets/background/installation-hatch.png', root));
+assert.equal(hatch.readUInt32BE(16), 1024);
+assert.equal(hatch.readUInt32BE(20), 1536);
+assert(hatch.includes(Buffer.from('impeccable:prompt')));
 console.log(
-  'PASS: bounded nonsemantic background details, static grain and unchanged hydration owners',
+  'PASS: scoped homepage hatch, unchanged documentation decoration, text controls and hydration owners',
 );

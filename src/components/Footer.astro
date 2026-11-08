@@ -1,5 +1,9 @@
-<footer class="site-footer">
-  <div class="shell background-frame">
+---
+const isHome = Astro.url.pathname === '/';
+---
+
+<footer class:list={['site-footer', { 'site-footer-home': isHome }]}>
+  <div class:list={['shell', { 'background-frame': !isHome }]}>
     <div class="footer-main">
       <div class="footer-brand">
         <a href="/" aria-label="Fluidise home"><img src="/brand/logo-white.svg" width="32" height="32" alt="" /></a>

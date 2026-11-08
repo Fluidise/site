@@ -146,35 +146,32 @@ a {
   white-space: nowrap;
   border: 0;
 }
-.glacial-control {
-  border: 1px solid var(--control-border);
-  border-radius: 16px;
-  background: var(--surface);
+.terminal-control {
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--secondary);
-  padding: 11px 20px;
+  padding: 12px 0;
   font-size: var(--type-label);
   font-weight: 500;
   min-height: 44px;
+  min-inline-size: 44px;
   white-space: normal;
   max-inline-size: 100%;
   line-height: 1.4;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease,
-    transform 0.1s ease;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 8px;
 }
-.glacial-control:hover {
-  background: var(--hover);
+.terminal-control:hover,
+.terminal-control[aria-selected='true'] {
   color: var(--ink);
 }
-.glacial-control:active {
-  transform: scale(0.98);
+.terminal-control[aria-selected='true'] {
+  text-decoration-line: underline;
 }
-.glacial-control[aria-pressed='true'],
-.glacial-control[aria-selected='true'] {
-  color: var(--action);
-  background: var(--selected);
-  box-shadow: inset 0 -2px var(--accent);
+.terminal-control:focus-visible {
+  outline-color: var(--ink);
 }
 
 .archipelago-hero {
@@ -549,13 +546,27 @@ h2 {
 :where(h2, h3, p) {
   overflow-wrap: anywhere;
 }
+.home-content .shell,
+.site-footer-home .shell {
+  max-width: 1600px;
+}
+.tool-workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  padding-block: 32px 24px;
+}
 .tool-section {
-  padding-block: 32px 96px;
+  min-width: 0;
 }
 .catalog-header {
   display: grid;
-  gap: 24px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.catalog-header h2 {
+  line-height: 1.05;
 }
 .catalog-toolbar {
   display: flex;
@@ -572,6 +583,8 @@ h2 {
 }
 .catalog-header p {
   margin-top: 8px;
+  font-size: 1.25rem;
+  line-height: 1.4;
 }
 .catalog-filters {
   display: flex;
@@ -618,30 +631,27 @@ h2 {
 }
 .task-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   border-top: 1px solid var(--line);
 }
 .task-entry {
-  display: flex;
-  flex-direction: column;
-  padding: 40px 48px 0 0;
+  padding: 16px 0;
   min-width: 0;
 }
 .task-entry + .task-entry {
-  padding: 40px 0 0 48px;
-  border-left: 1px solid var(--line);
+  border-top: 1px solid var(--line);
 }
 .task-entry h3 {
-  font: 500 var(--type-package)/1.2 var(--font-heading);
+  font: 500 clamp(1.625rem, 2.3vw, 2.125rem)/1.2 var(--font-heading);
   letter-spacing: -0.025em;
   margin: 0 0 16px;
-  max-width: 22ch;
+  max-width: none;
 }
 .tool-feature {
-  flex: 1;
   display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 32px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
 }
 .task-preview-toggle {
   display: none;
@@ -661,9 +671,10 @@ h2 {
   flex-direction: column;
   width: 100%;
   min-width: 0;
+  padding-top: 12px;
 }
 .tool-presentation .tool-links {
-  margin-top: auto;
+  margin-top: 0;
 }
 .tool-identity {
   display: flex;
@@ -679,11 +690,46 @@ h2 {
   margin: 0;
 }
 .tool-tagline {
-  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  font-size: clamp(1.125rem, 1.4vw, 1.25rem);
   line-height: 1.55;
   color: var(--secondary);
   max-width: 45ch;
-  margin: 20px 0 24px;
+  margin: 16px 0 20px;
+}
+.home-content .tool-scene {
+  min-height: 0;
+}
+.home-content .preview-panels {
+  gap: 8px;
+  padding: 12px 48px;
+}
+.home-content .preview-panel {
+  padding: 10px 12px;
+}
+.home-content .preview-input {
+  margin-right: 12px;
+}
+.home-content .preview-result {
+  margin-left: 12px;
+}
+.home-content .preview-detail {
+  line-height: 1.4;
+  margin: 6px 0 2px;
+}
+.home-content .preview-panel pre {
+  line-height: 1.35;
+  margin-top: 8px;
+}
+.home-content .preview-plan {
+  gap: 4px;
+  margin: 8px 0;
+}
+.home-content .preview-approval {
+  padding-top: 8px;
+}
+.home-content .tool-scene figcaption {
+  padding: 6px 12px;
+  line-height: 1.4;
 }
 .tool-scene {
   position: relative;
@@ -843,36 +889,77 @@ h2 {
   grid-column: 1 / -1;
 }
 .install-section {
-  padding-block: 0 96px;
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  margin-top: 181px;
+  padding-left: 40px;
+  border-left: 1px solid var(--line);
+}
+.installation-hatch {
+  position: absolute;
+  z-index: -1;
+  inset: -181px -48px auto 0;
+  aspect-ratio: 2 / 3;
+  background: var(--installation-hatch) center / 100% 100% no-repeat;
+  opacity: 0.45;
+  pointer-events: none;
+  user-select: none;
+}
+.install-section > :not(.installation-hatch) {
+  position: relative;
+  background: var(--canvas);
 }
 .section-intro {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 32px 48px;
-  margin-bottom: 40px;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.section-intro h2 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
 }
 .section-intro p {
   margin: 0;
   align-self: center;
 }
 .install-list {
-  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 24px;
 }
 .install-entry {
+  min-width: 0;
+}
+.install-guidance {
+  margin: 20px 0 8px;
+  color: var(--secondary);
+  font-size: var(--type-label);
+  line-height: 1.6;
+}
+.install-resources {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 24px 48px;
+  gap: 8px;
+}
+.install-identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  padding: 32px 0;
-  border-bottom: 1px solid var(--line);
+  gap: 0 12px;
 }
 .install-identity h3 {
-  font: 500 var(--type-package)/1.2 var(--font-heading);
-  letter-spacing: -0.02em;
-  margin: 0 0 8px;
+  font: 500 var(--type-body)/1.4 var(--font-heading);
+  margin: 0;
 }
 .install-identity .tool-links {
-  margin-top: 12px;
+  grid-column: 1 / -1;
+  gap: 4px 16px;
+  margin-top: 0;
+}
+.install-section .copy-command code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.install-tap-note {
+  line-height: 1.6;
 }
 .copy-command-wrapper {
   min-width: 0;
@@ -925,12 +1012,13 @@ h2 {
 }
 .install-tap {
   max-width: 600px;
-  margin-top: 32px;
+  margin-top: 20px;
 }
 .install-tap > p {
   color: var(--secondary);
-  font-size: var(--type-label);
-  margin: 0 0 12px;
+  font-size: var(--type-meta);
+  line-height: 1.5;
+  margin: 0 0 8px;
 }
 
 .terminal {
@@ -965,7 +1053,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 8px 24px;
 }
 .terminal-body {
   display: grid;
@@ -1436,6 +1524,58 @@ article.prose :is(th, td) {
 }
 
 @media (max-width: 900px) {
+  .tool-workbench {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 64px;
+    padding-bottom: 64px;
+  }
+  .tool-feature {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .tool-presentation {
+    padding-top: 0;
+  }
+  .install-section {
+    margin-top: 0;
+    padding: 0;
+    border-left: 0;
+  }
+  .install-guidance {
+    font-size: var(--type-body);
+    line-height: 1.65;
+  }
+  .install-tap > p {
+    font-size: var(--type-label);
+    line-height: 1.6;
+  }
+  .installation-hatch {
+    inset: -64px 0 auto auto;
+    width: min(100%, 420px);
+    height: 64px;
+    aspect-ratio: auto;
+    background-position: center top;
+    background-size: 100% auto;
+  }
+  .home-content .preview-panels {
+    gap: 16px;
+    padding: 24px;
+  }
+  .home-content .preview-panel {
+    padding: 16px;
+  }
+  .home-content .preview-detail {
+    margin: 16px 0 8px;
+    line-height: 1.6;
+  }
+  .home-content .preview-panel pre {
+    line-height: 1.7;
+    margin-top: 16px;
+  }
+  .home-content .tool-scene figcaption {
+    padding: 12px 16px;
+    line-height: 1.6;
+  }
   .task-preview-toggle {
     display: flex;
     align-items: center;
@@ -1486,10 +1626,6 @@ article.prose :is(th, td) {
   .task-entry h3 {
     min-height: 0;
     max-width: 22ch;
-  }
-  .tool-section,
-  .install-section {
-    padding-bottom: 64px;
   }
   .philosophy-section {
     padding-bottom: 64px;
@@ -1578,8 +1714,15 @@ article.prose :is(th, td) {
   article.prose pre {
     padding: 20px;
   }
-  .terminal-controls .glacial-control {
-    padding-inline: 14px;
+  .install-identity {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .home-content .preview-panels {
+    padding: 20px 16px;
+  }
+  .catalog-header p {
+    font-size: var(--type-body);
+    line-height: 1.65;
   }
   .footer-links {
     gap: 28px;
@@ -1626,7 +1769,8 @@ article.prose :is(th, td) {
 @media (forced-colors: active) {
   .background-frame::before,
   .background-frame::after,
-  .background-hatch {
+  .background-hatch,
+  .installation-hatch {
     display: none;
   }
   .doc-shell.background-frame .doc-reading {
@@ -1643,7 +1787,6 @@ article.prose :is(th, td) {
   }
   .floating-dock,
   .dock-tooltip,
-  .glacial-control,
   .primary-link,
   .doc-start,
   .copy-command,
@@ -1655,19 +1798,17 @@ article.prose :is(th, td) {
   .dock-tooltip {
     border: 1px solid ButtonText;
   }
-  .catalog-filter:focus-visible {
+  .catalog-filter:focus-visible,
+  .terminal-control:focus-visible {
     outline-color: Highlight;
   }
-  .dock-link[aria-current],
-  .glacial-control[aria-pressed='true'],
-  .glacial-control[aria-selected='true'] {
+  .dock-link[aria-current] {
     outline: 1px solid Highlight;
   }
 }
 @supports (corner-shape: squircle) {
   .floating-dock,
   .dock-link,
-  .glacial-control,
   .primary-link,
   .copy-button {
     corner-shape: squircle;

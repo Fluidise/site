@@ -1,12 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
+import { getImage } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import { ToolGrid } from '../components/ToolGrid';
 import ManifestoSection from '../components/ManifestoSection.astro';
 import { getToolBanner } from '../lib/tool-banner';
+import installationHatch from '../assets/background/installation-hatch.png';
 
 const toolEntries = await getCollection('tools');
+const hatch = await getImage({ src: installationHatch, format: 'webp', quality: 80 });
 const tools = await Promise.all(
   toolEntries
     .sort((a, b) => a.data.order - b.data.order)
@@ -43,12 +46,14 @@ const jsonLd = {
 
 <Layout jsonLd={jsonLd}>
   <Hero />
-  <ToolGrid client:visible tools={tools} />
-  <noscript>
-    <style is:inline>
-      .task-preview-toggle { display: none; }
-      .task-preview-content[data-expanded] { display: block; margin-top: 0; }
-    </style>
-  </noscript>
-  <ManifestoSection />
+  <div class="home-content" style={`--installation-hatch: url('${hatch.src}')`}>
+    <ToolGrid client:visible tools={tools} />
+    <noscript>
+      <style is:inline>
+        .task-preview-toggle { display: none; }
+        .task-preview-content[data-expanded] { display: block; margin-top: 0; }
+      </style>
+    </noscript>
+    <ManifestoSection />
+  </div>
 </Layout>

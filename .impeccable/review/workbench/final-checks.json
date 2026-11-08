@@ -1,0 +1,70 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "log": "/tmp/fluidise-workbench-check-0.txt",
+    "seconds": 1.28
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "log": "/tmp/fluidise-workbench-check-1.txt",
+    "seconds": 0.44
+  },
+  {
+    "command": "bun run build",
+    "exitCode": 0,
+    "log": "/tmp/fluidise-workbench-check-2.txt",
+    "seconds": 1.49
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "log": "/tmp/fluidise-workbench-check-3.txt",
+    "seconds": 0.29
+  },
+  {
+    "command": "node src/components/Design.test.mjs",
+    "exitCode": 0,
+    "log": "/tmp/fluidise-workbench-check-4.txt",
+    "seconds": 0.11
+  },
+  {
+    "command": "node src/components/Hero.test.mjs",
+    "exitCode": 0,
+    "log": "/tmp/fluidise-workbench-check-5.txt",
+    "seconds": 0.05
+  },
+  {
+    "command": "node src/components/Navbar.test.mjs",
+    "exitCode": 0,
+    "log": "/tmp/fluidise-workbench-check-6.txt",
+    "seconds": 0.04
+  },
+  {
+    "command": "git diff --check",
+    "exitCode": 0,
+    "log": "/tmp/fluidise-workbench-check-7.txt",
+    "seconds": 0.1
+  },
+  {
+    "productionFixturesAbsent": true
+  },
+  {
+    "provenanceScan": {
+      "command": "impeccable embed-prompt --scan src/assets/background src/assets/tools",
+      "exitCode": 3,
+      "scanned": 4,
+      "missingEmbeddedMetadata": [
+        "src/assets/tools/clint-banner.png",
+        "src/assets/tools/relay-banner.png"
+      ],
+      "exception": "Unchanged legacy artwork with exact origin and SHA-256 documentation; hatch and grain passed."
+    }
+  },
+  {
+    "command": "bun run format:check",
+    "exitCode": 0,
+    "scope": "Entire project after documentation and byte-preserving engine archive cleanup"
+  }
+]

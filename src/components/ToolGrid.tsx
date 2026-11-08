@@ -8,12 +8,8 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
   const filteredTools = tools.filter((tool) => filter === 'all' || tool.status === filter);
 
   return (
-    <>
-      <section
-        id="tools"
-        className="tool-section shell background-frame"
-        aria-labelledby="tools-heading"
-      >
+    <div className="tool-workbench shell">
+      <section id="tools" className="tool-section" aria-labelledby="tools-heading">
         <div className="catalog-header">
           <div>
             <h2 id="tools-heading">Start with the job.</h2>
@@ -55,19 +51,12 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
             </p>
           )}
         </div>
-        <span className="background-hatch" aria-hidden="true" />
       </section>
-      <section
-        id="install"
-        className="install-section shell background-frame"
-        aria-labelledby="install-heading"
-      >
+      <section id="install" className="install-section" aria-labelledby="install-heading">
+        <span className="installation-hatch" aria-hidden="true" />
         <div className="section-intro">
           <h2 id="install-heading">Install with Homebrew.</h2>
-          <p>
-            These Homebrew commands are for macOS. Review each tool’s installation options for other
-            methods.
-          </p>
+          <p>macOS</p>
         </div>
         <div className="install-list">
           {tools.map((tool) => (
@@ -77,33 +66,45 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
               key={tool.id}
               aria-labelledby={`install-title-${tool.id}`}
             >
-              <div className="install-identity">
-                <h3 id={`install-title-${tool.id}`}>{tool.name}</h3>
-                <p className="tool-status">
-                  {tool.status === 'released' ? `${tool.version ?? ''} Released` : 'In Development'}
-                </p>
-                <div className="tool-links">
-                  <a className="text-link" href={`/tools/${tool.id}/#installation`}>
-                    Installation options <IconArrowUpRight size={16} aria-hidden="true" />
-                  </a>
-                  <a
-                    className="text-link"
-                    href={tool.repoUrl}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    aria-label={`View ${tool.name} repository on GitHub (opens in new tab)`}
-                  >
-                    <IconBrandGithub size={17} aria-hidden="true" /> GitHub
-                  </a>
-                </div>
-              </div>
-              {tool.brewCommand && (
+              {tool.brewCommand ? (
                 <CopyCommand
                   command={tool.brewCommand}
                   label={`Copy install command for ${tool.name}`}
                 />
+              ) : (
+                <a className="text-link" href={`/tools/${tool.id}/#installation`}>
+                  Installation options
+                </a>
               )}
             </article>
+          ))}
+        </div>
+        <p className="install-guidance">
+          These Homebrew commands are for macOS. Review each tool’s installation options for other
+          methods.
+        </p>
+        <div className="install-resources">
+          {tools.map((tool) => (
+            <div className="install-identity" key={tool.id}>
+              <h3 id={`install-title-${tool.id}`}>{tool.name}</h3>
+              <p className="tool-status">
+                {tool.status === 'released' ? `${tool.version ?? ''} Released` : 'In Development'}
+              </p>
+              <div className="tool-links">
+                <a className="text-link" href={`/tools/${tool.id}/#installation`}>
+                  Installation options <IconArrowUpRight size={16} aria-hidden="true" />
+                </a>
+                <a
+                  className="text-link"
+                  href={tool.repoUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={`View ${tool.name} repository on GitHub (opens in new tab)`}
+                >
+                  <IconBrandGithub size={17} aria-hidden="true" /> GitHub
+                </a>
+              </div>
+            </div>
           ))}
         </div>
         <div className="install-tap">
@@ -116,8 +117,7 @@ export function ToolGrid({ tools }: { tools: ToolData[] }) {
             label="Copy Homebrew tap installation command"
           />
         </div>
-        <span className="background-hatch" aria-hidden="true" />
       </section>
-    </>
+    </div>
   );
 }
