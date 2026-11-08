@@ -1,0 +1,53 @@
+{
+  "end": {
+    "command": "$ fluidise-clint --format text \"feat(core): introduce agent-first contract\"",
+    "focus": "terminal-format-text",
+    "selected": "Text (--format text)"
+  },
+  "home": {
+    "focus": "terminal-format-json",
+    "selected": "JSON (Agent default)"
+  },
+  "invalidCopy": {
+    "feedback": ["Terminal output copied to clipboard", "Text format, invalid sample"],
+    "output": "✖ Validation Error [CC001]: Missing conventional commit type prefix\n  1 | Fixed the bug and cleaned up code\n    | ^^^^^ Expected type prefix (feat, fix, docs, chore, etc.)\n\nExit code: 1 (Deterministic violation).",
+    "sample": "invalid"
+  },
+  "arrowLeft": {
+    "sample": "valid",
+    "selected": "JSON (Agent default)"
+  },
+  "text200": {
+    "clientWidth": 379,
+    "root": "32px",
+    "scrollWidth": 379
+  },
+  "deniedCopy": true,
+  "text200Focus": {
+    "clientWidth": 379,
+    "dock": {
+      "bottom": 918,
+      "height": 55.67999267578125,
+      "left": 92.54000091552734,
+      "right": 286.4599838256836,
+      "top": 862.3200073242188,
+      "width": 193.91998291015625,
+      "x": 92.54000091552734,
+      "y": 862.3200073242188
+    },
+    "focus": {
+      "bottom": 247.71875,
+      "height": 44,
+      "left": 20,
+      "right": 309.296875,
+      "top": 203.71875,
+      "width": 289.296875,
+      "x": 20,
+      "y": 203.71875
+    },
+    "focusText": "Installation options ",
+    "scrollWidth": 379,
+    "viewport": [390, 844]
+  },
+  "clipboardLimit": "Success UI verified; exact OS clipboard bytes not verified. CSS-root 200% fixture is not browser zoom."
+}

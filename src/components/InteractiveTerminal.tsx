@@ -95,7 +95,7 @@ export function InteractiveTerminal() {
           <div role="tablist" aria-label="Output format selector" className="terminal-controls">
             <button
               type="button"
-              className="glacial-control"
+              className="terminal-control"
               id="terminal-format-json"
               role="tab"
               aria-selected={mode === 'json'}
@@ -108,7 +108,7 @@ export function InteractiveTerminal() {
             </button>
             <button
               type="button"
-              className="glacial-control"
+              className="terminal-control"
               id="terminal-format-text"
               role="tab"
               aria-selected={mode === 'text'}
@@ -122,7 +122,7 @@ export function InteractiveTerminal() {
           </div>
           <button
             type="button"
-            className="glacial-control"
+            className="terminal-control"
             aria-controls="terminal-output"
             onClick={() => setSample(sample === 'valid' ? 'invalid' : 'valid')}
           >

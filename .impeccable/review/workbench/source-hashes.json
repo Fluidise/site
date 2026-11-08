@@ -1,0 +1,13 @@
+{
+  "src/components/ToolGrid.tsx": "67af9687936963d3a44345c6bb78c27b44e8d844da1e08601ab28f1ba6fb7ff5",
+  "src/components/InteractiveTerminal.tsx": "bb1c4efa26a9c184f77307e178f070076cb216e06b75dfd400f25e9ac01593d8",
+  "src/pages/index.astro": "0ce6c82ab555c46ca66e0b6fbf62245feaebb33ba0435081b54cab02c28f0299",
+  "src/components/Footer.astro": "82e07a0f16472a7f36fb4ca80619eefcc84c919ff0108f8b212cb6ce98b14420",
+  "src/components/ManifestoSection.astro": "e9320ab4e5eb8d10ab783da6e418a88356c8f64ee988fb10eab2c0600c5f05f9",
+  "src/styles/global.css": "163229dc9e6d8e5928f968b64014e56f8d10a1d887e4ef7371fb9e9a6a185a69",
+  "src/components/Hero.astro": "98f63654c15cf5de95560b7cce39862038b69723557d0c03072b1757cfa9a058",
+  "src/components/Navbar.astro": "5255fbbf415f46d6b49b84434c07e8ec587d574d2729a1386e5a3f52ad5f9c18",
+  "src/assets/background/installation-hatch.png": "cbfede55988cb6492a5c88531be811c64a66a970a3006c06b95fd33a3d22ace9",
+  "src/assets/tools/clint-banner.png": "833dc0e65776ab12a6df6548276f5c0e9f261d29312eecc50717e6b8205d446f",
+  "src/assets/tools/relay-banner.png": "a35378dcd05159f5139f859db321241df900d812c32a9a9f768458f910556b1b"
+}

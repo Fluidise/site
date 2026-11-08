@@ -1,0 +1,380 @@
+{
+  "cases": [
+    {
+      "name": "home-1440",
+      "url": "http://127.0.0.1:4330/#tools",
+      "bodyFont": "17px",
+      "clientWidth": 1429,
+      "installTop": 203,
+      "scrollWidth": 1429,
+      "scrollY": 2710,
+      "toolsColumns": "383.938px 404.141px",
+      "viewport": [1440, 900],
+      "visibleControls": []
+    },
+    {
+      "name": "home-1280",
+      "url": "http://127.0.0.1:4330/#tools",
+      "bodyFont": "17px",
+      "clientWidth": 1269,
+      "installTop": 203,
+      "scrollWidth": 1269,
+      "scrollY": 2170,
+      "toolsColumns": "338.781px 356.625px",
+      "viewport": [1280, 720],
+      "visibleControls": []
+    },
+    {
+      "name": "home-844",
+      "url": "http://127.0.0.1:4330/#tools",
+      "bodyFont": "17px",
+      "clientWidth": 833,
+      "installTop": 910.03125,
+      "scrollWidth": 833,
+      "scrollY": 1180,
+      "toolsColumns": "765.5px",
+      "viewport": [844, 390],
+      "visibleControls": []
+    },
+    {
+      "name": "home-390",
+      "url": "http://127.0.0.1:4330/#tools",
+      "bodyFont": "17px",
+      "clientWidth": 379,
+      "installTop": 1049,
+      "scrollWidth": 379,
+      "scrollY": 2542,
+      "toolsColumns": "339px",
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "home-320",
+      "url": "http://127.0.0.1:4330/#tools",
+      "bodyFont": "17px",
+      "clientWidth": 309,
+      "installTop": 1269.078125,
+      "scrollWidth": 309,
+      "scrollY": 2170,
+      "toolsColumns": "269px",
+      "viewport": [320, 720],
+      "visibleControls": []
+    },
+    {
+      "name": "mobile-home-expanded",
+      "url": "http://127.0.0.1:4330/#tools",
+      "bodyFont": "17px",
+      "clientWidth": 379,
+      "installTop": 1247.5625,
+      "scrollWidth": 379,
+      "scrollY": 2777,
+      "toolsColumns": "339px",
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "mobile-home-empty",
+      "url": "http://127.0.0.1:4330/#tools",
+      "bodyFont": "17px",
+      "clientWidth": 379,
+      "installTop": 408.875,
+      "scrollWidth": 379,
+      "scrollY": 2542,
+      "toolsColumns": null,
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "mobile-install",
+      "url": "http://127.0.0.1:4330/#tools",
+      "bodyFont": "17px",
+      "clientWidth": 379,
+      "installTop": 22,
+      "scrollWidth": 379,
+      "scrollY": 3569,
+      "toolsColumns": "339px",
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "clint-1280",
+      "url": "http://127.0.0.1:4330/tools/clint/",
+      "bodyFont": "17px",
+      "clientWidth": 1269,
+      "scrollWidth": 1269,
+      "scrollY": 3858,
+      "toolsColumns": null,
+      "viewport": [1280, 720],
+      "visibleControls": [
+        {
+          "height": 45,
+          "label": "JSON (Agent default)",
+          "selected": "true"
+        },
+        {
+          "height": 45,
+          "label": "Text (--format text)",
+          "selected": "false"
+        },
+        {
+          "height": 45,
+          "label": "Toggle Error",
+          "selected": null
+        }
+      ]
+    },
+    {
+      "name": "clint-text-invalid",
+      "url": "http://127.0.0.1:4330/tools/clint/",
+      "bodyFont": "17px",
+      "clientWidth": 1269,
+      "scrollWidth": 1269,
+      "scrollY": 3876,
+      "toolsColumns": null,
+      "viewport": [1280, 720],
+      "visibleControls": [
+        {
+          "height": 45,
+          "label": "JSON (Agent default)",
+          "selected": "false"
+        },
+        {
+          "height": 45,
+          "label": "Text (--format text)",
+          "selected": "true"
+        },
+        {
+          "height": 45,
+          "label": "Toggle Success",
+          "selected": null
+        }
+      ]
+    },
+    {
+      "name": "clint-390",
+      "url": "http://127.0.0.1:4330/tools/clint/",
+      "bodyFont": "17px",
+      "clientWidth": 379,
+      "scrollWidth": 379,
+      "scrollY": 5089,
+      "toolsColumns": null,
+      "viewport": [390, 844],
+      "visibleControls": [
+        {
+          "height": 45,
+          "label": "JSON (Agent default)",
+          "selected": "false"
+        },
+        {
+          "height": 45,
+          "label": "Text (--format text)",
+          "selected": "true"
+        },
+        {
+          "height": 45,
+          "label": "Toggle Success",
+          "selected": null
+        }
+      ]
+    },
+    {
+      "name": "clint-320",
+      "url": "http://127.0.0.1:4330/tools/clint/",
+      "bodyFont": "17px",
+      "clientWidth": 309,
+      "scrollWidth": 309,
+      "scrollY": 5422,
+      "toolsColumns": null,
+      "viewport": [320, 720],
+      "visibleControls": [
+        {
+          "height": 45,
+          "label": "JSON (Agent default)",
+          "selected": "false"
+        },
+        {
+          "height": 45,
+          "label": "Text (--format text)",
+          "selected": "true"
+        },
+        {
+          "height": 45,
+          "label": "Toggle Success",
+          "selected": null
+        }
+      ]
+    },
+    {
+      "name": "clint-320-json-focus",
+      "url": "http://127.0.0.1:4330/tools/clint/",
+      "bodyFont": "17px",
+      "clientWidth": 309,
+      "scrollWidth": 309,
+      "scrollY": 5523,
+      "toolsColumns": null,
+      "viewport": [320, 720],
+      "visibleControls": [
+        {
+          "height": 45,
+          "label": "JSON (Agent default)",
+          "selected": "true"
+        },
+        {
+          "height": 45,
+          "label": "Text (--format text)",
+          "selected": "false"
+        },
+        {
+          "height": 45,
+          "label": "Toggle Error",
+          "selected": null
+        }
+      ]
+    },
+    {
+      "name": "relay-320",
+      "url": "http://127.0.0.1:4330/tools/relay/",
+      "bodyFont": "17px",
+      "clientWidth": 309,
+      "scrollWidth": 309,
+      "scrollY": 0,
+      "toolsColumns": null,
+      "viewport": [320, 720],
+      "visibleControls": []
+    },
+    {
+      "name": "relay-1280",
+      "url": "http://127.0.0.1:4330/tools/relay/",
+      "bodyFont": "17px",
+      "clientWidth": 1269,
+      "scrollWidth": 1269,
+      "scrollY": 0,
+      "toolsColumns": null,
+      "viewport": [1280, 720],
+      "visibleControls": []
+    },
+    {
+      "name": "hero-1440",
+      "url": "http://127.0.0.1:4330/",
+      "bodyFont": "17px",
+      "clientWidth": 1429,
+      "installTop": 2913,
+      "scrollWidth": 1429,
+      "scrollY": 0,
+      "toolsColumns": "383.938px 404.141px",
+      "viewport": [1440, 900],
+      "visibleControls": []
+    },
+    {
+      "name": "home-full-1440",
+      "url": "http://127.0.0.1:4330/",
+      "bodyFont": "17px",
+      "clientWidth": 1429,
+      "installTop": 2913,
+      "scrollWidth": 1429,
+      "scrollY": 0,
+      "toolsColumns": "383.938px 404.141px",
+      "viewport": [1440, 900],
+      "visibleControls": []
+    },
+    {
+      "name": "hero-390",
+      "url": "http://127.0.0.1:4330/",
+      "bodyFont": "17px",
+      "clientWidth": 379,
+      "installTop": 3591,
+      "scrollWidth": 379,
+      "scrollY": 0,
+      "toolsColumns": "339px",
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "home-full-390",
+      "url": "http://127.0.0.1:4330/",
+      "bodyFont": "17px",
+      "clientWidth": 379,
+      "installTop": 3591,
+      "scrollWidth": 379,
+      "scrollY": 0,
+      "toolsColumns": "339px",
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "home-text-200",
+      "url": "http://127.0.0.1:4330/__workbench-review/text-200.html#tools",
+      "bodyFont": "34px",
+      "clientWidth": 379,
+      "installTop": 3143.953125,
+      "scrollWidth": 379,
+      "scrollY": 1961,
+      "toolsColumns": "339px",
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "home-copy-denied",
+      "url": "http://127.0.0.1:4330/__workbench-review/clipboard-denied.html",
+      "bodyFont": "16px",
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "scrollY": 0,
+      "toolsColumns": null,
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "home-text-200",
+      "url": "http://127.0.0.1:4330/__workbench-review/text-200.html#tools",
+      "bodyFont": "34px",
+      "clientWidth": 379,
+      "installTop": 2656.953125,
+      "scrollWidth": 379,
+      "scrollY": 2448,
+      "toolsColumns": "339px",
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "home-text-200-focus",
+      "url": "http://127.0.0.1:4330/__workbench-review/text-200.html#tools",
+      "bodyFont": "34px",
+      "clientWidth": 379,
+      "installTop": 2604.953125,
+      "scrollWidth": 379,
+      "scrollY": 2500,
+      "toolsColumns": "339px",
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "home-text-200-focus",
+      "url": "http://127.0.0.1:4330/__workbench-review/text-200.html#install",
+      "bodyFont": "34px",
+      "clientWidth": 379,
+      "installTop": 2275.953125,
+      "scrollWidth": 379,
+      "scrollY": 2829,
+      "toolsColumns": "339px",
+      "viewport": [390, 844],
+      "visibleControls": []
+    },
+    {
+      "name": "home-text-200-focus",
+      "url": "http://127.0.0.1:4330/__workbench-review/text-200.html#install",
+      "bodyFont": "34px",
+      "clientWidth": 379,
+      "installTop": -1026.046875,
+      "scrollWidth": 379,
+      "scrollY": 6131,
+      "toolsColumns": "339px",
+      "viewport": [390, 844],
+      "visibleControls": []
+    }
+  ],
+  "mobileIsolation": {
+    "count": "0 tools shown",
+    "installationRows": 2
+  }
+}

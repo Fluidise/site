@@ -1,0 +1,19 @@
+{
+  "hoverSelection": [
+    {
+      "color": "rgb(242, 242, 242)",
+      "decoration": "none",
+      "hovered": true,
+      "label": "JSON (Agent default)",
+      "selected": "false"
+    },
+    {
+      "color": "rgb(242, 242, 242)",
+      "decoration": "underline",
+      "hovered": false,
+      "label": "Text (--format text)",
+      "selected": "true"
+    }
+  ],
+  "scope": "Native click on JSON, native End selects Text while pointer remains over inactive JSON. Other runtime changes are limited to selected-only text decoration. Final build removed ignored test fixtures."
+}

@@ -24,6 +24,17 @@ const tool: ToolData = {
 };
 
 describe('task gateway and installation desk', () => {
+  it('places discovery and the independent installation desk inside one workbench', () => {
+    const html = renderToStaticMarkup(<ToolGrid tools={[tool]} />);
+    expect(html).toContain('<div class="tool-workbench shell">');
+    expect(html).toContain('id="tools" class="tool-section"');
+    expect(html).toContain('id="install" class="install-section"');
+    expect(html).not.toContain('background-frame');
+    expect(html).not.toContain('background-hatch');
+    expect(html).toContain('<span class="installation-hatch" aria-hidden="true"></span>');
+    expect(html.indexOf('id="tools"')).toBeLessThan(html.indexOf('id="install"'));
+  });
+
   it('groups native text filters and the live count in one catalog toolbar', () => {
     const html = renderToStaticMarkup(<ToolGrid tools={[tool]} />);
     const gateway = html.slice(html.indexOf('id="tools"'), html.indexOf('id="install"'));
