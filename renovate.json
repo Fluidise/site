@@ -3,5 +3,20 @@
   "extends": ["config:recommended"],
   "semanticCommits": "enabled",
   "semanticCommitType": "chore",
-  "semanticCommitScope": "deps"
+  "semanticCommitScope": "deps",
+  "packageRules": [
+    {
+      "description": "Dagger TypeScript SDK v0.21.11 requires the TypeScript 5 Compiler API (ts.SyntaxKind); restrict typescript upgrades in .dagger to <6.0.0",
+      "matchFileNames": [".dagger/**"],
+      "matchDepNames": ["typescript"],
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<6.0.0"
+    },
+    {
+      "description": "Prevent major dependency updates inside .dagger to protect Dagger engine runtime compatibility",
+      "matchFileNames": [".dagger/**"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    }
+  ]
 }
