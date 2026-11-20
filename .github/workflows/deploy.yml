@@ -47,7 +47,7 @@ jobs:
       - name: Run CI pipeline with Dagger
         uses: dagger/dagger-for-github@v8.4.1
         with:
-          version: '0.21.11'
+          version: '0.21.12'
           verb: call
           args: check --export-artifacts=true
         env:
